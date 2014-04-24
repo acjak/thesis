@@ -4,7 +4,7 @@
 %  Updated by Finn Kuno Christensen, fkc@imm.dtu.dk Aug 15, 2008
 
 %  COMPILATION STEPS USING INVOLVING A PS FILE
-\documentclass[10pt,twoside]{book}
+\documentclass[10pt,twoside,a4paper]{book}
 %  latex phdthesis.tex
 %  dvips -D600 -Pamz -Pcmz -j0 phdthesis.dvi -o phdthesis.ps
 %  ps2pdf -sPAPERSIZE=b5 phdthesis.ps phdthesis.pdf (or use Acrobat Distiller)
@@ -18,7 +18,7 @@
 \def\thesisyear{2014} % Year thesis submitted
 \def\thesisnumber{70}  % Only number no year
 \def\thesisauthor{Anders Clemen Jakobsen} % Thesis author
-\def\thesistitle{X-ray optics in new instruments for astro- and astroparticle physics} % Title of thesis
+\def\thesistitle{X-ray optics in new instruments for astro- and astroparticlephysics} % Title of thesis
 \def\thesiskeywords{X-ray optics}
 \def\thesisISBN{} %OBSOBS provide ISBN number for industrial phd students ONLY
 \def\thesisversion{print} %OBSOBS choose this for printed version send to printing
@@ -72,7 +72,8 @@
 % Appendix A, B, ...
 \include{tex/Appendix1}
 \include{tex/paper1}
-%\include{paper2}
+%\include{tex/paper2}
+
 
 
 \backmatter
