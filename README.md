@@ -1,4 +1,4 @@
-thesis
+PhD thesis
 ======
 
-PhD thesis
+
