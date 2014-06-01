@@ -33,7 +33,7 @@
 \usepackage{theorem}
 \usepackage{immthesislayout}
 \usepackage{pdfpages}
-
+\usepackage[us,24hr]{datetime}
 
 
 \newcommand{\papertitle}{}
@@ -82,7 +82,7 @@
 
 \vspace*{2cm}
 \def\empty{}
-{\sf Compiled: \today}\\
+{\sf Compiled: \today\ at \currenttime}\\
 \ifx\thesisISBN\empty
   {\sf ISSN \thesisISSN}
 \else
