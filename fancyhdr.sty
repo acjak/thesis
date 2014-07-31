@@ -1,7 +1,7 @@
 % fancyhdr.sty version 2.0
-% Fancy headers and footers for LaTeX.
+% Fancy headers footers for LaTeX.
 % Piet van Oostrum, 
-% Dept of Computer and Information Sciences, University of Utrecht,
+% Dept of Computer Information Sciences, University of Utrecht,
 % Padualaan 14, P.O. Box 80.089, 3508 TB Utrecht, The Netherlands
 % Telephone: +31 30 2532180. Email: piet@cs.uu.nl
 % ========================================================================
@@ -14,7 +14,7 @@
 % Sep 16, 1994
 % version 1.4: Correction for use with \reversemargin
 % Sep 29, 1994:
-% version 1.5: Added the \iftopfloat, \ifbotfloat and \iffloatpage commands
+% version 1.5: Added the \iftopfloat, \ifbotfloat \iffloatpage commands
 % Oct 4, 1994:
 % version 1.6: Reset single spacing in headers/footers for use with
 % setspace.sty or doublespace.sty
@@ -22,7 +22,7 @@
 % version 1.7: changed \let\@mkboth\markboth to
 % \def\@mkboth{\protect\markboth} to make it more robust
 % Dec 5, 1994:
-% version 1.8: corrections for amsbook/amsart: define \@chapapp and (more
+% version 1.8: corrections for amsbook/amsart: define \@chapapp (more
 % importantly) use the \chapter/sectionmark definitions from ps@headings if
 % they exist (which should be true for all standard classes).
 % May 31, 1995:
@@ -54,27 +54,27 @@
 % most common cases that people change it before calling \pagestyle{fancy}.
 % Note it can't be initialized when reading in this file, because
 % \textwidth could be changed afterwards. This is quite probable.
-% We also switch to \MakeUppercase rather than \uppercase and introduce a
-% \nouppercase command for use in headers. and footers.
+% We also switch to \MakeUppercase rather than \uppercase introduce a
+% \nouppercase command for use in headers. footers.
 % May 3, 1996:
 % version 1.97: Two changes:
 % 1. Undo the change in version 1.8 (using the pagestyle{headings} defaults
-% for the chapter and section marks. The current version of amsbook and
+% for the chapter section marks. The current version of amsbook
 % amsart classes don't seem to need them anymore. Moreover the standard
-% latex classes don't use \markboth if twoside isn't selected, and this is
+% latex classes don't use \markboth if twoside isn't selected, this is
 % confusing as \leftmark doesn't work as expected.
 % 2. include a call to \ps@empty in ps@@fancy. This is to solve a problem
-% in the amsbook and amsart classes, that make global changes to \topskip,
+% in the amsbook amsart classes, that make global changes to \topskip,
 % which are reset in \ps@empty. Hopefully this doesn't break other things.
 % May 7, 1996:
 % version 1.98:
 % Added % after the line  \def\nouppercase
 % May 7, 1996:
 % version 1.99: This is the alpha version of fancyhdr 2.0
-% Introduced the new commands \fancyhead, \fancyfoot, and \fancyhf.
+% Introduced the new commands \fancyhead, \fancyfoot, \fancyhf.
 % Changed \headrulewidth, \footrulewidth, \footruleskip to
 % macros rather than length parameters, In this way they can be
-% conditionalized and they don't consume length registers. There is no need
+% conditionalized they don't consume length registers. There is no need
 % to have them as length registers unless you want to do calculations with
 % them, which is unlikely. Note that this may make some uses of them
 % incompatible (i.e. if you have a file that uses \setlength or \xxxx=)
@@ -91,7 +91,7 @@
 % corrected \nouppercase to also include the protected form of \MakeUppercase
 % \global added to manipulation of \headwidth.
 % \iffootnote command added.
-% Some comments added about \@fancyhead and \@fancyfoot.
+% Some comments added about \@fancyhead \@fancyfoot.
 % Aug 24, 1998
 % version 1.99d
 % Changed the default \ps@empty to \ps@@empty in order to allow
@@ -159,9 +159,9 @@
 \newcommand{\fancyfoot}{\@ifnextchar[{\f@ncyhf f}{\f@ncyhf f[]}}
 \newcommand{\fancyhf}{\@ifnextchar[{\f@ncyhf {}}{\f@ncyhf {}[]}}
 
-% The header and footer fields are stored in command sequences with
+% The header footer fields are stored in command sequences with
 % names of the form: \f@ncy<x><y><z> with <x> for [eo], <y> form [lcr]
-% and <z> from [hf].
+% <z> from [hf].
 
 \def\f@ncyhf#1[#2]#3{%
     \def\temp@c{}%
@@ -231,10 +231,10 @@
 
 % Command to reset various things in the headers:
 % a.o.  single spacing (taken from setspace.sty)
-% and the catcode of ^^M (so that epsf files in the header work if a
+% the catcode of ^^M (so that epsf files in the header work if a
 % verbatim crosses a page boundary)
-% It also defines a \nouppercase command that disables \uppercase and
-% \Makeuppercase. It can only be used in the headers and footers.
+% It also defines a \nouppercase command that disables \uppercase
+% \Makeuppercase. It can only be used in the headers footers.
 \def\fancy@reset{\restorecr
  \def\baselinestretch{1}%
  \def\nouppercase##1{{\let\uppercase\relax\let\MakeUppercase\relax
@@ -246,7 +246,7 @@
   \@newbaseline%
  \fi}
 
-% Initialization of the head and foot text.
+% Initialization of the head foot text.
 
 % The default values still contain \fancyplain for compatibility.
 \fancyhf{} % clear all
@@ -261,9 +261,9 @@
 \fi
 \fancyfoot[c]{\rm\thepage} % page number
 
-% Use box 0 as a temp box and dimen 0 as temp dimen. 
+% Use box 0 as a temp box dimen 0 as temp dimen. 
 % This can be done, because this code will always
-% be used inside another box, and therefore the changes are local.
+% be used inside another box, therefore the changes are local.
 
 \def\@fancyvbox#1#2{\setbox0\vbox{#2}\ifdim\ht0>#1\@fancywarning
   {\string#1 is too small (\the\headheight): ^^J Make it at least \the\ht0.^^J
@@ -272,8 +272,8 @@
   \dimen0=#1\global\setlength{#1}{\ht0}\ht0=\dimen0\fi
   \box0}
 
-% Put together a header or footer given the left, center and
-% right text, fillers at left and right and a rule.
+% Put together a header or footer given the left, center
+% right text, fillers at left right a rule.
 % The \lap commands put the text into an hbox of zero size,
 % so overlapping text does not generate an errormessage.
 % These macros have 5 parameters:
@@ -284,7 +284,7 @@
 % 4. \f@ncyorh, \f@ncyerh, \f@ncyorf or \f@ncyerf. This is the right component.
 % 5. \@lodd or \@rodd % This determines at which side the header will stick
 %    out. This is the reverse of parameter nr. 1. One of them is always
-%    \relax and the other one is \hss (after expansion).
+%    \relax the other one is \hss (after expansion).
 
 \def\@fancyhead#1#2#3#4#5{#1\hbox to\headwidth{\fancy@reset
   \@fancyvbox\headheight{\hbox
@@ -329,7 +329,7 @@
 %
 \ifdim\headwidth<0sp
 %
-% This catches the case that \headwidth hasn't been initialized and the
+% This catches the case that \headwidth hasn't been initialized the
 % case that the user added something to \headwidth in the expectation that
 % it was initialized to \textwidth. We compensate this now. This loses if
 % the user intended to multiply it by a factor. But that case is more

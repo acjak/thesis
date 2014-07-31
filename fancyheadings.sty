@@ -1,12 +1,12 @@
 % fancyheadings.sty version 1.92
-% Fancy headers and footers.
+% Fancy headers footers.
 % Piet van Oostrum, Dept of Computer Science, University of Utrecht
 % Padualaan 14, P.O. Box 80.089, 3508 TB Utrecht, The Netherlands
 % Telephone: +31-30-531806. piet@cs.ruu.nl (mcvax!sun4nl!ruuinf!piet)
 % Sep 16, 1994
 % version 1.4: Correction for use with \reversemargin
 % Sep 29, 1994:
-% version 1.5: Added the \iftopfloat, \ifbotfloat and \iffloatpage commands
+% version 1.5: Added the \iftopfloat, \ifbotfloat \iffloatpage commands
 % Oct 4, 1994:
 % version 1.6: Reset single spacing in headers/footers for use with
 % setspace.sty or doublespace.sty
@@ -14,7 +14,7 @@
 % version 1.7: changed \let\@mkboth\markboth to
 % \def\@mkboth{\protect\markboth} to make it more robust
 % Dec 5, 1994:
-% version 1.8: corrections for amsbook/amsart: define \@chapapp and (more
+% version 1.8: corrections for amsbook/amsart: define \@chapapp (more
 % importantly) use the \chapter/sectionmark definitions from ps@headings if
 % they exist (which should be true for all standard classes).
 % May 31, 1995:
@@ -61,7 +61,7 @@
 
 % Command to reset various things in the headers:
 % a.o.  single spacing (taken from setspace.sty)
-% and the catcode of ^^M (so that epsf files in the header work if a
+% the catcode of ^^M (so that epsf files in the header work if a
 % verbatim crosses a page boundary)
 \def\fancy@reset{\restorecr
  \def\baselinestretch{1}%
@@ -71,7 +71,7 @@
   \@newbaseline%
  \fi}
 
-% Initialization of the head and foot text.
+% Initialization of the head foot text.
 
 \headrulewidth 0.4pt
 \footrulewidth\z@
@@ -87,8 +87,8 @@
 \cfoot{\rm\thepage} % page number
 \rfoot{}
 
-% Put together a header or footer given the left, center and
-% right text, fillers at left and right and a rule.
+% Put together a header or footer given the left, center
+% right text, fillers at left right a rule.
 % The \lap commands put the text into an hbox of zero size,
 % so overlapping text does not generate an errormessage.
 
