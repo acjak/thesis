@@ -36,7 +36,23 @@
 \usepackage[us,24hr]{datetime}
 \usepackage{enumitem}
 \usepackage{eurosym}
+\usepackage{listings}
+\usepackage{fancyvrb,fancybox,calc}
+\newenvironment{verbcode}{\VerbatimEnvironment%
+  \noindent
+  %      {\columnwidth-\leftmargin-\rightmargin-2\fboxsep-2\fboxrule-4pt}
+  \begin{Sbox}
+  \begin{minipage}{0.8\linewidth-2\fboxsep-2\fboxrule-4pt}
+  \begin{Verbatim}
+}{%
+  \end{Verbatim}
+  \end{minipage}
+  \end{Sbox}
 
+  \fbox{\TheSbox}
+
+  %\fbox{}{\TheSbox}
+}
 
 \newcommand{\papertitle}{}
 \setcounter{tocdepth}{2} % 1 in final version 10 for debugging

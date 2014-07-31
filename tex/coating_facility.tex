@@ -48,16 +48,45 @@ Baratron\\
 \subsection{Cathode shutters}
 
 \section{Multilab control software}\label{sec:ml_software}
-\subsection{The original software solution}
-\subsection{Considerations on a new software solution}
+
+\subsection{The original control software}
+
+\subsection{Considerations on the new software solution}
+\begin{verbcode}
+  SPEC> mra
+\end{verbcode}
 
 \section{Coating calibration}
+To deposit a coating with the correct film layer thicknesses on a substrate, a calibration of the material combination is required. Four samples of 10 bilayer films are coated using the two materials. Each sample is placed on a separate mounting plate and each coated with a different thickness of both light and heavy materials. The samples are then measured using XRR and compared to an IMD model fit to get bilayer thickness (d-spacing) and thin/heavy material fraction ($\Gamma$) as seen in figure \ref{fig:irb4c-fit}.
 
 \begin{figure}[!h]
-	\center
-	\includegraphics[height=6cm]{figures/chamber/si5811-fit.pdf}
+  \center
+  \includegraphics[height=6cm]{figures/chamber/si5811-fit.pdf}
 \caption{\footnotesize XRR measurement of a 10 bilayer Ir/B$_4$C coating to calibrate for SPO coating. The measurement is fitted with an IMD model to determine d-spacing $\Gamma$.}\label{fig:irb4c-fit}
 \end{figure}
+
+The result for each sample is used to get the specific thickness of a material when coating with a given speed. Each result from the IMD model fitting is put into a table like the following:
+
+%\begin{table}[!h]
+\begin{center}
+\begin{tabular}{c|c|c|c|c}
+Sample & speed (Ir) & speed (B$_4$C) & d-Ir [nm] & d-B$_4$C [nm] \\
+\hline
+si5809 & 2623 & 473 & 2.42 & 2.54 \\
+si5810 & 1445 & 338 & 3.21 & 3.88 \\
+si5811 & 1011 & 236 & 4.33 & 5.81 \\
+si5812 &  674 & 158 & 6.40 & 8.85 \\
+si5813 & 281 & 225 & 14.55 & 7.49
+\end{tabular}
+\end{center}
+%\caption{\footnotesize Calibration samples coated with 10 bilayer Ir/B$_4$C multilayers of different thickness. Each sample is measured using XRR and fitted to an IMD model. \label{tab:AFMsamples}}
+%\end{table}
+
+The d-spacings for a given material are plotted as a function of the inverse speed of the sample ring (v$^{-1}$) and fitted with a linear regression as seen in figure \ref{fig:calib-fit}. The $a$ and $b$ values of the linear regression are used directly to determine the speed of the sample ring to coat e.g. B$_4$C with a thickness of $d_{\mathrm{B}_4\mathrm{C}}$ like so:
+
+\begin{eqnarray}
+	v_{\mathrm{B}_4\mathrm{C}} = \frac{a}{d_{\mathrm{B}_4\mathrm{C}}-b}.
+\end{eqnarray}
 
 \begin{figure}[!h]
 	\center
