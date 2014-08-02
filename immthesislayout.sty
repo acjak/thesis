@@ -51,7 +51,7 @@
 \renewcommand{\appendixname}{A p p e n d i x }
 
 \def\@makechapterhead#1{%
-  \vspace*{50\p@}%
+  \vspace*{30\p@}% Var 50
   {\parindent \z@ \raggedright \normalfont
    \ifnum \c@secnumdepth >\m@ne
       \if@mainmatter
@@ -65,11 +65,11 @@
      \par\nobreak
      \vskip 15pt
      \hrule height 0.4pt
-    \vskip 80\p@
+    \vskip 30\p@ % var 80
   }}
 
 \def\@makeschapterhead#1{%
-  \vspace*{50\p@}%
+  \vspace*{30\p@}% Var 50
   {\parindent \z@ \raggedright \normalfont
     \interlinepenalty\@M
 %    \flushleft\parbox{\textwidth}{\raggedleft \sffamily\Huge\bfseries  #1}
@@ -78,5 +78,5 @@
      \par\nobreak
      \vskip 15pt
      \hrule height 0.4pt
-    \vskip 80\p@
+    \vskip 30\p@ % var 80
   }}
