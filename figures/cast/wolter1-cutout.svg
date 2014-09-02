@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Lag_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="315.333px" height="332.667px" viewBox="0 0 315.333 332.667" enable-background="new 0 0 315.333 332.667"
+	 xml:space="preserve">
+<circle fill="#CCCBC9" stroke="#000000" stroke-miterlimit="10" cx="158.258" cy="176.052" r="146.771"/>
+<circle fill="#898480" stroke="#000000" stroke-miterlimit="10" cx="158.257" cy="176.052" r="22.238"/>
+<g opacity="0.59">
+	<g id="XMLID_1_">
+		<g>
+			<path fill="#DE823A" d="M253.333,56.697l-83.23,105.35c-3.54-2.37-7.79-3.76-12.36-3.76c-4.14,0-8.01,1.13-11.33,3.1
+				l-76.85-110.42c25.73-17.22,55.77-27.1,87.85-27.1C192.914,23.867,225.904,35.957,253.333,56.697z"/>
+		</g>
+		<g>
+			<path fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M146.414,161.387
+				c3.32-1.97,7.19-3.1,11.33-3.1c4.57,0,8.82,1.39,12.36,3.76"/>
+			<path fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M69.563,50.967
+				c25.73-17.22,55.77-27.1,87.85-27.1c35.5,0,68.49,12.09,95.92,32.83"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="69.563" y1="50.967" x2="146.414" y2="161.387"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="253.333" y1="56.697" x2="170.104" y2="162.047"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 117.5107 86.667)"><tspan x="0" y="0" font-family="'CMB10'" font-size="12">Wolter I cut-out </tspan><tspan x="-7.554" y="14.4" font-family="'CMB10'" font-size="12">for CAST telescope</tspan></text>
+<text transform="matrix(1 0 0 1 137.562 179.6665)" font-family="'CMB10'" font-size="11">Mandrel</text>
+<text transform="matrix(1 0 0 1 68.54 13.6675)" font-family="'CMB10'" font-size="13">Wolter I telescope frontal view</text>
+</svg>
