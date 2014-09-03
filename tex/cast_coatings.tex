@@ -24,11 +24,9 @@ The spectrum of X-rays from axions can be seen in figure \ref{fig:axion_spectrum
 \end{figure}
 
 From theory, the expected mass of the axion is between $10^{-7}$-$1$ eV. In figure \ref{fig:axion_search_cast} the search area can be seen as the axion-photon coupling constant, \gay, as a function of the axion mass, \maxion. The yellow line represents the area where we expect to see the axion if all dark matter in the universe consists of axion particles with the same \maxion\ and \gay. The CAST helioscope is by 2014 the most comprehensive axion search, and has set an experimental upper limit of
-
 \begin{eqnarray}
 \gaymath \leq 2 \cdot 10^{-10} \textrm{ GeV}^{-1}.
 \end{eqnarray}
-
 % \begin{figure}
 % \centering
 % \begin{minipage}{.5\textwidth}
@@ -43,8 +41,7 @@ From theory, the expected mass of the axion is between $10^{-7}$-$1$ eV. In figu
 %   \label{fig:axion_search_cast}
 % \end{minipage}
 % \end{figure}
-
-The CAST experiment is largely made from spare parts of other projects at CERN and other research institutions. The magnet is one of three prototype superconducting dipole magnets from the Large Hadron Collider. It is designed to transport particles in two directions inside a strong magnetic field, so it has two bores inside with diameters of 45 mm. As can be seen in the picture of the CAST instrument (figure \ref{fig:cast_instrument}), the magnet is able to pitch and yaw up to a limit. That makes it possible to follow the sun as it comes up with one end and as it goes down with the other end. Since the axion does not interact with matter, detectors are placed at both ends of the magnet and at both boreholes, so two detectors can be used at sunrise and two at sunset.
+The CAST experiment is largely made from spare parts of other projects at CERN and other research institutions. The magnet is one of three prototype superconducting dipole magnets from the Large Hadron Collider. It is designed to transport particles in two directions inside a strong magnetic field, so it has two bores inside with diameters of 43 mm. As can be seen in the picture of the CAST instrument (figure \ref{fig:cast_instrument}), the magnet is able to pitch and yaw up to a limit. That makes it possible to follow the sun as it comes up with one end and as it goes down with the other end. Since the axion does not interact with matter, detectors are placed at both ends of the magnet and at both boreholes, so two detectors can be used at sunrise and two at sunset.
 
 \begin{figure}[htbp]
   \centering
@@ -60,66 +57,154 @@ CAST has been doing axion searches since 2002 and the experiment continually imp
 The detectors covers the entire area of each bore opening, so are relatively large. Detector size is proportional to the background radiation, so it makes sense to have smaller detectors. By using X-ray optics, the X-ray photons can be focused into a detector area of only a fraction of the previous. This will significantly increase the signal-to-noise ratio and will let the CAST helioscope search for the axion in new areas.
 
 \section{Developing an optic for CAST}
-One major concern in making an X-ray optic from NuSTAR glass for the CAST helioscope is the limited space available. The optic would have to fit on the end of the magnet nearest the wall, which leaves only about 2 meters for optic, detector and the focal length between the two. Another problem is the small bore opening of only 45 mm, which is smaller than the inner radius of the NuSTAR telescopes. Both of those problems can be solved by realising that the optic would not require imaging capability and the axion spectrum is of relatively low energies.
+One major concern in making an X-ray optic from NuSTAR glass for the CAST helioscope is the limited space available. The optic would have to fit on the end of the magnet nearest the wall, which leaves only about 2 meters for optic, detector and the focal length between the two. Another problem is the small bore opening of only 43 mm, which is smaller than the inner radius of the NuSTAR telescopes. Both of those problems can be solved by realising that the optic would not require imaging capability and the axion spectrum is of relatively low energies.
 
 !!!Diagram of CAST exp. hall from top, shows the limited space!!!
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[height=6cm]{figures/cast/wolter1-cutout.eps}
+    \includegraphics[height=5cm]{figures/cast/wolter1-cutout.pdf}
   \caption{}
   \label{fig:wolter1-cutout}
 \end{figure}
 
-By using only 1/6 of the Wolter I radial reflective area, a pie-slice (figure \ref{fig:wolter1-cutout}), two stacks of mirrors can be used to reflect X-rays to one side. The stack only needs to be high enough to cover the bore opening, but each mirror should also be wide enough. The NuSTAR glass are made in 60\degr\ segments for the inner radii and 30\degr\ segments for the outer radii.
+By using only 1/6 of the Wolter I radial reflective area, a pie-slice (figure \ref{fig:wolter1-cutout}), two stacks of mirrors can be used to reflect X-rays to one side. The stack only needs to be high enough to cover the bore opening, but each mirror should also be wide enough. The NuSTAR glass pieces are made in 60\degr\ segments for the inner radii and 30\degr\ segments for the outer radii.
 
 \subsection{Optic geometry considerations}
 The geometry of the optic was calculated using the following equation for a Wolter I optic:
-
 \begin{eqnarray}\label{eq:wolter}
-  \tan(4\alpha) = \frac{\rho}{f},
+  \tan(4\alpha) = \frac{\mathit{R3}}{f},
 \end{eqnarray}
+where $\alpha$ is the angle of reflection of each mirror, $f$, is the focal length and $\mathit{R3}$ is the radius between center of optic and the midpoint between parabolic and hyperbolic mirror (figure \ref{fig:wolter1-diagram}). The center of the bore will need an off-set with the focal plane of the telescope, given by $d$, which is the radius of the bore, $r_{\text{bore}}$, plus the minimum radius of a NuSTAR optic, $r_{\text{min}}$. The length of the NuSTAR mirrors is $l = 225$ mm.
+% \begin{figure}
+% \centering
+% \begin{minipage}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=\linewidth]{figures/cast/wolter1-diagram.eps}
+%   \captionof{figure}{Diagram of wolter I from side.R1-R5 designated.}
+%   \label{fig:wolter1-diagram}
+% \end{minipage}%
+% \begin{minipage}{.5\textwidth}
+%   \centering  \includegraphics[width=\linewidth]{figures/cast/axion_search_cast.pdf}
+%   \captionof{figure}{Show bore-opening with mandrel from front.}
+%   \label{fig:optic_and_bore}
+% \end{minipage}
+% \end{figure}
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=0.95\linewidth]{figures/cast/wolter1-diagram.eps}
+  \caption{Diagram of wolter I from side.R1-R5 designated.}
+  \label{fig:wolter1-diagram}
+\end{figure}
 
-where $\alpha$ is the angle of reflection of each mirror, $f$, is the focal length and $\rho$ is the radius between center of optic and the midpoint between parabolic and hyperbolic mirror (figure \ref{fig:wolter1-diagram}). The center of the bore will need an off-set with the focal plane of the telescope, given by $d$, which is the radius of the bore, $r_{\text{bore}}$, plus the minimum radius of a NuSTAR optic, $r_{\text{min}}$ (figure \ref{fig:optic_and_bore}). The length of the NuSTAR mirrors is $l = 225$ mm.
+The focal length $f$ was set to a fixed value of 1.5 m. Using $r_{\text{min}}$ as the 0th layer radius, $\mathit{R3}_0$, the angle of the first layer, $\alpha_0$, can be calculated using eq. \ref{eq:wolter}. From $\alpha_0$ and $\mathit{R3}_0$, we can calculate $\mathit{R1}_0$, $\mathit{R2}_0$, $\mathit{R4}_0$ and \ensuremath{\mathit{R5}_0}:
+\begin{eqnarray}
+  \mathit{R2}_i &=& \mathit{R3}_i + 0.5\ x_{\text{sep}}\tan(\alpha_i),\\
+  \mathit{R1}_i &=& \mathit{R2}_i + l\sin(\alpha_i),\\
+  \mathit{R4}_i &=& \mathit{R3}_i - 0.5\ x_{\text{sep}}\tan(3\alpha_i),\\
+  \mathit{R5}_i &=& \mathit{R4}_i - l\sin(3\alpha_i),
+\end{eqnarray}
+for layer $i=0$, where $x_{\text{sep}}$ is the distance between the parabolic and hyperbolic mirror. $\mathit{R4}_1$ and $\mathit{R5}_1$ will be a lower value than $r_{\text{min}}$, so it was nessecary to increase the bore to focal plane distance, $d$.
 
-\begin{figure}
+The next layer can be added by setting $\mathit{R3}_{i+1} = \mathit{R1}_i + d_{\text{glass}}$, where $d_{\text{glass}}$ is the thickness of the glass. Thereby the opening of the next layer will be exactly large enough for all incoming photons to hit the parabolic mirror. All mirror layers are subsequently added using the same method until the stack is high enough to cover the bore opening:
+\begin{eqnarray}
+  \mathit{R1}_{\text{last}} &\geq& r_{\text{min}} + 2r_{\text{bore}}.
+\end{eqnarray}
+The calculated geometry can be seen in figure \ref{fig:cast_front} \& \ref{fig:cast_side}.
+
+\begin{figure}[htbp]
 \centering
 \begin{minipage}{.5\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{figures/cast/axion_search_cast.pdf}
-  \captionof{figure}{Diagram of wolter I from side.R1-R5 designated.}
-  \label{fig:wolter1-diagram}
+  \includegraphics[height=4cm]{figures/cast/cast_front.pdf}
+  \captionof{figure}{\footnotesize CAST XRT from front.}
+  \label{fig:cast_front}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
-  \centering  \includegraphics[width=\linewidth]{figures/cast/axion_search_cast.pdf}
-  \captionof{figure}{Show bore-opening with mandrel from front.}
-  \label{fig:optic_and_bore}
+  \centering  \includegraphics[width=\linewidth]{figures/cast/cast_side.pdf}
+  \captionof{figure}{\footnotesize CAST XRT from side.}
+  \label{fig:cast_side}
 \end{minipage}
 \end{figure}
 
-The focal length $f$ was set to a fixed value of 1.5 m. Using $r_{\text{min}}$ as the first layer radius, $\mathit{R3}_1$, the angle of the first layer, $\alpha_1$, can be calculated using eq. \ref{eq:wolter}. From $\alpha_1$ and $\mathit{R3}_1$, we can calculate $\mathit{R1}_1$, $\mathit{R2}_1$, $\mathit{R4}_1$ and $\mathit{R5}_1$:
-
-\begin{eqnarray}
-  \mathit{R2}_1 &=& \mathit{R3}_1 + 0.5 \cdot x_{\text{sep}}\cdot\tan(\alpha),\\
-  \mathit{R4}_1 &=& \mathit{R3}_1 - 0.5 \cdot x_{\text{sep}}\cdot\tan(3\alpha),\\
-  \mathit{R1}_1 &=& \mathit{R2}_1 + l\cdot\sin(\alpha),\\
-  \mathit{R5}_1 &=& \mathit{R4}_1 - l\cdot\sin(3\alpha),
-\end{eqnarray}
-
-where $x_{\text{sep}}$ is the distance between the parabolic and hyperbolic mirror. The next layer can be added by setting
-
-\begin{eqnarray}
-  \mathit{R3}_2 &=& \mathit{R1}_1 + d_{\text{glass}},
-\end{eqnarray}
-
-where $d_{\text{glass}}$ is the thickness of the glass. Thereby the opening will be exactly large enough for all incoming photons to hit the parabolic mirror.
-
-
-!! setting the focal length to 1.5 m !!
-
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{c|c|c|c}
+Layer & R1 [mm] & R3 [mm] & $\alpha$ [\degr] \\
+\hline
+si5809 & 2623 & 473 & 2.42  \\
+si5810 & 1445 & 338 & 3.21  \\
+si5811 & 1011 & 236 & 4.33 \\
+si5812 &  674 & 158 & 6.40  \\
+si5813 & 281 & 225 & 14.55
+\end{tabular}
+\end{center}
+\caption{\footnotesize Grh gurehiuf wehui fwhguierhui}\label{tab:cast_geometry}
+\end{table}
 
 \subsection{Optimising reflective coatings}
+To achieve the maximum possible efficiency of the optic, the coating needed to be optimised for the energy range. In contrast with most astrophysical observatories, the CAST telescope will only look at a single object with a very specific spectrum. That means that the coatings can be tailored to achieve maximum reflectivity in that area of the spectrum. Also known is the quantum efficiency of the detector.
 
+An algorithm was developed to calculate all the different permutations of multilayers for a wide variety of material combinations. The spectrum is at a very relatively low X-ray energy, so single layer coatings could be relevant. The algorithm calculates the reflectivity for a multilayer with given material combination and geometry at a certain angle. $F.O.M.$ is then calculated using the following integral:
+\begin{equation}\label{eq:fom}
+	F.O.M. = \int_{0.1}^{10} R^2(\mathrm{\alpha},\text{E})\ QE_{\text{det}}(\text{E})\ S_{\text{axion}}(\text{E})\ dE,
+\end{equation}
+with $R^2(\mathrm{\alpha},\text{E})$ being the squared reflectivity because of the double reflection, $QE_{\text{det}}(\text{E})$ the detector quantum efficiency and $S_{\text{axion}}(\text{E})$ the axion spectrum as seen in figure \ref{fig:axion_spectrum}. By integrating over the energy range from 0.1 keV to 10 keV, a figure of merit can be obtained that takes both coating, spectrum and detector into account.
+
+The material combinations considered were multilayers of W/B$_4$C, W/Si, Pt/C, Pt/B$_4$C, Ni/B$_4$C as well as single layers of W, Pt, Ir and Ni. W/Si and Pt/C were the most well understood for slumped glass type substrates, since they both were used in the NuSTAR mission. To find the optimal coating, the parameter space considered for each material combination can be seen in table \ref{tab:cast_parameter_space}. By using $d_{\text{min}}$ and $d_{\text{max}}$, both linearly graded-d coatings and constant-d coatings can be computed. To avoid computing cases where \(d_{\text{min}}\) is larger than \(d_{\text{max}}\), the condition \(d_{\text{min}} \leq d_{\text{max}}\) has been set.
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{c|c|c|c}
+Parameter & Minimum & Maximum & Interval \\
+\hline
+$N$ & 1 layer & 30 layers & 1 layer \\
+$d_{\text{min}}$ & 3 nm & 300 nm & 0.5 nm \\
+$d_{\text{max}}$ & 3 nm & 300 nm & 0.5 nm \\
+$\Gamma$ & 0.1 & 0.9 & 0.05 \\
+\end{tabular}
+\end{center}
+\caption{\footnotesize Grh gurehiuf wehui fwhguierhui}\label{tab:cast_parameter_space}
+\end{table}
+
+For single layer coatings, only a single thickness of 50 nm was considered. The surface and interface roughnesses were fixed at 0.5 nm. The complete computation was done for every layer in the optic, as $\alpha$ changes throughout the mirror stack. The algorithm does the following steps:
+\begin{itemize}
+  \item[\bf 1] Finds the next combination in the parameter matrix.
+  \item[\bf 2] Calculates the reflectivity using IMD's FRESNEL function.
+  \item[\bf 3] Uses the calculated reflectivity in the $F.O.M.$ equation \ref{eq:fom}.
+  \item[\bf 4] If the calculated value is higher than the previous maximum value, the parameters are saved and the calculated value set as the new maximum.
+\end{itemize}
+
+When the entire parameters space has been covered for a mirror layer and material combination, the algorithm saves the best $F.O.M.$ value and the coating recipe and goes on to the next layer. When all layers are covered, the effective area is calculated and then the algorithm continues on to the next material combination. Calculating the effective area is explained in detail in section \ref{sec:eff_area}. The result of a full computation using the algorithm is shown in figure \ref{fig:mat_result}.
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[height=6cm]{figures/cast/mat_result.png}
+  \caption{\footnotesize Effective area comparison for computed material combinations in the CAST XRT optic.}
+  \label{fig:mat_result}
+\end{figure}
+
+The best result for a given material combination can be seen in figure \ref{}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/cast/w-b4c-result-1.png}
+  \captionof{figure}{\footnotesize }
+  \label{fig:w-b4c-result-1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering  \includegraphics[width=\linewidth]{figures/cast/w-b4c-result-2.png}
+  \captionof{figure}{\footnotesize }
+  \label{fig:w-b4c-result-2}
+\end{minipage}
+\end{figure}
+
+%Each calculation was done over the energy range $0.1 - 10$ keV with a step size of 0.1 keV.
+
+
+\subsection{Calculating effective area}\label{sec:eff_area}
 
 \section{Producing coated substrates}
 
