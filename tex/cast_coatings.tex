@@ -110,7 +110,6 @@ The next layer can be added by setting $\mathit{R3}_{i+1} = \mathit{R1}_i + d_{\
 \begin{eqnarray}
   \mathit{R1}_{\text{last}} &\geq& r_{\text{min}} + 2r_{\text{bore}}.
 \end{eqnarray}
-The calculated geometry can be seen in figure \ref{fig:cast_front} \& \ref{fig:cast_side}.
 
 \begin{figure}[htbp]
 \centering
@@ -127,16 +126,28 @@ The calculated geometry can be seen in figure \ref{fig:cast_front} \& \ref{fig:c
 \end{minipage}
 \end{figure}
 
+The calculated geometry can be seen in figure \ref{fig:cast_front} and \ref{fig:cast_side}. The calculated radius and angle for each layer can be seen in table \ref{tab:cast_geometry}. The area is the cross sectional area of the layer opening which overlaps with the magnet bore opening, a description of the calculation can be seen in section \ref{sec:eff_area}.
+
 \begin{table}[!h]
 \begin{center}
-\begin{tabular}{c|c|c|c}
-Layer & R1 [mm] & R3 [mm] & $\alpha$ [\degr] \\
+\begin{tabular}{c|c|c|c|c|c}
+Layer & Area [mm$^2$] & $\alpha$ [\degr] & $\alpha$ [mrad] & $\mathit{R1}$ [mm] & $\mathit{R5}$ [mm]\\
 \hline
-si5809 & 2623 & 473 & 2.42  \\
-si5810 & 1445 & 338 & 3.21  \\
-si5811 & 1011 & 236 & 4.33 \\
-si5812 &  674 & 158 & 6.40  \\
-si5813 & 281 & 225 & 14.55
+0&0.000&0.556&9.697&60.500&51.321 \\
+1&13.863&0.579&10.113&63.006&53.821 \\
+2&48.175&0.603&10.530&65.606&56.043 \\
+3&69.270&0.628&10.962&68.305&58.348 \\
+4&86.760&0.654&11.411&71.105&60.741 \\
+5&102.266&0.680&11.877&74.011&63.223 \\
+6&116.172&0.708&12.360&77.027&65.800 \\
+7&128.419&0.737&12.861&80.157&68.474 \\
+8&138.664&0.767&13.382&83.405&71.249 \\
+9&146.281&0.798&13.921&86.775&74.129 \\
+10&150.267&0.830&14.481&90.272&77.117 \\
+11&149.002&0.863&15.062&93.902&80.218 \\
+12&139.621&0.898&15.665&97.668&83.436 \\
+13&115.793&0.933&16.290&101.576&86.776 \\
+14&47.648&0.970&16.938&105.632&90.241
 \end{tabular}
 \end{center}
 \caption{\footnotesize Grh gurehiuf wehui fwhguierhui}\label{tab:cast_geometry}
@@ -151,7 +162,7 @@ An algorithm was developed to calculate all the different permutations of multil
 \end{equation}
 with $R^2(\mathrm{\alpha},\text{E})$ being the squared reflectivity because of the double reflection, $QE_{\text{det}}(\text{E})$ the detector quantum efficiency and $S_{\text{axion}}(\text{E})$ the axion spectrum as seen in figure \ref{fig:axion_spectrum}. By integrating over the energy range from 0.1 keV to 10 keV, a figure of merit can be obtained that takes both coating, spectrum and detector into account.
 
-The material combinations considered were multilayers of W/B$_4$C, W/Si, Pt/C, Pt/B$_4$C, Ni/B$_4$C as well as single layers of W, Pt, Ir and Ni. W/Si and Pt/C were the most well understood for slumped glass type substrates, since they both were used in the NuSTAR mission. To find the optimal coating, the parameter space considered for each material combination can be seen in table \ref{tab:cast_parameter_space}. By using $d_{\text{min}}$ and $d_{\text{max}}$, both linearly graded-d coatings and constant-d coatings can be computed. To avoid computing cases where \(d_{\text{min}}\) is larger than \(d_{\text{max}}\), the condition \(d_{\text{min}} \leq d_{\text{max}}\) has been set.
+The material combinations considered were multilayers of W/B$_4$C, W/Si, Pt/C, Pt/B$_4$C, Ni/B$_4$C as well as single layers of W, Pt, Ir and Ni. W/Si and Pt/C were the most well understood for slumped glass type substrates, since they both were used in the NuSTAR mission. To find the optimal coating, the parameter space considered for each material combination can be seen in table \ref{tab:cast_parameter_space}. By using $d_{\text{min}}$ and $d_{\text{max}}$, both linearly graded-d coatings and constant-d coatings can be computed. To avoid computing cases where \(d_{\text{min}}\) is larger than \(d_{\text{max}}\), the condition \(d_{\text{min}}\) $\leq$ \(d_{\text{max}}\) has been set.
 
 \begin{table}[!h]
 \begin{center}
@@ -179,12 +190,12 @@ When the entire parameters space has been covered for a mirror layer and materia
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[height=6cm]{figures/cast/mat_result.png}
+    \includegraphics[height=5cm]{figures/cast/mat_result.png}
   \caption{\footnotesize Effective area comparison for computed material combinations in the CAST XRT optic.}
   \label{fig:mat_result}
 \end{figure}
 
-The best result for a given material combination can be seen in figure \ref{}.
+The best result for the W/B$_4$C material combination can be seen in figure \ref{fig:w-b4c-result-1} and \ref{fig:w-b4c-result-2}.
 
 \begin{figure}[htbp]
 \centering
@@ -201,13 +212,55 @@ The best result for a given material combination can be seen in figure \ref{}.
 \end{minipage}
 \end{figure}
 
+The coating optimization for the CAST X-ray optic was done in parallel with most of the ATHENA coating investigations that is described in chapter \ref{chap:athena_coatings}. The findings from long term storage that are discussed in section \ref{sec:long_term} show changes in the coatings over time at ambient conditions for most B$_4$C containing films. For that reason, it was decided to make the CAST coatings with Pt/C, as the combination is well described for NuSTAR like glass substrates. W/Si was also used for NuSTAR and would be a cheaper solution, but the Si absorption line at $\sim2$ keV would decrease efficiency of the coatings around the peak of the axion spectrum.
 %Each calculation was done over the energy range $0.1 - 10$ keV with a step size of 0.1 keV.
 
 
 \subsection{Calculating effective area}\label{sec:eff_area}
+The effective area is the cross sectional opening of the optic multiplied with the reflectivity squared for each layer. Total effective area is the sum of effective area of each layer:
+\begin{eqnarray}
+  A_{\text{eff,i}} &=& A_{\text{CS,i}}R_i^2(\text{E})\\
+  A_{\text{eff}} &=& \sum_{i=0}^n A_{\text{eff,i}}
+\end{eqnarray}
+The cross sectional opening is the intersection of the circle of the bore opening and a layer opening. The layer opening is the cross sectional area between two circles of radius $\mathcal{R}_{i}$ and $\mathcal{R}_{i-1}$, where $\mathcal{R} = \mathit{R1}$. It can be calculated using the overlap of the outer shell of the layer opening and the bore opening. From that is subtracted the overlap of the inner shell of the layer opening with the bore opening as seen in figure \ref{fig:cross_section_area}.
 
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=0.9\linewidth]{figures/cast/cross_section_area.eps}
+  \caption{\footnotesize }
+  \label{fig:cross_section_area}
+\end{figure}
+
+Area of the overlap of $i$th shell with bore is:
+\begin{eqnarray}\label{eq:overlap1}
+  A_{i} &=& r_{\text{bore}}^2\cos^{-1}\Big(\frac{d^2+r_{\text{bore}}^2-\mathcal{R}_{i}^2}{2dr_{\text{bore}}}\Big)\nonumber\\
+  &&+\mathcal{R}_{i}^2\cos^{-1}\Big(\frac{d^2-r_{\text{bore}}^2+\mathcal{R}_{i}^2}{2d\mathcal{R}_{i}^2}\Big)\nonumber\\
+  &&-\frac{1}{2}\sqrt{(-d+r_{\text{bore}}+\mathcal{R}_{i})(d+r_{\text{bore}}-\mathcal{R}_{i})}\nonumber\\
+  &&\times\sqrt{(d-r_{\text{bore}}+\mathcal{R}_{i})(d+r_{\text{bore}}+\mathcal{R}_{i})},
+  %A_{i-1} &=&
+\end{eqnarray}
+Area of the overlap of shell $i-1$ with bore is:
+\begin{eqnarray}\label{eq:overlap2}
+  A_{i-1} &=& r_{\text{bore}}^2\cos^{-1}\Big(\frac{d^2+r_{\text{bore}}^2-\mathcal{R}_{\text{bot}}^2}{2dr_{\text{bore}}}\Big)\nonumber\\
+  &&+\mathcal{R}_{\text{bot}}^2\cos^{-1}\Big(\frac{d^2-r_{\text{bore}}^2+\mathcal{R}_{\text{bot}}^2}{2d\mathcal{R}_{\text{bot}}^2}\Big)\nonumber\\
+  &&-\frac{1}{2}\sqrt{(-d+r_{\text{bore}}+\mathcal{R}_{\text{bot}})(d+r_{\text{bore}}-\mathcal{R}_{\text{bot}})}\nonumber\\
+  &&\times\sqrt{(d-r_{\text{bore}}+\mathcal{R}_{\text{bot}})(d+r_{\text{bore}}+\mathcal{R}_{\text{bot}})},
+\end{eqnarray}
+where
+\begin{eqnarray}\label{eq:overlap2}
+  \mathcal{R}_{\text{bot}} &=& \mathcal{R}_{i-1} + d_{\text{glass}},
+\end{eqnarray}
+with $\mathcal{R}_{i-1}$ being the radius of the layer underneath layer $i$ and $d_{\text{glass}}$ being the thickness of the glass.
+
+The NuSTAR type telescope is built up from glass layers with graphite spacers between.  Since the optic is so small, but with relatively large openings between the layers, it is necessary to use graphite spacers in the middle. Each of those are rectangular in shape, as high as the opening and $x_{\text{gr}}=2$ mm wide. The spacer obscures the opening, so will have to be subtracted from cross sectional opening. The cross sectional area of the  opening of layer $i$ is then:
+\begin{eqnarray}
+  A_{\text{CS,i}} &=& A_{i} - A_{i-1} - (\mathcal{R}_{i}-\mathcal{R}_{i-1})x_{\text{gr}}
+\end{eqnarray}
+The effective area for the optimized Pt/C coating can be seen in figure \ref{fig:eff_area_ptc}.
+
+!!!!! Show eff area here !!!!!!!!
 \section{Producing coated substrates}
-
+jhgir agrsi hgrsl ngjkfsdlnburilsn buires
 
 \subsection{Collecting substrates for coating}
 
