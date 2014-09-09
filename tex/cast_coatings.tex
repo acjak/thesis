@@ -4,7 +4,6 @@ Afte the launch of NuSTAR, the X-ray optics group at DTU Space was invited to pa
 The optic was designed between summer 2012 and summer 2014. Production, assembly, installation and alignment with CAST was done during summer 2014 in cooperation with University of Zaragoza in Spain and Lawrence Livermore National Lab in the US. In this chapter the reader will find a description of the whole process from start to finish.
 
 \section{The CAST instrument}
-
 The axion is an ultra-light particle that is formed from the interaction of a photon with an electromagnetic field, called the Primakoff effect. So the main sources of the particle would be from inside stars, and from Earth the best nearby source will of course be the Sun. The axion is weakly interacting so in order to detect it, CAST uses a strong magnet to convert the axion back to a photon again by the Primakoff effect. The photons subsequently hit a detector.
 
 \begin{figure}[htbp]
@@ -158,11 +157,11 @@ To achieve the maximum possible efficiency of the optic, the coating needed to b
 
 An algorithm was developed to calculate all the different permutations of multilayers for a wide variety of material combinations. The spectrum is at a very relatively low X-ray energy, so single layer coatings could be relevant. The algorithm calculates the reflectivity for a multilayer with given material combination and geometry at a certain angle. $F.O.M.$ is then calculated using the following integral:
 \begin{equation}\label{eq:fom}
-	F.O.M. = \int_{0.1}^{10} R^2(\mathrm{\alpha},\text{E})\ QE_{\text{det}}(\text{E})\ S_{\text{axion}}(\text{E})\ dE,
+	F.O.M. = \int_{0.1}^{10} \mathbb{R}^2(\mathrm{\alpha},\text{E})\ QE_{\text{det}}(\text{E})\ S_{\text{axion}}(\text{E})\ dE,
 \end{equation}
-with $R^2(\mathrm{\alpha},\text{E})$ being the squared reflectivity because of the double reflection, $QE_{\text{det}}(\text{E})$ the detector quantum efficiency and $S_{\text{axion}}(\text{E})$ the axion spectrum as seen in figure \ref{fig:axion_spectrum}. By integrating over the energy range from 0.1 keV to 10 keV, a figure of merit can be obtained that takes both coating, spectrum and detector into account.
+with $\mathbb{R}^2(\mathrm{\alpha},\text{E})$ being the squared reflectivity because of the double reflection, $QE_{\text{det}}(\text{E})$ the detector quantum efficiency and $S_{\text{axion}}(\text{E})$ the axion spectrum as seen in figure \ref{fig:axion_spectrum}. By integrating over the energy range from 0.1 keV to 10 keV, a figure of merit can be obtained that takes both coating, spectrum and detector into account.
 
-The material combinations considered were multilayers of W/B$_4$C, W/Si, Pt/C, Pt/B$_4$C, Ni/B$_4$C as well as single layers of W, Pt, Ir and Ni. W/Si and Pt/C were the most well understood for slumped glass type substrates, since they both were used in the NuSTAR mission. To find the optimal coating, the parameter space considered for each material combination can be seen in table \ref{tab:cast_parameter_space}. By using $d_{\text{min}}$ and $d_{\text{max}}$, both linearly graded-d coatings and constant-d coatings can be computed. To avoid computing cases where \(d_{\text{min}}\) is larger than \(d_{\text{max}}\), the condition \(d_{\text{min}}\) $\leq$ \(d_{\text{max}}\) has been set.
+The material combinations considered were multilayers of W/B$_4$C, W/Si, Pt/C, Pt/B$_4$C, Ni/B$_4$C as well as single layers of W, Pt, Ir and Ni. W/Si and Pt/C were the most well understood for slumped glass type substrates, since they both were used in the NuSTAR mission. To find the optimal coating, the parameter space considered for each material combination can be seen in table \ref{tab:cast_parameter_space}. By using $d_{\text{min}}$ and $d_{\text{max}}$, both linearly graded-d coatings and constant-d coatings can be computed. To avoid computing cases where \(d_{\text{min}}\) is larger than \(d_{\text{max}}\), the condition \(d_{\text{min}}\) $\leq$ \(d_{\text{max}}\) was set.
 
 \begin{table}[!h]
 \begin{center}
@@ -178,7 +177,7 @@ $\Gamma$ & 0.1 & 0.9 & 0.05 \\
 \caption{\footnotesize Grh gurehiuf wehui fwhguierhui}\label{tab:cast_parameter_space}
 \end{table}
 
-For single layer coatings, only a single thickness of 50 nm was considered. The surface and interface roughnesses were fixed at 0.5 nm. The complete computation was done for every layer in the optic, as $\alpha$ changes throughout the mirror stack. The algorithm does the following steps:
+For single layer coatings, only a single thickness of 50 nm was considered. The surface and interface roughnesses were fixed at 0.5 nm. The complete computation can be done for every layer in the optic, as $\alpha$ changes throughout the mirror stack. The algorithm does the following steps:
 \begin{itemize}
   \item[\bf 1] Finds the next combination in the parameter matrix.
   \item[\bf 2] Calculates the reflectivity using IMD's FRESNEL function.
@@ -186,43 +185,43 @@ For single layer coatings, only a single thickness of 50 nm was considered. The 
   \item[\bf 4] If the calculated value is higher than the previous maximum value, the parameters are saved and the calculated value set as the new maximum.
 \end{itemize}
 
-When the entire parameters space has been covered for a mirror layer and material combination, the algorithm saves the best $F.O.M.$ value and the coating recipe and goes on to the next layer. When all layers are covered, the effective area is calculated and then the algorithm continues on to the next material combination. Calculating the effective area is explained in detail in section \ref{sec:eff_area}. The result of a full computation using the algorithm is shown in figure \ref{fig:mat_result}.
+When the entire parameter space has been covered for a mirror layer and material combination, the algorithm saves the best $F.O.M.$ value and the coating recipe and goes on to the next mirror layer. When all mirror layers are covered, the effective area is calculated and then the algorithm continues on to the next material combination. Calculating the effective area is explained in detail in section \ref{sec:eff_area}.
+
+For the CAST coatings, making a separate coating recipe for each layer would result in having to produce $\sim$14 different coating runs, each with only four mirror substrates. Instead only four different coating recipes were made, where each recipe would be applied to three-four mirror layers. That way 16 mirror substrates could be coated at a time and all substrates could be coated in four coating runs. The result of a full computation using the algorithm with four recipes is shown in figure \ref{fig:mat_result}.
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[height=5cm]{figures/cast/mat_result.png}
+    \includegraphics[height=5cm]{figures/cast/mat_result.pdf}
   \caption{\footnotesize Effective area comparison for computed material combinations in the CAST XRT optic.}
   \label{fig:mat_result}
 \end{figure}
 
-The best result for the W/B$_4$C material combination can be seen in figure \ref{fig:w-b4c-result-1} and \ref{fig:w-b4c-result-2}.
+The best result for the Pt/C material combination can be seen in figure \ref{fig:pt-c_optimized_recipes}. Curves are the reflectivity squared times detector quantum efficiency times axion spectrum ($\mathbb{R}^2\cdot QE_{\text{det}}\cdot S_{\text{axion}}$) for a given recipe.
 
 \begin{figure}[htbp]
-\centering
-\begin{minipage}{.5\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{figures/cast/w-b4c-result-1.png}
-  \captionof{figure}{\footnotesize }
-  \label{fig:w-b4c-result-1}
-\end{minipage}%
-\begin{minipage}{.5\textwidth}
-  \centering  \includegraphics[width=\linewidth]{figures/cast/w-b4c-result-2.png}
-  \captionof{figure}{\footnotesize }
-  \label{fig:w-b4c-result-2}
-\end{minipage}
+    \includegraphics[height=5cm]{figures/cast/pt-c_optimized_recipes1.pdf}
+    \includegraphics[height=1.5cm]{figures/cast/pt-c_optimized_recipes2.pdf}
+  \caption{\footnotesize .}
+  \label{fig:pt-c_optimized_recipes}
 \end{figure}
+
+
 
 The coating optimization for the CAST X-ray optic was done in parallel with most of the ATHENA coating investigations that is described in chapter \ref{chap:athena_coatings}. The findings from long term storage that are discussed in section \ref{sec:long_term} show changes in the coatings over time at ambient conditions for most B$_4$C containing films. For that reason, it was decided to make the CAST coatings with Pt/C, as the combination is well described for NuSTAR like glass substrates. W/Si was also used for NuSTAR and would be a cheaper solution, but the Si absorption line at $\sim2$ keV would decrease efficiency of the coatings around the peak of the axion spectrum.
 %Each calculation was done over the energy range $0.1 - 10$ keV with a step size of 0.1 keV.
 
-
 \subsection{Calculating effective area}\label{sec:eff_area}
 The effective area is the cross sectional opening of the optic multiplied with the reflectivity squared for each layer. Total effective area is the sum of effective area of each layer:
 \begin{eqnarray}
-  A_{\text{eff,i}} &=& A_{\text{CS,i}}R_i^2(\text{E})\\
+  A_{\text{eff,i}} &=& A_{\text{CS,i}}\mathbb{R}_i^2(\text{E})\\
   A_{\text{eff}} &=& \sum_{i=0}^n A_{\text{eff,i}}
 \end{eqnarray}
-The cross sectional opening is the intersection of the circle of the bore opening and a layer opening. The layer opening is the cross sectional area between two circles of radius $\mathcal{R}_{i}$ and $\mathcal{R}_{i-1}$, where $\mathcal{R} = \mathit{R1}$. It can be calculated using the overlap of the outer shell of the layer opening and the bore opening. From that is subtracted the overlap of the inner shell of the layer opening with the bore opening as seen in figure \ref{fig:cross_section_area}.
+The cross sectional opening is the intersection of the circle of the bore opening and a layer opening. The layer opening is the cross sectional area between two circles of radius $\mathcal{R}_{i}$ and $\mathcal{R}_{i-1}$, where
+\begin{eqnarray}
+  \mathcal{R} = \mathit{R1}.
+\end{eqnarray}
+It can be calculated using the overlap of the outer shell of the layer opening and the bore opening. From that is subtracted the overlap of the inner shell of the layer opening with the bore opening as seen in figure \ref{fig:cross_section_area}.
 
 \begin{figure}[htbp]
   \centering
@@ -231,7 +230,7 @@ The cross sectional opening is the intersection of the circle of the bore openin
   \label{fig:cross_section_area}
 \end{figure}
 
-Area of the overlap of $i$th shell with bore is:
+Area of the overlap of shell $i$ with bore (figure \ref{fig:cross_section_area} left) is:
 \begin{eqnarray}\label{eq:overlap1}
   A_{i} &=& r_{\text{bore}}^2\cos^{-1}\Big(\frac{d^2+r_{\text{bore}}^2-\mathcal{R}_{i}^2}{2dr_{\text{bore}}}\Big)\nonumber\\
   &&+\mathcal{R}_{i}^2\cos^{-1}\Big(\frac{d^2-r_{\text{bore}}^2+\mathcal{R}_{i}^2}{2d\mathcal{R}_{i}^2}\Big)\nonumber\\
@@ -239,7 +238,7 @@ Area of the overlap of $i$th shell with bore is:
   &&\times\sqrt{(d-r_{\text{bore}}+\mathcal{R}_{i})(d+r_{\text{bore}}+\mathcal{R}_{i})},
   %A_{i-1} &=&
 \end{eqnarray}
-Area of the overlap of shell $i-1$ with bore is:
+Area of the overlap of shell $i-1$ with bore (figure \ref{fig:cross_section_area} middle) is:
 \begin{eqnarray}\label{eq:overlap2}
   A_{i-1} &=& r_{\text{bore}}^2\cos^{-1}\Big(\frac{d^2+r_{\text{bore}}^2-\mathcal{R}_{\text{bot}}^2}{2dr_{\text{bore}}}\Big)\nonumber\\
   &&+\mathcal{R}_{\text{bot}}^2\cos^{-1}\Big(\frac{d^2-r_{\text{bore}}^2+\mathcal{R}_{\text{bot}}^2}{2d\mathcal{R}_{\text{bot}}^2}\Big)\nonumber\\
@@ -256,28 +255,153 @@ The NuSTAR type telescope is built up from glass layers with graphite spacers be
 \begin{eqnarray}
   A_{\text{CS,i}} &=& A_{i} - A_{i-1} - (\mathcal{R}_{i}-\mathcal{R}_{i-1})x_{\text{gr}}
 \end{eqnarray}
-The effective area for the optimized Pt/C coating can be seen in figure \ref{fig:eff_area_ptc}.
+The effective area and throughput for the optimized Pt/C coating can be seen in figures \ref{fig:pt-c_effara_throughput_lin} and \ref{fig:pt-c_effara_throughput_log}.
 
-!!!!! Show eff area here !!!!!!!!
+\begin{figure}[htbp]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/cast/pt-c_effara_throughput_lin.pdf}
+  \captionof{figure}{\footnotesize }
+  \label{fig:pt-c_effara_throughput_lin}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/cast/pt-c_effara_throughput_log.pdf}
+  \captionof{figure}{\footnotesize }
+  \label{fig:pt-c_effara_throughput_log}
+\end{minipage}
+\end{figure}
+
+
+
 \section{Producing coated substrates}
-jhgir agrsi hgrsl ngjkfsdlnburilsn buires
+DTU Space has a fairly large selection of leftover slumped glass substrates from the NuSTAR mission. An extra amount of glass substrates were produced to cover broken pieces and pieces that failed visual inspection. From this surplus, the substrates for the CAST XRT was selected.
 
 \subsection{Collecting substrates for coating}
+Each layer for NuSTAR corresponded to a shell diameter, which was described in the serial number of each substrate. The serial number includes diameter and wether it is a parabolic or hyperbolic piece, and is written with a marker on the back of the substrate like the following:
+\begin{eqnarray}
+  \text{NXXX(A/B)yyy-zzz(s/p),}\nonumber
+\end{eqnarray}
+where XXX is the diameter of the shell, (A/B)yyy describes the production batch of the slumped glass process, zzz is the layer number of the optic and (s/p) describes wether it is for the first or second stack (parabolic or hyperbolic). Since the NuSTAR optic is a conical approximation to the Wolter I geometry, the glass substrates are conical in shape. So instead of being parabolic or hyperbolic, they are straight along the optical axis.
+
+To find pieces for the CAST XRT, the diameter described by XXX would need to correspond with the calculated $\mathit{R1}$ and $\mathit{R2}$ values for the first piece, or $\mathit{R4}$ and $\mathit{R5}$ for the second piece. The pieces should be mounted at higher grazing incidence angles than NuSTAR, so the difference between $\mathit{R1}$ and $\mathit{R2}$ are higher for CAST than NuSTAR. That differences would need to be corrected for by bending each piece to the correct shape during the mounting process. The NuSTAR pieces corresponding to the CAST radii can be seen in table \ref{tab:cast_pieces}.
+
+!!!!! Table with CAST XRT radii and NuSTAR pieces !!!!!!!
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[height=6cm]{figures/cast/pieces_for_cleaning.jpg}
+  \caption{\footnotesize }
+  \label{fig:pieces_for_cleaning}
+\end{figure}
+
+Each piece was visually inspected and the best pieces were selected for the CAST XRT (figure \ref{fig:pieces_for_cleaning}). The pieces were subsequently cleaned by the following process:
+\begin{enumerate}
+  \item Ethanol rinsing to clear away markers.
+  \item Clean room wipes were used to remove visible blemishes.\label{item:clean_wipes}
+  \item 15 min. in ultrasonic bath with milli-Q water and soap (figure \ref{fig:cast_cleaning_soap}).
+  \item Thorough rinse with milli-Q water to remove soap.
+  \item 15 min. in ultrasonic acetone bath (figure \ref{fig:cast_cleaning_ethanol}).
+  \item 15 min. in ethanol bath (figure \ref{fig:cast_cleaning_ethanol}).
+  \item Each piece rinsed with milli-Q water and carefully dried with dry N$_2$.
+  \item Visual inspection, if failed, repeat from step \ref{item:clean_wipes}.
+\end{enumerate}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[height=5.5cm]{figures/cast/soap_bath.jpg}
+  \captionof{figure}{\footnotesize }
+  \label{fig:cast_cleaning_soap}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/cast/acetone_and_ethanol.jpg}
+  \captionof{figure}{\footnotesize }
+  \label{fig:cast_cleaning_ethanol}
+\end{minipage}
+\end{figure}
+
+The pieces were moved directly to sample mounting plates (figure \ref{fig:coating_mount}) in a downflow module to avoid dust contamination.
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[height=6cm]{figures/cast/coating_mount.jpg}
+  \caption{\footnotesize }
+  \label{fig:coating_mount}
+\end{figure}
 
 \subsection{Coating of substrates}
+hguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftx
 
+hguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftx
 
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=0.45\linewidth]{figures/cast/power_recipe1.pdf}
+    \includegraphics[width=0.45\linewidth]{figures/cast/power_recipe4.pdf}\\
+  \caption{\footnotesize }
+  \label{fig:cast_coatings_power}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[height=7cm]{figures/cast/coated_pieces.jpg}
+  \caption{\footnotesize }
+  \label{fig:coated_pieces}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe1.pdf}
+    \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe2.pdf}\\
+    \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe3.pdf}
+    \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe4.pdf}
+  \caption{\footnotesize }
+  \label{fig:cast_recipe_xrr}
+\end{figure}
 
 \section{Assembling coated substrates}
 
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=0.45\linewidth]{figures/cast/assembly1.jpg}
+    \includegraphics[width=0.45\linewidth]{figures/cast/assembly2.jpg}
+  \caption{\footnotesize }
+  \label{fig:cast_assembly}
+\end{figure}
 
-\subsection{Acquiring parts for assembly vacuum vessel}
+\subsection{Vacuum vessel}
 
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=0.45\linewidth]{figures/cast/cast_vessel1.jpg}
+    \includegraphics[width=0.45\linewidth]{figures/cast/cast_vessel2.jpg}
+  \caption{\footnotesize }
+  \label{fig:cast_vessel}
+\end{figure}
 
 \section{Installation of optic at CAST}
 
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[height=6cm]{figures/cast/castxrt_install.jpg}
+  \caption{\footnotesize }
+  \label{fig:cast_install}
+\end{figure}
 
 \subsection{Optic alignment}
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[height=5cm]{figures/cast/castxrt_alignment1.jpg}
+    \hspace{20pt}
+    \includegraphics[width=0.45\linewidth]{figures/cast/castxrt_alignment2.jpg}
+  \caption{\footnotesize }
+  \label{fig:cast_align}
+\end{figure}
 
 \subsection{Tests with 8 keV X-ray source}
 
