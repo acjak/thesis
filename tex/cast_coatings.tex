@@ -1,7 +1,9 @@
 \chapter{Coatings for CAST}
 Afte the launch of NuSTAR, the X-ray optics group at DTU Space was invited to participate in the creation of an X-ray optic for the CAST solar axion helioscope. CAST is an experiment at CERN that looks for the hypothetical axion particle which is a solution to the charge-parity (CP) problem of the standard model in particle physics. If the axion exist, it is also some or all of the dark matter in the universe. It was assumed that the technology from NuSTAR could be leveraged and therefore use spare glass to make a cheap and relatively simple X-ray optic.
 
-The optic was designed between summer 2012 and summer 2014. Production, assembly, installation and alignment with CAST was done during summer 2014 in cooperation with University of Zaragoza in Spain and Lawrence Livermore National Lab in the US. In this chapter the reader will find a description of the whole process from start to finish.
+The optic was designed between summer 2012 and summer 2014. Production, assembly, installation and alignment with CAST was done during summer 2014 in cooperation with University of Zaragoza (UoZ) in Spain and Lawrence Livermore National Lab (LLNL) in the US. In this chapter the reader will find a description of the whole process from start to finish.
+
+My part of the work was to design the optic geometry and coating as well as produce the coated substrates and participate in the installation. LLNL designed vacuum vessel and alignment procedure and UoZ designed detector and X-ray source assembly.
 
 \section{The CAST instrument}
 The axion is an ultra-light particle that is formed from the interaction of a photon with an electromagnetic field, called the Primakoff effect. So the main sources of the particle would be from inside stars, and from Earth the best nearby source will of course be the Sun. The axion is weakly interacting so in order to detect it, CAST uses a strong magnet to convert the axion back to a photon again by the Primakoff effect. The photons subsequently hit a detector.
@@ -17,7 +19,7 @@ The spectrum of X-rays from axions can be seen in figure \ref{fig:axion_spectrum
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[height=6cm]{figures/cast/axion_search_cast.pdf}
+    \includegraphics[height=6cm]{figures/cast/axion_search_cast2.pdf}
   \caption{}
   \label{fig:axion_search_cast}
 \end{figure}
@@ -152,7 +154,7 @@ Layer & Area [mm$^2$] & $\alpha$ [\degr] & $\alpha$ [mrad] & $\mathit{R1}$ [mm] 
 \caption{\footnotesize Grh gurehiuf wehui fwhguierhui}\label{tab:cast_geometry}
 \end{table}
 
-\subsection{Optimising reflective coatings}
+\subsection{Optimising reflective coatings}\label{sec:opt_coatings}
 To achieve the maximum possible efficiency of the optic, the coating needed to be optimised for the energy range. In contrast with most astrophysical observatories, the CAST telescope will only look at a single object with a very specific spectrum. That means that the coatings can be tailored to achieve maximum reflectivity in that area of the spectrum. Also known is the quantum efficiency of the detector.
 
 An algorithm was developed to calculate all the different permutations of multilayers for a wide variety of material combinations. The spectrum is at a very relatively low X-ray energy, so single layer coatings could be relevant. The algorithm calculates the reflectivity for a multilayer with given material combination and geometry at a certain angle. $F.O.M.$ is then calculated using the following integral:
@@ -226,7 +228,7 @@ It can be calculated using the overlap of the outer shell of the layer opening a
 \begin{figure}[htbp]
   \centering
     \includegraphics[width=0.9\linewidth]{figures/cast/cross_section_area.eps}
-  \caption{\footnotesize }
+  \caption{\footnotesize Grh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhui}
   \label{fig:cross_section_area}
 \end{figure}
 
@@ -259,16 +261,15 @@ The effective area and throughput for the optimized Pt/C coating can be seen in 
 
 \begin{figure}[htbp]
 \centering
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/cast/pt-c_effara_throughput_lin.pdf}
-  \captionof{figure}{\footnotesize }
+\begin{minipage}{.47\textwidth}
+  \centering  \includegraphics[width=\linewidth]{figures/cast/pt-c_effara_throughput_lin.pdf}
+  \captionof{figure}{\footnotesize Grh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhui}
   \label{fig:pt-c_effara_throughput_lin}
-\end{minipage}%
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/cast/pt-c_effara_throughput_log.pdf}
-  \captionof{figure}{\footnotesize }
+\end{minipage}
+\hspace{10pt}
+\begin{minipage}{.47\textwidth}
+  \centering  \includegraphics[width=\linewidth]{figures/cast/pt-c_effara_throughput_log.pdf}
+  \captionof{figure}{\footnotesize Grh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhui}
   \label{fig:pt-c_effara_throughput_log}
 \end{minipage}
 \end{figure}
@@ -285,16 +286,41 @@ Each layer for NuSTAR corresponded to a shell diameter, which was described in t
 \end{eqnarray}
 where XXX is the diameter of the shell, (A/B)yyy describes the production batch of the slumped glass process, zzz is the layer number of the optic and (s/p) describes wether it is for the first or second stack (parabolic or hyperbolic). Since the NuSTAR optic is a conical approximation to the Wolter I geometry, the glass substrates are conical in shape. So instead of being parabolic or hyperbolic, they are straight along the optical axis.
 
-To find pieces for the CAST XRT, the diameter described by XXX would need to correspond with the calculated $\mathit{R1}$ and $\mathit{R2}$ values for the first piece, or $\mathit{R4}$ and $\mathit{R5}$ for the second piece. The pieces should be mounted at higher grazing incidence angles than NuSTAR, so the difference between $\mathit{R1}$ and $\mathit{R2}$ are higher for CAST than NuSTAR. That differences would need to be corrected for by bending each piece to the correct shape during the mounting process. The NuSTAR pieces corresponding to the CAST radii can be seen in table \ref{tab:cast_pieces}.
+To find pieces for the CAST XRT, the diameter described by XXX would need to correspond with the calculated $\mathit{R1}$ and $\mathit{R2}$ values for the first piece, or $\mathit{R4}$ and $\mathit{R5}$ for the second piece. The pieces should be mounted at higher grazing incidence angles than NuSTAR, so the difference between $\mathit{R1}$ and $\mathit{R2}$ are higher for CAST than NuSTAR. That difference would need to be corrected for by bending each piece to the correct shape during the mounting process. The NuSTAR pieces corresponding to the CAST radii can be seen in table \ref{tab:cast_pieces}.
 
-!!!!! Table with CAST XRT radii and NuSTAR pieces !!!!!!!
+\begin{table}[p]
+\begin{center}
+\begin{tabular}{c|c|c|c|c}
+Layer & Mean diam. & Corresp. & Mean diam. & Corresp. \\
+& (parabolic)  & NuSTAR & (hyperbolic)  & NuSTAR  \\
+& [mm] &  diam. [mm] & [mm] &  diam. [mm]\\
+\hline
+1&124.2&124&114.7&116\\
+2&129.3&128&119.5&120\\
+3&134.7&136&124.4&124\\
+4&140.3&140&129.6&128\\
+5&146.0&144&134.9&136\\
+6&152.0&152&140.5&140\\
+7&158.3&160&146.2&148\\
+8&164.8&164&152.2&152\\
+9&172.5&172&158.4&160\\
+10&178.4&180&164.8&164\\
+11&185.7&184&171.5&172\\
+12&193.2&192&178.5&180\\
+13&201.0&200&185.7&184\\
+14&209.1&208&193.1&192
+\end{tabular}
+\end{center}
+\caption{\footnotesize Grh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhui}\label{tab:cast_pieces}
+\end{table}
 
 \begin{figure}[htbp]
-  \centering
-    \includegraphics[height=6cm]{figures/cast/pieces_for_cleaning.jpg}
-  \caption{\footnotesize }
+  \centering  \includegraphics[height=6cm]{figures/cast/pieces_for_cleaning.jpg}
+  \caption{\footnotesize Grh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhui}
   \label{fig:pieces_for_cleaning}
 \end{figure}
+
+With 14 glass layers and two stacks, 28 pieces are needed for the CAST XRT optic. As the glass pieces are very fragile and tend to break, it was decided to produce twice the amount, 56 in total.
 
 Each piece was visually inspected and the best pieces were selected for the CAST XRT (figure \ref{fig:pieces_for_cleaning}). The pieces were subsequently cleaned by the following process:
 \begin{enumerate}
@@ -334,17 +360,9 @@ The pieces were moved directly to sample mounting plates (figure \ref{fig:coatin
 \end{figure}
 
 \subsection{Coating of substrates}
-hguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftx
+Four coating recipes were made for the CAST XRT. With 56 pieces to coat, that means 14 pieces per recipe. The  coating chamber in the DTU Space multilab can hold up to 36 substrates if the entire length of each cathode is utilized. To ensure a uniform coating, only the center part of the coating cathodes are used. Two substrates were mounted on each plate so the center of each sample was 350 mm or 450 mm above the chamber floor. Along with the glass substrates, two Si wafer pieces were installed on a separate plate at the same height to become witness samples.
 
-hguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghurisl ghuflixbh uirthb ftx
-
-\begin{figure}[htbp]
-  \centering
-    \includegraphics[width=0.45\linewidth]{figures/cast/power_recipe1.pdf}
-    \includegraphics[width=0.45\linewidth]{figures/cast/power_recipe4.pdf}\\
-  \caption{\footnotesize }
-  \label{fig:cast_coatings_power}
-\end{figure}
+From the coating optimization calculations described in section \ref{sec:opt_coatings}, the optimal material combination was chosen to be Pt/C. Before coating, a thorough calibration was needed, which was done as described in section \ref{sec:coating_calib}. Honeycomb (6.4 mm opening, 5 mm thickness) was used as collimation in front of the cathodes. A Pt target was mounted in cathode 2 and a 2-piece C target was mounted in cathode 4. Power settings were 450 W for cathode 2 and 900 W for cathode 4. Ar was supplied to the chamber at 88 SCCM, corresponding to a coating pressure of 2.9 mTorr. Background pressure for each coating was $\leq 2\cdot10^{-6}$ Torr.
 
 \begin{figure}[htbp]
   \centering
@@ -353,27 +371,49 @@ hguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghuris
   \label{fig:coated_pieces}
 \end{figure}
 
+In figure \ref{fig:coated_pieces} can be seen the glass substrates after a coating still mounted in the coating chamber.
+
+The coating was done with each material separately. With all cathodes turned off and the ring at the position where the first sample plate is between cathode 1 and 4, the ring would first move so smaple plate 1 is next to the cathode of the first material. The cathode would then turn on, the shutter open and the ring start moving at the speed obtained from calibration corresponding to the thickness found in section \ref{sec:opt_coatings}. After one full rotation, the shutter closes, the cathode turns off and the ring returns to the start position before starting on the next material.
+
+The power supplies were polled every 5 secs. to get the power output, which can be seen in figure \ref{fig:cast_coatings_power} for the coatings of recipe 1 and recipe 4. Cathode 5 and 6 are actually cathode 3 and 4 in the chamber, but are run from a third dual channel power supply. During the recipe 4 coatings can be seen some fluctuations in the cathode 4 power output, they are caused by the  instabilites that occur when coating with non-metallic materials at high power.
+
 \begin{figure}[htbp]
-  \centering
-    \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe1.pdf}
-    \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe2.pdf}\\
-    \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe3.pdf}
-    \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe4.pdf}
+  \centering  \includegraphics[width=0.45\linewidth]{figures/cast/power_recipe1.pdf}  \includegraphics[width=0.45\linewidth]{figures/cast/power_recipe4.pdf}\\
+  \caption{\footnotesize }
+  \label{fig:cast_coatings_power}
+\end{figure}
+
+The Si witness samples were measured at the XRR lab at DTU Space. XRR results from each witness sample for recipes 1-4 can be seen in figure \ref{fig:cast_recipe_xrr}. In each of the four coating runs, the two witness samples show completely similar XRR structure indicating a high uniformity between the two sample mounting positions.
+
+\begin{figure}[htbp]
+  \centering  \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe1.pdf}  \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe2.pdf}\\  \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe3.pdf}  \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe4.pdf}
   \caption{\footnotesize }
   \label{fig:cast_recipe_xrr}
 \end{figure}
 
+!!!!! XRR/ IMD fit results !!!!!!!!
+
+The coated substrates were packed and shipped to LLNL for assembly.
+
+\emph{The shipping of the substrates were done with DHL, but the package was lost between Denmark and US. A new batch of substrates were collected, cleaned, coated, packed and shipped during June/July of 2014. In this chapter is described the process for the second batch.}
+
 \section{Assembling coated substrates}
+Optic assembly was carried out at LLNL, where one of the NuSTAR assembly machines were set up for that purpose. The machine had been adjusted to make only a 30\degr\ section of substrates, and a specially designed Ti mandrel had been procured.
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[width=0.45\linewidth]{figures/cast/assembly1.jpg}
-    \includegraphics[width=0.45\linewidth]{figures/cast/assembly2.jpg}
+  \includegraphics[width=0.45\linewidth]{figures/cast/assembly1.jpg}
+  \includegraphics[width=0.45\linewidth]{figures/cast/assembly2.jpg}
   \caption{\footnotesize }
   \label{fig:cast_assembly}
 \end{figure}
 
+Four graphite spacers were mounted onto the mandrel with epoxy glue and machined to the correct thickness before the two pieces for the first layer were mounted, again using epoxy. The next set of graphite spacers were mounted onto the first glass substrates and the machined to the right thickness (figure \ref{fig:cast_assembly}).
+
+!!!! Something about the 13 instead of 14 layers !!!!
+
 \subsection{Vacuum vessel}
+The magnet bores and detectors in the CAST helioscope operates at vacuum levels, so the entire optic had to be mounted inside a vacuum vessel. To align the optic after mounting it on the CAST helioscope, it was necessary to have linear actuators for the translation and rotation of the optic while under vacuum.
 
 \begin{figure}[htbp]
   \centering
@@ -383,7 +423,10 @@ hguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghuris
   \label{fig:cast_vessel}
 \end{figure}
 
+The vacuum vessel can be seen in figure \ref{fig:cast_vessel}. It was designed by Todd Decker (also pictured), an engineer from LLNL. In the picture can be seen five linear actuators, two on top to control pitch, three on the side, one for translation and two for yaw control. The three metal rods also visible on the side are for sliding out the optic, to make a precise optical alignment using a theodolite, described in detail in section \ref{sec:optic_alignment}.
+
 \section{Installation of optic at CAST}
+The optic mounted in the vacuum vessel was shipped to CERN for installation in Aug. 2014. It was leak tested with He before installation. Afterwards, the vessel was lifted into position in front of the magnet bore using a crane as seen in figure \ref{fig:cast_install}.
 
 \begin{figure}[htbp]
   \centering
@@ -392,7 +435,16 @@ hguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghuris
   \label{fig:cast_install}
 \end{figure}
 
-\subsection{Optic alignment}
+After mounting, vacuum view ports were mounted at either end of the magnet bores, making it possible to shine a laser straight through into the optic from the other end. The entire helioscope and magnet bore were also precisely aligned with a theodolite.
+
+\subsection{Optic alignment}\label{sec:optic_alignment}
+Inside the vacuum vessel, two pieces of metal were mounted to either end of the mandrel. On can be seen in figure \ref{fig:cast_vessel} (right). They have openings to allow photons into the optic and a narrow piece in the middle that blocks the graphite spacers between the glass pieces. Just above the top layer of glass was made a small hole in one of the metal pieces and on the other was mounted a small metal ball. The ball and hole were at the same distance from the center of the optic. The side of the vacuum vessel was designed so it could slide out a short distance along three precisely machined rods. By setting a pair of premachined spacers in the opening, the distance that the optic has slid out is exactly the distance from the hole and ball and the center of the optic.
+
+A theodolite mounted 3 m from the front of the helioscope was aligned with the bore axis, so looking through the theodolite one could see the ball and hole of the optic. The optic rotation and translation could then be adjusted using the linear actuators to line up the ball and hole, and get a precise alignment. After the hole and ball was lined up, the optic was slid back into the vacuum vessel and the bolts were fastened.
+
+!!!!!! Picture of hole and ball through theodolite !!!!!!!
+
+The theodolite could be set to shine a laser beam with adjustable divergence through the bore and at the optic. The optic reflected the laser light nicely, making it possible to get an exact position for the detector as seen in figure \ref{fig:cast_align} (left). A fake detector with a carbonite back was used for the alignment. That allowed the laser light focused by the optic to shine at the carbonite back and be viewable from the outside.
 
 \begin{figure}[htbp]
   \centering
@@ -403,7 +455,18 @@ hguirao ghrusei ghursieghurisl ghuflixbh uirthb ftxhguirao ghrusei ghursieghuris
   \label{fig:cast_align}
 \end{figure}
 
+The position of the detector was adjusted to make the spot hit in exactly the center. The detector mounts could then be fastened and the fake detector could then be replaced by a real one as seen in figure \ref{fig:cast_align} (right).
+
 \subsection{Tests with 8 keV X-ray source}
+The last task with detector and optic in place was a test with X-rays. An X-ray souce had to be mounted in front of the helioscope, but still under vacuum. It was decided to use a COOL-X pyroelectric X-ray source. It works by warming and cooling a pyroelectric element, which emits electrons that subsequently hits a Cu target and an X-ray spectrum gets emitted with a peak at the Cu K$_{\alpha_1}$ energy. The source has a flux of $10^8$ photons/sec. emitted at an angle of 160\degr, so at a distance of $\sim$15.7 m and including loss in the optic, $\sim$2-3 photons/sec. would arrive at the detector.
+
+!!!!! Data from 5 hour run !!!!!!
+
+In figure ???? can be seen the data output from the MicroMegas detectors after a 5 hour measurement with the COOL-X X-ray source. A flux of less than 1 Hz was seen. According to the effective area plot in figure \ref{fig:pt-c_effara_throughput_log}, the throughput at 8 keV is only $\sim$1\%. 
+
+Raytracing was done by Michael J. Pivovaroff from LLNL, and can be seen in figure ????. The figure assumes a 16 mm diameter source placed 14.2 m from the optic. They assume 100\% reflectivity from the mirror coatings and do not account for the spectrum of the COOL-X.
+
+!!!!! Raytracing figures !!!!!!!!
 
 \section{Conclusion}
-%\section{First light}
+In this chapter was shown the creation of an X-ray optic form design phase to installation. The whole process was $\sim$2 years from start to finish and would
