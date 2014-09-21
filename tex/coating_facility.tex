@@ -48,13 +48,29 @@ Baratron\\
 \subsection{Cathode shutters}
 
 \section{Multilab control software}\label{sec:ml_software}
+In the years before moving the DTU Space multilab to DTU campus, it became apparent that a completely new software solution was needed for the coating facility. The software controls all stepper motors (cathode shutters and sample ring), gas flow controllers, pressure gauge communication and cathode power supplies.
 
-\subsection{The original control software}
+The software was made in Visual Basic 6, which Microsoft stopped supporting in ?????. Features that were not build into the software from the start was bolted on at a later stage, resulting in some files with thousands of lines of uncommented code. VB6 also has the drawback that it is single threaded, so only one command can be executed at the same time which means that none of the instruments can be read for the log file if for instance the sample ring is moving. So checking whether there is a plasma dropout on a cathode is not possible while coating a layer, something that can take 30+ minutes.
+
+Everything in the original software solution was controlled in a graphical user interface which makes it easy to use, but will only allow for preprogrammed coating types to be made. When it came to make coating investigations for the ATHENA mission, the linearly graded coatings with top and bilayer required being in front of the computer during the process. For every layer, it was necessary to manually type in a new sample ring speed and start the movement. The coatings took on average 2-3 hours, so it became clear that a new solution was necessary.
 
 \subsection{Considerations on the new software solution}
-\begin{verbcode}
-  SPEC> mra
-\end{verbcode}
+Considering the observations from above, a list of requirements for new software was made:
+
+\begin{description}
+  \item[Software should run on linux] To remote control the coating facility in the old software solution, it was necessary to run a remote desktop to control the graphical user interface. The remote desktop requires a relatively large amount of internet bandwidth, something that is not always available. The new software should be controllable over a remote SSH connection using a Bash shell or similar.
+  \item[Software should log continuously] Output from cathode power supplies, pressure gauges and flow meters should be read every 5 seconds during a coating. Between coatings, the pressure gauges should be read every 5 seconds and written to a web server. That allows for checking chamber status on a smart phone or computer connected to the internet.
+  \item[A coating run should be described in a script] Instead of predefined coating types, the scripts make it possible to produce completely custom multilayer coatings.
+  \item[Software should preferably be open source] Open source software is often well documented and flexible. An open source programming language with plenty of extra packages would be Python.
+\end{description}
+
+The first attempts at creating new software was directed at Python, since that is just about the most well-documented programming language on the internet, and also where I have the most experience.
+
+It became clear after a while that the real problem was satisifying the second requirement in the list above. All instruments controlled by computer in the multilab are communicated with using serial connections, which will block a line until a command is recieved by an instrument and a response is returned. In some instruments the response time is up to a second and for the stepper motors, a response is not returned until movement is complete. That is the reason why the old software was unable to read any outputs during the movement of the sample ring.
+
+Python is a single threaded scripting language, so all commands are executed sequentially. There are however software packages for Python that can spawn subprocesses from a queue and read the output of those into another queue. A specific package for multithreading serial communication is Twisted for Python, but after moderately succesful attempts it was clear that the solution would be too difficult. The software should be flexible and making a multithreaded python solution with queue systems was both too much work and a bit like reinventing the wheel.
+
+The choice in the end fell on SPEC, a software package for X-ray diffraction setups. SPEC is not open source, but requires a license. SPEC is widely used in synchrotron beamlines across the world, and also in the X-ray lab at DTU Space. It is a
 
 \section{Coating calibration}\label{sec:coating_calib}
 To deposit a coating with the correct film layer thicknesses on a substrate, a calibration of the material combination is required. Four samples of 10 bilayer films are coated using the two materials. Each sample is placed on a separate mounting plate and each coated with a different thickness of both light and heavy materials. The samples are then measured using XRR and compared to an IMD model fit to get bilayer thickness (d-spacing) and thin/heavy material fraction ($\Gamma$) as seen in figure \ref{fig:irb4c-fit}.

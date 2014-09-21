@@ -5,6 +5,8 @@ The optic was designed between summer 2012 and summer 2014. Production, assembly
 
 My part of the work was to design the optic geometry and coating as well as produce the coated substrates and participate in the installation. LLNL designed vacuum vessel and alignment procedure and UoZ designed detector and X-ray source assembly.
 
+A complete software package was developed that could calculate the geometry of the optic given a focal length and substrate specifications. The software then optimises the coating for a range of material combinations by incorporating IMD. I chose to make the software in Python because of the huge amount of documentation and specialised packages available. To interface with IMD, a package called Pidly was used to communicate with IDL, which could spawn an IMD session. The principle is described in section \ref{sec:software_improvements}
+
 \section{The CAST instrument}
 The axion is an ultra-light particle that is formed from the interaction of a photon with an electromagnetic field, called the Primakoff effect. So the main sources of the particle would be from inside stars, and from Earth the best nearby source will of course be the Sun. The axion is weakly interacting so in order to detect it, CAST uses a strong magnet to convert the axion back to a photon again by the Primakoff effect. The photons subsequently hit a detector.
 
@@ -93,7 +95,7 @@ where $\alpha$ is the angle of reflection of each mirror, $f$, is the focal leng
 % \end{figure}
 \begin{figure}[htbp]
   \centering
-    \includegraphics[width=0.95\linewidth]{figures/cast/wolter1-diagram.eps}
+    \includegraphics[width=0.95\linewidth]{figures/cast/wolter1-diagram.pdf}
   \caption{Diagram of wolter I from side.R1-R5 designated.}
   \label{fig:wolter1-diagram}
 \end{figure}
@@ -157,7 +159,7 @@ Layer & Area [mm$^2$] & $\alpha$ [\degr] & $\alpha$ [mrad] & $\mathit{R1}$ [mm] 
 \subsection{Optimising reflective coatings}\label{sec:opt_coatings}
 To achieve the maximum possible efficiency of the optic, the coating needed to be optimised for the energy range. In contrast with most astrophysical observatories, the CAST telescope will only look at a single object with a very specific spectrum. That means that the coatings can be tailored to achieve maximum reflectivity in that area of the spectrum. Also known is the quantum efficiency of the detector.
 
-An algorithm was developed to calculate all the different permutations of multilayers for a wide variety of material combinations. The spectrum is at a very relatively low X-ray energy, so single layer coatings could be relevant. The algorithm calculates the reflectivity for a multilayer with given material combination and geometry at a certain angle. $F.O.M.$ is then calculated using the following integral:
+An algorithm was developed to calculate all the different permutations of multilayers for a wide variety of material combinations. The spectrum is at a relatively low X-ray energy, so single layer coatings could be relevant. The algorithm calculates the reflectivity for a multilayer with given material combination and geometry at an angle given by the radius of the layer from the optical axis. $F.O.M.$ is then calculated using the following integral:
 \begin{equation}\label{eq:fom}
 	F.O.M. = \int_{0.1}^{10} \mathbb{R}^2(\mathrm{\alpha},\text{E})\ QE_{\text{det}}(\text{E})\ S_{\text{axion}}(\text{E})\ dE,
 \end{equation}
@@ -210,7 +212,7 @@ The best result for the Pt/C material combination can be seen in figure \ref{fig
 
 
 
-The coating optimization for the CAST X-ray optic was done in parallel with most of the ATHENA coating investigations that is described in chapter \ref{chap:athena_coatings}. The findings from long term storage that are discussed in section \ref{sec:long_term} show changes in the coatings over time at ambient conditions for most B$_4$C containing films. For that reason, it was decided to make the CAST coatings with Pt/C, as the combination is well described for NuSTAR like glass substrates. W/Si was also used for NuSTAR and would be a cheaper solution, but the Si absorption line at $\sim2$ keV would decrease efficiency of the coatings around the peak of the axion spectrum.
+The coating optimisation for the CAST X-ray optic was done in parallel with most of the ATHENA coating investigations that is described in chapter \ref{chap:athena_coatings}. The findings from long term storage that are discussed in section \ref{sec:long_term} show changes in the coatings over time at ambient conditions for most B$_4$C containing films. For that reason, it was decided to make the CAST coatings with Pt/C, as the combination is well described for NuSTAR like glass substrates. W/Si was also used for NuSTAR and would be a cheaper solution, but the Si absorption line at $\sim2$ keV would decrease efficiency of the coatings around the peak of the axion spectrum.
 %Each calculation was done over the energy range $0.1 - 10$ keV with a step size of 0.1 keV.
 
 \subsection{Calculating effective area}\label{sec:eff_area}
@@ -227,7 +229,7 @@ It can be calculated using the overlap of the outer shell of the layer opening a
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[width=0.9\linewidth]{figures/cast/cross_section_area.eps}
+    \includegraphics[width=0.9\linewidth]{figures/cast/cross_section_area.pdf}
   \caption{\footnotesize Grh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhui}
   \label{fig:cross_section_area}
 \end{figure}
@@ -257,7 +259,7 @@ The NuSTAR type telescope is built up from glass layers with graphite spacers be
 \begin{eqnarray}
   A_{\text{CS,i}} &=& A_{i} - A_{i-1} - (\mathcal{R}_{i}-\mathcal{R}_{i-1})x_{\text{gr}}
 \end{eqnarray}
-The effective area and throughput for the optimized Pt/C coating can be seen in figures \ref{fig:pt-c_effara_throughput_lin} and \ref{fig:pt-c_effara_throughput_log}.
+The effective area and throughput for the optimised Pt/C coating can be seen in figures \ref{fig:pt-c_effara_throughput_lin} and \ref{fig:pt-c_effara_throughput_log}.
 
 \begin{figure}[htbp]
 \centering
@@ -362,7 +364,7 @@ The pieces were moved directly to sample mounting plates (figure \ref{fig:coatin
 \subsection{Coating of substrates}
 Four coating recipes were made for the CAST XRT. With 56 pieces to coat, that means 14 pieces per recipe. The  coating chamber in the DTU Space multilab can hold up to 36 substrates if the entire length of each cathode is utilized. To ensure a uniform coating, only the center part of the coating cathodes are used. Two substrates were mounted on each plate so the center of each sample was 350 mm or 450 mm above the chamber floor. Along with the glass substrates, two Si wafer pieces were installed on a separate plate at the same height to become witness samples.
 
-From the coating optimization calculations described in section \ref{sec:opt_coatings}, the optimal material combination was chosen to be Pt/C. Before coating, a thorough calibration was needed, which was done as described in section \ref{sec:coating_calib}. Honeycomb (6.4 mm opening, 5 mm thickness) was used as collimation in front of the cathodes. A Pt target was mounted in cathode 2 and a 2-piece C target was mounted in cathode 4. Power settings were 450 W for cathode 2 and 900 W for cathode 4. Ar was supplied to the chamber at 88 SCCM, corresponding to a coating pressure of 2.9 mTorr. Background pressure for each coating was $\leq 2\cdot10^{-6}$ Torr.
+From the coating optimisation calculations described in section \ref{sec:opt_coatings}, the optimal material combination was chosen to be Pt/C. Before coating, a thorough calibration was needed, which was done as described in section \ref{sec:coating_calib}. Honeycomb (6.4 mm opening, 5 mm thickness) was used as collimation in front of the cathodes. A Pt target was mounted in cathode 2 and a 2-piece C target was mounted in cathode 4. Power settings were 450 W for cathode 2 and 900 W for cathode 4. Ar was supplied to the chamber at 88 SCCM, corresponding to a coating pressure of 2.9 mTorr. Background pressure for each coating was $\leq 2\cdot10^{-6}$ Torr.
 
 \begin{figure}[htbp]
   \centering
@@ -460,13 +462,57 @@ The position of the detector was adjusted to make the spot hit in exactly the ce
 \subsection{Tests with 8 keV X-ray source}
 The last task with detector and optic in place was a test with X-rays. An X-ray souce had to be mounted in front of the helioscope, but still under vacuum. It was decided to use a COOL-X pyroelectric X-ray source. It works by warming and cooling a pyroelectric element, which emits electrons that subsequently hits a Cu target and an X-ray spectrum gets emitted with a peak at the Cu K$_{\alpha_1}$ energy. The source has a flux of $10^8$ photons/sec. emitted at an angle of 160\degr, so at a distance of $\sim$15.7 m and including loss in the optic, $\sim$2-3 photons/sec. would arrive at the detector.
 
-!!!!! Data from 5 hour run !!!!!!
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=0.47\linewidth,trim=40pt 0pt 30pt 0]{figures/cast/cast_5h_1000x.png}
+    \includegraphics[width=0.47\linewidth,trim=40pt 0pt 30pt 0]{figures/cast/cast_5h_200x.png}
+  \caption{\footnotesize }
+  \label{fig:cast_align}
+\end{figure}
 
-In figure ???? can be seen the data output from the MicroMegas detectors after a 5 hour measurement with the COOL-X X-ray source. A flux of less than 1 Hz was seen. According to the effective area plot in figure \ref{fig:pt-c_effara_throughput_log}, the throughput at 8 keV is only $\sim$1\%. 
+In figure ???? can be seen the data output from the MicroMegas detectors after a 5 hour measurement with the COOL-X X-ray source. A flux of less than 1 Hz was seen. According to the effective area plot in figure \ref{fig:pt-c_effara_throughput_log}, the throughput at 8 keV is only $\sim$1\%.
 
 Raytracing was done by Michael J. Pivovaroff from LLNL, and can be seen in figure ????. The figure assumes a 16 mm diameter source placed 14.2 m from the optic. They assume 100\% reflectivity from the mirror coatings and do not account for the spectrum of the COOL-X.
 
 !!!!! Raytracing figures !!!!!!!!
 
 \section{Conclusion}
-In this chapter was shown the creation of an X-ray optic form design phase to installation. The whole process was $\sim$2 years from start to finish and would
+In this chapter was shown the creation of an X-ray optic from design phase to installation. The whole process was $\sim$2 years from start to finish and realised on a minimal budget with surplus materials and instrumentation where possible.
+
+The measurement results obtained using the COOL-X X-ray source show that surplus slumped glass can be repurposed into well-behaving X-ray optics for specialised tasks.
+
+It was shown that a customised software solution interfacing to IMD can find the optimal geometry for a specific X-ray optic and make comparisons of best recipe material combinations. The specially designed software can make a full computation with a wide range of material combinations and multilayer coating geometries within 2-3 days using a regular desktop computer. Using a calculation of the overlap between optic opening and magnetic bore opening, a precise effective area can be calculated with the software.
+
+A discussion of possible improvements in the software can be found in the following section.
+
+\subsection{Improvements to the software}\label{sec:software_improvements}
+The software is limited by the inability of IMD to use more than one core on common multi-core CPUs in most computers today. The limit can be circumvented by letting the software spawn an instance of IMD for every processor core. That could be done by separating the calculations of each recipe, so e.g. four cores can calculate four recipes at the same time. The challenge is however to let each subprocess return the calculated optimised recipes without interrupting another subprocess. It would also require the same number of IDL instances run at the same time on one computer. This can be done using the Python \verb|subprocess.Popen| class. An example is given here. The first Python script imports the Popen procedure and spawns an instance of Popen that opens the file \verb|subp.py| in Python and that is called \verb|process1|. Popen can be set to pipe back output from \verb|process1|, but that will make the script wait for the output before spawning the second instance called \verb|proces2|. This script will simply open subp.py in two separate instances of Python and then quit.
+
+\begin{verbcode}
+from subprocess import Popen
+
+process1 = Popen(['python', 'subp.py', '-d'])
+
+process2 = Popen(['python', 'subp.py', '-d'])
+\end{verbcode}
+
+The contents of \verb|subp.py| can be seen below. It imports \verb|pidly|, which is a class that facilitates communication between Python and IDL. It then spawns an instance of Pidly called idl (that also opens IDL), and using the idl instance, commands can be piped directly into the IDL application. It can also run IDL procedures (\verb|*.pro|-files) or start an IMD terminal in that instance (\verb|.r IMD|).
+
+\begin{verbcode}
+import pidly
+
+idl = pidly.IDL()
+idl('for i=0, 100000 do begin & a=sqrt(i/255)')
+\end{verbcode}
+
+The example given above will use 100\% of two cores in a multi-core CPU, and is a very simplistic form of multi threading. The output from each instance of IDL can be written to files on the hard drive and read by the main Python program when the IDL computation is done. That can be done in a brute force manner by simply letting the main Python program wait until the number of IDL instances running on the computer is zero. That works well if each computation takes roughly the same time, but a more advanced approach can be taken in other cases, where Python will open a new process whenever a CPU core becomes available. The two Linux Bash commands below will get the number of CPU cores in the system and the number of IDL instances running, respectively. The second line will also count itself as a program running that is called something with \verb|idl| in the name, which should be accounted for.
+
+\begin{verbcode}
+  $ cat /proc/cpuinfo | grep -c cpuid
+
+  $ ps a | grep -c idl
+\end{verbcode}
+
+In codebases where new instances of \verb|Popen| are spawned rapidly and output files are read in between, the main process should run on its own CPU core. Otherwise a bottleneck will occur where the main program is slowed by subprocesses taking over system ressources and new subprocesses will not be spawned fast enough.
+
+Apart from speed improvements, the software is made with lower energy X-ray optics in mind. Specifically, it is limited to linearly graded multilayers, where for higher energy (10+ keV X-rays) the optimal choice would be a power-law grading. In that case, the variables to optimise would be $a$, $b$, and $c$ in the power law $y = a+bx^c$ and the number of layers, $N$.
