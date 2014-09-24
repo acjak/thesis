@@ -11,7 +11,7 @@
 
 %  COMPILATION STEP USING PDFLATEX
 %
-\documentclass[12pt,twoside,a4paper]{book}
+\documentclass[12pt,twoside,a4paper,draft]{book}
 % COMPILATION FOR B5PAPER BOOK
 %\documentclass[11pt,twoside]{book}
 %  pdflatex phdthesis.tex
@@ -65,7 +65,7 @@
 %%%%%%%MAIN CHAPTERS INCLUDE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \include{tex/introduction}
-\include{tex/telescope_design}
+%\include{tex/telescope_design}
 \include{tex/coating_facility}
 \include{tex/athena_coatings}
 \include{tex/cast_coatings}
@@ -76,8 +76,10 @@
 %%%%%%%APPENDIX CHAPTERS INCLUDE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Appendix A, B, ...
-%\include{tex/Appendix1}
+
 \include{tex/paper_chapter}
+\include{tex/multilab_app}
+
 %\include{tex/paper2}
 %\cite{Jakobsen:2011vd}
 

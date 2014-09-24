@@ -8,49 +8,17 @@ The currently used magnetrons are attached to powerful DC power supplies that ca
 
 The entire lab was moved from Rockefeller Institute near Rigshospitalet in Copenhagen during the summer of 2012. It was up and running again around the summer of 2013 in the newly constructed building 328, the new home for DTU Space on DTU campus. In the new location, the lab is 50\% larger, has a double airlock (earlier just a single airlock), laminar airflow from ceiling mounted HEPA filters and various other improvements. The result is a considerably cleaner facility, which is important to avoid contaminants on optical substrates.
 
-\section{Laboratory setup}
+%\section{Laboratory setup}
 %In this section, the various instruments facilities will be described. Any reader not interested in using the Multilab can skip to section \ref{sec:ml_chamber}.
-The vacuum chamber is the dominant piece of the laboratory, most of the computers, electronics and cooling in the lab is in some way connected to the chamber. Apart from the chamber, the lab consists of a downflow module, two fume hoods, a profilometer, a large clean room oven and various tables and cupboards. Next to the lab is the Multilab Auxilliary Room, which houses the cooling heat exchangers and pumps, the rotary vane roughing pump, DC power supplies, and a large part of the extra storage needed for the lab. Additionally, there is a room in the basement that houses a ceramic oven that has a built in vacuum chamber, the room also serves to store hundreds of spare pieces of NuSTAR optic glass.
+The vacuum chamber is the dominant piece of the laboratory and most of the computers, electronics and cooling in the lab is in some way connected to the chamber. Apart from the chamber, the lab consists of a downflow module, two fume hoods, a profilometer, a large clean room oven and various tables and cupboards. Next to the lab is the Multilab Auxilliary Room, which houses the cooling heat exchangers and pumps, the rotary vane roughing pump, DC power supplies, and a large part of the extra storage needed for the lab. Additionally, there is a room in the basement that houses a ceramic oven that has a built in vacuum chamber, the room also serves to store hundreds of spare pieces of NuSTAR optic glass.
 
-\subsection{Downflow module}
-The downflow module is where the
-
-\subsection{Fume hoods}
-
-\subsection{Oven}
-
-\subsection{Multilab auxilliary room}
-
-\subsection{Multilab basement storage}
-
-\subsection{Profilometer}
-
-\section{Multilayer coating chamber}\label{sec:ml_chamber}
-
-\subsection{Chamber, pumps \& valves}
-Bell\\
-Viton ring\\
-Heaters\\
-Roughing pump\\
-Turbo pump
-
-\subsection{Cathodes}
-Powersupplies\\
-Masks\\
-
-\subsection{Gas flow controllers}
-
-\subsection{Pressure gauges}
-Baratron\\
-
-\subsection{Rotating ring}
-
-\subsection{Cathode shutters}
+\section{Coating chamber}
+The coating facility at DTU Space is arranged with vertical sputtering cathodes pointing outwards in a circular vacuum chamber. Substrates are mounted on vertical mounting plates that are placed on a rotating ring in the sputtering chamber and the substrates pass in front of each cathode at a speed determined by the desired layer thickness. After chamber is closed, a roughing pump and two turbo molecular pumps evacuates the chamber to a pressure of $\leq2\cdot10^{-6}$ Torr before pure Ar gas is let into the chamber at a constant flow rate. The desired total pressure with Ar gas is $2.8\cdot10^{-3}$ Torr, to ensure the fraction of other gasses to be $<$0.1\%.
 
 \section{Multilab control software}\label{sec:ml_software}
 In the years before moving the DTU Space multilab to DTU campus, it became apparent that a completely new software solution was needed for the coating facility. The software controls all stepper motors (cathode shutters and sample ring), gas flow controllers, pressure gauge communication and cathode power supplies.
 
-The software was made in Visual Basic 6, which Microsoft stopped supporting in ?????. Features that were not build into the software from the start was bolted on at a later stage, resulting in some files with thousands of lines of uncommented code. VB6 also has the drawback that it is single threaded, so only one command can be executed at the same time which means that none of the instruments can be read for the log file if for instance the sample ring is moving. So checking whether there is a plasma dropout on a cathode is not possible while coating a layer, something that can take 30+ minutes.
+The software was made in Visual Basic 6, which Microsoft stopped supporting in 2008. Features that were not build into the software from the start was bolted on at a later stage, resulting in some files with thousands of lines of uncommented code. VB6 also has the drawback that it is single threaded, so only one command can be executed at the same time which means that none of the instruments can be read for the log file if for instance the sample ring is moving. So checking whether there is a plasma dropout on a cathode is not possible while coating a layer, something that can take 30+ minutes.
 
 Everything in the original software solution was controlled in a graphical user interface which makes it easy to use, but will only allow for preprogrammed coating types to be made. When it came to make coating investigations for the ATHENA mission, the linearly graded coatings with top and bilayer required being in front of the computer during the process. For every layer, it was necessary to manually type in a new sample ring speed and start the movement. The coatings took on average 2-3 hours, so it became clear that a new solution was necessary.
 
@@ -70,7 +38,159 @@ It became clear after a while that the real problem was satisifying the second r
 
 Python is a single threaded scripting language, so all commands are executed sequentially. There are however software packages for Python that can spawn subprocesses from a queue and read the output of those into another queue. A specific package for multithreading serial communication is Twisted for Python, but after moderately succesful attempts it was clear that the solution would be too difficult. The software should be flexible and making a multithreaded python solution with queue systems was both too much work and a bit like reinventing the wheel.
 
-The choice in the end fell on SPEC, a software package for X-ray diffraction setups. SPEC is not open source, but requires a license. SPEC is widely used in synchrotron beamlines across the world, and also in the X-ray lab at DTU Space. It is a
+The choice in the end fell on SPEC, a software package for X-ray diffraction setups. SPEC is not open source, but requires a license. SPEC is widely used in synchrotron beamlines across the world, and also in the X-ray lab at DTU Space. It is an extremely flexible piece of software, specifically designed to talk to a wide range of instruments at X-ray beamlines. Many types of hardware can be controlled directly from SPEC without the need for drivers, since a direct hardware level communication protocol is build into the software. Commands are typed in on a command line, but can also written into text files (scripts) and the commands can then be executed sequentially by SPEC.
+
+\subsection{Software architecture of new Multilab control program}
+SPEC is, like Python, single threaded. There are however build-in procedures for communicating through the serial protocol and a range of other protocols. SPEC also has the ability to run as a server so commands can be issued to the software using sockets on the system level. By running three separate instances of SPEC at the same time, it became possible to constantly communicate with instruments, write to a logfile, and control the chamber from a main pogram. The software is set up like the following:
+
+\begin{description}
+  \item[SPEC (main program)] The main program, where user-level commands can be typed in. Coating macros are executed from this program. The program has direct control with stepper motors.
+  \item[ControlServer] The control program. It has direct access to cathode power supplies, gas flow controllers and pressure gauges. SPEC and LogClient will get status and control the instruments through ControlServer by socket commands.
+  \item[LogClient] The logging program. It gets data from the ControlServer every five seconds and writes the data to a file. If a coating is starting, it will make a new folder in the \verb'~/logs' directory named by time and date. In that directory it will make a log file (\verb'logfile.txt') for the coating and also a log of the commands typed in by a coating macro (\verb'coatinglog.txt').
+\end{description}
+
+These three programs run continously side-by-side, and will make sure that there are no interruptions in the logging during a coating run. Each command to control any part of the instruments are described in the \verb'site.mac' macro files of each program and auxiliary macro files for e.g. power supplies and pressure gauges. All commands are divided into system-level and user-level commands. System-level commands are called like this:
+
+\begin{verbcode}
+  SPEC> output = getpoweroutput(#)
+\end{verbcode}
+
+This command will get the output of cathode \# and put the result in the variable \verb'output'. The system-level commands \emph{can} be used by the user, but \emph{should not}. Instead they are used inside user-level command macros, so a user-level command looks like this:
+
+\begin{verbcode}
+  SPEC> getpoweroutput 1
+  Current power output of cathode 1: 450 W
+\end{verbcode}
+
+This makes it easier to type commands into SPEC, as commands can be autocompleted by using the tabulator key. If a command needs one or several parameters following it and not enough/too many are given, it will respond with an error and a description of the parameters needed.
+
+Log files produced continously by the LogClient program are fetched by a web server at DTU Space that will make a plot of pressure and cathode power output every 30 seconds. A plot from Sept. 14th 2014 can be seen in figure \ref{fig:chamber_pressure}. The logfile holds up to 50,000 lines of data, which corresponds to $\sim$3 days of data collected every five seconds. In the plot can be seen both the curve corresponding to the cold cathode pressure gauge (red line) and the baratron pressure gauge (green line). The cold cathode works well at both low and high pressure, but some of the functional parts can be coated over during a coating, so a valve closes off to that gauge during coating. The baratron only works between $10^{-1}$ Torr and $2\cdot10^{-4}$ Torr, but is more precise and also works during a coating.
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=0.8\linewidth]{figures/chamber/pressure.png}
+  \caption{\footnotesize }
+  \label{fig:chamber_pressure}
+\end{figure}
+
+The web server that continuously fetches the log file from the coating computer also gets information from the X-ray measurement computer in the basement. Information about measurement status and progress is posted to the same web site. This makes it possible to get the status about all the labs by a quick glance to the web site. The script running on the web server also has the option to send out a mail to pre-defined recipients if the pressure in the chamber is low enough to start a coating. This proved handy during the NuSTAR coatings, where coatings had to be started in the middle of the night. The web site and script running on the web server were produced during the NuSTAR coating campaign to make the production process easier.
+
+The cathode shutters and ring are all controlled by the same motor controller, and is communicated to over the same serial cable. That is however opaque to the user. In order to open or close a specific shutter, the command \verb'osh #' or \verb'csh #' should be given for opening and closing shutter \#, respectively. Alternatively, all shutters can be opened or closed using \verb'openallshutters' and \verb'closeallshutters'. The ring can be controlled using the commands \verb'mra speed angle' or \verb'mr speed steps', the first of which moves the ring at the speed given in steps/sec. at an angle given in degrees. The second does the same thing, except for changing the angle for steps. The motor controller has 668,000 steps in a complete rotation of the ring in the chamber and the speed of a cathode should be between 0 and 15,000 steps/sec, otherwise the movement precision decreases. In a coating macro, the command \verb'mra speed angle' is used extensively as the main method to move the samples past the cathodes. In chapter \ref{chap:multilab_details}, an extensive list of commands made for the control software can be found.
+
+\subsubsection{Interfacing with cathode power supplies}
+The power supplies used to run the cathodes in the multilab consist of two Advanced Energy Pinnacle 5/5 DC power supplies and one Advanced Energy Pinnacle Plus+ 5/5 pulsed-DC power supply. Each power supply has two channels, so can run two cathodes at same time. In order to communicate with power supplies, a special protocol running over serial has to be used. All other instruments in the multilab are communicated with by ControlServer and SPEC using basic text commands send over a serial connection.
+
+The protocol is made for connecting all power supplies to the same serial connection, but in the multilab they are connected separately. The protocol requires each command to be packaged in a binary packet that includes power supply hardware address, length of packet, command, extra data and finally an XOR of the entire packet so the reciever can verify that the whole packet is there. The design of the packet can be seen in figure \ref{fig:ae_packet}. In the header, which is 8 bits long, the first 5 are the address of the power supply (set with a DIP switch on the back) and the remaining 3 bits describe the length of the packet. If the length in the header is set to 7 (111 in binary), the 'optional' byte is used to describe the actual length of the packet. The 'command' byte is a number between 0 and 255 (0 and FFh) in hexadecimal numbers. The 'checksum' byte is an XOR of the entire packet up until the 'chekcksum' byte. When the reciever gets a packet, it will do an XOR of the entire packet including the 'checksum' byte and if the result is 0, the packet is approved and processed.
+
+\begin{figure}[!h]
+  \center
+  \includegraphics[width=0.9\linewidth]{figures/chamber/ae_packet.pdf}
+\caption{\footnotesize }\label{fig:ae_packet}
+\end{figure}
+
+This packet architecture is used to communicate back and forth between the ControlServer program and the power supplies. If a packet is approved, an ACK is send back in the form of the hex code 06h. The commands for the power supplies can either be to retrieve current status of some parameter, to set a parameter on the power supply, or to execute a command on the power supply. The entire communication protocol is transparent to the user and all user-level control of the power supplies can be achieved by user-level commands only.
+
+\subsubsection{Coating macro}
+To produce a coating in the multilab chamber, a coating macro can be typed up and started in the main SPEC program as soon as the pressure is low enough ($\leq2\cdot10^{-6}$ Torr). An example of a simple coating macro, \verb'coat_singlelayer', can be seen here:
+
+\begin{verbcode}
+  def coat_singlelayer '
+        if ($# != 1) {
+                eprint "Start coating of singlelayer.\n"
+                eprint "Usage: coat_singlelayer v(cath3)"
+                exit
+        }
+        coating_start_log
+        closevalve
+        setflow 1 88
+        openflow 1
+        openmainflow
+        print("Waiting for Ar flow to settle.\n")
+        print("(60 seconds).\n")
+        sleep(60)
+        setpower 3 450
+        print("Starting coating.\n")
+        mra 90 10000
+        sleep(2)
+        pson 3
+        sleep(5)
+        osh 1
+        print("Coating material 1, all plates.\n")
+        mra -360 $1
+        sleep(2)
+        csh 1
+        sleep(1)
+        psoff 3
+        mra -90 10000
+        sleep(2)
+        print("Coating over. Closing flow valve.\n")
+        closemainflow
+        closeflow 1
+        openvalve
+        coating_stop_log
+\end{verbcode}
+
+Each step in the macro is described here:
+
+\begin{description}
+  \item[Error check] The macro starts out with an \verb|if| statement to make sure that there is one parameter after the user has called the macro.
+  \item[coating\_start\_log] Sets the variable \verb|coating_starting=1| in the LogClient program and lets it know that it is time to start a log for a new coating.
+  \item[closevalve] Closes valve to the cold cathode pressure gauge.
+  \item[setflow 1 88] Sets flow output on flow controller 1 to 88 SCCM.
+  \item[openflow 1] Opens flow controller 1.
+  \item[openmainflow] Opens flow controllers to chamber.
+  \item[Text output to user] Feedback should be given to user throughout the coating.
+  \item[sleep(60)] Macro will wait for 60 seconds to let the pressure settle at $\sim$2.8 mTorr.
+  \item[setpower 3 450] Power output is set to 450 W on power supply output 3, the first output on the second power supply.
+  \item[mra 90 10000] Ring is moved 90\degr\ at a speed of 10,000 steps/sec. so the first sample is right before cathode 1.
+  \item[pson 3] Power supply 3 is turned on.
+  \item[osh 1] Shutter 1 to cathode 1 is opened.
+  \item[mra -360 \$1] Ring is moved 360\degr\ at the speed given by the parameter which is set by the user when calling the macro.
+  \item[csh 1] Shutter 1 is closed after ring is done moving.
+  \item[psoff 3] Power supply 3 is turned off.
+  \item[mra -90 10000] Ring is moved back to start position.
+  \item[closemainflow] Main flow to flow controllers is turned off.
+  \item[closeflow 1] Flow controller 1 flow is turned off.
+  \item[openvalve] Valve to cold cathode pressure gauge is opened.
+  \item[coating\_stop\_log] Sets the parameter \verb|coating_starting=0| in the LogClient program, which stops logging for that coating.
+\end{description}
+
+The macro will coat all samples in the ring with one layer of the material on cathode 1 at the speed given by the parameter after the macro call. Macros in SPEC are given in a C-type language and many types of loops and statements are implemented. The comprehensive manual for SPEC gives a good overview.
+
+If the user wants to make more complicated multilayers, adjusting the macro example above into a graded-d type coating can of course seem daunting. For that reason, subfunctions are implemented that will coat e.g. 90\degr\ of the ring with cathode 3. The principle of the subfunction is as follows:
+
+\begin{enumerate}
+  \item From the start position of the ring where sample 1 is placed, the ring will move sample 1 between cathode 2 and 3.
+  \item Turn on cathode 3 and open shutter.
+  \item Move ring 90\degr\ given by input parameter.
+  \item Close shutter 3 and turn off cathode.
+  \item Move ring back to start position.
+\end{enumerate}
+
+The sample can then be coated by another cathode afterwards. If a larger batch requires coating at the same time, there are similar subfunctions for moving 180\degr\ and 360\degr.
+
+The software also makes it possible to coat 4 different samples with 4 different coatings in the same coating run. By placing the samples at 4 different corners of the ring, each sample can have a coating applied separately. Flexible macros for that purpose are not yet implemented, but a template that can be changed into a specific purpose is the macro \verb|coat_n_bilayers_4plates| along with subfunction e.g. \verb|abilayer_4_plates_c2c4($2,$3,$4,$5,$6,$7,$8,$9)| that will coat 4 different constant-d coatings using cathode 2 and 4. It is possible to change any parameter for the power supplies or flow meters between each sample, so testing out a parameter space becomes significantly faster with this system.
+
+For graded-d coatings, an example is given below and is a nice example of the flexibility of the SPEC macro language.
+
+\begin{verbcode}
+  for (j=0;j<nlayers;j++){
+    printf("\nStarting layer %g.\n",j+1)
+    dlayer = dmin+(j)*(dmax-dmin)/(nlayers-1)
+    dlayer1 = dlayer*gamma
+    dlayer2 = dlayer*(1-gamma)
+    speed1 = int(1/((dlayer1-sicorr)/sifact))
+    speed2 = int(1/((dlayer2-wcorr)/wfact))
+    coat_cath2_180 speed2
+    coat_cath4_180 speed1
+    }
+\end{verbcode}
+
+By defining \verb|nlayers| as the number of layer, \verb|dmin|, \verb|dmax| and \verb|gamma| of the coating along with calibration factors, the macro will for every layer calculate the speed for both materials and coat the correct thickness. Calibration factors are calculated as seen in section \ref{sec:coating_calib} where e.g. $a$ for W is the \verb|wfact| and $b$ is \verb|wcorr|. The same principle can be used in other types of graded-d coatings, e.g. power-law gradings where $a$, $b$ and $c$ are defined in $y = a+bx^c$.
+
+%To use SPEC most efficiently, it would
+
+\section{X-ray lab source at DTU Space}
 
 \section{Coating calibration}\label{sec:coating_calib}
 To deposit a coating with the correct film layer thicknesses on a substrate, a calibration of the material combination is required. Four samples of 10 bilayer films are coated using the two materials. Each sample is placed on a separate mounting plate and each coated with a different thickness of both light and heavy materials. The samples are then measured using XRR and compared to an IMD model fit to get bilayer thickness (d-spacing) and thin/heavy material fraction ($\Gamma$) as seen in figure \ref{fig:irb4c-fit}.

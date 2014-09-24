@@ -442,11 +442,16 @@ After mounting, vacuum view ports were mounted at either end of the magnet bores
 \subsection{Optic alignment}\label{sec:optic_alignment}
 Inside the vacuum vessel, two pieces of metal were mounted to either end of the mandrel. On can be seen in figure \ref{fig:cast_vessel} (right). They have openings to allow photons into the optic and a narrow piece in the middle that blocks the graphite spacers between the glass pieces. Just above the top layer of glass was made a small hole in one of the metal pieces and on the other was mounted a small metal ball. The ball and hole were at the same distance from the center of the optic. The side of the vacuum vessel was designed so it could slide out a short distance along three precisely machined rods. By setting a pair of premachined spacers in the opening, the distance that the optic has slid out is exactly the distance from the hole and ball and the center of the optic.
 
-A theodolite mounted 3 m from the front of the helioscope was aligned with the bore axis, so looking through the theodolite one could see the ball and hole of the optic. The optic rotation and translation could then be adjusted using the linear actuators to line up the ball and hole, and get a precise alignment. After the hole and ball was lined up, the optic was slid back into the vacuum vessel and the bolts were fastened.
+A theodolite mounted 3 m from the front of the helioscope was aligned with the bore axis, so looking through the theodolite one could see the ball and hole of the optic. The optic rotation and translation could then be adjusted using the linear actuators to line up the ball and hole, and get a precise alignment. The theodolite could be set to shine a laser beam with adjustable divergence through the bore and at the optic. The view from the detector side can be seen in figure \ref{fig:ball_and_hole}. After the hole and ball was lined up, the optic was slid back into the vacuum vessel and the bolts were fastened.
 
-!!!!!! Picture of hole and ball through theodolite !!!!!!!
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[height=5cm]{figures/cast/ballandhole.pdf}
+  \caption{\footnotesize }
+  \label{fig:ball_and_hole}
+\end{figure}
 
-The theodolite could be set to shine a laser beam with adjustable divergence through the bore and at the optic. The optic reflected the laser light nicely, making it possible to get an exact position for the detector as seen in figure \ref{fig:cast_align} (left). A fake detector with a carbonite back was used for the alignment. That allowed the laser light focused by the optic to shine at the carbonite back and be viewable from the outside.
+The optic reflected the laser light nicely, making it possible to get an exact position for the detector as seen in figure \ref{fig:cast_align} (left). A fake detector with a carbonite back was used for the alignment. That allowed the laser light focused by the optic to shine at the carbonite back and be viewable from the outside.
 
 \begin{figure}[htbp]
   \centering
@@ -467,10 +472,10 @@ The last task with detector and optic in place was a test with X-rays. An X-ray 
     \includegraphics[width=0.47\linewidth,trim=40pt 0pt 30pt 0]{figures/cast/cast_5h_1000x.png}
     \includegraphics[width=0.47\linewidth,trim=40pt 0pt 30pt 0]{figures/cast/cast_5h_200x.png}
   \caption{\footnotesize }
-  \label{fig:cast_align}
+  \label{fig:cast_5h_run}
 \end{figure}
 
-In figure ???? can be seen the data output from the MicroMegas detectors after a 5 hour measurement with the COOL-X X-ray source. A flux of less than 1 Hz was seen. According to the effective area plot in figure \ref{fig:pt-c_effara_throughput_log}, the throughput at 8 keV is only $\sim$1\%.
+In figure \ref{fig:cast_5h_run} can be seen the data output from the MicroMegas detectors after a 5 hour measurement with the COOL-X X-ray source. Left figure is exact positions of each photon hitting the detector, right side shows the photons collected into bins, 200 bins per axis. A flux of less than 1 Hz was seen. According to the effective area plot in figure \ref{fig:pt-c_effara_throughput_log}, the throughput at 8 keV is only $\sim$1\%.
 
 Raytracing was done by Michael J. Pivovaroff from LLNL, and can be seen in figure ????. The figure assumes a 16 mm diameter source placed 14.2 m from the optic. They assume 100\% reflectivity from the mirror coatings and do not account for the spectrum of the COOL-X.
 
