@@ -1,0 +1,12 @@
+PWD /Users/andcj/Dropbox/Documents/PhD/Thesis/tex
+INPUT /usr/local/texlive/2011/texmf.cnf
+INPUT /usr/local/texlive/2011/texmf/web2c/texmf.cnf
+INPUT /usr/local/texlive/2011/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT athena_coatings.tex
+OUTPUT athena_coatings.log
+INPUT /usr/local/texlive/2011/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2011/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2011/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/local/texlive/2011/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+OUTPUT athena_coatings.pdf
+INPUT /usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map
