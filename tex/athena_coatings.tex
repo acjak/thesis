@@ -10,24 +10,163 @@
   \label{fig:stress_irb4c}
 \end{figure}
 
-\section{!!!!!Alternative coatings}
-\section{!!!!!Findings from long term storage}\label{sec:long_term}
-\section{!!!!!Novel coating methods}
-\subsection{Pulsed-DC sputtering}
+% \section{!!!!!Alternative coatings}
+% \section{!!!!!Findings from long term storage}\label{sec:long_term}
+% \section{!!!!!Novel coating methods}
+% \subsection{Pulsed-DC sputtering}
+%
+% \subsection{Reactive sputtering with N$_2$}
 
-\subsection{Reactive sputtering with N$_2$}
+\section{Investigation of Cr roughness improvement}
+The baseline coating for ATHENA consists of a bilayer of Ir and B$_4$C, the former of which has shows considerably film stress of up to -4 GPa (compressive). To alleviate the stress in the film, earlier investigations has shown significant improvements in stress by using a Cr underlayer, which almost eliminates the total film stress\cite{Jakobsen:2011vd}.
+
+The drawback is however the high surface roughness in Cr films. We present here the results of two experiments with the purpose of reducing the Cr surface roughness. The first experiment is an attempt to decrease the rate of sputtered Cr atoms reaching the substrate. A lower rate rate will give an adsorbed Cr atom a chance to move to a lower position\cite{Venables:1984wu}. By decreasing the output power to the Cr cathode, while maintaining the same voltage of -400 V, the rate of sputtered atoms can be decreased. In figure \ref{fig:cr-power-change} XRR measurements of Cr films coated at varying power output can be seen.
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[height=6cm]{figures/athena/coatings/cr-power-change.pdf}
+\caption{\footnotesize XRR measurements of four Cr single layer coatings made with varying power settings.}\label{fig:cr-power-change}
+\end{figure}
+
+It is seen that at lower power settings, the hills and fringes become less pronounced, indicating a higher roughness. This would indicate that the flux of sputtered atoms adhering to the substrate have time to coalesce into islands, thereby giving rise to island-growth also known as 'Volmer-Weber' growth. In that case, it would seem that lowering the power on Cr yields a higher surface roughness because given enough time, the Cr adatoms will form into their preferred configuration.
+
+A second experiment involves changing the Ar gas pressure during coating. A minimum pressure is required in order to sustain the cathode plasma, but it is beneficial to coat at the lower possible pressure. At a given pressure, the sputtered atoms going from target to substrate will have a chance of hitting an Ar atom given by the mean free path. A sputtered atom that would otherwise hit the substrate at a very low normal angle, will after having hit an Ar atom reach the substrate at a much higher angle, thereby giving rise to self-shadowing as seen in figure \ref{fig:self-shadow}.
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[height=3.5cm]{figures/athena/coatings/self-shadow.pdf}
+\caption{\footnotesize Principle of self-shadowing during angled deposition on a surface. At higher angles, incoming particles will have a tendency to adsorb on top of single particles already on the surface instead of filling gaps in the film. From \cite{Dirks:1977uk}.}\label{fig:self-shadow}
+\end{figure}
+
+By producing Cr coatings at varying Ar pressures and measuring using XRR, a correlation was found between Ar pressure and Cr surface roughness. The XRR measurements along with IMD fits can be seen in figure \ref{fig:cr-pressure-fit}. A decrease in Cr surface roughness from 1.0 nm to 0.7 nm is seen when going from 2.4 mTorr to 1.5 mTorr Ar pressure.
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[height=6cm]{figures/athena/coatings/cr-pressure-fit.pdf}
+\caption{\footnotesize XRR measurements of two Cr single layer coatings made with varying Ar pressure. Blue points are IMD models fitted to the data.}\label{fig:cr-pressure-fit}
+\end{figure}
+
+Earlier investigations of the baseline Ir/B$_4$C coating with Cr sublayer\cite{Jakobsen:2011vd} have hinted that the interface roughness of Ir/B$_4$C becomes lower than the interface roughness of Cr/Ir. A simple bilayer coating of Cr/Ir have now been made, where B$_4$C can be factored out of the fitting procedure. The B$_4$C has been left out, so to easier constrain the surface roughness of Ir and Cr in the fitting process as the model only has 4 variables compared to 6 variables for a Cr/Ir/B$_4$C coating. The coating was made using the standard Ar pressure of 2.9 mTorr. XRR measurement of the sample can be seen in figure \ref{fig:cr-ir-fit} along with a an IMD fit. The fitted curve shows a Cr/Ir interface roughness of 0.62 nm and an Ir surface roughness of 0.3 nm.
+This is an extremely promising result, since the baseline ATHENA coating depends on the Ir surface for most of the energy response above $\sim$3 keV. So to have this surface smooth while at the same time keeping a low amount of film stress is reassuring.
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[height=6cm]{figures/athena/coatings/cr-ir-fit.pdf}
+\caption{\footnotesize XRR measurement of a bilayer of Cr/Ir (red) along with an IMD model fitted to the data (blue). }\label{fig:cr-ir-fit}
+\end{figure}
+
+\section{Investigation of pulsed-DC sputtering}
+We investigate the use of pulsed sputtering to decrease roughness as thickness increase as described in the litterature\cite{Pei:2009gn,Shaha:2011gy,Turkin:2010ur}. In the paper by Pei et al, a sputtering cathode with a C target was supplied with -400 V and 1.5 A at 350 kHz and 50\% duty cycle. The substrate was place 10 cm away from the target and supplied with -40 V at 250 kHz at 50 \% duty cycle. The high frequency at the target allows for a much higher percentage of the sputtered atoms to become ionized, giving them a positive charge. At regular non-pulsed DC sputtering, only 10 \% are ionized atoms, but for pulsed that increases to 60-70 \%. The negative pulsed bias on the substrate will pull in the ionized sputtered atoms at much higher velocity than possible for DC sputtering. The higher velocity sputtered atoms gives rise to denser and more smooth films, as the momentum of the impact causes a temporary 'liquidification' of the immediate surrounding thin film on the nano-scale.
+
+Attempts by Pei et al show promising results for decreasing interlayer roughness in multilayers using a high frequency pulse modulation on the power delivered to the cathode with lighter material, in their case carbon was used. For coatings for the ATHENA mission, it is critical to use B$_4$C as the light material, as a regular C layer will be desolved in the lift-off process that removes the lithographic resist.
+
+We acquired the same power supply, an Advanced Energy Pinnacle Plus+ 5+5 capable of delivering two channels of 5 kW at 350 kHz. Using W and B$_4$C, 10 bilayer coatings were produced with the same power supply setup as mentioned in \cite{Pei:2009gn}. The entire rotating ring in the multilayer coating chamber at DTU Space is designed to hold a separate bias or be grounded depending on configuration. Initial results can be seen in fig. \ref{fig:wb4c-pulsed}.
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[height=6cm]{figures/athena/coatings/w-b4c_pulsed.pdf}
+\caption{\footnotesize XRR measurements of four W/B$_4$C 10 bilayer films made with varying pulsed-DC frequency on the B$_4$C cathode.}\label{fig:wb4c-pulsed}
+\end{figure}
+
+The figure show XRR measurements of 4 samples coated with 10 bilayer W/B$_4$C with different frequencies supplied to the B$_4$C target. For a 10 bilayer coating, we expect to see clear Bragg peaks with 8 Kiessig fringes between, but all samples show washed out 1st and 2nd order Bragg peaks and an indeterminate number of Kiessig fringes. Even the sample coated without a pulsed B$_4$C cathode show the same behavior. In figure \ref{fig:wb4c-nopulsed}, the two samples coated with 350 kHz and 0 kHz in the same coating run is compared to a sample from a different run coated with regular DC sputtering showing well-defined Bragg peaks as would be expected.
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[height=6cm]{figures/athena/coatings/w-b4c-nopulsed.pdf}
+\caption{\footnotesize XRR measurements of three W/B$_4$C 10 bilayer films. Two (red and blue) made using pulsed-DC sputtering and also shown in figure \ref{fig:wb4c-pulsed}. The last one (black) is made in a separate coating run without pulsed-DC sputtering, but otherwise with the same coating parameters.}\label{fig:wb4c-nopulsed}
+\end{figure}
+
+Something has clearly gone wrong in the pulsed-DC coating. The new software recently installed to control the multilayer coating chamber logs the cathode output every 5 seconds and a plot of that can be seen in figure \ref{fig:power-output}(left) compared to a log from a regular DC coating (figure \ref{fig:power-output}(right)). The figure shows clearly that the power output to the B$_4$C cathode drops to zero in the middle of a rotation. The B$_4$C cathode should be at 900 W output for the entire time between the W cathode being on.
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/power_output_rf_coating.png}
+	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/power_output_dc_coating.png}
+\caption{\footnotesize Graphs of cathode power output over time during a coating run. Left is from a W/B$_4$C 10 bilayer coated using pulsed-DC sputtering on the B$_4$C material. Right is from a W/B$_4$C 10 bilayer coating made without pulsed-DC sputtering.}\label{fig:power-output}
+\end{figure}
+
+It is not uncommon to see a cathode 'drop out' during a coating run, where the power supply is unable to sustain the plasma. In that case the power supply will increase the voltage to get the plasma to ignite again and the power output will in that period be 30-40 W. In this case the power output drops to zero, which is inconsistent with a conventional drop-out. Investigating the matter further shows that the 'arc'-protection system on the power supply goes off rapidly during a coating. Arcs are a sudden discharge from cathode to the grounded anode shield and can have a wide variety of causes. The arc-protection will protect the power supply from the power surge and will tell the user when it happens. The inner anode shield in the B$_4$C cathode clearly shows damage from arcing in the steel and the shielding teflon strips, which looks like welding marks. We assume that at some point during the coating, the damage creates enough debris to make a short between cathode and anode shield.
+
+It is at this moment still unclear what causes the arcing. The pulsed-DC system brings many more variables into an already complicated sputtering process. The best assumption at the moment is either that the cables from power supply to cathode are too long or that a wire assembly box has insufficient electrical shielding.
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[height=6cm]{figures/athena/coatings/cr_pulsed.pdf}
+\caption{\footnotesize XRR measurements of four samples coated with single layers of Cr using pulsed-DC sputtering at varying frequency. Sample coated with $f=0$ kHz (red) has a thickness of $\sim$17 nm. Sample coated with $f=350$ kHz (purple) has a thickness of $\sim$12 nm.}\label{fig:cr-pulsed}
+\end{figure}
+
+The second attempt at using the pulsed-DC method was with Cr single layer coatings. XRR measurements of the coated samples can be seen in figure \ref{fig:cr-pulsed}. Four samples were coated with varying frequencies applied to the Cr cathode. The measurements show clear differences in coated thickness between the frequencies used (position of Kiessig fringes does not overlap) and higher frequencies show a lower surface roughness (Kiessig fringes are less pronounced and shows a wavy pattern at the highest frequency). The XRR measurements were difficult to fit using IMD, indicating that the films are of non-uniform density. The coating done without pulsed-DC fitted to a $\sim$17 nm Cr thickness and the coating done with the highest frequency pulsed-DC sputtering fitted to a $\sim$13 nm Cr thickness. No arcing was seen when coating Cr using pulsed-DC sputtering.
+
+We believe that the investigation of pulsed-DC sputtering have concluded with no improvements in the coatings. The arcing that was seen during pulsed-DC sputtering of B$_4$C, but did not show up for Cr can have a variety of causes. First, the output power when coating B$_4$C is significantly higher than for Cr (1100 W compared to 450 W). The higher power puts higher demand on electrical shielding as well as the cable length between power supply and cathode. Second, there are fundamental differences in the two materials. The Cr is a well conducting and hard metal, whereas B$_4$C is not very well conducting and brittle. A very good contact is required between cathode and sputter material, but since the B$_4$C is very stiff and not as malleable as metal, the target can easily crack which will give rise to areas of non-contact. In conclusion, the whole process is not well understood, but has potential as seen in the literature. The process could easily be investigated in several master thesis projects.
+
+\section{Investigation of reactive sputtering with N$_2$}
+Improving interlayer roughness of multilayer coatings using N$_2$ reactive deposition has been shown before\cite{Windt:2007wh}, specifically for W/B$_4$C films. For this project, coatings of W/B$_4$C were produced using N$_2$ reactive sputter deposition and compared to similar coatings made without N$_2$. XRR measurements of the results and comparison can be seen in figure \ref{fig:wb4c-n2}. The left figure show coatings with a d-spacing of $\sim$3.5 nm, and the right coatings with d-spacings of $\sim$5.0 nm. The left figure show a horizontal offset in the XRR measurement between the two coatings, contributed by an offset in the calibration. The right figure show a similar offset, but also a significant change in Kiessig fringe intensity between the 2nd and 3rd Bragg peak. The 3rd Bragg peak is also less pronounced for the reactively sputtered film than the non-reactively sputtered. The results indicate that the reactive sputtering does not improve the interface roughness, but rather deteriorates.
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c_n2_35AA.pdf}
+	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c_n2_50AA.pdf}
+\caption{\footnotesize XRR measurements of 10 bilayer W/B$_4$C coatings made with and without N$_2$ reactive sputtering (10 \% N$_2$, 90 \% Ar). Left figure is coatings with a d-spacing of $\sim$3.5 nm, right figure is coatings with a d-spacing of $\sim$5 nm.}\label{fig:wb4c-n2}
+\end{figure}
+
+It was later found out from samples stored over time, that the coatings will visibly change over time if coated with N$_2$ reactive sputtering. A sample with discoloration can be seen in figure \ref{fig:discolor} (picture taken July 2014). The sample is a W/B$_4$C 10 bilayer calibration coating with a d-spacing of $\sim$5 nm. It was coated in February 2012 using 10 \% N$_2$ with 90 \% Ar at a total pressure of 2.9 mTorr.
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[height=5cm]{figures/athena/coatings/si5556.jpg}
+\caption{\footnotesize Picture of sample coated with 10 bilayers of W/B$_4$C using N$_2$ reactive sputtering. Sample was coated in February 2012, picture taken July 2014.}\label{fig:discolor}
+\end{figure}
+
+Investigation into the literature gives a possible explanation. B$_4$C coatings are react to humidity, but for BN coatings the effect is even more pronounced. The coating will suck in water molecule from the air, which diffuses through the coating and can eventually make the film peel off, see \cite{Cardinale:1994ha}. When B$_4$C coatings are sputtered with N$_2$ present, the nitrogen atoms become part of the film and will form B-N bonds. That would make all B$_4$C films produced with N$_2$ reactive sputtering deteriorate at ambient humidity. To test the hypothesis, a number of samples were produced with and without reactive sputtering, measured with XRR and subsequently placed in a desiccator at $\sim$20\% humidity.
+
+The results can be seen in figure \ref{fig:wb4c-n2-storage}. The upper row are thick ($\sim$5.0 nm) and thin ($\sim$3.5 nm) samples of 10 bilayer W/B$_4$C coated with 10 SCCM N$_2$ flow ($\sim$10\% N$_2$). Middle row are samples with the same type and thickness of coating, but without N$_2$. Bottom row are also coated without N$_2$ but placed at ambient humidity ($\sim$45\%) outside the dessicator. The bottom row are also only stored for 3 months. The reactively sputtered coatings in the upper row show little change from Feb. 4th to June 28th, $\sim$5 months. What is interesting is the center row that show some interfacial changes in the film, especially for the thicker sample (left figure). Comparing to the bottom row, the thicker sample does not show the same changes over the 3 month period, but the thinner sample show significant change. The critical angle has shifted or washed out, the Bragg peak has widened and lowered in intensity. The sample also show visible discoloration, which is something that was not expected of a coating made without N$_2$ reactive sputtering. A more in-depth investigation into this problem is reported in section \ref{sec:long_term}.
+
+\begin{figure}[htbp]
+	\center
+	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c-n2-0sccm-thick.pdf}
+	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c-n2-0sccm-thin.pdf}
+	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c-n2-10sccm-thick.pdf}
+	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c-n2-10sccm-thin.pdf}
+	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c-no-storage-thick.pdf}
+	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c-no-storage-thin.pdf}
+\caption{\footnotesize XRR measurements of samples coated with 10 bilayer W/B$_4$C films measured after coating and at a later time. Top and middle row samples were stored in a dessicator with $\sim$30 \% humidity. Bottom row samples were stored at ambient humidity ($\sim$50 \%).  \textbf{Top row} Samples coated with N$_2$ reactive sputtering (10 \% N$_2$, 90 \% Ar), d-spacings of $\sim$5 nm (left) and $\sim$3.5 nm (right). \textbf{Center row} Samples coated with non-reactive sputtering, d-spacings of $\sim$5 nm (left) and $\sim$3.5 nm (right). \textbf{Bottom row} Samples coated with non-reactive sputtering, d-spacings of $\sim$5 nm (left) and $\sim$3 nm (right) }\label{fig:wb4c-n2-storage}
+\end{figure}
+
+\begin{figure}[htbp]
+  \center
+  \includegraphics[width=0.47\linewidth]{figures/athena/coatings/pt-b4c-kalib2.pdf}
+  \includegraphics[width=0.47\linewidth]{figures/athena/coatings/pt-b4c-kalib1.pdf}
+  \includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c-kalib2.pdf}
+  \includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c-kalib1.pdf}
+  \includegraphics[width=0.47\linewidth]{figures/athena/coatings/ir-b4c.pdf}
+  \includegraphics[width=0.47\linewidth]{figures/athena/coatings/ir-b4c-w-cr.pdf}
+\caption{\footnotesize XRR measurements of coatings stored for 2-3 years.  \textbf{Top row} 10 bilayer Pt/B$_4$C with d-spacings of $\sim$5 nm (left) and $\sim$3 nm (right). \textbf{Center row} 10 bilayer W/B$_4$C with d-spacings of $\sim$6 nm (left) and $\sim$3.5 nm (right). \textbf{Bottom row} 10 bilayer Ir/B$_4$C with d-spacings of $\sim$8 nm (left) and 10 bilayer Ir/B$_4$C with d-spacings of $\sim$6.5 nm and a 10 nm Cr sublayer (right). }\label{fig:longtermstorage}
+\end{figure}
+
+\section{Long term storage investigation}\label{sec:long_term}
+All samples coated at DTU Space are stored indefinitely for possible later investigation. The calibration samples of each material type for the ATHENA coatings are especially suitable for a long term investigation since the XRR measurement results of these samples have distinct features. In figure \ref{fig:longtermstorage} the results of XRR measurements of calibration samples are shown immediately after coating and after up to two years later. All the samples are coated without N$_2$ and using the standard Ar pressure of 2.9 mTorr.
+
+In the upper row are shown 10 bilayer Pt/B$_4$C multilayers, middle row show W/B$_4$C multilayers and bottom row show Ir/B$_4$C multilayer (left) and Ir/B$_4$C multilayer with Cr sublayer (right).
+
+The Pt/B$_4$C multilayers show significant change over time. The thicker film (left) show a rise in Kiessig fringe intensity between 1st and 2nd Bragg peak as well as a flattening of the 2nd Bragg peak. These effects show up already after $\sim$4 months. The thinner Pt/B$_4$C film (left) show even more deterioration, even after only 18 days. The 1st Bragg peak have widened and have grown a significant should at higher angles.
+
+The W/B$_4$C multilayers in the middle row also show significant change after less than two months. The thicker sample (left) have a shifted critical angle, corresponding to a change in $\Gamma$ in the multilayer. The thinner film (right) also show a change in critical angle, although less pronounced.
+
+Ir/B$_4$C multilayers in the bottom row show very little change even after 2-2.5 years. The sample with Cr sublayer (right) shows some change in the Kiessig fringe intensity.
+
+These results indicate serious problems in using B$_4$C films in certain material combinations. The baseline ATHENA coating of an Ir/B$_4$C bilayer and the alternative Ir/B$_4$C multilayer will according to these results be stable over longer periods of time. As a result, the coatings deposited on SPO substrates for this work package are not Pt/B$_4$C or W/B$_4$C.
 
 \section{Upscaled production}
 
-\emph{The following section was part of a technical report for the European Space Agency. It was done as part of the coating investigations for ATHENA+, which had a double-telescope configuration. It also required significantly less silicon port optic substrates, 64,640 vs. $\sim$300,000 for ATHENA. The investigations done for scaling up production still holds true and the final production will also still take 2 years, but cost, production equipment and manpower will have to increase by a factor of four to five.}
+\emph{The following section was part of a technical report for the European Space Agency. It was done as part of the coating investigations for ATHENA+, which had a double-telescope configuration. It also required significantly less silicon pore optic substrates, 64,640 vs. $\sim$150,000 for ATHENA. The investigations done for scaling up production still holds true and the final production will also still take 2 years, but cost, production equipment and manpower will have to increase by a factor of two to three.}
 
 For the ATHENA mission, the coating of the mirror substrates will be a large undertaking as 64,640 silicon pore optic (SPO) substrates will need a coating of between two and twenty layers.
 
 Every piece will have to be transported from the SPO substrate fabrication facility (SFF) to a new dedicated coating facility, thoroughly cleaned, coated in specially designed chambers transported to the stacking facility. After stacking into mirror modules (MM), each MM will be measured at one of three dedicated beam lines at the BESSY II synchrotron in Berlin.
 
-In this paper, an approximate cost timeline of the coating qualification of SPO substrates is given.
+In this paper, an approximate cost and timeline of the coating qualification of SPO substrates is given.
 
-\subsection{Timeline cost of procurement setup of coating facility}
+\subsection{Timeline and cost of procurement and setup of coating facility}
 
 Cleaning coating of SPO substrates will require as a minimum an ISO 7 clean room to avoid dust particles. Dust on the substrates before coating will result in small holes in the coating, which will reduce the effective area. There are two possibilities for the location of the coating facility which is discussed in this paper. Either the facility is located in the same building or adjacent building as the stacking facility or the coating facility is placed further away, i.e. another country.
 
@@ -46,7 +185,7 @@ Clean rooms can be build inside existing larger storage areas or cleaner product
 	\item[7-8] \textbf{years before launch:}
 		\begin{itemize}[itemsep=1.5pt,parsep=1pt]
 		\item[-] Construction of facility is carried out.
-		\item[-] Produced coating chambers are installed qualifications begun.
+		\item[-] Produced coating chambers are installed and qualifications begun.
 		\end{itemize}
 	\item[6] \textbf{years before launch (CDR):}
 		\begin{itemize}[itemsep=1.5pt,parsep=1pt]
@@ -59,7 +198,7 @@ The cost of building and preparing the coating facility will differ between a sh
 \subsection{Coating chambers}\label{sec:chambers}
 The two telescopes of ATHENA consists of 66,640 SPO substrates, which are all coated. Considering the coating chamber design used at DTU Space, a maximum of 100 plates can be coated per day in an 8 hour workday. In a year of 200 workdays, 20,000 substrates can be coated. Using three chambers, 60,000 substrates can be coated per year, within the two year time frame a total of 120,000 substrates can be coated. A minimum of 90,000 coated is considered as baseline, as we account for damaged plates, bad coatings etc. That leaves an acceptable down time of 6 months throughout the project.
 
-Using chambers of same design as DTU Space will give a cost of around 1M \euro per chamber. Those chambers have the drawback of a long pump down time after having the chamber opened to change samples. The advantage of coating SPO substrates compared to e.g. NuSTAR glass is that the SPO substrates are flat only $\sim$1 mm thin.
+Using chambers of same design as DTU Space will give a cost of around 1M \euro\ per chamber. Those chambers have the drawback of a long pump down time after having the chamber opened to change samples. The advantage of coating SPO substrates compared to e.g. NuSTAR glass is that the SPO substrates are flat only $\sim$1 mm thin.
 
 If a new chamber design is considered, it would be advantageous to pursue a design similar to what is used in the semiconductor industry. Here entire wafer are given a number of different coatings automatically moved from one cathode to another using a robotic arm. As those wafers can have a thickness of up to 3 mm, we propose to use a substrate holder shaped like a wafer 3 mm thick with a diameter of 300 mm. Recessions in the substrate holder can accommodate SPO substrate no clips will be needed to hold substrates in place, since the wafer will at all times be horizontal. A chamber of that design will not need pump down time between each batch of substrates, since wafers will be inserted into the central vacuum chamber through a narrow slit directly from a clean magazine in atmospheric pressure. Every coating cathode is also in a separate chamber can be accessed without venting the entire machine. Custom made machines like seen in figure \ref{fig:dram} are priced at $\sim$2M \euro.
 
@@ -167,7 +306,7 @@ W/B$_4$C & Graded-d multilayer & 8,700 \euro & 29,000 \euro \\
 
 Only 30\% of the target can be used before it has to be replaced, so a factor of 3-4 should be applied to these cost estimates. The leftover targets of precious metals, platinum iridium, can be sold back at market value, which can reduce the total costs of precious metal consumption by up to $\sim$50 \%.
 
-For a Pt/B$_4$C graded-d multilayer, the total thickness of Pt is 16 nm in average 22 nm of B$_4$C. Thus, $1.6 \cdot 5000$ mm$^3$ of Pt is needed at a price of 10.5 \euro per mm$^3$ at 90 \% coating loss, combined with $2.2 \cdot 5000$ mm$^3$ of B$_4$C at 0.26 \euro per mm$^3$ gives a total cost of 87,000 \euro.
+For a Pt/B$_4$C graded-d multilayer, the total thickness of Pt is 16 nm in average 22 nm of B$_4$C. Thus, $1.6 \cdot 5000$ mm$^3$ of Pt is needed at a price of 10.5 \euro\ per mm$^3$ at 90 \% coating loss, combined with $2.2 \cdot 5000$ mm$^3$ of B$_4$C at 0.26 \euro\ per mm$^3$ gives a total cost of 87,000 \euro.
 
 \subsection{Personnel}
 During the two year coating campaign, 300 substrates will be handled daily. Procedures to be done daily include:
@@ -226,11 +365,13 @@ The timetable is independent on whether the coating facility being shared with t
 \begin{table}[htbp]
 	\centering
 \begin{tabular}{c|l}
-T - 9 years & Planning is begun for the construction of a shared clean room. \\
-			& Planning is begun for coating chambers.\\
+T - 9 years & Planning begins for the construction\\
+  & \hspace{1cm} of a shared clean room. \\
+			& Planning begins for coating chambers.\\
 \hline
 T - 8 years & Construction of facility is carried out.\\
-			& Produced coating chambers are installed qualifications begun.\\
+			& Produced coating chambers are installed\\
+      & \hspace{1cm} and qualifications begin.\\
 \hline
 T - 7 years & Continuation of coating chamber qualifications.\\
 \hline
