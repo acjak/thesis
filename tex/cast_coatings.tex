@@ -230,7 +230,7 @@ It can be calculated using the overlap of the outer shell of the layer opening a
 \begin{figure}[htbp]
   \centering
     \includegraphics[width=0.9\linewidth]{figures/cast/cross_section_area.pdf}
-  \caption{\footnotesize Grh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhui}
+  \caption{\footnotesize Diagram of cross sectional area (CSA) calculation for the intersection of the CAST XRT and CAST magnet bore. \textbf{Left:} CSA of layer $i$ and magnet bore. \textbf{Middle:} CSA of layer $i-1$ and magnet bore. \textbf{Right:} CSA between layer $i$, $i-1$ and magnet bore.}
   \label{fig:cross_section_area}
 \end{figure}
 
@@ -250,7 +250,7 @@ Area of the overlap of shell $i-1$ with bore (figure \ref{fig:cross_section_area
   &&\times\sqrt{(d-r_{\text{bore}}+\mathcal{R}_{\text{bot}})(d+r_{\text{bore}}+\mathcal{R}_{\text{bot}})},
 \end{eqnarray}
 where
-\begin{eqnarray}\label{eq:overlap2}
+\begin{eqnarray}\label{eq:overlap3}
   \mathcal{R}_{\text{bot}} &=& \mathcal{R}_{i-1} + d_{\text{glass}},
 \end{eqnarray}
 with $\mathcal{R}_{i-1}$ being the radius of the layer underneath layer $i$ and $d_{\text{glass}}$ being the thickness of the glass.
@@ -259,24 +259,15 @@ The NuSTAR type telescope is built up from glass layers with graphite spacers be
 \begin{eqnarray}
   A_{\text{CS,i}} &=& A_{i} - A_{i-1} - (\mathcal{R}_{i}-\mathcal{R}_{i-1})x_{\text{gr}}
 \end{eqnarray}
-The effective area and throughput for the optimised Pt/C coating can be seen in figures \ref{fig:pt-c_effara_throughput_lin} and \ref{fig:pt-c_effara_throughput_log}.
+The effective area and throughput for the optimised Pt/C coating can be seen in figure \ref{fig:pt-c_effarea_throughput}.
 
 \begin{figure}[htbp]
-\centering
-\begin{minipage}{.47\textwidth}
-  \centering  \includegraphics[width=\linewidth]{figures/cast/pt-c_effara_throughput_lin.pdf}
-  \captionof{figure}{\footnotesize Grh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhui}
-  \label{fig:pt-c_effara_throughput_lin}
-\end{minipage}
-\hspace{10pt}
-\begin{minipage}{.47\textwidth}
-  \centering  \includegraphics[width=\linewidth]{figures/cast/pt-c_effara_throughput_log.pdf}
-  \captionof{figure}{\footnotesize Grh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhui}
-  \label{fig:pt-c_effara_throughput_log}
-\end{minipage}
+  \centering
+  \includegraphics[width=0.47\linewidth]{figures/cast/pt-c_effara_throughput_lin.pdf}
+  \includegraphics[width=0.47\linewidth]{figures/cast/pt-c_effara_throughput_log.pdf}
+  \caption{\footnotesize Linear and logarithmic effective area curves of the CAST XRT given in mm$^2$. Throughput is given on the right side of each plot as the fraction of the magnet bore covered by the optic at a given energy.}
+  \label{fig:pt-c_effarea_throughput}
 \end{figure}
-
-
 
 \section{Producing coated substrates}
 DTU Space has a fairly large selection of leftover slumped glass substrates from the NuSTAR mission. An extra amount of glass substrates were produced to cover broken pieces and pieces that failed visual inspection. From this surplus, the substrates for the CAST XRT was selected.
@@ -397,7 +388,7 @@ The Si witness samples were measured at the XRR lab at DTU Space. XRR results fr
 
 The coated substrates were packed and shipped to LLNL for assembly.
 
-\emph{The shipping of the substrates were done with DHL, but the package was lost between Denmark and US. A new batch of substrates were collected, cleaned, coated, packed and shipped during June/July of 2014. In this chapter is described the process for the second batch.}
+\emph{The substrates were shipped with DHL, but the package was lost between Denmark and US. A new batch of substrates were collected, cleaned, coated, packed and shipped during June/July of 2014. In this chapter is described the process for the second batch.}
 
 \section{Assembling coated substrates}
 Optic assembly was carried out at LLNL, where one of the NuSTAR assembly machines were set up for that purpose. The machine had been adjusted to make only a 30\degr\ section of substrates, and a specially designed Ti mandrel had been procured.
@@ -412,8 +403,6 @@ Optic assembly was carried out at LLNL, where one of the NuSTAR assembly machine
 
 Four graphite spacers were mounted onto the mandrel with epoxy glue and machined to the correct thickness before the two pieces for the first layer were mounted, again using epoxy. The next set of graphite spacers were mounted onto the first glass substrates and the machined to the right thickness (figure \ref{fig:cast_assembly}).
 
-!!!! Something about the 13 instead of 14 layers !!!!
-
 \subsection{Vacuum vessel}
 The magnet bores and detectors in the CAST helioscope operates at vacuum levels, so the entire optic had to be mounted inside a vacuum vessel. To align the optic after mounting it on the CAST helioscope, it was necessary to have linear actuators for the translation and rotation of the optic while under vacuum.
 
@@ -421,11 +410,13 @@ The magnet bores and detectors in the CAST helioscope operates at vacuum levels,
   \centering
     \includegraphics[width=0.45\linewidth]{figures/cast/cast_vessel1.jpg}
     \includegraphics[width=0.45\linewidth]{figures/cast/cast_vessel2.jpg}
-  \caption{\footnotesize }
+  \caption{\footnotesize Vacuum vessel for the CAST XRT. \textbf{Left:} Vacuum vessel with linear actuators and guide rods viewable. CF flange is mounted directly to the magnet. \textbf{Right:} Inside of vacuum vessel as viewed from CF flange. A metal plate with two openings cover the graphite spacers in the center between the glass layers. }
   \label{fig:cast_vessel}
 \end{figure}
 
 The vacuum vessel can be seen in figure \ref{fig:cast_vessel}. It was designed by Todd Decker (also pictured), an engineer from LLNL. In the picture can be seen five linear actuators, two on top to control pitch, three on the side, one for translation and two for yaw control. The three metal rods also visible on the side are for sliding out the optic, to make a precise optical alignment using a theodolite, described in detail in section \ref{sec:optic_alignment}.
+
+Because of the limited space at the place where the optic had to be installed and the method of which to align it, the number of layers were cut from 14 to 13 layers. With 14 layers, the freedom of movement of the optic inside the vacuum vessel would have been severely limited and possibly caused the optic to hit the vacuum vessel wall during alignment.
 
 \section{Installation of optic at CAST}
 The optic mounted in the vacuum vessel was shipped to CERN for installation in Aug. 2014. It was leak tested with He before installation. Afterwards, the vessel was lifted into position in front of the magnet bore using a crane as seen in figure \ref{fig:cast_install}.
@@ -433,7 +424,7 @@ The optic mounted in the vacuum vessel was shipped to CERN for installation in A
 \begin{figure}[htbp]
   \centering
     \includegraphics[height=6cm]{figures/cast/castxrt_install.jpg}
-  \caption{\footnotesize }
+  \caption{\footnotesize The vacuum vessel housing the CAST XRT is lowered into place at the end of the CAST magnet using a crane.}
   \label{fig:cast_install}
 \end{figure}
 
@@ -447,7 +438,7 @@ A theodolite mounted 3 m from the front of the helioscope was aligned with the b
 \begin{figure}[htbp]
   \centering
     \includegraphics[height=5cm]{figures/cast/ballandhole.pdf}
-  \caption{\footnotesize }
+  \caption{\footnotesize Picture taken from the detector side of the CAST XRT as a divergent laser beam shines through. A piece of paper covers the opening and is lit up by the laser. The optic has been moved out for alignment and the ball and hole are visible above the top glass layer.}
   \label{fig:ball_and_hole}
 \end{figure}
 
@@ -458,7 +449,7 @@ The optic reflected the laser light nicely, making it possible to get an exact p
     \includegraphics[height=5cm]{figures/cast/castxrt_alignment1.jpg}
     \hspace{20pt}
     \includegraphics[width=0.45\linewidth]{figures/cast/castxrt_alignment2.jpg}
-  \caption{\footnotesize }
+  \caption{\footnotesize MicroMegas detector alignment. \textbf{Left:} A fake detector with a carbonite back was installed. The divergent laser beam focused to a spot by the X-ray optic can be seen through the carbonite back. \textbf{Right:} The fake detector was exchanged for a functioning MicroMegas detector in the same mounting bracket and was connected to the vacuum system with XRT and magnet.}
   \label{fig:cast_align}
 \end{figure}
 
@@ -475,23 +466,31 @@ The last task with detector and optic in place was a test with X-rays. An X-ray 
   \label{fig:cast_5h_run}
 \end{figure}
 
-In figure \ref{fig:cast_5h_run} can be seen the data output from the MicroMegas detectors after a 5 hour measurement with the COOL-X X-ray source. Left figure is exact positions of each photon hitting the detector, right side shows the photons collected into bins, 200 bins per axis. A flux of less than 1 Hz was seen. According to the effective area plot in figure \ref{fig:pt-c_effara_throughput_log}, the throughput at 8 keV is only $\sim$1\%.
+In figure \ref{fig:cast_5h_run} can be seen the data output from the MicroMegas detectors after a 5 hour measurement with the COOL-X X-ray source. Left figure is exact positions of each photon hitting the detector, right side shows the photons collected into bins, 200 bins per axis. The spot is $\sim$7 mm long and $\sim$5 mm wide, the relatively large spot is expected since the source is not a point source infinitely far away.
 
-Raytracing was done by Michael J. Pivovaroff from LLNL, and can be seen in figure ????. The figure assumes a 16 mm diameter source placed 14.2 m from the optic. They assume 100\% reflectivity from the mirror coatings and do not account for the spectrum of the COOL-X.
+A flux of less than 1 Hz was seen in the spot. According to the effective area plot in figure \ref{fig:pt-c_effarea_throughput}, the throughput at 8 keV is only $\sim$1\%.
 
-!!!!! Raytracing figures !!!!!!!!
+Ray-tracing was done by Michael J. Pivovaroff from LLNL, and can be seen in figure \ref{fig:raytracing}. The simulations assumes a 6 mm diameter source placed 14.2 m from the optic and glass figure errors comparable to the NuSTAR optic. The MicroMegas data was rotated 45 degrees and binned into 200 x 200 $\upmu$m$^2$ virtual pixels. By ray-tracing a 6 mm spot at discrete photon energies from 0-10 keV and using the measured spectrum as weight, a composite image was created to compare with measured data.
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=0.47\linewidth]{figures/cast/raytracing1.png}
+    \includegraphics[width=0.47\linewidth]{figures/cast/raytracing2.png}
+  \caption{\footnotesize Comparison of ray-trace model with measurement using the COOL-X X-ray source.  \textbf{Left:} Ray-tracing simulation considering a 6 mm source 14.2 m from the optic.  \textbf{Right:} Measurement over 5 hours using the COOL-X X-ray source. White contours are from ray-tracing simulation. (From Michael J. Pivovaroff, LLNL) }
+  \label{fig:raytracing}
+\end{figure}
 
 \section{Conclusion}
 In this chapter was shown the creation of an X-ray optic from design phase to installation. The whole process was $\sim$2 years from start to finish and realised on a minimal budget with surplus materials and instrumentation where possible.
 
-The measurement results obtained using the COOL-X X-ray source show that surplus slumped glass can be repurposed into well-behaving X-ray optics for specialised tasks.
+The measurement results obtained using the COOL-X X-ray source combined with ray-tracing simulations, show that surplus slumped glass can be re-purposed into well-behaving X-ray optics for specialised tasks.
 
 It was shown that a customised software solution interfacing to IMD can find the optimal geometry for a specific X-ray optic and make comparisons of best recipe material combinations. The specially designed software can make a full computation with a wide range of material combinations and multilayer coating geometries within 2-3 days using a regular desktop computer. Using a calculation of the overlap between optic opening and magnetic bore opening, a precise effective area can be calculated with the software.
 
 A discussion of possible improvements in the software can be found in the following section.
 
 \subsection{Improvements to the software}\label{sec:software_improvements}
-The software is limited by the inability of IMD to use more than one core on common multi-core CPUs in most computers today. The limit can be circumvented by letting the software spawn an instance of IMD for every processor core. That could be done by separating the calculations of each recipe, so e.g. four cores can calculate four recipes at the same time. The challenge is however to let each subprocess return the calculated optimised recipes without interrupting another subprocess. It would also require the same number of IDL instances run at the same time on one computer. This can be done using the Python \verb|subprocess.Popen| class. An example is given here. The first Python script imports the Popen procedure and spawns an instance of Popen that opens the file \verb|subp.py| in Python and that is called \verb|process1|. Popen can be set to pipe back output from \verb|process1|, but that will make the script wait for the output before spawning the second instance called \verb|proces2|. This script will simply open subp.py in two separate instances of Python and then quit.
+The software is limited by the inability of IMD to use more than one core on common multi-core CPUs that is found in most computers today. The limit can be circumvented by letting the software spawn an instance of IMD for every processor core. That could be done by separating the calculations of each recipe, so e.g. four cores can calculate four recipes at the same time. The challenge is however to let each subprocess return the calculated optimised recipes without interrupting another subprocess. It would also require the same number of IDL instances run at the same time on one computer. This can be done using the Python \verb|subprocess.Popen| class. An example is given here. The first Python script imports the Popen procedure and spawns an instance of Popen that opens the file \verb|subp.py| in Python and that is called \verb|process1|. Popen can be set to pipe back output from \verb|process1|, but that will make the script wait for the output before spawning the second instance called \verb|proces2|. This script will simply open subp.py in two separate instances of Python and then quit.
 
 \begin{verbcode}
 from subprocess import Popen
@@ -520,4 +519,4 @@ The example given above will use 100\% of two cores in a multi-core CPU, and is 
 
 In codebases where new instances of \verb|Popen| are spawned rapidly and output files are read in between, the main process should run on its own CPU core. Otherwise a bottleneck will occur where the main program is slowed by subprocesses taking over system ressources and new subprocesses will not be spawned fast enough.
 
-Apart from speed improvements, the software is made with lower energy X-ray optics in mind. Specifically, it is limited to linearly graded multilayers, where for higher energy (10+ keV X-rays) the optimal choice would be a power-law grading. In that case, the variables to optimise would be $a$, $b$, and $c$ in the power law $y = a+bx^c$ and the number of layers, $N$.
+Apart from speed improvements, the software is made with lower energy X-ray optics in mind. Specifically, it is limited to linearly graded multilayers, where for higher energy (10+ keV X-rays) the optimal choice would be a power-law grading. In that case, the variables to optimise would be $a$, $b$, and $c$ in the power law $d_i = a/(b+i)^c$ and the number of layers, $N$.
