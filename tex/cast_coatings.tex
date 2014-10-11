@@ -13,7 +13,7 @@ The axion is an ultra-light particle that is formed from the interaction of a ph
 \begin{figure}[htbp]
   \centering
     \includegraphics[height=6cm]{figures/cast/axion_spectrum.png}
-  \caption{}
+  \caption{Solar axion flux spectrum at Earth. }
   \label{fig:axion_spectrum}
 \end{figure}
 
@@ -49,7 +49,7 @@ The CAST experiment is largely made from spare parts of other projects at CERN a
 \begin{figure}[htbp]
   \centering
     \includegraphics[height=5cm]{figures/cast/cast_instrument.jpg}
-  \caption{}
+  \caption{\footnotesize The Cern Axion Solar Telescope (CAST) located near Geneva, Switzerland. A superconducting ...!!!!!!!!!!!!!!}
   \label{fig:cast_instrument}
 \end{figure}
 
@@ -67,7 +67,7 @@ One major concern in making an X-ray optic from NuSTAR glass for the CAST helios
 \begin{figure}[htbp]
   \centering
     \includegraphics[height=5cm]{figures/cast/wolter1-cutout.pdf}
-  \caption{}
+  \caption{\footnotesize Front view of Wolter I type optic with section used in the CAST XRT shown.}
   \label{fig:wolter1-cutout}
 \end{figure}
 
@@ -96,7 +96,7 @@ where $\alpha$ is the angle of reflection of each mirror, $f$, is the focal leng
 \begin{figure}[htbp]
   \centering
     \includegraphics[width=0.95\linewidth]{figures/cast/wolter1-diagram.pdf}
-  \caption{Diagram of wolter I from side.R1-R5 designated.}
+  \caption{\footnotesize Diagram of Wolter I from side with $\mathit{R1}$-$\mathit{R5}$ designated. The principle of the Wolter I double reflection can be seen as an X-ray photon is reflected off the parabolic and hyperbolic mirrors. $l$ is mirror length, $f$ is focal length, $x_{sep}$ is distance between parabolic and hyperbolic mirror and $\alpha$ is the angle of reflection for an X-ray photon parallel to the focal plane.}
   \label{fig:wolter1-diagram}
 \end{figure}
 
@@ -116,15 +116,16 @@ The next layer can be added by setting $\mathit{R3}_{i+1} = \mathit{R1}_i + d_{\
 
 \begin{figure}[htbp]
 \centering
-\begin{minipage}{.5\textwidth}
+\begin{minipage}{.46\textwidth}
   \centering
   \includegraphics[height=4cm]{figures/cast/cast_front.pdf}
-  \captionof{figure}{\footnotesize CAST XRT from front.}
+  \captionof{figure}{\footnotesize Computer generated CAST XRT design from front. Black ring designates the magnet bore opening.}
   \label{fig:cast_front}
 \end{minipage}%
-\begin{minipage}{.5\textwidth}
+\hspace{20pt}
+\begin{minipage}{.46\textwidth}
   \centering  \includegraphics[width=\linewidth]{figures/cast/cast_side.pdf}
-  \captionof{figure}{\footnotesize CAST XRT from side.}
+  \captionof{figure}{\footnotesize Computer generated CAST XRT design from side. Magnet bore opening is shown to the left.}
   \label{fig:cast_side}
 \end{minipage}
 \end{figure}
@@ -136,7 +137,7 @@ The calculated geometry can be seen in figure \ref{fig:cast_front} and \ref{fig:
 \begin{tabular}{c|c|c|c|c|c}
 Layer & Area [mm$^2$] & $\alpha$ [\degr] & $\alpha$ [mrad] & $\mathit{R1}$ [mm] & $\mathit{R5}$ [mm]\\
 \hline
-0&0.000&0.556&9.697&60.500&51.321 \\
+%0&0.000&0.556&9.697&60.500&51.321 \\
 1&13.863&0.579&10.113&63.006&53.821 \\
 2&48.175&0.603&10.530&65.606&56.043 \\
 3&69.270&0.628&10.962&68.305&58.348 \\
@@ -153,7 +154,7 @@ Layer & Area [mm$^2$] & $\alpha$ [\degr] & $\alpha$ [mrad] & $\mathit{R1}$ [mm] 
 14&47.648&0.970&16.938&105.632&90.241
 \end{tabular}
 \end{center}
-\caption{\footnotesize Grh gurehiuf wehui fwhguierhui}\label{tab:cast_geometry}
+\caption{\footnotesize Geometric properties of the computer generated CAST XRT design. }\label{tab:cast_geometry}
 \end{table}
 
 \subsection{Optimising reflective coatings}\label{sec:opt_coatings}
@@ -178,7 +179,7 @@ $d_{\text{max}}$ & 3 nm & 300 nm & 0.5 nm \\
 $\Gamma$ & 0.1 & 0.9 & 0.05 \\
 \end{tabular}
 \end{center}
-\caption{\footnotesize Grh gurehiuf wehui fwhguierhui}\label{tab:cast_parameter_space}
+\caption{\footnotesize Parameter space used for finding optimal coating recipes for each material combination.}\label{tab:cast_parameter_space}
 \end{table}
 
 For single layer coatings, only a single thickness of 50 nm was considered. The surface and interface roughnesses were fixed at 0.5 nm. The complete computation can be done for every layer in the optic, as $\alpha$ changes throughout the mirror stack. The algorithm does the following steps:
@@ -206,7 +207,7 @@ The best result for the Pt/C material combination can be seen in figure \ref{fig
   \centering
     \includegraphics[height=5cm]{figures/cast/pt-c_optimized_recipes1.pdf}
     \includegraphics[height=1.5cm]{figures/cast/pt-c_optimized_recipes2.pdf}
-  \caption{\footnotesize .}
+  \caption{\footnotesize Optimised coatings for CAST XRT with a Pt/C material combination. The four recipes are for layer 0-3 (layer 0 is the mandrel), layer 4-7, layer 8-11 and layer 12-14.}
   \label{fig:pt-c_optimized_recipes}
 \end{figure}
 
@@ -304,12 +305,12 @@ Layer & Mean diam. & Corresp. & Mean diam. & Corresp. \\
 14&209.1&208&193.1&192
 \end{tabular}
 \end{center}
-\caption{\footnotesize Grh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhui}\label{tab:cast_pieces}
+\caption{\footnotesize Table of radii of each layer for the parabolic and hyperbolic mirrors in the CAST XRT compared to compatible NuSTAR radii.}\label{tab:cast_pieces}
 \end{table}
 
 \begin{figure}[htbp]
   \centering  \includegraphics[height=6cm]{figures/cast/pieces_for_cleaning.jpg}
-  \caption{\footnotesize Grh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhuiGrh gurehiuf wehui fwhguierhui}
+  \caption{\footnotesize Glass substrates selected for the CAST XRT before cleaning. The substrates required for each recipe were collected in four different baskets.}
   \label{fig:pieces_for_cleaning}
 \end{figure}
 
@@ -329,16 +330,17 @@ Each piece was visually inspected and the best pieces were selected for the CAST
 
 \begin{figure}[htbp]
 \centering
-\begin{minipage}{.5\textwidth}
+\begin{minipage}{.46\textwidth}
   \centering
-  \includegraphics[height=5.5cm]{figures/cast/soap_bath.jpg}
-  \captionof{figure}{\footnotesize }
+  \includegraphics[height=4.5cm,trim= 0 100 0 200,clip]{figures/cast/soap_bath.jpg}
+  \captionof{figure}{\footnotesize Ultra-sonic bath with soap.}
   \label{fig:cast_cleaning_soap}
 \end{minipage}%
-\begin{minipage}{.5\textwidth}
+\hspace{20pt}
+\begin{minipage}{.46\textwidth}
   \centering
   \includegraphics[width=0.9\linewidth]{figures/cast/acetone_and_ethanol.jpg}
-  \captionof{figure}{\footnotesize }
+  \captionof{figure}{\footnotesize Acetone and ethanol tubs. \textbf{Left:} Acetone tub in ultra-sonic machine. \textbf{Right:} Ethanol tub.}
   \label{fig:cast_cleaning_ethanol}
 \end{minipage}
 \end{figure}
@@ -348,7 +350,7 @@ The pieces were moved directly to sample mounting plates (figure \ref{fig:coatin
 \begin{figure}[htbp]
   \centering
     \includegraphics[height=6cm]{figures/cast/coating_mount.jpg}
-  \caption{\footnotesize }
+  \caption{\footnotesize Cleaned glass substrates attached to sample mounting plate before coating. Two glass substrates were mounted onto each plate at positions 25 cm and 35 cm above coating chamber floor.}
   \label{fig:coating_mount}
 \end{figure}
 
@@ -360,7 +362,7 @@ From the coating optimisation calculations described in section \ref{sec:opt_coa
 \begin{figure}[htbp]
   \centering
     \includegraphics[height=7cm]{figures/cast/coated_pieces.jpg}
-  \caption{\footnotesize }
+  \caption{\footnotesize Mounted glass substrates in coating chamber after coating. }
   \label{fig:coated_pieces}
 \end{figure}
 
@@ -372,19 +374,145 @@ The power supplies were polled every 5 secs. to get the power output, which can 
 
 \begin{figure}[htbp]
   \centering  \includegraphics[width=0.45\linewidth]{figures/cast/power_recipe1.pdf}  \includegraphics[width=0.45\linewidth]{figures/cast/power_recipe4.pdf}\\
-  \caption{\footnotesize }
+  \caption{\footnotesize Graphs of power output delivered to cathodes from power supplies during CAST XRT multilayer coatings. \textbf{Left:} Cathode power output during recipe 1 coatings, two bilayers. \textbf{Right:} Cathode power output during recipe 4 coatings, five bilayers.}
   \label{fig:cast_coatings_power}
 \end{figure}
 
-The Si witness samples were measured at the XRR lab at DTU Space. XRR results from each witness sample for recipes 1-4 can be seen in figure \ref{fig:cast_recipe_xrr}. In each of the four coating runs, the two witness samples show completely similar XRR structure indicating a high uniformity between the two sample mounting positions.
+The Si witness samples were measured at the XRR lab at DTU Space. XRR results from each witness sample for recipes 1-4 can be seen in figure \ref{fig:cast_recipe_xrr}. In each of the four coating runs, the two witness samples show completely similar XRR structure indicating a high uniformity between the two sample mounting positions. An exception is the witness samples from recipe 2, which show shifted peaks especially at higher angles as well as dissimilarities around the 5th peak.
 
 \begin{figure}[htbp]
   \centering  \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe1.pdf}  \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe2.pdf}\\  \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe3.pdf}  \includegraphics[width=0.45\linewidth]{figures/cast/cast_recipe4.pdf}
-  \caption{\footnotesize }
+  \caption{\footnotesize XRR measurements of witness samples from CAST XRT coatings recipe 1-4. Each coating run included two witness samples placed at 25 cm and 35 cm above coating chamber floor, same as glass substrates.}
   \label{fig:cast_recipe_xrr}
 \end{figure}
 
-!!!!! XRR/ IMD fit results !!!!!!!!
+XRR data of witness samples were compared to an IMD model as seen in figures \ref{fig:cast_fit_rec1}, \ref{fig:cast_fit_rec2-1}, \ref{fig:cast_fit_rec2-2}, \ref{fig:cast_fit_rec3} and \ref{fig:cast_fit_rec4}. All fits show good agreement with XRR measurement despite the difficulties in fitting graded-d coatings as each layer thickness and interface roughness is an independent variable.
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{.47\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/cast/cast_recipe1_fit.pdf}
+\end{minipage}%
+\begin{minipage}{.53\textwidth}
+  \centering
+  \footnotesize
+  \begin{tabular}{c|c|c|c|c}
+
+i&d$_{\text{aim}}$ [nm]&$\Gamma_{\text{aim}}$&d$_{\text{fit}}$ [nm]&$\Gamma_{\text{fit}}$\\
+  \hline
+  1&22.5&0.45&22.48&0.462\\
+  2&11.5&0.45&11.19&0.462
+  \end{tabular}
+\end{minipage}
+\caption{\footnotesize XRR measurement of witness sample from CAST XRT recipe 1 coating compared to IMD model fit.}\label{fig:cast_fit_rec1}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{.47\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/cast/cast_recipe2_fit1.pdf}
+\end{minipage}%
+\begin{minipage}{.53\textwidth}
+  \centering
+  \footnotesize
+  \begin{tabular}{c|c|c|c|c}
+  i&d$_{\text{aim}}$ [nm]&$\Gamma_{\text{aim}}$&d$_{\text{fit}}$ [nm]&$\Gamma_{\text{fit}}$\\
+  \hline
+  1&19&0.45&18.53&0.46\\
+  2&13&0.45&13.93&0.54\\
+  3&7&0.45&6.89&0.46
+  \end{tabular}
+\end{minipage}
+\caption{\footnotesize XRR measurement of witness sample from CAST XRT recipe 2 coating compared to IMD model fit. Witness sample was mounted 35 cm above coating chamber floor.}\label{fig:cast_fit_rec2-1}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{.47\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/cast/cast_recipe2_fit2.pdf}
+\end{minipage}%
+\begin{minipage}{.53\textwidth}
+  \centering
+  \footnotesize
+\begin{tabular}{c|c|c|c|c}
+i&d$_{\text{aim}}$ [nm]&$\Gamma_{\text{aim}}$&d$_{\text{fit}}$ [nm]&$\Gamma_{\text{fit}}$\\
+\hline
+1&19&0.45&18.40&0.448\\
+2&13&0.45&14.57&0.558\\
+3&7&0.45&6.99&0.449
+\end{tabular}
+\end{minipage}
+\caption{\footnotesize XRR measurement of witness sample from CAST XRT recipe 2 coating compared to IMD model fit. Witness sample was mounted 25 cm above coating chamber floor.}\label{fig:cast_fit_rec2-2}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{.47\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/cast/cast_recipe3_fit.pdf}
+\end{minipage}%
+\begin{minipage}{.53\textwidth}
+  \centering
+  \footnotesize
+\begin{tabular}{c|c|c|c|c}
+i&d$_{\text{aim}}$ [nm]&$\Gamma_{\text{aim}}$&d$_{\text{fit}}$ [nm]&$\Gamma_{\text{fit}}$\\
+\hline
+1&16&0.4&16.19&0.411\\
+2&12.5&0.4&12.27&0.394\\
+3&9&0.4&9.04&0.386\\
+4&5.5&0.4&5.17&0.440
+\end{tabular}
+\end{minipage}
+\caption{\footnotesize XRR measurement of witness sample from CAST XRT recipe 3 coating compared to IMD model fit.}\label{fig:cast_fit_rec3}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{.47\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/cast/cast_recipe4_fit.pdf}
+\end{minipage}%
+\begin{minipage}{.53\textwidth}
+  \centering
+  \footnotesize
+\begin{tabular}{c|c|c|c|c}
+i&d$_{\text{aim}}$ [nm]&$\Gamma_{\text{aim}}$&d$_{\text{fit}}$ [nm]&$\Gamma_{\text{fit}}$\\
+\hline
+1&14&0.4&13.61&0.397\\
+2&11.75&0.4&11.44&0.400\\
+3&9.5&0.4&9.27&0.404\\
+4&7.25&0.4&7.10&0.408\\
+5&5&0.4&4.93&0.412
+\end{tabular}
+\end{minipage}
+\caption{\footnotesize XRR measurement of witness sample from CAST XRT recipe 4 coating compared to IMD model fit.}\label{fig:cast_fit_rec4}
+\end{figure}
+
+Both top and bottom witness sample from the recipe 2 coatings were fitted given the dissimilarities stated above. The targeted coating for recipe 2 were 3 layers with d$_{\text{min}}=7$ nm, d$_{\text{max}}=19$ nm, $\Gamma=0.45$. Both top and bottom witness sample show a significant irregularity in the second bilayer where $\Gamma \sim 0.55$ and d $\sim$ 13.93-14.57 nm. The results warranted a thorough check of coating log and the coating macro used for the coating, as the irregularities could be at least partly explained by an error in the coating macro. No sign of error in the calculations of the coating macro. The coating log also revealed that the speeds that were used during the coating corresponded to the values obtained in the calibration. The d-spacings for the second layer in recipe 2 compared to IMD fits of XRR data from top and bottom witness sample are shown in table \ref{tab:recipe2layer2}.
+
+\begin{table}
+  \centering
+\begin{tabular}{c|c|c|c|c}
+Witn. sample& d-C$_{\text{aim}}$ [nm]&d-C$_{\text{fit}}$ [nm]&d-Pt$_{\text{aim}}$ [nm]&d-Pt$_{\text{fit}}$ [nm]\\
+\hline
+Top&5.85&7.52&7.15&6.41\\
+Bottom&5.85&8.13&7.15&6.44\\
+\end{tabular}
+\caption{\footnotesize Thicknesses of CAST XRT recipe 2 layer 2 in top and bottom witness sample, designed d-spacings from recipe compared to d-spacings obtained from XRR measurement and IMD fitting.}\label{tab:recipe2layer2}
+\end{table}
+
+An explanation for the inconsistencies between top and bottom witness sample could be problems with a cathode during coating. Column 3 shows inconsistencies between top and bottom witness sample in the C thickness, but it is not seen in the Pt thickness, column 5. That corroborates the hypothesis that the C cathode had difficulties during the application of the second layer, as indeed can be seen in figure \ref{fig:cast_coatings_power_recipe2_layer2}. The cathode is only polled every 5 seconds, so intermittent dropouts between polling are likely to have occurred. Top and bottom witness sample were mounted on the same plate, so passed the cathode simultaneously. The difference in C thickness can only be explained by a non-uniform coating rate of C during the coating of layer 2. A partial dropout of the C cathode could have put the power supply in a state where to reignite the plasma, the cathode would for some time have a non-uniform plasma density. Another explanation could be a localized charge-up on the C target during coating caused by the insulating properties of the material \footnote{The carbon targets used at DTU Space are boron-doped to increase the conductivity of the bulk material.}. Such a charge-up would change the electric field in front of the target and thereby create a non-uniform plasma density.
+
+\begin{figure}[htbp]
+  \centering  \includegraphics[width=0.7\linewidth]{figures/cast/power_cat6.png}
+  \caption{\footnotesize Power output delivered to cathode 6 (carbon) during coating of layer 2 of recipe 2. }
+  \label{fig:cast_coatings_power_recipe2_layer2}
+\end{figure}
+
+The drop-outs of the C cathode can only explain the difference in C thickness between top and bottom witness sample. The inconsistencies of layer 2, recipe 2 is at the time of writing still of unknown origin.
 
 The coated substrates were packed and shipped to LLNL for assembly.
 
@@ -397,7 +525,7 @@ Optic assembly was carried out at LLNL, where one of the NuSTAR assembly machine
   \centering
   \includegraphics[width=0.45\linewidth]{figures/cast/assembly1.jpg}
   \includegraphics[width=0.45\linewidth]{figures/cast/assembly2.jpg}
-  \caption{\footnotesize }
+  \caption{\footnotesize Pictures of glass substrates mounted on Ti mandrel during assembly. Three graphite spacers are attached on top of each glass substrate and machined to correct thickness before mounting of the next substrate.}
   \label{fig:cast_assembly}
 \end{figure}
 
@@ -437,8 +565,10 @@ A theodolite mounted 3 m from the front of the helioscope was aligned with the b
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[height=5cm]{figures/cast/ballandhole.pdf}
-  \caption{\footnotesize Picture taken from the detector side of the CAST XRT as a divergent laser beam shines through. A piece of paper covers the opening and is lit up by the laser. The optic has been moved out for alignment and the ball and hole are visible above the top glass layer.}
+    \includegraphics[height=4cm,trim=40 10 60 0, clip]{figures/cast/ballandhole.pdf}
+    %\hspace{20pt}
+    \includegraphics[width=0.47\linewidth]{figures/cast/ballandhole.jpg}
+  \caption{\footnotesize \textbf{Left:} Picture taken from the detector side of the CAST XRT as a divergent laser beam shines through. A piece of paper covers the opening and is lit up by the laser. The optic has been moved out for alignment and the ball and hole are visible above the top glass layer. \textbf{Right:} CAD drawing of the CAST XRT with end-plates showing the ball and hole of the gunsight used for alignment. }
   \label{fig:ball_and_hole}
 \end{figure}
 
@@ -470,14 +600,22 @@ In figure \ref{fig:cast_5h_run} can be seen the data output from the MicroMegas 
 
 A flux of less than 1 Hz was seen in the spot. According to the effective area plot in figure \ref{fig:pt-c_effarea_throughput}, the throughput at 8 keV is only $\sim$1\%.
 
-Ray-tracing was done by Michael J. Pivovaroff from LLNL, and can be seen in figure \ref{fig:raytracing}. The simulations assumes a 6 mm diameter source placed 14.2 m from the optic and glass figure errors comparable to the NuSTAR optic. The MicroMegas data was rotated 45 degrees and binned into 200 x 200 $\upmu$m$^2$ virtual pixels. By ray-tracing a 6 mm spot at discrete photon energies from 0-10 keV and using the measured spectrum as weight, a composite image was created to compare with measured data.
+Ray-tracing was done by Michael J. Pivovaroff from LLNL, and can be seen in figure \ref{fig:raytracing1}. The simulations assumes a 6 mm diameter source placed 14.2 m from the optic and glass figure errors comparable to the NuSTAR optic. The MicroMegas data was rotated 45 degrees and binned into 200 x 200 $\upmu$m$^2$ virtual pixels. By ray-tracing a 6 mm spot at discrete photon energies from 0-10 keV and using the measured spectrum as weight, a composite image was created to compare with measured data.
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[width=0.47\linewidth]{figures/cast/raytracing1.png}
-    \includegraphics[width=0.47\linewidth]{figures/cast/raytracing2.png}
+    \includegraphics[width=0.47\linewidth]{figures/cast/coolX-simulation.pdf}
+    \includegraphics[width=0.47\linewidth]{figures/cast/coolX-SRMM.pdf}
   \caption{\footnotesize Comparison of ray-trace model with measurement using the COOL-X X-ray source.  \textbf{Left:} Ray-tracing simulation considering a 6 mm source 14.2 m from the optic.  \textbf{Right:} Measurement over 5 hours using the COOL-X X-ray source. White contours are from ray-tracing simulation. (From Michael J. Pivovaroff, LLNL) }
-  \label{fig:raytracing}
+  \label{fig:raytracing1}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=0.47\linewidth]{figures/cast/sunspot13.pdf}
+    \includegraphics[width=0.47\linewidth]{figures/cast/sunspot10.pdf}
+  \caption{\footnotesize Ray-trace model of CAST XRT considering the sun as a point source.  \textbf{Left:} Ray-tracing simulation considering optic with a figure error similar to NuSTAR of $\sim$1 arcmin.  \textbf{Right:} Ray-tracing simulation considering optic with a figure error 1.3 times greater than for NuSTAR ($\sim$1.3 arcmin). (From Michael J. Pivovaroff, LLNL) }
+  \label{fig:raytracing2}
 \end{figure}
 
 \section{Conclusion}
