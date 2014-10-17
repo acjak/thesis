@@ -1,21 +1,29 @@
 %!TEX root = /Users/andcj/Dropbox/Documents/PhD/Thesis/phdthesis.tex
 \chapter{Coatings for ATHENA}\label{chap:athena_coatings}
+In this chapter are described developments and investigations in the coating technology required for the European ATHENA mission. The work started in spring 2011, now involves five people at DTU Space and is still ongoing.
 
-\section{!!!!!Investigating the baseline Ir/B$_4$C coating}
-\section{!!!!!Film stress}
-\begin{figure}[htbp]
-  \centering
-    \includegraphics[height=6cm]{figures/athena/stress_ir_b4c.pdf}
-  \caption{}
-  \label{fig:stress_irb4c}
-\end{figure}
+\section{The European ATHENA mission}
+Design and development of the ATHENA mission was started already in the 90's as an European/American/Japanese collaboration with the intent to make a high resolution X-ray telescope with a large effective area. Up until 2012 and the financial crisis, the project was known as IXO (International X-ray Observatory), whereafter the collaboration fell apart as a result of down-scoping of space-related projects.
 
-% \section{!!!!!Alternative coatings}
-% \section{!!!!!Findings from long term storage}\label{sec:long_term}
-% \section{!!!!!Novel coating methods}
-% \subsection{Pulsed-DC sputtering}
-%
-% \subsection{Reactive sputtering with N$_2$}
+The European Space Agency (ESA) continued development of a smaller mission using technology that had already been in development for IXO for some time. The mission was ATHENA (Advanced Telescope for High-ENergy Astrophysics), but was not selected as the 2022 large (L1) mission by ESA. Development continued under the ATHENA+ name, and the project was eventually selected for the L2 mission to be launched in 2028. To avoid confusion, ATHENA+ was after selection renamed to ATHENA.
+
+
+!!!!! Pic of ATHENA
+
+\subsection{ATHENA optics technology}
+The
+
+Principle of SPOs\\
+
+\subsection{The ATHENA reflective coating baseline}
+
+Film stress\\
+Refer to paper. See paper in appendix \ref{pap:PREL_ATHENA}.
+
+\subsection{Coating optimisations for ATHENA}
+Refer to paper. See paper in appendix \ref{pap:athena_2012}.
+
+
 
 \section{Investigation of Cr roughness improvement}
 The baseline coating for ATHENA consists of a bilayer of Ir and B$_4$C, the former of which has shows considerably film stress of up to -4 GPa (compressive). To alleviate the stress in the film, earlier investigations has shown significant improvements in stress by using a Cr underlayer, which almost eliminates the total film stress\cite{Jakobsen:2011vd}.
@@ -28,7 +36,7 @@ The drawback is however the high surface roughness in Cr films. We present here 
 \caption{\footnotesize XRR measurements of four Cr single layer coatings made with varying power settings.}\label{fig:cr-power-change}
 \end{figure}
 
-It is seen that at lower power settings, the hills and fringes become less pronounced, indicating a higher roughness. This would indicate that the flux of sputtered atoms adhering to the substrate have time to coalesce into islands, thereby giving rise to island-growth also known as 'Volmer-Weber' growth. In that case, it would seem that lowering the power on Cr yields a higher surface roughness because given enough time, the Cr adatoms will form into their preferred configuration.
+It is seen that at lower power settings, the hills and fringes become less pronounced, indicating a higher roughness. This would indicate that the flux of sputtered atoms adhering to the substrate have time to coalesce into islands, thereby giving rise to island-growth also known as \emph{Volmer-Weber} growth\cite{Thompson:2000ge}. In that case, it would seem that lowering the power on Cr yields a higher surface roughness because given enough time, the Cr adatoms will form into their preferred configuration.
 
 A second experiment involves changing the Ar gas pressure during coating. A minimum pressure is required in order to sustain the cathode plasma, but it is beneficial to coat at the lower possible pressure. At a given pressure, the sputtered atoms going from target to substrate will have a chance of hitting an Ar atom given by the mean free path. A sputtered atom that would otherwise hit the substrate at a very low normal angle, will after having hit an Ar atom reach the substrate at a much higher angle, thereby giving rise to self-shadowing as seen in figure \ref{fig:self-shadow}.
 
@@ -52,13 +60,13 @@ This is an extremely promising result, since the baseline ATHENA coating depends
 \begin{figure}[!h]
 	\center
 	\includegraphics[height=6cm]{figures/athena/coatings/cr-ir-fit.pdf}
-\caption{\footnotesize XRR measurement of a bilayer of Cr/Ir (red) along with an IMD model fitted to the data (blue). }\label{fig:cr-ir-fit}
+\caption{\footnotesize XRR measurement of a bilayer of Cr/Ir (red) along with an IMD model fitted to the data (blue).}\label{fig:cr-ir-fit}
 \end{figure}
 
 \section{Investigation of pulsed-DC sputtering}
 We investigate the use of pulsed sputtering to decrease roughness as thickness increase as described in the litterature\cite{Pei:2009gn,Shaha:2011gy,Turkin:2010ur}. In the paper by Pei et al, a sputtering cathode with a C target was supplied with -400 V and 1.5 A at 350 kHz and 50\% duty cycle. The substrate was place 10 cm away from the target and supplied with -40 V at 250 kHz at 50 \% duty cycle. The high frequency at the target allows for a much higher percentage of the sputtered atoms to become ionized, giving them a positive charge. At regular non-pulsed DC sputtering, only 10 \% are ionized atoms, but for pulsed that increases to 60-70 \%. The negative pulsed bias on the substrate will pull in the ionized sputtered atoms at much higher velocity than possible for DC sputtering. The higher velocity sputtered atoms gives rise to denser and more smooth films, as the momentum of the impact causes a temporary 'liquidification' of the immediate surrounding thin film on the nano-scale.
 
-Attempts by Pei et al show promising results for decreasing interlayer roughness in multilayers using a high frequency pulse modulation on the power delivered to the cathode with lighter material, in their case carbon was used. For coatings for the ATHENA mission, it is critical to use B$_4$C as the light material, as a regular C layer will be desolved in the lift-off process that removes the lithographic resist.
+Attempts by Pei et al show promising results for decreasing interlayer roughness in multilayers using a high frequency pulse modulation on the power delivered to the cathode with lighter material, in their case carbon was used. For coatings for the ATHENA mission, it is critical to use B$_4$C as the light material, as a regular C layer will be dissolved in the lift-off process that removes the lithographic resist.
 
 We acquired the same power supply, an Advanced Energy Pinnacle Plus+ 5+5 capable of delivering two channels of 5 kW at 350 kHz. Using W and B$_4$C, 10 bilayer coatings were produced with the same power supply setup as mentioned in \cite{Pei:2009gn}. The entire rotating ring in the multilayer coating chamber at DTU Space is designed to hold a separate bias or be grounded depending on configuration. Initial results can be seen in fig. \ref{fig:wb4c-pulsed}.
 
@@ -100,7 +108,7 @@ The second attempt at using the pulsed-DC method was with Cr single layer coatin
 We believe that the investigation of pulsed-DC sputtering have concluded with no improvements in the coatings. The arcing that was seen during pulsed-DC sputtering of B$_4$C, but did not show up for Cr can have a variety of causes. First, the output power when coating B$_4$C is significantly higher than for Cr (1100 W compared to 450 W). The higher power puts higher demand on electrical shielding as well as the cable length between power supply and cathode. Second, there are fundamental differences in the two materials. The Cr is a well conducting and hard metal, whereas B$_4$C is not very well conducting and brittle. A very good contact is required between cathode and sputter material, but since the B$_4$C is very stiff and not as malleable as metal, the target can easily crack which will give rise to areas of non-contact. In conclusion, the whole process is not well understood, but has potential as seen in the literature. The process could easily be investigated in several master thesis projects.
 
 \section{Investigation of reactive sputtering with N$_2$}
-Improving interlayer roughness of multilayer coatings using N$_2$ reactive deposition has been shown before\cite{Windt:2007wh}, specifically for W/B$_4$C films. For this project, coatings of W/B$_4$C were produced using N$_2$ reactive sputter deposition and compared to similar coatings made without N$_2$. XRR measurements of the results and comparison can be seen in figure \ref{fig:wb4c-n2}. The left figure show coatings with a d-spacing of $\sim$3.5 nm, and the right coatings with d-spacings of $\sim$5.0 nm. The left figure show a horizontal offset in the XRR measurement between the two coatings, contributed by an offset in the calibration. The right figure show a similar offset, but also a significant change in Kiessig fringe intensity between the 2nd and 3rd Bragg peak. The 3rd Bragg peak is also less pronounced for the reactively sputtered film than the non-reactively sputtered. The results indicate that the reactive sputtering does not improve the interface roughness, but rather deteriorates.
+Improving interlayer roughness of multilayer coatings using N$_2$ reactive deposition has been shown before\cite{Windt:2007uj,jakobsen2010developing}, specifically for W/B$_4$C films. For this project, coatings of W/B$_4$C were produced using N$_2$ reactive sputter deposition and compared to similar coatings made without N$_2$. XRR measurements of the results and comparison can be seen in figure \ref{fig:wb4c-n2}. The left figure show coatings with a d-spacing of $\sim$3.5 nm, and the right coatings with d-spacings of $\sim$5.0 nm. The left figure show a horizontal offset in the XRR measurement between the two coatings, contributed by an offset in the calibration. The right figure show a similar offset, but also a significant change in Kiessig fringe intensity between the 2nd and 3rd Bragg peak. The 3rd Bragg peak is also less pronounced for the reactively sputtered film than the non-reactively sputtered. The results indicate that the reactive sputtering does not improve the interface roughness, but rather deteriorates.
 
 \begin{figure}[!h]
 	\center
