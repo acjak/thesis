@@ -1,14 +1,14 @@
 \chapter{Coatings for CAST}
-After the launch of NuSTAR, the X-ray optics group at DTU Space was invited to participate in the creation of an X-ray optic for the CAST solar axion helioscope \cite{Elias:1387488,Iguaz:1389411}. CAST is an experiment at CERN that looks for the hypothetical axion particle\cite{Weinberg:1978ii,Wilczek:1978kp,Peccei:1977ea,Peccei:1977em} which is a solution to the charge-parity (CP) problem of the standard model in particle physics\cite{Cheng:1988fu}. If the axion exist, it is also some or all of the dark matter in the universe\cite{Visinelli:2011tw,Bae:2008ix}. It was decided that the optics technology from NuSTAR\cite{Christensen:2011wg,Harrison:2010gu,Koglin:2005kb,Zhang:2009cb,Harrison:2013wl} could be leveraged and therefore use spare glass to make a cheap and relatively simple X-ray optic.
+After the launch of NuSTAR, the X-ray optics group at DTU Space was invited to participate in the creation of an X-ray optic for the CAST solar axion helioscope \cite{Elias:1387488,Iguaz:1389411}. CAST is an experiment at CERN that looks for the hypothetical axion particle\cite{Weinberg:1978ii,Wilczek:1978kp,Peccei:1977ea,Peccei:1977em} which is a solution to the charge-parity (CP) problem of the standard model in particle physics\cite{Cheng:1988fu}. If the axion exist, it constitutes some or all of the Dark Matter in the universe\cite{Visinelli:2011tw,Bae:2008ix}. It was decided that the optics technology from NuSTAR\cite{Christensen:2011wg,Harrison:2010gu,Koglin:2005kb,Zhang:2009cb,Harrison:2013wl} could be leveraged and therefore use spare glass to make an inexpensive and relatively simple X-ray optic.
 
 The optic was designed between summer 2012 and summer 2014. Production, assembly, installation and alignment with CAST was done during summer 2014 in cooperation with University of Zaragoza (UoZ) in Spain and Lawrence Livermore National Lab (LLNL) in the US. In this chapter the reader will find a description of the whole process from start to finish.
 
-My part of the work was to design the optic geometry and coating as well as produce the coated substrates and participate in the installation. LLNL designed vacuum vessel and alignment procedure and UoZ designed detector and X-ray source assembly.
+My part of the work was to design the optic geometry and coating as well as produce the coated substrates and participate in the installation. LLNL designed the vacuum vessel and alignment procedure and UoZ designed detector and the X-ray source assembly.
 
 A complete software package was developed that could calculate the geometry of the optic given a focal length and substrate specifications. The software then optimises the coating for a range of material combinations with respect to energy range and axion spectrum by incorporating IMD. I chose to make the software in Python because of the huge amount of documentation and specialised packages available. To interface with IMD, a package called Pidly was used to communicate with IDL, which could spawn an IMD session. The principle is described in section \ref{sec:software_improvements}
 
 \section{The CAST instrument}
-The axion is an ultra-light particle that is formed from the interaction of a photon with an electromagnetic field, called the Primakoff effect. So the main sources of the particle would be from inside stars, and from Earth the best nearby source will of course be the Sun. The axion is weakly interacting so in order to detect it, CAST uses a strong magnet to convert the axion back to a photon, again by the Primakoff effect. The photons subsequently hit a detector.
+The axion is an ultra-light particle that is formed from the interaction of a photon with an electromagnetic field, called the Primakoff effect. A primary source of the particle would be from inside stars, and from Earth the best nearby source will of course be the Sun. The axion is weakly interacting so in order to detect it, CAST uses a strong magnet to convert the axion back to a photon, again by the Primakoff effect. The photons subsequently hit a detector.
 
 \begin{figure}[htbp]
   \centering
@@ -22,11 +22,11 @@ The spectrum of X-rays from solar axions reaching Earth can be seen in figure \r
 \begin{figure}[htbp]
   \centering
     \includegraphics[height=6cm]{figures/cast/axion_search_cast2.pdf}
-  \caption{\footnotesize The axion (and axion-like partikle) parameter space, showing the limits of detection for current direct detection experiments. The yellow "axino band" represents areas of the parameter space where theoretical models predicts axions. The part of the parameter space excluded by the CAST axion helioscope so far is represented by the blue line and grey area. (From \cite{Irastorza:2013uu})}
+  \caption{\footnotesize The axion (and axion-like partikle) parameter space, showing the limits of detection for current direct detection experiments. The yellow "axion band" represents areas of the parameter space where theoretical models predicts axions. The part of the parameter space excluded by the CAST axion helioscope so far is represented by the blue line and grey area. (From \cite{Irastorza:2013uu})}
   \label{fig:axion_search_cast}
 \end{figure}
 
-From theory, the expected mass of the axion is between $10^{-7}$-$1$ eV. In figure \ref{fig:axion_search_cast} the parameter space can be seen with the axion-photon coupling constant, \gay, as a function of the axion mass, \maxion. The yellow line represents the area where we expect to see the axion if all dark matter in the universe consists of axion particles with the same \maxion\ and \gay. The CAST helioscope is by 2014 the most comprehensive axion search, and has set an experimental upper limit of
+Cosmological observations constrain the axion mass between 1 $\upmu$eV and 1 eV. In figure \ref{fig:axion_search_cast} the parameter space can be seen with the axion-photon coupling constant, \gay, as a function of the axion mass, \maxion. The yellow line represents the area where we expect to see the axion if all dark matter in the universe consists of axion particles with the same \maxion\ and \gay. The CAST helioscope is by 2014 the most comprehensive axion search, and has set an experimental upper limit of
 \begin{eqnarray}
 \gaymath \leq 8.8 \cdot 10^{-11} \textrm{ GeV}^{-1}\cite{Zioutas:2005jl,Andriamonje:2007jc}.
 \end{eqnarray}
@@ -49,14 +49,14 @@ The CAST experiment is largely made from spare parts of other projects at CERN a
 \begin{figure}[htbp]
   \centering
     \includegraphics[height=5cm]{figures/cast/cast_instrument.jpg}
-  \caption{\footnotesize The Cern Axion Solar Telescope (CAST) located near Geneva, Switzerland. A superconducting ...!!!!!!!!!!!!!!}
+  \caption{\footnotesize The Cern Axion Solar Telescope (CAST) located near Geneva, Switzerland. The main component of the experiment is a Large Hadron Collider (LHC) prototype dipole magnet that has a 10 T magnetic field, physical length of 13 meters and a mass of 50 tonnes.}
   \label{fig:cast_instrument}
 \end{figure}
 
 CAST has been doing axion searches since 2002 and the experiment continually improves and reiterates the equipment to get higher sensitivity. One major problem is to get a high enough signal-to-noise ratio, the majority of the noise coming from background radiation from the ground, the materials in the instrument and cosmic rays. The detectors cover the entire area of each bore opening, so are relatively large. Detector size is proportional to the background radiation, so it makes sense to have smaller detectors. By using X-ray optics, the X-ray photons can be focused into a detector area of only a fraction of the previous. This will significantly increase the signal-to-noise ratio and will let the CAST helioscope search for the axion in new areas.
 
 \section{Developing an optic for CAST}
-One major concern in making an X-ray optic from NuSTAR glass for the CAST helioscope is the limited space available. The optic would have to fit on the end of the magnet nearest the wall, which leaves only about 2 meters for optic, detector and the focal length between the two. Another problem is the small bore opening of only 43 mm, which is smaller than the inner radius of the NuSTAR telescopes. Both of those problems can be solved by realising that the optic would not require imaging capability and that the axion spectrum is of relatively low energies. In figure \ref{fig:cast_xrt_principle} is seen a top-down view of the end of the magnet bore where the optic and detector can be attached. By stacking a number of reflectors, X-rays can be reflected to one side, something that would not be possible if imaging capabilities were required.
+One major concern in making an X-ray optic from NuSTAR glass for the CAST helioscope is the limited space available. The optic would have to fit on the end of the magnet nearest the wall, which leaves only about 2 meters for optic, detector and the focal length between the two. Another problem is the small bore opening of only 43 mm, which is smaller than the inner radius of the NuSTAR telescopes. Both of those problems can be solved by realising that the optic does not require a symmetric field of view and that the axion spectrum is of relatively low energies. In figure \ref{fig:cast_xrt_principle} is seen a top-down view of the end of the magnet bore where the optic and detector can be attached. By stacking a number of reflectors, X-rays can be reflected to one side, something that would not be possible for a traditional imaging X-ray astrophysical telescope.
 
 \begin{figure}[htbp]
 \centering
@@ -81,7 +81,7 @@ One major concern in making an X-ray optic from NuSTAR glass for the CAST helios
 %   \label{fig:wolter1-cutout}
 % \end{figure}
 
-By using only 1/6 of the Wolter I radial reflective area, a pie-slice (figure \ref{fig:wolter1-cutout}), two stacks of mirrors can be used to reflect X-rays to one side. The stack only needs to be high enough to cover the bore opening, but each mirror should also be wide enough. The NuSTAR glass pieces are made in 60\degr\ segments for the inner radii and 30\degr\ segments for the outer radii.
+By using only 1/6 of the Wolter I azimuthal area, a pie-slice (figure \ref{fig:wolter1-cutout}), two stacks of mirrors can be used to reflect X-rays to one side. The stack only needs to be high enough to cover the bore opening, but each mirror should also be wide enough. The NuSTAR glass pieces are made in 60\degr\ segments for the inner radii and 30\degr\ segments for the outer radii.
 
 \subsection{Optic geometry considerations}
 The geometry of the optic was calculated using the following equation for a Wolter I optic:
@@ -166,6 +166,8 @@ Layer & Area [mm$^2$] & $\alpha$ [\degr] & $\alpha$ [mrad] & $\mathit{R1}$ [mm] 
 \end{center}
 \caption{\footnotesize Geometric properties of the computer generated CAST XRT design. }\label{tab:cast_geometry}
 \end{table}
+
+Finally, we note that the actual radii and angles had to be slightly adjusted to allow the optic adhere to a cone-approximation to a true Wolter I design. These minor modifications to the radii and graze angles ensured the best possible focusing of the telescope and had negligible impact on multilayer optimisation.
 
 \subsection{Optimising reflective coatings}\label{sec:opt_coatings}
 To achieve the maximum possible efficiency of the optic, the coating needed to be optimised for the energy range. In contrast with most astrophysical observatories, the CAST telescope will only look at a single object with a very specific spectrum. That means that the coatings can be tailored to achieve maximum reflectivity in that area of the spectrum. Also known is the quantum efficiency of the detector.
@@ -596,7 +598,7 @@ The optic reflected the laser light nicely, making it possible to get an exact p
 The position of the detector was adjusted to make the spot hit in exactly the center. The detector mounts could then be fastened and the fake detector could then be replaced by a real one as seen in figure \ref{fig:cast_align} (right).
 
 \subsection{Tests with 8 keV X-ray source}
-The last task with detector and optic in place was a test with X-rays. An X-ray souce had to be mounted in front of the helioscope, but still under vacuum. It was decided to use a COOL-X pyroelectric X-ray source. It works by warming and cooling a pyroelectric element, which emits electrons that subsequently hits a Cu target and an X-ray spectrum gets emitted with a peak at the Cu K$_{\alpha_1}$ energy. The source has a flux of $10^8$ photons/sec. emitted at an angle of 160\degr, so at a distance of $\sim$14.2 m from the optic, $<10$ photons/sec. would arrive at the detector on average given then effectivity of the optic at $\sim$8 keV, detector efficiency and the non-constant flux from the source.
+The last task with detector and optic in place was a test with X-rays. An X-ray souce had to be mounted in front of the helioscope, but still under vacuum. It was decided to use a COOL-X pyroelectric X-ray source. It works by warming and cooling a pyroelectric element, which emits electrons that subsequently hits a Cu target, resulting in a bremsstrahlung spectrum and characteristic Cu emission lines. The source has a flux of $10^8$ photons/sec. emitted at an angle of 160\degr, so at a distance of $\sim$14.2 m from the optic, $<10$ photons/sec. would arrive at the detector on average given the integrated efficiency of the optic and the detector.
 
 % \begin{figure}[htbp]
 %   \centering

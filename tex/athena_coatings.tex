@@ -1,15 +1,23 @@
 %!TEX root = /Users/andcj/Dropbox/Documents/PhD/Thesis/phdthesis.tex
 \chapter{Coatings for ATHENA}\label{chap:athena_coatings}
-In this chapter are described developments and investigations in the coating technology required for the European ATHENA mission. The work started in spring 2011, now involves five employees and students at DTU Space and is still ongoing.
+In this chapter are described developments and investigations in the coating technology required for the European ATHENA mission. The work started in spring 2011, now involves five employees and students at DTU Space, and is still ongoing.
+
+The first part of the chapter describes the ATHENA telescope and optics technology. Afterwards is a description of the X-ray reflective coating investigation carried out at DTU Space, starting with the baseline coating and stress investigation in \cite{Jakobsen:2011vd}. Proceeding that is the work based on different optimization techniques multilayer coatings, namely reactive sputter deposition and pulsed-DC sputtering. The coating lab acquired a pulsed-DC power supply specifically for the ATHENA coating investigations, but no improvements were found. Additionally, a number of problems showed up with the new power supply and the causes were not clear. Reactive sputtering investigations revealed major problems with some material combinations that included B$_4$C, which became apparent after long term storage investigations. In the end, the baseline material combination that was initially proposed for ATHENA seems to be the best-performing and most stable solution.
+
+The last part of this chapter (section \ref{sec:athena_upscaled}) is a report written to ESA on the coating production facility requirements for the original ATHENA mission proposed in 2012. A significant effort will have to be put into mass production for the ATHENA optic to be realised. The section points out the cost and timetable of such and effort.
 
 \section{The European ATHENA mission}
-Design and development of the ATHENA mission was started already in the 90's as an European/American/Japanese collaboration with the intent to make a high resolution X-ray telescope with a large effective area. Up until 2012 and the financial crisis, the project was known as IXO (International X-ray Observatory), hereafter the collaboration fell apart as a result of down-scoping of space-related projects.
+Design and development of the ATHENA mission was started already in the 90's as first a European mission (XEUS) with the intent to make a high resolution X-ray telescope with a large effective area. In 2008 it merged into IXO (International X-ray Observatory), a European/American/Japanese collaboration. In 2012 after some years of global financial crisis, the collaboration fell apart as a result of down-scoping of space-related projects.
 
-The European Space Agency (ESA) continued development of a smaller mission using technology that had already been in development for IXO for some time. The mission was ATHENA (Advanced Telescope for High-ENergy Astrophysics)\cite{Barcons:2012va}, but was not selected as the 2022 large (L1) mission by ESA. Development continued under the ATHENA+ name, and the project was eventually selected for the L2 mission to be launched in 2028. To avoid confusion, ATHENA+ was after selection renamed to ATHENA.
+The European Space Agency (ESA) continued development of a smaller mission using technology that had already been in development for IXO for almost a decade. The mission was ATHENA (Advanced Telescope for High-ENergy Astrophysics)\cite{Barcons:2012va}, but was not selected as the 2022 large (L1) mission by ESA. Development continued under the ATHENA+ name, and the project was eventually selected for the L2 mission to be launched in 2028. To avoid confusion, ATHENA+ was after selection renamed to ATHENA.
 
-!!!!! Pic of ATHENA
+\begin{figure}[!h]
+  \center
+  \includegraphics[height=5cm]{figures/athena/athena_telescope.pdf}
+\caption{\footnotesize (from \url{www.the-athena-x-ray-observatory.eu}).}\label{fig:athena_telescope}
+\end{figure}
 
-The theme of the 2028 L2 mission is \emph{The Hot and Energetic Universe}, which calls for spatially resolved X-ray spectroscopy and deep wide-field X-ray spectral imaging. The performance should greatly exceed instruments currently in use such as Chandra and XMM-Newton or future mission such as Astro-H and eRosita. The improvements are to be realised with an effective area of 2 m$^2$ at 1 keV, 5'' angular resolution and 40'x40' wide field-of-view\cite{Willingale:2013vo}.
+The theme of the 2028 L2 mission is \emph{The Hot and Energetic Universe}, which calls for spatially resolved X-ray spectroscopy and deep wide-field X-ray spectral imaging. The performance should greatly exceed instruments currently in use such as Chandra and XMM-Newton as well as future mission such as Astro-H and eRosita. The improvements are to be realised with an effective area of 2 m$^2$ at 1 keV, 5'' angular resolution and 40'x40' wide field-of-view\cite{Willingale:2013vo}.
 
 \subsection{ATHENA optics technology}
 ESA has for the past decade been working on a radically new optics technology for future X-ray missions, the Silicon Pore Optics (SPO)\cite{Barcons:2012va}. By using silicon wafers, cut into rectangular shapes (diced) and with grooves cut into the underside, a high collecting area can be achieved with very low mass and at the same time achieve angular resolution better than glass.
@@ -36,9 +44,9 @@ ESA has for the past decade been working on a radically new optics technology fo
 % \end{minipage}
 % \end{figure}
 
-The silicon wafers are diced, wedged and grooves are cut into the underside, see figure \ref{fig:spo_principle1}. The grooves are 0.83 mm wide and with only 0.17 mm between them, making narrow ribs in the underside. The grooving has two purposes: First, the wafer becomes so thin that it is bendable transversely to the ribs. Secondly, the SPO substrates can be stacked directly on top of one another with the ribs bonding to the surface of the substrate underneath. The X-rays will the be able to pass between the ribs and reach the reflecting surface of the bottom substrate. Stacking 68 of the SPO wafer substrates results in a very light, but very rigid block of silicon with micro-pores to accept X-rays and reflecting surfaces inside each pore. In order to have the SPOs reflect photons to the same spot, a wedge is applied to each reflecting surface corresponding to the angle required, see figure \ref{fig:spo_principle1} bottom left. The wedge is made from SiO$_x$ that is etched to the correct thickness and slope.
+The silicon wafers are diced, wedged and grooves are cut into the underside, see figure \ref{fig:spo_principle1}. The grooves are 0.83 mm wide and spaced only 0.17 mm apart, resulting in narrow ribs in the underside. The grooving has two purposes: First, the wafer becomes so thin that it is bendable transversely to the ribs. Second, the SPO substrates can be stacked directly on top of one another with the ribs bonding to the surface of the substrate underneath. The X-rays will the be able to pass between the ribs and reflect on the surface of the bottom substrate. Stacking 68 of the SPO wafer substrates results in a very light, but very rigid block of silicon with micro-pores and a reflecting surface inside each pore. In order to have the SPOs reflect photons to the same spot, a wedge is applied to each reflecting surface corresponding to the angle required, see figure \ref{fig:spo_principle1} bottom left. The wedge is made from SiO$_x$ that is etched to the correct thickness and slope.
 
-As the SPO substrates can be bend, they are stacked on a mandrel with the exact curvature needed. The high-precision stacking process is done by a dedicated robot in a controlled ultra-clean environment as single dust specks can offset the stacking precision.
+As the SPO substrates can be bend, they are stacked on a mandrel with the exact curvature needed. The high-precision stacking process is done by a dedicated robot in a controlled ultra-clean environment, as single dust specks can offset the stacking precision.
 
 Two stacks of 68 SPO substrates constitutes an SPO module as can be seen in figure \ref{fig:spo_stack}. Each stack will reflect an incoming X-ray photon once, so two stacks acts like a conical approximation to the double-reflection Wolter I optic. However, in order to achieve sub-10'' angular resolution as specified by the science-criteria for ESA, the SPO technology will need to achieve a true Wolter I shape. Several initiatives by ESA are underway to achieve this as of 2014.
 
@@ -48,7 +56,7 @@ Two stacks of 68 SPO substrates constitutes an SPO module as can be seen in figu
 \caption{\footnotesize (from \cite{Willingale:2013vo}).}\label{fig:spo_stack}
 \end{figure}
 
-Each SPO module is self-consistent, making the entire optic technology modular. When a module is ready, it can be slided into a light-weight construction. This is in contrast to the NuSTAR technology where each layer had to be mounted sequentially. The modularity is also a necessity when it becomes apparent that an effective area of 2 m$^2$ at 1 keV requires 1.5 mio. pores. As ATHENA is a large ESA mission, the Ariane V rocket will be used and the telescope is designed with the size limitations of the Ariane V fairing in mind, resulting in a telescope with $\sim$3 m diameter and $\sim$13 m length. To populate a an optic with a diameter of $\sim$3 m, the number of SPO modules needed are $\sim$900 as can be seen in figure \ref{fig:athena_full_optic}.
+Each SPO module is self-consistent, making the entire optic technology modular. When a module is ready, it can be slided into a light-weight construction. This is in contrast to the NuSTAR technology where each layer had to be mounted sequentially. The modularity is also a necessity when it becomes apparent that an effective area of 2 m$^2$ at 1 keV requires 1.5 mil. pores. As ATHENA is a large ESA mission, the Ariane V rocket will be used and the telescope is designed with the size limitations of the Ariane V fairing in mind, resulting in a telescope with $\sim$3 m diameter and $\sim$13 m length. To populate an optic with a diameter of $\sim$3 m, the number of SPO modules needed are $\sim$900 as can be seen in figure \ref{fig:athena_full_optic}.
 
 \begin{figure}[!h]
   \center
@@ -56,12 +64,12 @@ Each SPO module is self-consistent, making the entire optic technology modular. 
 \caption{\footnotesize (from \cite{Willingale:2013vo}).}\label{fig:athena_full_optic}
 \end{figure}
 
-As each optic module consist of $2 \cdot 68 = 136$ SPO substrates, a total of $900 \cdot 136 \approx 123,000$ SPO substrates are needed not accounting for spares or broken substrates. Considering that the NuSTAR telescope consisted of $2\cdot2376$ glass substrates and took two years to produce, it becomes apparent that the ATHENA mission will require a large-scale production facility. In section \ref{sec:athena_upscaled} can be found an investigation in the production facility requirements for the original ATHENA mission proposed for the ESA L1 mission, consisting of two optics with a total of $\sim$64,000 SPO substrates.
+As each optic module consist of $2 \cdot 68 = 136$ SPO substrates, a total of $900 \cdot 136 \approx 123,000$ SPO substrates are needed, not accounting for spares or broken substrates. Considering that the NuSTAR telescope consisted of $2\cdot2376$ glass substrates and took two years to produce, it becomes apparent that the ATHENA mission will require a large-scale production facility. In section \ref{sec:athena_upscaled} can be found an investigation in the coating side of the production facility requirements for the original ATHENA mission proposed for the ESA L1 mission. It consisted of two optics with a total of $\sim$64,000 SPO substrates.
 
 \subsection{Reflective coatings on SPO substrates}
 One of the most important principles of the SPO technology is the ability for the SPO substrates to bond when stacked. It is achieved by pressing the surface of one SPO substrate against the ribs of another SPO substrate. Since the SPO substrates are wedged with a SiO$_x$ material, both ribs and surface consist of SiO$_x$ and pressing the two substrates together forms a strong covalent bond, thereby fusing the two.
 
-In order to apply a reflective coating to each of the SPO substrates, the bonding process has to be taken into account. Applying a coating with a physical vapor deposition process such as DC magnetron sputtering wil coat the whole surface, but by using a lithographic process from the semiconductor industry it is possible to apply coatings in patterns on a surface. The pattern being the exact position where the ribs will touch the surface when stacking, so these areas are $\sim$0.17 mm wide, covers the entire length of the substrate surface and are space $\sim$0.83 mm apart. The lithographic process involves the following:
+In order to apply a reflective coating to each of the SPO substrates, the bonding process has to be taken into account. Applying a coating with a physical vapor deposition process such as DC magnetron sputtering will coat the whole surface, but by using a lithographic process from the semiconductor industry it is possible to apply coatings in patterns on a surface. The pattern being the exact position where the ribs will touch the surface when stacking, so these areas are $\sim$0.17 mm wide, covers the entire length of the substrate surface and are spaced $\sim$0.83 mm apart. The lithographic process involves the following:
 
 \begin{itemize}
   \item Applying a resist film on the substrate surface.
@@ -71,25 +79,26 @@ In order to apply a reflective coating to each of the SPO substrates, the bondin
   \item Removing the cured resist including the coating applied on top of the resist using acetone or DMSO\footnote{Dimethyl sulfoxide}.
 \end{itemize}
 
-!!!!! Figure of lithographic process !!!
+\begin{figure}[!h]
+  \center
+  \includegraphics[height=6cm]{figures/athena/litho_process.pdf}
+\caption{\footnotesize.}\label{fig:litho_process}
+\end{figure}
 
 The lithographic process puts requirements on the reflective coatings applied to the SPO substrates since chemical solutions used in the last step are designed to break carbon-carbon bonds. All multilayer coatings with pure C as the low-Z material are excluded as the last step described above will simply break apart the coating.
 
 \subsection{The ATHENA reflective coating baseline}
+The baseline coating for ATHENA is a Ir/B$_4$C single bilayer. The Ir will reflect higher energy X-rays in the 0.1--10 keV energy range, and the B$_4$C top layer will reflect lower energies. The B$_4$C material is able to withstand the C-C bond-breaking chemical solutions applied in the last step of the lithographic process, while at the same time being a very light material. The low electron density gives B$_4$C a very good reflectivity at energies 0.1--$\sim$3 keV.
 
-
-Film stress\\
-Refer to paper. See paper in appendix \ref{pap:PREL_ATHENA}.
+The Ir/B$_4$C combination does however have some drawbacks, especially high compressive film stress. Additionally, the thin film material combination is not described in the litterature, so the interplay between the two materials in both the short and long term is relatively unknown. In appendix \ref{pap:PREL_ATHENA} can be found a paper from 2011 that investigates the baseline ATHENA coating along with solutions to handle the film stress. In section \ref{sec:athena_cr_impro} is a continuation of the investigation into stress improvements.
 
 \subsection{Coating optimisations for ATHENA}
-Refer to paper. See paper in appendix \ref{pap:athena_2012}.
-njdnfdjsfndjaskgndjsakgndas
+To improve on the ATHENA baseline coating, a range of alternative material combinations were investigated using computer optimisation with Markov-Chain Monte-Carlo methods by Desiree D. M. Ferreira at DTU Space. A number of optimised coating recipes were produced for each material combination and the actual coatings were subsequently produced on SPO substrates in the coating lab at DTU Space. In appendix \ref{pap:athena_2012} can be found a paper from 2012 on some of the optimizations and investigations done on coatings applied to SPO substrates.
 
+\section{Investigation of Cr roughness improvement}\label{sec:athena_cr_impro}
+The baseline coating for ATHENA consists of a bilayer of Ir and B$_4$C, the former of which shows considerably film stress of up to -4 GPa (compressive). To alleviate the stress in the film, earlier investigations has shown significant improvements in stress by using a Cr underlayer, which almost eliminates the total film stress\cite{Jakobsen:2011vd}.
 
-\section{Investigation of Cr roughness improvement}
-The baseline coating for ATHENA consists of a bilayer of Ir and B$_4$C, the former of which has shows considerably film stress of up to -4 GPa (compressive). To alleviate the stress in the film, earlier investigations has shown significant improvements in stress by using a Cr underlayer, which almost eliminates the total film stress\cite{Jakobsen:2011vd}.
-
-The drawback is however the high surface roughness in Cr films. We present here the results of two experiments with the purpose of reducing the Cr surface roughness. The first experiment is an attempt to decrease the rate of sputtered Cr atoms reaching the substrate. A lower rate rate will give an adsorbed Cr atom a chance to move to a lower position\cite{Venables:1984wu}. By decreasing the output power to the Cr cathode, while maintaining the same voltage of -400 V, the rate of sputtered atoms can be decreased. In figure \ref{fig:cr-power-change} XRR measurements of Cr films coated at varying power output can be seen.
+The drawback is however the high surface roughness in Cr films. We present here the results of two experiments with the purpose of reducing the Cr surface roughness. The first experiment is an attempt to decrease the rate of sputtered Cr atoms reaching the substrate. A lower rate will give an adsorbed Cr atom a chance to move to a lower position\cite{Venables:1984wu}. By decreasing the output power to the Cr cathode, while maintaining the same voltage of -400 V, the rate of sputtered atoms can be decreased. In figure \ref{fig:cr-power-change} XRR measurements of Cr films coated at varying power output can be seen.
 
 \begin{figure}[!h]
 	\center
@@ -99,7 +108,7 @@ The drawback is however the high surface roughness in Cr films. We present here 
 
 It is seen that at lower power settings, the hills and fringes become less pronounced, indicating a higher roughness. This would indicate that the flux of sputtered atoms adhering to the substrate have time to coalesce into islands, thereby giving rise to island-growth also known as \emph{Volmer-Weber} growth\cite{Thompson:2000ge}. In that case, it would seem that lowering the power on Cr yields a higher surface roughness because given enough time, the Cr adatoms will form into their preferred configuration.
 
-A second experiment involves changing the Ar gas pressure during coating. A minimum pressure is required in order to sustain the cathode plasma, but it is beneficial to coat at the lower possible pressure. At a given pressure, the sputtered atoms going from target to substrate will have a chance of hitting an Ar atom given by the mean free path. A sputtered atom that would otherwise hit the substrate at a very low normal angle, will after having hit an Ar atom reach the substrate at a much higher angle, thereby giving rise to self-shadowing as seen in figure \ref{fig:self-shadow}.
+A second experiment involves changing the Ar gas pressure during coating. A minimum pressure is required in order to sustain the cathode plasma, but it is beneficial to coat at the lowest possible pressure. At a given pressure, the sputtered atoms going from target to substrate will have a chance of hitting an Ar atom given by the mean free path. A sputtered atom that would otherwise hit the substrate at a very low normal angle, will after having hit an Ar atom reach the substrate at a much higher angle, thereby giving rise to self-shadowing as seen in figure \ref{fig:self-shadow}.
 
 \begin{figure}[!h]
 	\center
@@ -145,7 +154,7 @@ The figure show XRR measurements of 4 samples coated with 10 bilayer W/B$_4$C wi
 \caption{\footnotesize XRR measurements of three W/B$_4$C 10 bilayer films. Two (red and blue) made using pulsed-DC sputtering and also shown in figure \ref{fig:wb4c-pulsed}. The last one (black) is made in a separate coating run without pulsed-DC sputtering, but otherwise with the same coating parameters.}\label{fig:wb4c-nopulsed}
 \end{figure}
 
-Something has clearly gone wrong in the pulsed-DC coating. The new software recently installed to control the multilayer coating chamber logs the cathode output every 5 seconds and a plot of that can be seen in figure \ref{fig:power-output}(left) compared to a log from a regular DC coating (figure \ref{fig:power-output}(right)). The figure shows clearly that the power output to the B$_4$C cathode drops to zero in the middle of a rotation. The B$_4$C cathode should be at 900 W output for the entire time between the W cathode being on.
+Something has clearly gone wrong in the pulsed-DC coating. The new software recently installed to control the multilayer coating chamber logs the cathode output every 5 seconds and a plot of that can be seen in figure \ref{fig:power-output}(left) compared to a log from a regular DC coating, figure \ref{fig:power-output}(right). The figure shows clearly that the power output to the B$_4$C cathode drops to zero in the middle of a rotation. The B$_4$C cathode should be at 900 W output for the entire time the W cathode is off.
 
 \begin{figure}[!h]
 	\center
@@ -166,16 +175,16 @@ It is at this moment still unclear what causes the arcing. The pulsed-DC system 
 
 The second attempt at using the pulsed-DC method was with Cr single layer coatings. XRR measurements of the coated samples can be seen in figure \ref{fig:cr-pulsed}. Four samples were coated with varying frequencies applied to the Cr cathode. The measurements show clear differences in coated thickness between the frequencies used (position of Kiessig fringes does not overlap) and higher frequencies show a lower surface roughness (Kiessig fringes are less pronounced and shows a wavy pattern at the highest frequency). The XRR measurements were difficult to fit using IMD, indicating that the films are of non-uniform density. The coating done without pulsed-DC fitted to a $\sim$17 nm Cr thickness and the coating done with the highest frequency pulsed-DC sputtering fitted to a $\sim$13 nm Cr thickness. No arcing was seen when coating Cr using pulsed-DC sputtering.
 
-We believe that the investigation of pulsed-DC sputtering have concluded with no improvements in the coatings. The arcing that was seen during pulsed-DC sputtering of B$_4$C, but did not show up for Cr can have a variety of causes. First, the output power when coating B$_4$C is significantly higher than for Cr (1100 W compared to 450 W). The higher power puts higher demand on electrical shielding as well as the cable length between power supply and cathode. Second, there are fundamental differences in the two materials. The Cr is a well conducting and hard metal, whereas B$_4$C is not very well conducting and brittle. A very good contact is required between cathode and sputter material, but since the B$_4$C is very stiff and not as malleable as metal, the target can easily crack which will give rise to areas of non-contact. In conclusion, the whole process is not well understood, but has potential as seen in the literature. The process could easily be investigated in several master thesis projects.
+We believe that the investigation of pulsed-DC sputtering have concluded with no improvements in the coatings. The arcing that was seen during pulsed-DC sputtering of B$_4$C, but did not show up for Cr, can have a variety of causes. First, the output power when coating B$_4$C is significantly higher than for Cr (1100 W compared to 450 W). The higher power puts higher demand on electrical shielding as well as the cable length between power supply and cathode. Second, there are fundamental differences in the two materials. The Cr is a well conducting and hard metal, whereas B$_4$C is not very well conducting and brittle. A very good contact is required between cathode and sputter material, but since the B$_4$C is very stiff and not as malleable as metal, the target can easily crack which will give rise to areas of non-contact. In conclusion, the whole process is not well understood, but has potential as seen in the literature.
 
 \section{Investigation of reactive sputtering with N$_2$}
-Improving interlayer roughness of multilayer coatings using N$_2$ reactive deposition has been shown before\cite{Windt:2007uj,jakobsen2010developing}, specifically for W/B$_4$C films. For this project, coatings of W/B$_4$C were produced using N$_2$ reactive sputter deposition and compared to similar coatings made without N$_2$. XRR measurements of the results and comparison can be seen in figure \ref{fig:wb4c-n2}. The left figure show coatings with a d-spacing of $\sim$3.5 nm, and the right coatings with d-spacings of $\sim$5.0 nm. The left figure show a horizontal offset in the XRR measurement between the two coatings, contributed by an offset in the calibration. The right figure show a similar offset, but also a significant change in Kiessig fringe intensity between the 2nd and 3rd Bragg peak. The 3rd Bragg peak is also less pronounced for the reactively sputtered film than the non-reactively sputtered. The results indicate that the reactive sputtering does not improve the interface roughness, but rather deteriorates.
+Improving interlayer roughness of multilayer coatings using N$_2$ reactive deposition has been shown before\cite{Windt:2007uj,jakobsen2010developing}, specifically for W/B$_4$C films. For this project, coatings of 10 bilayer W/B$_4$C were produced using N$_2$ reactive sputter deposition and compared to similar coatings made without N$_2$. XRR measurements of the results and comparison can be seen in figure \ref{fig:wb4c-n2}. The left figure show coatings with a d-spacing of $\sim$3.5 nm, and the right coatings with d-spacings of $\sim$5.0 nm. The left figure show a horizontal offset in the XRR measurement between the two coatings, contributed by an offset in the calibration. The right figure show a similar offset, but also a significant change in Kiessig fringe intensity between the 2nd and 3rd Bragg peak. The 3rd Bragg peak is also less pronounced for the reactively sputtered film than the non-reactively sputtered. The results indicate that the reactive sputtering does not improve the interface roughness, but rather increases interlayer roughness.
 
 \begin{figure}[!h]
 	\center
 	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c_n2_35AA.pdf}
 	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c_n2_50AA.pdf}
-\caption{\footnotesize XRR measurements of 10 bilayer W/B$_4$C coatings made with and without N$_2$ reactive sputtering (10 \% N$_2$, 90 \% Ar). Left figure is coatings with a d-spacing of $\sim$3.5 nm, right figure is coatings with a d-spacing of $\sim$5 nm.}\label{fig:wb4c-n2}
+\caption{\footnotesize XRR measurements of 10 bilayer W/B$_4$C coatings made with and without N$_2$ reactive sputtering (10 \% N$_2$, 90 \% Ar). \textbf{Left:} Coatings with a d-spacing of $\sim$3.5 nm. \textbf{Right:} Coatings with a d-spacing of $\sim$5 nm.}\label{fig:wb4c-n2}
 \end{figure}
 
 It was later found out from samples stored over time, that the coatings will visibly change over time if coated with N$_2$ reactive sputtering. A sample with discoloration can be seen in figure \ref{fig:discolor} (picture taken July 2014). The sample is a W/B$_4$C 10 bilayer calibration coating with a d-spacing of $\sim$5 nm. It was coated in February 2012 using 10 \% N$_2$ with 90 \% Ar at a total pressure of 2.9 mTorr.
@@ -186,9 +195,9 @@ It was later found out from samples stored over time, that the coatings will vis
 \caption{\footnotesize Picture of sample coated with 10 bilayers of W/B$_4$C using N$_2$ reactive sputtering. Sample was coated in February 2012, picture taken July 2014.}\label{fig:discolor}
 \end{figure}
 
-Investigation into the literature gives a possible explanation. B$_4$C coatings are react to humidity, but for BN coatings the effect is even more pronounced. The coating will suck in water molecule from the air, which diffuses through the coating and can eventually make the film peel off, see \cite{Cardinale:1994ha}. When B$_4$C coatings are sputtered with N$_2$ present, the nitrogen atoms become part of the film and will form B-N bonds. That would make all B$_4$C films produced with N$_2$ reactive sputtering deteriorate at ambient humidity. To test the hypothesis, a number of samples were produced with and without reactive sputtering, measured with XRR and subsequently placed in a desiccator at $\sim$20\% humidity.
+Investigation into the literature gives a possible explanation. B$_4$C coatings react to humidity, but for BN coatings the effect is even more pronounced. The coating will absorb water molecules from the air, which diffuses through the coating and can eventually make the film peel off\cite{Cardinale:1994ha}. When B$_4$C coatings are sputtered with N$_2$ present, the nitrogen atoms become part of the film and will form B-N bonds. That would make all B$_4$C films produced with N$_2$ reactive sputtering deteriorate at ambient humidity. To test the hypothesis, a number of samples were produced with and without reactive sputtering, measured with XRR and subsequently placed in a desiccator at $\sim$20\% humidity.
 
-The results can be seen in figure \ref{fig:wb4c-n2-storage}. The upper row are thick ($\sim$5.0 nm) and thin ($\sim$3.5 nm) samples of 10 bilayer W/B$_4$C coated with 10 SCCM N$_2$ flow ($\sim$10\% N$_2$). Middle row are samples with the same type and thickness of coating, but without N$_2$. Bottom row are also coated without N$_2$ but placed at ambient humidity ($\sim$45\%) outside the dessicator. The bottom row are also only stored for 3 months. The reactively sputtered coatings in the upper row show little change from Feb. 4th to June 28th, $\sim$5 months. What is interesting is the center row that show some interfacial changes in the film, especially for the thicker sample (left figure). Comparing to the bottom row, the thicker sample does not show the same changes over the 3 month period, but the thinner sample show significant change. The critical angle has shifted or washed out, the Bragg peak has widened and lowered in intensity. The sample also show visible discoloration, which is something that was not expected of a coating made without N$_2$ reactive sputtering. A more in-depth investigation into this problem is reported in section \ref{sec:long_term}.
+The results can be seen in figure \ref{fig:wb4c-n2-storage}. The upper row are thick ($\sim$5.0 nm) and thin ($\sim$3.5 nm) samples of 10 bilayer W/B$_4$C coated with 10 SCCM N$_2$ flow ($\sim$10\% N$_2$). Middle row are samples with the same type and thickness of coating, but without N$_2$. Bottom row are also coated without N$_2$ but placed at ambient humidity ($\sim$45\%) outside the desiccator. The bottom row are also only stored for 3 months. The reactively sputtered coatings in the upper row show little change from Feb. 4th to June 28th, $\sim$5 months. What is interesting is the center row that show some interfacial changes in the film, especially for the thicker sample (left figure). Comparing to the bottom row, the thicker sample does not show the same changes over the 3 month period, but the thinner sample show significant change. The critical angle has shifted or washed out, the Bragg peak has widened and lowered in intensity. The sample also show visible discoloration, which is something that was not expected of a coating made without N$_2$ reactive sputtering. A more in-depth investigation into this problem is reported in section \ref{sec:long_term}.
 
 \begin{figure}[htbp]
 	\center
@@ -198,7 +207,7 @@ The results can be seen in figure \ref{fig:wb4c-n2-storage}. The upper row are t
 	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c-n2-10sccm-thin.pdf}
 	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c-no-storage-thick.pdf}
 	\includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c-no-storage-thin.pdf}
-\caption{\footnotesize XRR measurements of samples coated with 10 bilayer W/B$_4$C films measured after coating and at a later time. Top and middle row samples were stored in a dessicator with $\sim$30 \% humidity. Bottom row samples were stored at ambient humidity ($\sim$50 \%).  \textbf{Top row} Samples coated with N$_2$ reactive sputtering (10 \% N$_2$, 90 \% Ar), d-spacings of $\sim$5 nm (left) and $\sim$3.5 nm (right). \textbf{Center row} Samples coated with non-reactive sputtering, d-spacings of $\sim$5 nm (left) and $\sim$3.5 nm (right). \textbf{Bottom row} Samples coated with non-reactive sputtering, d-spacings of $\sim$5 nm (left) and $\sim$3 nm (right) }\label{fig:wb4c-n2-storage}
+\caption{\footnotesize XRR measurements of samples coated with 10 bilayer W/B$_4$C films measured after coating and at a later time. Top and middle row samples were stored in a desiccator with $\sim$30 \% humidity. Bottom row samples were stored at ambient humidity ($\sim$50 \%).  \textbf{Top row} Samples coated with N$_2$ reactive sputtering (10 \% N$_2$, 90 \% Ar) and stored in desiccator, d-spacings of $\sim$5 nm (left) and $\sim$3.5 nm (right). \textbf{Center row} Samples coated with non-reactive sputtering and stored in desiccator, d-spacings of $\sim$5 nm (left) and $\sim$3.5 nm (right). \textbf{Bottom row} Samples coated with non-reactive sputtering and stored outside desiccator, d-spacings of $\sim$5 nm (left) and $\sim$3 nm (right) }\label{fig:wb4c-n2-storage}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -209,7 +218,7 @@ The results can be seen in figure \ref{fig:wb4c-n2-storage}. The upper row are t
   \includegraphics[width=0.47\linewidth]{figures/athena/coatings/w-b4c-kalib1.pdf}
   \includegraphics[width=0.47\linewidth]{figures/athena/coatings/ir-b4c.pdf}
   \includegraphics[width=0.47\linewidth]{figures/athena/coatings/ir-b4c-w-cr.pdf}
-\caption{\footnotesize XRR measurements of coatings stored for 2-3 years.  \textbf{Top row} 10 bilayer Pt/B$_4$C with d-spacings of $\sim$5 nm (left) and $\sim$3 nm (right). \textbf{Center row} 10 bilayer W/B$_4$C with d-spacings of $\sim$6 nm (left) and $\sim$3.5 nm (right). \textbf{Bottom row} 10 bilayer Ir/B$_4$C with d-spacings of $\sim$8 nm (left) and 10 bilayer Ir/B$_4$C with d-spacings of $\sim$6.5 nm and a 10 nm Cr sublayer (right). }\label{fig:longtermstorage}
+\caption{\footnotesize XRR measurements of coatings stored for 2-3 years at ambient conditions (outside desiccator).  \textbf{Top row} 10 bilayer Pt/B$_4$C with d-spacings of $\sim$5 nm (left) and $\sim$3 nm (right). \textbf{Center row} 10 bilayer W/B$_4$C with d-spacings of $\sim$6 nm (left) and $\sim$3.5 nm (right). \textbf{Bottom row} 10 bilayer Ir/B$_4$C with d-spacings of $\sim$8 nm (left) and 10 bilayer Ir/B$_4$C with d-spacings of $\sim$6.5 nm and a 10 nm Cr sublayer (right). }\label{fig:longtermstorage}
 \end{figure}
 
 \section{Long term storage investigation}\label{sec:long_term}
@@ -217,39 +226,39 @@ All samples coated at DTU Space are stored indefinitely for possible later inves
 
 In the upper row are shown 10 bilayer Pt/B$_4$C multilayers, middle row show W/B$_4$C multilayers and bottom row show Ir/B$_4$C multilayer (left) and Ir/B$_4$C multilayer with Cr sublayer (right).
 
-The Pt/B$_4$C multilayers show significant change over time. The thicker film (left) show a rise in Kiessig fringe intensity between 1st and 2nd Bragg peak as well as a flattening of the 2nd Bragg peak. These effects show up already after $\sim$4 months. The thinner Pt/B$_4$C film (left) show even more deterioration, even after only 18 days. The 1st Bragg peak have widened and have grown a significant should at higher angles.
+The Pt/B$_4$C multilayers show significant change over time. The thicker film (left) show a rise in Kiessig fringe intensity between 1st and 2nd Bragg peak as well as a flattening of the 2nd Bragg peak. These effects show up already after $\sim$4 months. The thinner Pt/B$_4$C film (left) show even more deterioration, even after only 18 days. The 1st Bragg peak have widened and have grown a significant shoulder at higher angles.
 
 The W/B$_4$C multilayers in the middle row also show significant change after less than two months. The thicker sample (left) have a shifted critical angle, corresponding to a change in $\Gamma$ in the multilayer. The thinner film (right) also show a change in critical angle, although less pronounced.
 
 Ir/B$_4$C multilayers in the bottom row show very little change even after 2-2.5 years. The sample with Cr sublayer (right) shows some change in the Kiessig fringe intensity.
 
-These results indicate serious problems in using B$_4$C films in certain material combinations. The baseline ATHENA coating of an Ir/B$_4$C bilayer and the alternative Ir/B$_4$C multilayer will according to these results be stable over longer periods of time. As a result, the coatings deposited on SPO substrates for this work package are not Pt/B$_4$C or W/B$_4$C.
+These results indicate serious problems in using B$_4$C films in certain material combinations. The baseline ATHENA coating of an Ir/B$_4$C bilayer and the alternative Ir/B$_4$C multilayer will according to these results be stable over longer periods of time.
 
 \section{Upscaled production}\label{sec:athena_upscaled}
 
-\emph{The following section was part of a technical report for the European Space Agency. It was done as part of the coating investigations for ATHENA+, which had a double-telescope configuration. It also required significantly less silicon pore optic substrates, 64,640 vs. $\sim$150,000 for ATHENA. The investigations done for scaling up production still holds true and the final production will also still take 2 years, but cost, production equipment and manpower will have to increase by a factor of two to three.}
+\emph{The following section was part of a technical report for the European Space Agency. It was done as part of the coating investigations for the original ATHENA proposed for ESA's L1 mission, which had a double-telescope configuration. It also required significantly less silicon pore optic substrates, 64,640 vs. $\sim$130,000 for ATHENA. The investigations done for scaling up production still holds true and the final production will also still take 2 years, but cost, production equipment and manpower will have to increase by a factor of two to three.}
 
 For the ATHENA mission, the coating of the mirror substrates will be a large undertaking as 64,640 silicon pore optic (SPO) substrates will need a coating of between two and twenty layers.
 
-Every piece will have to be transported from the SPO substrate fabrication facility (SFF) to a new dedicated coating facility, thoroughly cleaned, coated in specially designed chambers transported to the stacking facility. After stacking into mirror modules (MM), each MM will be measured at one of three dedicated beam lines at the BESSY II synchrotron in Berlin.
+Every piece will have to be transported from the SPO substrate fabrication facility (SFF) to a new dedicated coating facility, thoroughly cleaned, coated in specially designed chambers and then transported to the stacking facility. After stacking into mirror modules (MM), each MM will be measured at one of three dedicated beam lines at the BESSY II synchrotron in Berlin.
 
-In this paper, an approximate cost and timeline of the coating qualification of SPO substrates is given.
+In this paper, an approximate cost and timeline of the coating and coating qualification of SPO substrates is given.
 
 \subsection{Timeline and cost of procurement and setup of coating facility}
 
-Cleaning coating of SPO substrates will require as a minimum an ISO 7 clean room to avoid dust particles. Dust on the substrates before coating will result in small holes in the coating, which will reduce the effective area. There are two possibilities for the location of the coating facility which is discussed in this paper. Either the facility is located in the same building or adjacent building as the stacking facility or the coating facility is placed further away, i.e. another country.
+Cleaning and coating of SPO substrates will require as a minimum an ISO 7 clean room to avoid dust particles. Dust on the substrates before coating will result in small holes in the coating, which will reduce the effective area. There are two possibilities for the location of the coating facility which is discussed in this paper. Either the facility is located in the same building or adjacent building as the stacking facility or the coating facility is placed further away, i.e. another country within Europe.
 
-Moving substrates in out of clean rooms transporting them over larger distances has drawbacks extra costs associated. But locating the two facilities separately can reduce costs as it will be easier cheaper to find two smaller clean rooms to repurpose into production facilities. Building setting up a clean rooms of a sufficient size for both facilities will take several years come with a significant cost, but if it is possible to repurpose existing laboratories that cost can be reduced.
+Moving substrates in and out of clean rooms and transporting them over larger distances has drawbacks and extra costs associated. But locating the two facilities separately can reduce costs as it will be easier cheaper to find two smaller clean rooms to re-purpose into production facilities. Building and setting up clean rooms of a sufficient size for both facilities will take several years and come with a significant cost, but if it is possible to re-purpose existing laboratories that cost can be reduced.
 
-The first part of the clean room should be for opening shipments from the SFF cleaning each substrate. As the substrates are produced in a clean room at the SFF, it is assumed that they will at maximum need to be cleaned with an air gun with dry nitrogen. After being cleaned, each substrate is mounted onto a substrate holder that will be inserted into a coating chamber for coating. When the coating is done, the substrate holder is taken out of the chamber and the substrates are ready to go into the stacking facility.
+The first part of the clean room should be for opening shipments from the SFF and cleaning each substrate. As the substrates are produced in a clean room at the SFF, it is assumed that they will at maximum need to be cleaned with an air gun with dry nitrogen. After being cleaned, each substrate is mounted onto a substrate holder that will be inserted into a coating chamber for coating. When the coating is done, the substrate holder is taken out of the chamber and the substrates are ready to go into the stacking facility.
 
 Clean rooms can be build inside existing larger storage areas or cleaner production facilities. The approximate timeline for the setup of the entire facility is as follows:
 
 \begin{description}[itemsep=1.5pt,parsep=1pt]
 	\item[9] \textbf{years before launch:}
 		\begin{itemize}[itemsep=1.5pt,parsep=1pt]
-		\item[-] Planning is begun for the construction of a shared cleanroom facility
-		\item[-] Planning is begun for coating chambers
+		\item[-] Planning begins for the construction of a shared cleanroom facility.
+		\item[-] Planning begins for coating chambers.
 		\end{itemize}
 	\item[7-8] \textbf{years before launch:}
 		\begin{itemize}[itemsep=1.5pt,parsep=1pt]
@@ -267,50 +276,50 @@ The cost of building and preparing the coating facility will differ between a sh
 \subsection{Coating chambers}\label{sec:chambers}
 The two telescopes of ATHENA consists of 66,640 SPO substrates, which are all coated. Considering the coating chamber design used at DTU Space, a maximum of 100 plates can be coated per day in an 8 hour workday. In a year of 200 workdays, 20,000 substrates can be coated. Using three chambers, 60,000 substrates can be coated per year, within the two year time frame a total of 120,000 substrates can be coated. A minimum of 90,000 coated is considered as baseline, as we account for damaged plates, bad coatings etc. That leaves an acceptable down time of 6 months throughout the project.
 
-Using chambers of same design as DTU Space will give a cost of around 1M \euro\ per chamber. Those chambers have the drawback of a long pump down time after having the chamber opened to change samples. The advantage of coating SPO substrates compared to e.g. NuSTAR glass is that the SPO substrates are flat only $\sim$1 mm thin.
+Using chambers of same design as DTU Space will give a cost of around 1M \euro\ per chamber. Those chambers have the drawback of a long pump down time after having the chamber opened to change samples. The advantage of coating SPO substrates compared to e.g. NuSTAR glass is that the SPO substrates are flat and only $\sim$1 mm thin.
 
-If a new chamber design is considered, it would be advantageous to pursue a design similar to what is used in the semiconductor industry. Here entire wafer are given a number of different coatings automatically moved from one cathode to another using a robotic arm. As those wafers can have a thickness of up to 3 mm, we propose to use a substrate holder shaped like a wafer 3 mm thick with a diameter of 300 mm. Recessions in the substrate holder can accommodate SPO substrate no clips will be needed to hold substrates in place, since the wafer will at all times be horizontal. A chamber of that design will not need pump down time between each batch of substrates, since wafers will be inserted into the central vacuum chamber through a narrow slit directly from a clean magazine in atmospheric pressure. Every coating cathode is also in a separate chamber can be accessed without venting the entire machine. Custom made machines like seen in figure \ref{fig:dram} are priced at $\sim$2M \euro.
+If a new chamber design is considered, it would be advantageous to pursue a design similar to what is used in the semiconductor industry. Here an entire wafer are given a number of different coatings and automatically moved from one cathode to another using a robotic arm. As those wafers can have a thickness of up to 3 mm, we propose to use a substrate holder shaped like a wafer 3 mm thick with a diameter of 300 mm. Recessions in the substrate holder can accommodate SPO substrate and no clips will be needed to hold substrates in place, since the wafer will at all times be horizontal. A chamber of that design will not need pump down time between each batch of substrates, since wafers will be inserted into the central vacuum chamber through a narrow slit directly from a clean magazine in atmospheric pressure. Every coating cathode is also in a separate chamber and can be accessed without venting the entire machine. Custom made machines like seen in figure \ref{fig:dram} are priced at $\sim$2M \euro.
 
 \begin{figure}[htbp]
 	\centering
 		\includegraphics[width=0.6\textwidth]{figures/athena/dram.jpeg}
-	\caption{Multi-chamber deposition machine from Applied Materials. \emph{Source: www.appliedmaterials.com}}
+	\caption{\footnotesize Multi-chamber deposition machine from Applied Materials. \emph{Source: www.appliedmaterials.com}}
 	\label{fig:dram}
 \end{figure}
 
-A significant increase production rates can be achieved using machines like this as well as a cleaner environment for samples, since the machine itself can stay closed for longer periods of time. Higher production rates means that only one or two chambers are needed to complete the coating of 90,000 SPO substrates in two years.
+A significant increase in production rates can be achieved using machines like this. It also gives a cleaner environment for samples, since the machine itself can stay closed for longer periods of time. Higher production rates means that only one or two chambers are needed to complete the coating of 90,000 SPO substrates in two years.
 
 \subsection{Shared facility}
-Since both the coating facility stacking facility needs a clean room, these can be combined or connected in a shared facility. If the chamber design from DTU Space is used, a separate clean room will be needed to accommodate these chambers as they can give off dust flakes of material every time they are opened. If instead a multi-chamber coating system is used as described in section \ref{sec:chambers}, the coating machinery can be in a separate clean room against the wall into the stacking facility. That way wafer cassettes full of wafer-shaped SPO substrate holders can be inserted retrieved from the stacking facility clean room.
+Since both the coating facility stacking facility needs a clean room, these can be combined or connected in a shared facility. If the chamber design from DTU Space is used, a separate clean room will be needed to accommodate these chambers as they can give off dust flakes of material every time they are opened. If instead a multi-chamber coating system is used as described in section \ref{sec:chambers}, the coating machinery can be in a separate clean room against the wall into the stacking facility. That way wafer cassettes full of wafer-shaped SPO substrate holders can be inserted and retrieved from the stacking facility clean room.
 
 For a shared facility with multi-chamber coating systems as described in section \ref{sec:chambers}, we propose the following facility setup:
 
 \begin{itemize}
 	\item Common class 10,000 clean room for mounting SPO substrates on wafer-shaped sample holders. The same room will be used for fast X-ray system for pre- post coating measurements.
-	\item Access to insertion port of multi-chamber coating system from the common clean room. Wafer casettes are mounted directly to accessible part of the machine.
+	\item Access to insertion port of multi-chamber coating system from the common clean room. Wafer cassettes are mounted directly to accessible part of the machine.
 	\item The back end of the coating chambers are in a separate room, so targets can be changed without giving off dust near the substrates.
-	\item In connection to the common clean room is a separate class 100 - 10,000 clean room with stacking robots. The robots can be in a separate ventilated tent inside the clean room to decrease particle dust. Mirror modules will be sealed here moved outside the clean rooms for packing shipping to BESSY II.
+	\item In connection to the common clean room is a separate class 100 - 10,000 clean room with stacking robots. The robots can be in a separate ventilated tent inside the clean room to decrease particle dust. Mirror modules will be sealed here and moved outside the clean rooms for packing and shipping to BESSY II.
 \end{itemize}
 
 \subsection{Separated facilites}
-If the facilities are separated, a large effort will be required to keep substrates clean when packing/unpacking for transport. The substrates will be send from the SFF in batches of 1,500 double or triple sealed, so the package can be opened partly when inside a moderately clean room opened completely in the main class 10,000 clean room. The following setup of clean rooms is proposed.
+If the facilities are separated, a large effort will be required to keep substrates clean when packing/unpacking for transport. The substrates will be send from the SFF in batches of 1,500 and double or triple sealed, so the package can be opened partly when inside a moderately clean room opened completely in the main class 10,000 clean room. The following setup of clean rooms is proposed.
 
 \begin{itemize}
-	\item Two separate class 10,000 clean rooms, one for substrate handling one for coating chambers. Alternatively, one larger clean room parted by a clear plastic curtain.
-	\item Substrate handling clean room will also be used for the fast X-ray system for pre- post coating measurements.
-	\item Coated samples will be packed double sealed inside the clean room before being shipped to the stacking facility.
+	\item Two separate class 10,000 clean rooms, one for substrate handling and one for coating chambers. Alternatively, one larger clean room parted by a clear plastic curtain.
+	\item Substrate handling clean room will also be used for the fast X-ray system for pre- and post coating measurements.
+	\item Coated samples will be packed and double sealed inside the clean room before being shipped to the stacking facility.
 \end{itemize}
 
-\subsection{Resist deposition removal at alternative facility}
-One of the processes done at the SFF to the substrates before sending them to the coating facility will be the lithographic process of resist deposition. It requires a semiconductor grade facility to apply the resist using spray-on afterwards removing stripes by a UV radiation process.
+\subsection{Resist deposition and removal at alternative facility}
+One of the processes done at the SFF to the substrates before sending them to the coating facility will be the lithographic process of resist deposition. It requires a semiconductor grade facility to apply the resist using spray-on and afterwards removing stripes by a UV radiation process.
 
-The process can, instead of at the SFF, be done either at the coating facility by including the proper equipment or at an external facility. DTU Danchip is the Danish National Center for Micro- Nanofabrication, which runs a class 10 clean room with equipment capable of depositing the resist UV curing the SPO substrates.
+The process can, instead of at the SFF, be done either at the coating facility by including the proper equipment or at an external facility. DTU Danchip is the Danish National Center for Micro- Nanofabrication, which runs a class 10 clean room with equipment capable of depositing the resist and UV curing the SPO substrates.
 
-The removal of the resist after coating can be done at the stacking facility, but can instead be done at the coating facility if these are separated. By doing the resist removal at the coating facility, a visual inspection can be done of the substrate before being transported to the stacking facility. If the process damages the coating, the problem can be located new coated substrates can be produced quickly.
+The removal of the resist after coating can be done at the stacking facility, but can instead be done at the coating facility if these are separated. By doing the resist removal at the coating facility, a visual inspection can be done of the substrate before being transported to the stacking facility. If the process damages the coating, the problem can be located and new coated substrates can be produced quickly.
 
 
 \subsection{Cost for setting up}
-To prepare the lab before the coating campaign starts, the coating chambers will need to be installed configured. An extensive campaign with scientific personnel is needed to ensure the system's capability to produce coatings of sufficient quality. We estimate 12-24 months to qualify the coating chambers for the ATHENA coating campaign will need approximately two scientific personnel one technician.
+To prepare the lab before the coating campaign starts, the coating chambers will need to be installed and configured. An extensive campaign with scientific personnel is needed to ensure the system's capability to produce coatings of sufficient quality. We estimate 12-24 months to qualify the coating chambers for the ATHENA coating campaign and will need approximately two scientific personnel and one technician.
 
 The coating qualification equipment described in section \ref{qualification} will be needed to qualify the coating chambers.
 
@@ -334,10 +343,10 @@ Personnel for setup & 490,000 \euro\\
 \end{table}
 
 
-\subsection{Timeline cost for production of ATHENA coatings}
-SPO substrates are fabricated at the SFF should be shipped to the coating facility weekly in shipments of 1500 substrates. 300 substrates are daily mounted on wafer shaped sample holders after they have been measured using the fast X-ray system. The substrates are coated in one of the coating chambers subsequently taken out to have resist removed be measured again using the fast X-ray system.
+\subsection{Timeline and cost for production of ATHENA coatings}
+SPO substrates are fabricated at the SFF and should be shipped to the coating facility weekly in shipments of 1500 substrates. 300 substrates are daily mounted on wafer shaped sample holders after they have been measured using the fast X-ray system. The substrates are coated in one of the coating chambers and subsequently taken out to have resist removed and be measured again using the fast X-ray system.
 
-Cost drivers during production are sputtering targets personnel. The final cost is dependent on which material combination is used for coating. The differences can be seen below.
+Cost drivers during production are sputtering targets and personnel. The final cost is dependent on which material combination is used for coating. The differences can be seen below.
 
 \begin{table}[htbp]
 	\centering
@@ -373,9 +382,9 @@ W/B$_4$C & Graded-d multilayer & 8,700 \euro & 29,000 \euro \\
 \end{tabular}
 \end{table}
 
-Only 30\% of the target can be used before it has to be replaced, so a factor of 3-4 should be applied to these cost estimates. The leftover targets of precious metals, platinum iridium, can be sold back at market value, which can reduce the total costs of precious metal consumption by up to $\sim$50 \%.
+Only 30\% of the target can be used before it has to be replaced, so a factor of 3-4 should be applied to these cost estimates. The leftover targets of precious metals, platinum and iridium, can be sold back at market value, which can reduce the total costs of precious metal consumption by up to $\sim$50 \%.
 
-For a Pt/B$_4$C graded-d multilayer, the total thickness of Pt is 16 nm in average 22 nm of B$_4$C. Thus, $1.6 \cdot 5000$ mm$^3$ of Pt is needed at a price of 10.5 \euro\ per mm$^3$ at 90 \% coating loss, combined with $2.2 \cdot 5000$ mm$^3$ of B$_4$C at 0.26 \euro\ per mm$^3$ gives a total cost of 87,000 \euro.
+For a Pt/B$_4$C graded-d multilayer, the total thickness of Pt is 16 nm in average and 22 nm of B$_4$C. Thus, $1.6 \cdot 5000$ mm$^3$ of Pt is needed at a price of 10.5 \euro\ per mm$^3$ at 90 \% coating loss, combined with $2.2 \cdot 5000$ mm$^3$ of B$_4$C at 0.26 \euro\ per mm$^3$ gives a total cost of 87,000 \euro.
 
 \subsection{Personnel}
 During the two year coating campaign, 300 substrates will be handled daily. Procedures to be done daily include:
@@ -399,13 +408,13 @@ For three technicians two scientists, a two year coating campaign will cost 1,40
 %\subsection{Separated facilites}
 
 \subsection{Coating QA during production}\label{qualification}
-We envision a significant coating qualification campaign for the ATHENA mission. We propose a fast automated 8 keV X-ray setup, that can measure every plate before after coating. The plan is to make reflectivity scan of ca 50 \% of the pores.  Each measurement is an angular scan  at a fixed 8 keV energy at an angular range of 0 to $\sim$ 1.5 deg. will determine micro roughness to an accuracy of +/- 0.02 nm. It till require automatic alignment to an accuracy of +/- 0.01 deg. Measurements for each plate should be conducted in less than 5 minutes each scan should be automatically fitted, with the data logging plotting part of the facility. The foot print of the beam should cover more than 10 \% of each pore.
+We envision a significant coating qualification campaign for the ATHENA mission. We propose a fast automated 8 keV X-ray setup, that can measure every plate before and after coating. The plan is to make reflectivity scan of ca 50 \% of the pores.  Each measurement is an angular scan  at a fixed 8 keV energy and at an angular range of 0\degr to $\sim$ 1.5\degr\ will determine micro roughness to an accuracy of +/- 0.02 nm. It till require automatic alignment to an accuracy of +/- 0.01\degr. Measurements for each plate should be conducted in less than 5 minutes and each scan should be automatically fitted, with the data logging and plotting part of the facility. The foot print of the beam should cover more than 10 \% of each pore.
 
 The total database of reflectivity measurements can be used when building the final optical response model for ATHENA. During the campaign it will be required to measure ~600 SPO substrates per day, so the system should be capable of measuring each substrate in a batch automatically.
 
 Every chamber needs to be calibrated twice a week to ensure a precise layer thickness. This will require samples to be coated with constant-d multilayers, which will be measured using a separate 8 keV X-ray reflectivity (XRR) setup at the facility.
 
-In every coating run, a witness sample will be included along with SPO substrates. These witness samples will be measured using the 8 keV XRR setup to ensure proper layer thickness interfacial roughness. In addition, 5x70 mm wafer pieces are also coated measured for stress using a stylus measurement tool. One or two times a week, a coated SPO substrate will be taken out to check for adhesion visual QA in a microscope. If contamination is suspected, an AFM analysis will be carried out, if necessary externally.
+In every coating run, a witness sample will be included along with SPO substrates. These witness samples will be measured using the 8 keV XRR setup to ensure proper layer thickness interfacial roughness. In addition, 5x70 mm wafer pieces are also coated measured for stress using a stylus measurement tool. One or two times a week, a coated SPO substrate will be taken out to check for adhesion and visual QA in a microscope. If contamination is suspected, an AFM analysis will be carried out, if necessary externally.
 
 Measuring samples at the energies visible by ATHENA can help build the final optics model. We propose this optional addition: A single coated substrate per day will be selected for reflectivity scatter measurements at the BESSY II synchrotron at PTB Berlin. 25 substrates per month can be measured using X-ray reflectivity energy scans at 4 to 10 keV at BESSY II within 2-3 days. A few more days per month will be needed to measure scattering from select substrates.
 
@@ -427,9 +436,9 @@ Stylus stress measurement setup & 30,000 \euro\\
 
 
 
-\subsection{Timetable cost}
+\subsection{Timetable and cost}
 
-The timetable is independent on whether the coating facility being shared with the stacking facility or separate.\\
+The timetable is independent on whether the coating facility is shared with the stacking facility or separate.\\
 
 \begin{table}[htbp]
 	\centering
@@ -450,7 +459,7 @@ T - 6 years & Coating chamber qualifications complete.\\
 \end{tabular}
 \end{table}
 
-The timetable gives the possibility of starting the coating campaign four years before launch. The coating campaign is set for two years including delays will have the optic ready two years before launch. The two year window between optic readiness launch can be used for production buffer, calibration campaign installation in satellite.
+The timetable gives the possibility of starting the coating campaign six years before launch. The coating campaign is set for two years including delays will have the optic ready four years before launch. The four year window between optic readiness and launch is specified in the ESA timetable.
 
 Total cost for a shared facility is calculated below. For a separate facility, transport costs of substrates will have to be included, estimated at 100,000 \euro. Substituting three DTU design coating chambers with two more advanced multi-chamber systems will increase the cost of coating chambers to 4 mio. \euro.
 
@@ -483,3 +492,5 @@ Personnel during production & 1,400,000 \euro\\
 \textbf{Total} & $\leq$ 8,230,000 \euro\\
 \end{tabular}
 \end{table}
+
+\section{ATHENA discussion and conclusion}
