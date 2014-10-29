@@ -20,7 +20,7 @@ The European Space Agency (ESA) continued development of a smaller mission using
 The theme of the 2028 L2 mission is \emph{The Hot and Energetic Universe}, which calls for spatially resolved X-ray spectroscopy and deep wide-field X-ray spectral imaging. The performance should greatly exceed instruments currently in use such as Chandra and XMM-Newton as well as future mission such as Astro-H and eRosita. The improvements are to be realised with an effective area of 2 m$^2$ at 1 keV, 5'' angular resolution and 40'x40' wide field-of-view\cite{Willingale:2013vo}.
 
 \subsection{ATHENA optics technology}\label{sec:athena_opt_tech}
-ESA has for the past decade been working on a radically new optics technology for future X-ray missions, the Silicon Pore Optics (SPO)\cite{Barcons:2012va}. By using silicon wafers, cut into rectangular shapes (diced) and with grooves cut into the underside, a high collecting area can be achieved with very low mass and at the same time achieve angular resolution better than glass.
+ESA has for the past decade been working on a radically new optics technology for future X-ray missions, the Silicon Pore Optics (SPO)\cite{Barcons:2012va,Collon:2010bp,Collon:2006ky,Collon:2010bp,Collon:2006ky,Beijersbergen:2004cc}. By using silicon wafers, cut into rectangular shapes (diced) and with grooves cut into the underside, a high collecting area can be achieved with very low mass and at the same time achieve angular resolution better than glass.
 
 \begin{figure}[!h]
   \center
@@ -93,7 +93,7 @@ The baseline coating for ATHENA is a Ir/B$_4$C single bilayer. The Ir will refle
 The Ir/B$_4$C combination does however have some drawbacks, especially high compressive film stress. Additionally, the thin film material combination is not described in the litterature, so the interplay between the two materials in both the short and long term is relatively unknown. In appendix \ref{pap:PREL_ATHENA} can be found a paper from 2011 that investigates the baseline ATHENA coating along with solutions to handle the film stress. In section \ref{sec:athena_cr_impro} is a continuation of the investigation into stress improvements.
 
 \subsection{Coating optimisations for ATHENA}
-To improve on the ATHENA baseline coating, a range of alternative material combinations were investigated using computer optimisation with Markov-Chain Monte-Carlo methods by Desiree D. M. Ferreira at DTU Space. A number of optimised coating recipes were produced for each material combination and the actual coatings were subsequently produced on SPO substrates in the coating lab at DTU Space. In appendix \ref{pap:athena_2012} can be found a paper from 2012 on some of the optimizations and investigations done on coatings applied to SPO substrates.
+To improve on the ATHENA baseline coating, a range of alternative material combinations were investigated using computer optimisation with Markov-Chain Monte-Carlo methods by Desiree D. M. Ferreira at DTU Space. A number of optimised coating recipes were produced for each material combination and the actual coatings were subsequently produced on SPO substrates in the coating lab at DTU Space. In appendix \ref{pap:athena_2012} (see also \cite{ferreira2012athena}) can be found a paper from 2012 on some of the optimizations and investigations done on coatings applied to SPO substrates.
 
 \section{Investigation of Cr roughness improvement}\label{sec:athena_cr_impro}
 The baseline coating for ATHENA consists of a bilayer of Ir and B$_4$C, the former of which shows considerably film stress of up to -4 GPa (compressive). To alleviate the stress in the film, earlier investigations has shown significant improvements in stress by using a Cr underlayer, which almost eliminates the total film stress[\ref{pap:PREL_ATHENA}].
@@ -235,6 +235,7 @@ Ir/B$_4$C multilayers in the bottom row show very little change even after 2-2.5
 These results indicate serious problems in using B$_4$C films in certain material combinations. The baseline ATHENA coating of an Ir/B$_4$C bilayer and the alternative Ir/B$_4$C multilayer will according to these results be stable over longer periods of time.
 
 \section{Coating of Ir/B$_4$C on SPO substrates}
+Production of Ir/B$_4$C single bilayer and multilayer coatings on SPO substrates were carried out in the Multilab at DTU Space. The optimised recipes can be found described in appendix \ref{pap:athena_2012}, diagrams of the optimised coatings can be seen in figure \ref{fig:ml_baseline_sideview}. The multilayer coating is basically a five bilayer linearly graded coating underneath a baseline coating. The combination ensures that the baseline effective area requirements for ATHENA will be met and the five bilayers underneath will increase the effectivity around 6--6.5 keV\footnote{The iron K$_{\alpha}$ line is 6.4 keV and is an extremely useful emission line in astrophysics.}.
 
 \begin{figure}[!h]
   \center
@@ -242,6 +243,47 @@ These results indicate serious problems in using B$_4$C films in certain materia
   \includegraphics[width=0.4\linewidth]{figures/athena/coating_on_spo/ir-b4c-ml.png}
 \caption{\footnotesize Side-view diagrams of Ir/B$_4$C coatings for ATHENA. \textbf{Left:} The baseline Ir/B$_4$C single bilayer. d$_{\text{Ir}} = 11.0$ nm,  d$_{\text{B}_4\text{C}} = 8.0$ nm. \textbf{Right:} The multilayer coating optimised for the middle part of the ATHENA optic. Consists of five bilayers with d$_{\text{min}} = 5.0$ nm, d$_{\text{max}} = 11.0$ nm, plus a cap layer of Ir of d$_{\text{Ir}} = 11.0$ nm and a top layer of B$_4$C of d$_{\text{B}_4\text{C}} = 8.0$ nm.}\label{fig:ml_baseline_sideview}
 \end{figure}
+
+The SPO substrates were coated with an Ir cathode power of 450 W and a B$_4$C cathode power of 900 W at a pressure of 2.9 mTorr with an Ar flow of 88 sccm. The base pressure was $< 2\cdot10^{-6}$ Torr.
+
+The SPO substrates are mounted on sample plates in the chamber with ribs horizontally; the horizontal movement of the sample ensures good uniformity in the rib direction. XRR measurements performed after coating are done in the same direction as the ribs, so the coating is uniform in the footprint of the X-ray beam. In figure \ref{fig:ir-b4c-fit} can be seen an XRR measurement and IMD fit of a Ir/B$_4$C coated SPO substrate.
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{.47\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/athena/coating_on_spo/120-10-21_fit.pdf}
+\end{minipage}%
+\begin{minipage}{.53\textwidth}
+  \centering
+  \footnotesize
+\begin{tabular}{c|c|c|c|c}
+i&d$_{\text{aim}}$ [nm]&$\Gamma_{\text{aim}}$&d$_{\text{fit}}$ [nm]&$\Gamma_{\text{fit}}$\\
+\hline
+top&8.0&1&7.17&1\\
+cap&11.0&0&11.09&0\\
+1&11.0&0.6&11.43&0.620\\
+2&9.5&0.6&9.99&0.617\\
+3&8.0&0.6&8.54&0.623\\
+4&6.5&0.6&6.95&0.576\\
+5&5.0&0.6&5.85&0.567
+\end{tabular}
+\end{minipage}
+\caption{\footnotesize XRR measurement of SPO substrate coated with optimised Ir/B$_4$C multilayer, compared to IMD model fit. Fitted values are shown to the right.}\label{fig:ir-b4c-fit}
+\end{figure}
+
+The IMD fit was done using the differential evolution algorithm\cite{Bjoerck:2011fy} included in IMD from version 5.0. The fitting results show that each layer is thicker by up to $\sim$17\% (for the thinnest layer). $\Gamma$-values are also off by $\sim$-5.5\% for the thinnest layer and $\sim$3.3\% for the thickest layer. It should be noted that the fit is not perfect and the maxima and minima of the model at lower angles that does not correspond to the data can be caused by the low-Z material not having the correct thickness.
+
+The coated SPO substrates were also measured at the FCM beamline at the BESSY II synchrotron at PTB in Berlin. Energy scans at 1.8--10 keV can be performed there that will give an indication of the coating performance at low energies, although not at 0.1--1.8 keV. A measurement of an SPO substrate with Ir/B$_4$C multilayer coating can be seen in figure \ref{fig:spo_bessy}. Two measurements are performed at different spots to investigate non-uniformity. The reflectivity response at low energies is well-behaving, showing no sudden drops that would indicate contamination with other elements in the coating. There are two small dips at $\sim$2.1 keV and $\sim$2.5 keV, corresponding to Ir M$_{\alpha}$-edges.
+
+\begin{figure}[!h]
+  \center
+\includegraphics[width=0.4\linewidth]{figures/athena/coating_on_spo/ml_irb4c_nores.jpg}
+\caption{\footnotesize XRR measurements at the 1.8--10 keV energy range and a 0.6\degr\ angle, performed at the FCM beamline at BESSY II. Two measurements of the same sample are shown from different positions to investigate non-uniformity of the coating.}\label{fig:spo_bessy}
+\end{figure}
+
+
+
 
 \subsection{ISO qualification of Ir/B$_4$C coatings}\label{sec:qa_test}
 In order to qualify the Ir/B$_4$C coatings on SPO substrates for the ATHENA mission, a range of tests were conducted on coated substrates. Four SPO substrates were coated, two with single bilayer baseline Ir/B$_4$C and two with optimised Ir/B$_4$C multilayer. The three tests were:
@@ -254,7 +296,7 @@ In order to qualify the Ir/B$_4$C coatings on SPO substrates for the ATHENA miss
 
 A baseline and multilayer sample were used for both thermal cycling and humidity tests. The samples from the humidity tests were reused for the adhesion test. All tests were carried out by David Girou form DTU Space.
 
-The thermal cycling test consists of eight cycles in a oven (no vacuum). One cycle is divided into two hours spent at $T_{max}=85$\degr C $\pm 10$\degr C and two hours spent at $T_{min}=-45$\degr C $\pm 10$\degr C. The test is divided into two times four cycles since reflectance measurements are performed after the fourth cycle. Figure \ref{4c} shows the temperature profiles for four cycles. Note that the temperature initial and final is 22\degr C, that $\dfrac{\text{d}T}{\text{d}t}=4$\degr C$\cdot$min$^{-1}$ and that after the last cycle the temperature is first increased to 40\degr C and then decreased to 22\degr C to avoid condensation. Reflectance measurements are done after the fourth and the eighth cycle.
+The thermal cycling test consists of eight cycles in a oven (no vacuum). One cycle is divided into two hours spent at $T_{max}=85$\degr C $\pm 10$\degr C and two hours spent at $T_{min}=-45$\degr C $\pm 10$\degr C. The test is divided into two times four cycles since reflectance measurements are performed after the fourth cycle. Inital and final temperature is 22\degr C, that $\dfrac{\text{d}T}{\text{d}t}=4$\degr C$\cdot$min$^{-1}$ and that after the last cycle the temperature is first increased to 40\degr C and then decreased to 22\degr C to avoid condensation. Reflectance measurements are done after the fourth and the eighth cycle.
 
 \begin{figure}[!h]
   \center
