@@ -9,8 +9,52 @@ Then a new problem comes to light: As the energy of the X-ray photon increases, 
 
 In this thesis is described work done from 2011 to 2014 on coating developments for the European ATHENA mission as well as design, production, and installation of an X-ray optic for the CAST experiment at CERN. Both those instruments function in an energy band in the very low end compared to NuSTAR, right in the region where there is only a limited benefit from using multilayers compared to single or double layer coatings.
 
+Chapter \ref{chap:coating_facility} is a description of the coating facility and X-ray measurement setup at DTU Space. A complete overhaul was done to the control software of the coating facility, which is described in detail.
+
 For the coating developments for ATHENA (chapter \ref{chap:athena_coatings}), the main goal was to find coatings that are stable and well-performing. Coatings that will behave well even after being launched by a rocket and drifting around a Lagrange point for 10+ years. At the same time the coatings should be able to reflect well enough to give ATHENA the largest effective area of any X-ray telescope. A new optics technology was developed by ESA leveraged by advances in the semiconductor industry, but require specific processes that would ruin pure carbon coatings, an element used in the NuSTAR coatings. The final problem was finding a way to coat the 300,000 mirrors required for the mission in the 2 years allocated by ESA for mirror production and coating.
 
-% \section{X-ray optics described}
-% \section{X-ray telescopes described}
-% \subsection{This is a new subsection}
+The CAST helioscope looks for the hypothetical axion particle, a possible solution to the CP violation problem in particle physics and a candidate for Dark Matter. Using a strong magnetic field to convert axion particles to X-ray photons, CAST is the most comprehensive experiment for detecting axions to date. In order to improve the sensibility of the helioscope, an X-ray telescope was needed to focus photons converted from axions into a small detector. In chapter \ref{chap:cast_xrt} the reader can find a description on all of the work done on an X-ray telescope for CAST.
+
+A proposed successor to the CAST experiment is the International AXion Observatory (IAXO), which is described in chapter \ref{chap:iaxo}, the paper \emph{X-ray optics for axion helioscopes} in appendix \ref{pap:axion_spie}, and the paper \emph{Conceptual design of the International Axion Observatory (IAXO)} of which a relevant part is found in appendix \ref{pap:iaxo_concept}. IAXO is based on the same principle of the CAST helioscope, a superconducting magnet applies a magnetic field to convert axions into X-ray photons. The photons are collected by X-ray telescopes and focused into detectors. Numerous improvements of IAXO over CAST makes the sensitivity more than five orders of magnitude better, making it possible to reach the axion-photon coupling range at which most axions models predict the hypothetical particle will be found.
+
+\section{Coatings for X-ray telescopes}
+To focus X-rays in space- or balloon-based telescopes, an array of mirrors with specific coatings is required. When focusing photons in the UV spectrum and longer wavelengths up beyond radio waves, the mirror can be a parabola, since the refractive index deviates from that of unity considerably for longer wavelengths. In the X-ray case however, the refractive index deviation from unity is in the order of $-10^{-5}$, which means that from ambient (vacuum/air, $n=1$) to matter, the direction of the photon is changed very little. In a single lens, the focal length is in the range of 100m. Using a regular lens to focus would require a material with as high a deviation from unity as possible, which means denser materials and denser materials results in more absorption. So, normal incidence parabolic focusing and regular refractive focusing are not feasible solutions for focusing X-rays. Instead, grazing incidence reflection is used, since below a very low critical angle $\theta_c$, X-rays will experience total external reflection on a surface\cite{AlsNielsen:2001vt}. $\theta_c$ is connected to the density of the surface material by
+\begin{eqnarray}
+	\theta_c = \sqrt{2\delta}
+\end{eqnarray}
+with
+\begin{eqnarray}
+	\delta = \frac{2\pi \rho_A f^0 (0) r_0}{k^2}
+\end{eqnarray}
+
+where $\rho_A f^0 (0)=\rho$ is the electron density of the material. The critical angle can therefore be changed by using a heavier material as a mirror. Recent X-ray missions such as Chandra from NASA and XMM from ESA utilizes mirrors coated with gold to increase $\theta_c$ and decrease the focal length.
+
+% The focal length is still too long to be practical in a space-based telescope, so by letting the incoming photons reflect at low grazing angle on first a parabolic mirror and then a hyperbolic mirror (see figure \ref{fig:doublereflected}), the focal length for gold plated mirrors comes down to a reasonable length (10 m for NuStar and Chandra). The mirrors are mounted in concentric circles with a difference in radius between each layer so that entire mirror length will be used at the angle of incidence, but not more so the mirror rings can be packed as close together as possible.
+%
+% \begin{figure}[!ht] % double reflected
+% 	\centering
+% 		\includegraphics[height=3in]{figures/introduction/xmm.pdf}
+% 	\caption{\footnotesize Principle of X-rays focused by double reflection. The incoming photons first hit the parabolic mirror array, and to shorten the focal length, the photons then hit a hyperbolic mirror array. The focal length in this image applies to ESA's XMM telescope. From \url{xmm.esa.int} .}
+% 	\label{fig:doublereflected}
+% \end{figure}
+The mirrors coated with a single high density material have the drawback that they cannot effectively provide reflectivity for X-ray photons with energies outside the 0.1 to 5 keV range. When the X-ray photon energy increases, the critical angle of the material decreases, the result for a iridium film can be seen in figure \ref{fig:xrayperformance}(b) at a reflectivity angle of 13.1 mrad $=$ 0.751\degr. In figure \ref{fig:xrayperformance}(a) is shown the reflectivity at 2.2 mrad $=$ 0.126\degr\ where the Ir can reflect up to 40 keV. 0.126\degr\ is the reflectivity angle for a mirror in a mirror array distanced $\sim$8.7 cm from the focal plane and with a focal length of 10 m.
+
+\begin{figure}[!ht] % xrayperformance
+	\centering	\includegraphics[width=\linewidth]{figures/introduction/xrayperformance.pdf}
+	\caption{\footnotesize XRR simulations of an Ir singlelayer and a selection of multilayers as a function of energy. \textbf{(a)} shows the reflectivity response in range from 20 to 100 keV at a constant $2.2\text{mrad} = 0.126$\degr\ reflection angle. The Ir singlelayer loses nearly all reflectance around $40$ keV. W/SiC and Pt/SiC has drops around the absorption edges of W and Pt $69.5$ keV and $78.4$ keV. The reflectivity response from Co/C and NiV/B$_4$C is nearly constant in the entire spectrum. \textbf{(b)} shows the reflectivity response in the 0 to $10$ keV range at a constant angle of $13.1 \text{mrad} = 0.751$\degr. The Ir singlelayer loses reflectivity around $\sim 6.5$ keV, the Co/C multilayer at $\sim$7.6 keV and the NiV/B$_4$C at $\sim 8.3 $ keV. From \cite{Bellotti:2009dj}.}
+	\label{fig:xrayperformance}
+\end{figure}
+
+To focus higher energies, it is necessary to use multilayers with bilayers of two different materials. These improve the performance significantly at higher energies as can be seen in figure \ref{fig:xrayperformance}(a). The two materials have to be one of high electron density (high Z) and one of low electron density (low Z), since it is the interfaces between two materials with high difference in refractive index that reflects the X-ray photons. The basic parameters that define a multilayer is:
+
+\begin{itemize}
+	\item[$\bullet$] $N$, the number of bilayers in the multilayer
+	\item[$\bullet$] $d$, the thickness of the bilayers, also called the d-spacing
+	\item[$\bullet$] $\Gamma$, the thickness ratio of low Z versus high Z materials
+\end{itemize}
+
+The multilayer can have a constant d-spacing through the entire stack and will then exhibit Bragg reflections as the interfaces will act like periodic lattice planes in a crystal. The Bragg condition ensures that only a certain energy can be reflected at a certain angle because of constructive interference. Other energies will not experience constructive interference, so the reflected intensity is neglible. When focusing non-monochromatic X-ray photons, but rather photons with a range of energies, it is necessary to have a mirror with a smooth energy response. To achieve that, the d-spacing can be changed through the stack according to a linear grading or a power-law grading\cite{Joensen:12je}, $d_i = a/(b+i)^c$, where $d_i$ is the d-spacing for the i'th layer. The constants are determined for values of $c$, $d_{min}$, $d_{max}$. The resulting so-called \emph{depth graded} multilayer have a smoother response curve, so are more suitable for astronomincal telescopes.
+
+The material chosen as low Z and high Z materials will perform best if the difference in electron density is as large as possible. But there are other factors to consider: as can be seen in figure \ref{fig:xrayperformance}(a) W/SiC and Pt/SiC have a cut-off at 69.5 keV and 78.4 keV respectively. That is caused by X-ray absorption edges in W and Pt, which increases the absorption in the multilayer to a point where roughness decreases significantly.
+
+Another factor to consider is the ability of the combination of two materials in a multilayer (e.g. W and SiC) to achieve low roughness in the interfaces between each layer. The interface between two layers can be described by an interface profile developed by Stearns et al\cite{Stearns:1989va}. The profile width is $\theta_{\text{rms}}=\sqrt{\theta_r^2 + \theta_f^2}$, where $\theta_r$ is the roughness and $\theta_f$ is the diffuseness of the two materials in the interface. A general rule of thumb is to keep the r.m.s. roughness ($\sigma_{rms}$) under $1/6$ compared to the thickness of a single bilayer. That means that a bilayer which is 3 nm thick can only have an average roughness of 0.5 nm, which is only the height of a few atomic monolayers.

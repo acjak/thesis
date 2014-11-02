@@ -1,8 +1,6 @@
-\chapter{DTU Space coating facility}
-This chapter is written as a manual and introduction for future students and employees who wish to use the multilayer coating facility at DTU Space. Several of the sections, such as those describing the development of the control software are not necessary for anything but to give a background on the considerations taken in the process.
+\chapter{DTU Space coating facility}\label{chap:coating_facility}
 
-\section{Overview}
-The multilayer coating facility is the vacuum chamber placed in the laboratory that is otherwise known as the Multilab. It started out as a vapor deposition chamber for the SODART mission. Capable of vaporising a gold wire with a W rod in the center of the chamber, it would deposit a layer of gold on any mirror facing the center. The chamber was later upgraded with magnetron cathodes, each with independent shutters.
+The multilayer coating facility consists of a vacuum chamber placed in the laboratory known as the Multilab. It started out as a vapor deposition chamber for the SODART mission\cite{Christensen:1997kk,Schnopper:1994ip}. Capable of vaporising a gold wire with a W rod in the center of the chamber, it would deposit a layer of gold on any mirror facing the center. The chamber was later upgraded with magnetron cathodes, each with independent shutters.
 
 The currently used cathodes are attached to powerful DC power supplies that can deposit films atom-by-atom instead of the larger gold particles that would come from vaporisation. The upgrade made it possible to coat multilayers with d-spacings thinner than 3 nm and eventually became the coating method used for the NuSTAR mission.
 
@@ -32,9 +30,15 @@ The cathodes are the most important part of the chamber. They are 20 inches long
 
 Materials for sputtering, called targets, are fastened to the Cu block using a stainless steel clamp. It is important for the target to have a uniform contact with the cathode, so the Cu block should be cleaned before fastening using cleanroom wipes and ethanol. For tougher blemishes, a micro-fine sanding sponge can be used to clean the surface followed by ethanol and cleanroom wipes.
 
-Applying a voltage of -400 V to the cathode, creates an electric field in front of the target. The Ar gas present in the chamber will be ionised in front of the cathode, stripping an electron from the Ar atoms resulting in a plasma. The positive Ar$^+$ ions are accelerated towards the target, whereby the collision with the target create a sputtering of target atoms in a cone directed normal to the target surface. A substrate placed opposite the cathode will be coated with the sputtered atoms at a rate proportional to the electric current applied to the cathode.
+Applying a voltage of -400 V to the cathode creates an electric field in front of the target. The Ar gas present in the chamber will be ionised in front of the cathode by the electric field, stripping an electron from the Ar atoms resulting in a plasma. The positive Ar$^+$ ions are accelerated towards the target, whereby the collision with the target create a sputtering of target atoms in a cone directed normal to the target surface, see figure \ref{fig:sputtering}. A substrate placed opposite the cathode will be coated with the sputtered atoms at a rate proportional to the electric current applied to the cathode.
 
-Electrons stripped from Ar atoms are captured by the magnetic field lines from the permanent magnets in the Cu block. The electrons are moved back and forth across the target and occasionally hits neutral Ar atoms, which also become ionised and thereby sustain the plasma. The movement of electrons are from the center of the target to the outer edge, and as more Ar atoms are ionised in between those two points, the main erosion of the target during coating takes place in a so-called \emph{racetrack} around the target.
+\begin{figure}[htbp]
+  \centering  \includegraphics[width=0.6\linewidth]{figures/chamber/sputtering.pdf}
+  \caption{\footnotesize Principle of sputtering. Sputter gas led into an evacuated chamber is forced to the surface of a target with a force that rips atoms from the material. The freed target atoms move away from the target and some hit a substrate opposite the target. }
+  \label{fig:sputtering}
+\end{figure}
+
+Electrons stripped from Ar atoms are captured by the magnetic field lines from the permanent magnets in the Cu block. The electrons are moved back and forth across the target and occasionally hits neutral Ar atoms, which also become ionised and thereby sustain the plasma. The movement of electrons are from the center of the target to the outer edge, and as more Ar atoms are ionised in between those two points, the main erosion of the target during coating takes place in a so-called \emph{race track} around the target.
 
 !!!!!Something about the physics of sputtering!!!!!
 
@@ -228,7 +232,7 @@ The sample holder consists of a slab of flat perforated ceramic material, a vacu
 After the sample holder, 995 mm further along the z-axis is a 10 cm wide 2D methane-gas detector mounted on a rotating stage, $2\theta$. It is centered on the same axis as $\theta$, allowing the detector to move 90\degr around the sample while maintaining a focus on the same spot. The detector has 2000 channels along the x-axis of the beam; 100 channels are used during a measurement, giving a horizontal detector aperture of 2 cm.
 
 \section{Coating calibration}\label{sec:coating_calib}
-To deposit a coating with the correct film layer thicknesses on a substrate, a calibration of the material combination is required. Four samples of 10 bilayer films are coated using the two materials. Each sample is placed on a separate mounting plate and each coated with a different thickness of both light and heavy materials. The samples are then measured using XRR and compared to an IMD model fit to get bilayer thickness (d-spacing) and light/heavy material fraction ($\Gamma$) as seen in figure \ref{fig:irb4c-fit}.
+To deposit a coating with the correct film layer thicknesses on a substrate, a calibration of the material combination is required. Four samples of 10 bilayer films are coated using the two materials. Each sample is placed on a separate mounting plate and each coated with a different thickness of both light and heavy materials. The samples are then measured using XRR and compared to an IMD\cite{Windt:1998tb} model fit to get bilayer thickness (d-spacing) and light/heavy material fraction ($\Gamma$) as seen in figure \ref{fig:irb4c-fit}.
 
 \begin{figure}[!h]
   \center
@@ -253,7 +257,7 @@ si5813 & 281 & 225 & 14.55 & 7.49
 %\caption{\footnotesize Calibration samples coated with 10 bilayer Ir/B$_4$C multilayers of different thickness. Each sample is measured using XRR and fitted to an IMD model. \label{tab:AFMsamples}}
 %\end{table}
 
-The d-spacings for a given material are plotted as a function of the inverse speed of the sample ring (v$^{-1}$) and fitted with a linear regression as seen in figure \ref{fig:calib-fit}. The $a$ and $b$ values of the linear regression are used directly to determine the speed of the sample ring to coat e.g. B$_4$C with a thickness of $d_{\mathrm{B}_4\mathrm{C}}$ like so:
+The d-spacings for a given material are plotted as a function of the inverse speed of the sample ring (v$^{-1}$) and fitted with a linear regression as seen in figure \ref{fig:calib-fit}. The $a$ and $b$ values of the linear regression are used directly to determine the speed of the sample ring, $v_{\mathrm{B}_4\mathrm{C}}$, to coat e.g. B$_4$C with a thickness of $d_{\mathrm{B}_4\mathrm{C}}$ like so:
 
 \begin{eqnarray}
 	v_{\mathrm{B}_4\mathrm{C}} = \frac{a}{d_{\mathrm{B}_4\mathrm{C}}-b}.

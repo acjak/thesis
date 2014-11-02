@@ -501,7 +501,7 @@ FUNCTION {format.names}
     't :=
       nameptr #1 >
         {
-          nameptr #1
+          nameptr #3
           #1 + =
           numnames #5
           > and
