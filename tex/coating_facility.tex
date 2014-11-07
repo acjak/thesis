@@ -6,14 +6,26 @@ The currently used cathodes are attached to powerful DC power supplies that can 
 
 The entire lab was moved from Rockefeller Institute near Rigshospitalet in Copenhagen during the summer of 2012. It was up and running again around the summer of 2013 in the newly constructed building 328, the new home for DTU Space on DTU campus. In the new location, the lab is 50\% larger, has a double airlock (earlier just a single airlock), laminar airflow from ceiling mounted HEPA filters and various other improvements. The result is a considerably cleaner facility, which is important to avoid contaminants on optical substrates.
 
-%\section{Laboratory setup}
-%In this section, the various instruments facilities will be described. Any reader not interested in using the Multilab can skip to section \ref{sec:ml_chamber}.
-The vacuum chamber is the dominant piece of the laboratory and most of the computers, electronics and cooling in the lab is in some way connected to the chamber. Apart from the chamber, the lab consists of a downflow module, two fume hoods, a profilometer, a large clean room oven and various tables and cupboards. Next to the lab is the Multilab Auxiliary Room, which houses the cooling heat exchangers and pumps, the rotary vane roughing pump, DC power supplies, and a large part of the extra storage needed for the lab. Additionally, there is a room in the basement that houses a ceramic oven that has a built in vacuum chamber, the room also serves to store hundreds of spare pieces of NuSTAR optic glass.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{figures/chamber/multilab1.png}
+  \includegraphics[width=\linewidth]{figures/chamber/multilab2.png}
+  \caption{\footnotesize Panoramic view of the Multilab coating facility at DTU Space. Top right can be seen the bell-shaped coating chamber.}
+  \label{fig:multilab}
+\end{figure}
 
-\section{!!!!!!!Coating chamber}
-The coating facility at DTU Space is arranged with vertical sputtering cathodes pointing outwards in a circular vacuum chamber. Substrates are mounted on vertical mounting plates that are placed on a rotating ring in the sputtering chamber and the substrates pass in front of each cathode at a speed determined by the desired layer thickness. After chamber is closed, a roughing pump and a turbo molecular pumps evacuates the chamber to a pressure of $\leq2\cdot10^{-6}$ Torr before pure Ar gas is let into the chamber at a constant flow rate to ensure the fraction of other gases to be $<$0.1\%. The desired total pressure with Ar gas is $2.8\cdot10^{-3}$ Torr, which is as low as possible while maintaining plasma stability.
+The vacuum chamber is the dominant piece of the laboratory and most of the computers, electronics and cooling in the lab is in some way connected to the chamber. Apart from the chamber, the lab consists of a downflow module, two fume hoods, a profilometer, a large clean room oven and various tables and cupboards (see figure \ref{fig:multilab}). Next to the lab is the Multilab Auxiliary Room, which houses the cooling heat exchangers and pumps, the rotary vane roughing pump, DC power supplies, and a large part of the extra storage needed for the lab. Additionally, there is a room in the basement that houses a ceramic oven that has a built in vacuum chamber, the room also serves to store hundreds of spare pieces of NuSTAR optic glass.
 
-!!!!! Diagram of chamber !!!!!
+\section{Coating chamber}
+The coating facility at DTU Space is arranged with vertical sputtering cathodes pointing outwards in a circular vacuum chamber, see figure \ref{fig:chamber}. Substrates are mounted on vertical mounting plates that are placed on a rotating ring in the sputtering chamber and the substrates pass in front of each cathode at a speed determined by the desired layer thickness.
+
+\begin{figure}[htbp]
+  \centering  \includegraphics[width=0.5\linewidth]{figures/chamber/chamber.pdf}
+  \caption{\footnotesize Diagram of the coating chamber at DTU Space, showing the principle of the rotating sample ring stage. Cathodes 1--4 (green) points outwards and can be covered with a shutter. Water cooling and power lines for the cathodes comes from the floor in the center of the chamber (blue) and connects to the top of each cathode with vacuum flex tubes. The sample (orange) is placed on a vertical plate that is mounted on the ring (grey). The ring rotates, so the samples move past the cathodes and gets coated with a film thickness related to the ring speed.}
+  \label{fig:chamber}
+\end{figure}
+
+After chamber is closed, a roughing pump and a turbo molecular pumps evacuates the chamber to a pressure of $\leq2\cdot10^{-6}$ Torr before pure Ar gas is let into the chamber at a constant flow rate to ensure the fraction of other gases to be $<$0.1\%. The desired total pressure with Ar gas is $2.8\cdot10^{-3}$ Torr, which is as low as possible while maintaining plasma stability.
 
 The chamber fits four cathodes at a time and the Multilab has six in total, so two can be serviced while the other four are in use. For most coatings, only two or three cathodes at a time are necessary for the same number of materials.
 
@@ -23,7 +35,7 @@ In the earlier software solution, all cathodes were switched on at the same time
 The cathodes are the most important part of the chamber. They are 20 inches long and 1/2 inch wide planar magnetron cathodes made by Angstrom Sciences Inc. A diagram of the cathode can be seen in figure \ref{fig:cathodeintersection}. A copper (Cu) block acts as the cathode with a stainless steel shield around it, separated by teflon spacers. Inside the Cu block, three permanent magnets with alternating field directions supplies a magnetic field in front of the cathode. Water cooling and power lines are connected from the cathode through a flexible vacuum tube to water cooling and power supplies outside the chamber. The anode shield is grounded along with the rest of the chamber.
 
 \begin{figure}[htbp]
-  \centering  \includegraphics[width=0.6\linewidth]{figures/chamber/cathodeintersection.pdf}
+  \centering  \includegraphics[width=0.5\linewidth]{figures/chamber/cathodeintersection.pdf}
   \caption{\footnotesize Cross-sectional diagram of a magnetron cathode used in the Multilab at DTU Space. }
   \label{fig:cathodeintersection}
 \end{figure}
@@ -39,10 +51,10 @@ Applying a voltage of -400 V to the cathode creates an electric field in front o
 \end{figure}
 
 Electrons stripped from Ar atoms are captured by the magnetic field lines from the permanent magnets in the Cu block. The electrons are moved back and forth across the target and occasionally hits neutral Ar atoms, which also become ionised and thereby sustain the plasma. The movement of electrons are from the center of the target to the outer edge, and as more Ar atoms are ionised in between those two points, the main erosion of the target during coating takes place in a so-called \emph{race track} around the target.
-
-!!!!!Something about the physics of sputtering!!!!!
-
-!!!!Thornton zone model?????!!!!!!
+% 
+% !!!!!Something about the physics of sputtering!!!!!
+%
+% !!!!Thornton zone model?????!!!!!!
 
 \section{Multilab control software}\label{sec:ml_software}
 In the years before moving the DTU Space multilab to DTU campus, it became apparent that a completely new software solution was needed for the coating facility. The software controls all stepper motors (cathode shutters and sample ring), gas flow controllers,  cathode power supplies as well as pressure gauge communication.
@@ -98,7 +110,7 @@ Log files produced continuously by the LogClient program are fetched by a web se
 \begin{figure}[htbp]
   \centering
     \includegraphics[width=0.8\linewidth]{figures/chamber/pressure.png}
-  \caption{\footnotesize }
+  \caption{\footnotesize Plot representing the output from the continuous logging of chamber pressure. Red line is the pressure measured by a combined cold-cathode/penning gauge, that works well under both atmospheric pressure and low pressure. It will not function well during a coating. Green line is the MKS Baratron pressure gauge, that is precise in the $2\cdot10^{-4}$ -- $5\cdot10^{-2}$ Torr range.}
   \label{fig:chamber_pressure}
 \end{figure}
 
@@ -114,7 +126,7 @@ The protocol is made for connecting all power supplies to the same serial connec
 \begin{figure}[!h]
   \center
   \includegraphics[width=0.9\linewidth]{figures/chamber/ae_packet.pdf}
-\caption{\footnotesize }\label{fig:ae_packet}
+\caption{\footnotesize Schematic of the principle of transmission data packets in the Advanced Energy communication protocol. Each number on the white line corresponds to one bit in the data packet, eight bits equals one byte. From \cite{Anonymous:zazNQqcS}}\label{fig:ae_packet}
 \end{figure}
 
 This packet architecture is used to communicate back and forth between the ControlServer program and the power supplies. If a packet is approved, an ACK is send back in the form of the hex code 06h. The commands for the power supplies can either be to retrieve current status of some parameter, to set a parameter on the power supply, or to execute a command on the power supply. The entire communication protocol is transparent to the user and all user-level control of the power supplies can be achieved by user-level commands only.
@@ -265,7 +277,7 @@ The d-spacings for a given material are plotted as a function of the inverse spe
 
 \begin{figure}[!h]
 	\center
-	\includegraphics[height=4cm]{figures/chamber/calibration_plot-ir-b4c.pdf}
-	\includegraphics[height=4cm]{figures/chamber/calibration_plot-w-si.pdf}
+	\includegraphics[width=0.47\linewidth]{figures/chamber/calibration_plot-ir-b4c.pdf}
+	\includegraphics[width=0.47\linewidth]{figures/chamber/calibration_plot-w-si.pdf}
 \caption{\footnotesize Linear regression fits of calibration samples for Ir/B$_4$C (left) W/Si (right). Each datapoint is the XRR measured material thickness of one sample.}\label{fig:calib-fit}
 \end{figure}
