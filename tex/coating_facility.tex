@@ -51,7 +51,7 @@ Applying a voltage of -400 V to the cathode creates an electric field in front o
 \end{figure}
 
 Electrons stripped from Ar atoms are captured by the magnetic field lines from the permanent magnets in the Cu block. The electrons are moved back and forth across the target and occasionally hits neutral Ar atoms, which also become ionised and thereby sustain the plasma. The movement of electrons are from the center of the target to the outer edge, and as more Ar atoms are ionised in between those two points, the main erosion of the target during coating takes place in a so-called \emph{race track} around the target.
-% 
+%
 % !!!!!Something about the physics of sputtering!!!!!
 %
 % !!!!Thornton zone model?????!!!!!!
@@ -70,7 +70,7 @@ Considering the observations from above, a list of requirements for new software
   \item[Software should run on Linux] To remote control the coating facility in the old software solution, it was necessary to run a remote desktop to control the graphical user interface. The remote desktop requires a relatively large amount of internet bandwidth, something that is not always available. The new software should be controllable over a remote SSH connection using a Bash shell or similar.
   \item[Software should log continuously] Output from cathode power supplies, pressure gauges and flow meters should be read every 5 seconds during a coating. Between coatings, the pressure gauges should be read every 5 seconds and written to a web server. That allows for checking chamber status on a smart phone or computer connected to the internet.
   \item[A coating run should be described in a script] Instead of predefined coating types, the scripts make it possible to produce completely custom multilayer coatings.
-  \item[Software should preferably be open source] Open source software is often well documented and flexible. An open source programming language with plenty of extra packages would be Python.
+  \item[Software should preferably be open source] Open source software is often well documented and flexible. An open source programming language with plenty of extra packages could be Python.
 \end{description}
 
 The first attempts at creating new software was directed at Python, since that is just about the most well-documented programming language on the internet, and also where I have the most experience.
@@ -116,7 +116,7 @@ Log files produced continuously by the LogClient program are fetched by a web se
 
 The web server that continuously fetches the log file from the coating computer also gets information from the X-ray measurement computer in the basement. Information about measurement status and progress is posted to the same web site. This makes it possible to get the status about all the labs by a quick glance to the web site. The script running on the web server also has the option to send out a mail to pre-defined recipients if the pressure in the chamber is low enough to start a coating. This proved handy during the NuSTAR coatings, where coatings had to be started in the middle of the night. The web site and script running on the web server were produced during the NuSTAR coating campaign to make the production process easier.
 
-The cathode shutters and ring are all controlled by the same motor controller, and is communicated to over the same serial cable. That is however opaque to the user. In order to open or close a specific shutter, the command \verb'osh #' or \verb'csh #' should be given for opening and closing shutter \verb'#', respectively. Alternatively, all shutters can be opened or closed using \verb'openallshutters' and \verb'closeallshutters'. The ring can be controlled using the commands \verb'mra speed angle' or \verb'mr speed steps', the first of which moves the ring at the speed given in steps/sec. at an angle given in degrees. The second does the same thing, except for changing the angle for steps. The motor controller has 668,000 steps in a complete rotation of the ring in the chamber and the speed of the ring should be between 0 and 15,000 steps/sec, otherwise the movement precision decreases. In a coating macro, the command \verb'mra speed angle' is used extensively as the main method to move the samples past the cathodes. In chapter \ref{chap:multilab_details}, an extensive list of commands made for the control software can be found.
+The cathode shutters and ring are all controlled by the same motor controller, and is communicated to over the same serial cable. That is however opaque to the user. In order to open or close a specific shutter, the command \verb'osh #' or \verb'csh #' should be given for opening and closing shutter \verb'#', respectively. Alternatively, all shutters can be opened or closed using \verb'openallshutters' and \verb'closeallshutters'. The ring can be controlled using the commands \verb'mra speed angle' or \verb'mr speed steps', the first of which moves the ring at the speed given in steps/sec. at an angle given in degrees. The second does the same thing, except for changing the angle for steps. The motor controller has 668,000 steps in a complete rotation of the ring in the chamber and the speed of the ring should be between 0 and 15,000 steps/sec, otherwise the movement precision decreases. In a coating macro, the command \verb'mra speed angle' is used extensively as the main method to move the samples past the cathodes.% In chapter \ref{chap:multilab_details}, an extensive list of commands made for the control software can be found.
 
 \subsubsection{Interfacing with cathode power supplies}
 The power supplies used to run the cathodes in the multilab consist of two Advanced Energy Pinnacle 5/5 DC power supplies and one Advanced Energy Pinnacle Plus+ 5/5 pulsed-DC power supply. Each power supply has two channels, so can run two cathodes at same time. In order to communicate with power supplies, a special protocol running over serial has to be used. All other instruments in the multilab are communicated with by ControlServer and SPEC using basic text commands send over a serial connection.
@@ -210,7 +210,15 @@ If the user wants to make more complicated multilayers, adjusting the macro exam
 
 The sample can then be coated by another cathode afterwards. If a larger batch requires coating at the same time, there are similar subfunctions for moving 180\degr\ and 360\degr.
 
-The software also makes it possible to coat 4 different samples with 4 different coatings in the same coating run. By placing the samples at 4 different corners of the ring, each sample can have a coating applied separately. Flexible macros for that purpose are not yet implemented, but a template that can be changed into a specific purpose is the macro \verb|coat_n_bilayers_4plates| along with subfunction e.g. \verb|abilayer_4_plates_c2c4($2,$3,$4,$5,$6,$7,$8,$9)| that will coat 4 different constant-d coatings using cathode 2 and 4. It is possible to change any parameter for the power supplies or flow meters between each sample, so testing out a parameter space becomes significantly faster with this system.
+The software also makes it possible to coat four different samples with four different coatings in the same coating run. By placing the samples at four different corners of the ring, each sample can have a coating applied separately. Flexible macros for that purpose are not yet implemented, but a template that can be changed into a specific purpose is the macro
+\begin{verbcode}
+  SPEC> coat_n_bilayers_4plates
+\end{verbcode}
+along with subfunction e.g.
+\begin{verbcode}
+  SPEC> abilayer_4_plates_c2c4($2,$3,$4,$5,$6,$7,$8,$9)
+\end{verbcode}
+that will coat four different constant-d coatings using cathode 2 and 4. It is possible to change any parameter for the power supplies or flow meters between each sample, so testing out a parameter space becomes significantly faster with this system.
 
 For linearly graded-d coatings, an example is given below that shows the flexibility of the SPEC macro language.
 
@@ -248,7 +256,7 @@ To deposit a coating with the correct film layer thicknesses on a substrate, a c
 
 \begin{figure}[!h]
   \center
-  \includegraphics[height=6cm]{figures/chamber/si5811-fit.pdf}
+  \includegraphics[height=7cm]{figures/chamber/si5811-fit.pdf}
 \caption{\footnotesize XRR measurement of a 10 bilayer Ir/B$_4$C coating to calibrate for SPO coating. The measurement is fitted with an IMD model to determine d-spacing $\Gamma$.}\label{fig:irb4c-fit}
 \end{figure}
 
@@ -277,7 +285,7 @@ The d-spacings for a given material are plotted as a function of the inverse spe
 
 \begin{figure}[!h]
 	\center
-	\includegraphics[width=0.47\linewidth]{figures/chamber/calibration_plot-ir-b4c.pdf}
-	\includegraphics[width=0.47\linewidth]{figures/chamber/calibration_plot-w-si.pdf}
-\caption{\footnotesize Linear regression fits of calibration samples for Ir/B$_4$C (left) W/Si (right). Each datapoint is the XRR measured material thickness of one sample.}\label{fig:calib-fit}
+\includegraphics[width=0.8\linewidth]{figures/chamber/calibration_plot-ir-b4c.pdf}
+\includegraphics[width=0.8\linewidth]{figures/chamber/calibration_plot-w-si.pdf}
+\caption{\footnotesize Linear regression fits of calibration samples for Ir/B$_4$C (top) W/Si (bottom). Each datapoint is the XRR measured thickness of one material layer in a sample.}\label{fig:calib-fit}
 \end{figure}
