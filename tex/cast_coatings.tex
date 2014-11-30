@@ -223,7 +223,7 @@ The best result for the Pt/C material combination can be seen in figure \ref{fig
   \label{fig:pt-c_optimized_recipes}
 \end{figure}
 
-The coating optimisation for the CAST X-ray optic was done in parallel with most of the ATHENA coating investigations that is described in chapter \ref{chap:athena_coatings}. The findings from long term storage that are discussed in section \ref{sec:long_term} show changes in the coatings over time at ambient conditions for most B$_4$C containing films. For that reason, it was decided to make the CAST coatings with Pt/C, as the combination is well described for NuSTAR-like glass substrates. W/Si was also used for NuSTAR and would be a cheaper solution, but the Si absorption line at $\sim2$ keV would decrease efficiency of the coatings around the peak of the axion spectrum.
+The coating optimisation for the CAST X-ray optic was done in parallel with most of the Athena coating investigations that is described in chapter \ref{chap:Athena_coatings}. The findings from long term storage that are discussed in section \ref{sec:long_term} show changes in the coatings over time at ambient conditions for most B$_4$C containing films. For that reason, it was decided to make the CAST coatings with Pt/C, as the combination is well described for NuSTAR-like glass substrates. W/Si was also used for NuSTAR and would be a cheaper solution, but the Si absorption line at $\sim2$ keV would decrease efficiency of the coatings around the peak of the axion spectrum.
 %Each calculation was done over the energy range $0.1 - 10$ keV with a step size of 0.1 keV.
 
 \subsection{Calculating effective area}\label{sec:eff_area}
@@ -516,7 +516,7 @@ Bottom&5.85&8.13&7.15&6.44\\
 
 The d-spacings for the second layer in recipe 2 compared to IMD fits of XRR data from top and bottom witness sample are shown in table \ref{tab:recipe2layer2}. An explanation for the inconsistencies between top and bottom witness sample could be problems with a cathode during coating. Column 3 shows inconsistencies between top and bottom witness sample in the C thickness, but it is not seen in the Pt thickness, column 5. That corroborates the hypothesis that the C cathode had difficulties during the application of the second layer, as indeed can be seen in figure \ref{fig:cast_coatings_power_recipe2_layer2}. The cathode is only polled every 5 seconds, so intermittent dropouts between polling are likely to have occurred. Top and bottom witness sample were mounted on the same plate, so passed the cathode simultaneously. The difference in C thickness can only be explained by a non-uniform coating rate of C during the coating of layer 2. A partial dropout of the C cathode could have put the power supply in a state where to reignite the plasma, the cathode would for some time have a non-uniform plasma density. Another explanation could be a localized charge-up on the C target during coating caused by the insulating properties of the material \footnote{The carbon targets used at DTU Space are boron-doped to increase the conductivity of the bulk material.}. Such a charge-up would change the electric field in front of the target and thereby create a non-uniform plasma density.
 
-\begin{figure}[htbp]
+\begin{figure}[!h]
   \centering  \includegraphics[width=0.7\linewidth]{figures/cast/power_cat6.png}
   \caption{\footnotesize Power output delivered to cathode 6 (carbon) during coating of layer 2, recipe 2. }
   \label{fig:cast_coatings_power_recipe2_layer2}
@@ -646,7 +646,7 @@ In this chapter was shown the creation of an X-ray optic from design phase to in
 
 The measurement results obtained using the COOL-X X-ray source combined with ray-tracing simulations, show that surplus slumped glass can be re-purposed into well-behaving X-ray optics for specialised tasks.
 
-It was shown that a customised software solution interfacing to IMD can find the optimal geometry for a specific X-ray optic and make comparisons of best recipe material combinations. The specially designed software can make a full computation with a wide range of material combinations and multilayer coating geometries within 2-3 days using a regular desktop computer. Using a calculation of the overlap between optic opening and magnetic bore opening, a precise effective area can be calculated with the software.
+It was shown that a customised software solution interfacing to IMD can find the optimal geometry for a specific X-ray optic and make comparisons of best recipe material combinations. The specially designed software can make a full computation with a wide range of material combinations and multilayer coating geometries within 2-3 days using a regular desktop computer. Using a calculation of the overlap between optic opening and magnet bore opening, a precise effective area can be calculated with the software.
 
 A discussion of possible improvements in the software can be found in the following section.
 

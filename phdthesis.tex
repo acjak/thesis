@@ -11,7 +11,7 @@
 
 %  COMPILATION STEP USING PDFLATEX
 %
-\documentclass[12pt,twoside,a4paper]{book}
+\documentclass[12pt,twoside]{book}
 % COMPILATION FOR B5PAPER BOOK
 %\documentclass[11pt,twoside]{book}
 %  pdflatex phdthesis.tex
@@ -21,7 +21,7 @@
 \def\thesisyear{2014} % Year thesis submitted
 \def\thesisnumber{70}  % Only number no year
 \def\thesisauthor{Anders Clemen Jakobsen} % Thesis author
-\def\thesistitle{X-ray optics in new instruments for astroparticle- and astrophysics} % Title of thesis
+\def\thesistitle{X-ray optics in new instruments for astro- and astroparticle physics} % Title of thesis
 \def\thesiskeywords{X-ray optics}
 \def\thesisISBN{} %OBSOBS provide ISBN number for industrial phd students ONLY
 \def\thesisversion{print} %OBSOBS choose this for printed version send to printing
@@ -38,14 +38,16 @@
 \markboth{}{}
 \input{tex/resume}
 \markboth{}{}
-%\input{tex/preface}
-%\markboth{}{}
+\input{tex/preface}
+\markboth{}{}
+\input{tex/acknowledge}
+\markboth{}{}
 \input{tex/papers}
 \markboth{}{}
 \input{tex/other_papers}
 \markboth{}{}
-\input{tex/acknowledge}
-\markboth{}{}
+%\input{tex/acknowledge}
+%\markboth{}{}
 
 %%%%%%%PREFACE CHAPTERS INCLUDE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
