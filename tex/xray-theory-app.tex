@@ -125,56 +125,56 @@ The width of the interface function is denoted by $\sigma_{rms}$ that is the roo
 	\sigma_{rms} = \sqrt{\frac{\sigma_p^2 + \sigma_d^2}{2}}.
 \end{eqnarray}
 
-\section{Diffuse reflection}\label{diffuserefl}
-In the previous section only specular reflection was covered and dealt with by reducing the problem to a one-dimensional one without worrying about scattering. In case of roughness, there was merely an approximate factor to account for loss of reflection.\\
-Roughness in an interface will cause scattering outside the specular reflection, which can be modeled either using the Born Approximation (BA) or Distorted Wave Born Approximation (DWBA)\cite{Sinha:1988uu}. The regular BA is suitable for looking at scattering away from the critical angle, where scattering is considered a weak interaction and multiple refraction effects are negligible. When looking at multilayers, the BA is not suitable since it does not take multiple reflections into account.\\
-The DWBA is more suitable for multilayers, where total external and internal reflections near the critical angle are taken care of. Every imperfect interface is regarded as a perturbation. Sinha et al.\cite{Sinha:1988uu} worked out the DWBA for singlelayer and later the model was expanded to include multilayer systems\cite{Stearns:1998wn,Kopecky:1995uy,Holy:1993p5469}. In this section the formulas will not be derived, but the final formula presented and explained.\\
-
-The measured intensity in a scattering experiment is explained by
-\begin{eqnarray}
-	I = I_0 \int_{\Omega_{detector}} \frac{d\sigma}{d\Omega} d\Omega.
-\end{eqnarray}
-
-where $I$ is the measured intensity, $I_0$ the incident intensity and $\frac{d\sigma}{d\Omega}$, the differential cross section. For non-specular reflectivity, the incoherent differential cross section is used, as derived for multilayers by Holy et al.\cite{Holy:1993p5469}
-
-\begin{eqnarray}\label{holyeq}
-	\Bigg(\frac{d\sigma}{d\Omega}\Bigg)_I &=&\frac{Sk^4}{16\pi^2}\sum_{i=1}^N |n_{i}^2 - n_{i+1}^2|^2  \nonumber \\
-	 &\times&|(t_{1,i+1}t_{2,i+1}+r_{1,i+1}r_{2,i+1})\mathrm{e}^{\frac{-(\sigma_i q_{0z,i+1})^2}{2}} \nonumber  \\
-	 &+&(t_{1,i+1}r_{2,i+1}+t_{2,i+1}r_{1,i+1})\mathrm{e}^{\frac{-(\sigma_i q_{1z,i+1})^2}{2}}|^2 \\
-  &\times& C_i^{'} (q_x,q_y)
-\end{eqnarray}
-
-which is the simplified version applicable when $|q_{z,i+1}\sigma_2|^2 << 1$. The first factor contains the area $S$ hit by the incident beam and the wave number $k = 2\pi/\lambda$. Next is the sum that iterates over all $N$ layers from bottom layer up. The factor $|n_{i}^2 - n_{i+1}^2|$ takes the square of the index of the current layer and subtracts the square of the index of the layer above.\\
-Next is the Fresnel equations (Eq. (\ref{fresneleq})) which are multiplied by a modified interface function similar to Eq. (\ref{interfacefunction}) except the use of $q_{0z,i+1}$ and $q_{1z,i+1}$.\\
-The two wave vector transfers correspond to two different processes that occurs during diffuse scattering. The term $t_{1,i+1}t_{2,i+1}$ express the scattering from the transmitted wave with amplitude $t_{1,i+1}$ into the wave with amplitude $t_{2,i+1}$. The wave vector change corresponding to that interaction is $\mathbf{q}_{0,i+1} = \mathbf{K}_{2,i+1}-\mathbf{K}_{1,i+1}$. Refer to figure \ref{fig:holykvector}.\\
-And for $t_{1,i+1}r_{2,i+1}$, it is the scattering from the transmitted wave with amplitude $t_{1,i+1}$ into the reflected wave with amplitude $r_{2,i+1}$ and the wave vector transfer for that is $\mathbf{q}_{1,i+1} = \mathbf{K}_{2,i+1}^{'}-\mathbf{K}_{1,i+1}$.
-
-\begin{figure}[!ht] % holykvector
-	\centering
-		\includegraphics[height=2.2in]{figures/xray_app/holykvector.pdf}
-	\caption{Cross section of $N$-layer multilayer on substrate with visualization of wave vectors on the surface and in the $j$'th layer. From \cite{Holy:1993p5469}.}
-	\label{fig:holykvector}
-\end{figure}
-
-The last part in Eq. (\ref{holyeq}), $C_i^{'} (q_x,q_y)$, is the two dimensional Fourier transform of the correlation function, $C_i$
-\begin{eqnarray}
-	C_i^{'} (q_x,q_y) &=& \int_S dxdy C_i(x,y)\mathrm{e}^{-i(xq_x +yq_y)}.
-\end{eqnarray}
-
-The correlation function is often described with a statistical distribution of a self-affine fractal-like surface\cite{Sinha:1988uu}
-\begin{eqnarray}
-	C_i (x,y) = \sigma^2 \mathrm{e}^{-(\rho/\xi)^2h}
-\end{eqnarray}
-
-where $\sigma$ is the rms roughness of the surface and $\xi$ is a lateral correlation length which is an expression for how large an area is needed to measure before $\sigma$ is constant. If the roughness is periodic along the surface, $\xi$ is the length of the period. $h$ is the Hurst parameter that describes the jaggedness of the surface between 0 and 1. For $h=0.5$ the function becomes exponential and for $h=1$ it is Gaussian. So the higher the Hurst parameter, the smoother the surface.\\
-
-The software used for modeling diffuse reflectivity is BEDE\cite{Wormington:1992vm}, which uses Eq. (\ref{holyeq}) for the off-specular part. In this work, measurements of diffuse reflectivity were done by transverse scans, where the sum of the ingoing angle, $\theta_{I_0}$, and outgoing angle, $\theta_I$, is constant ($\theta_{I_0} + \theta_I=\mathrm{constant}$). \\
-
-\begin{figure}[!ht] % double reflected
-	\centering
-		\includegraphics[height=2in]{figures/xray_app/transverse.pdf}
-	\caption{Simulation of a transverse XRR scan calculated in BEDE of a 400 \AA\ W singlelayer on a silicon substrate with roughness of 4 \AA, correlation length of 200 \AA\ and Hurst parameter of 0.7. }
-	\label{fig:transverse}
-\end{figure}
-
-An example of a simulated transverse reflection can be seen in figure \ref{fig:transverse}. The peaks on both sides of the graph are Yoneda peaks\cite{Yoneda:1963tr} and arise from multiple scattering processes when either $\theta_{I_0}$ or $\theta_I$ equals the critical angle, $\theta_c$.
+% \section{Diffuse reflection}\label{diffuserefl}
+% In the previous section only specular reflection was covered and dealt with by reducing the problem to a one-dimensional one without worrying about scattering. In case of roughness, there was merely an approximate factor to account for loss of reflection.\\
+% Roughness in an interface will cause scattering outside the specular reflection, which can be modeled either using the Born Approximation (BA) or Distorted Wave Born Approximation (DWBA)\cite{Sinha:1988uu}. The regular BA is suitable for looking at scattering away from the critical angle, where scattering is considered a weak interaction and multiple refraction effects are negligible. When looking at multilayers, the BA is not suitable since it does not take multiple reflections into account.\\
+% The DWBA is more suitable for multilayers, where total external and internal reflections near the critical angle are taken care of. Every imperfect interface is regarded as a perturbation. Sinha et al.\cite{Sinha:1988uu} worked out the DWBA for singlelayer and later the model was expanded to include multilayer systems\cite{Stearns:1998wn,Kopecky:1995uy,Holy:1993p5469}. In this section the formulas will not be derived, but the final formula presented and explained.\\
+%
+% The measured intensity in a scattering experiment is explained by
+% \begin{eqnarray}
+% 	I = I_0 \int_{\Omega_{detector}} \frac{d\sigma}{d\Omega} d\Omega.
+% \end{eqnarray}
+%
+% where $I$ is the measured intensity, $I_0$ the incident intensity and $\frac{d\sigma}{d\Omega}$, the differential cross section. For non-specular reflectivity, the incoherent differential cross section is used, as derived for multilayers by Holy et al.\cite{Holy:1993p5469}
+%
+% \begin{eqnarray}\label{holyeq}
+% 	\Bigg(\frac{d\sigma}{d\Omega}\Bigg)_I &=&\frac{Sk^4}{16\pi^2}\sum_{i=1}^N |n_{i}^2 - n_{i+1}^2|^2  \nonumber \\
+% 	 &\times&|(t_{1,i+1}t_{2,i+1}+r_{1,i+1}r_{2,i+1})\mathrm{e}^{\frac{-(\sigma_i q_{0z,i+1})^2}{2}} \nonumber  \\
+% 	 &+&(t_{1,i+1}r_{2,i+1}+t_{2,i+1}r_{1,i+1})\mathrm{e}^{\frac{-(\sigma_i q_{1z,i+1})^2}{2}}|^2 \\
+%   &\times& C_i^{'} (q_x,q_y)
+% \end{eqnarray}
+%
+% which is the simplified version applicable when $|q_{z,i+1}\sigma_2|^2 << 1$. The first factor contains the area $S$ hit by the incident beam and the wave number $k = 2\pi/\lambda$. Next is the sum that iterates over all $N$ layers from bottom layer up. The factor $|n_{i}^2 - n_{i+1}^2|$ takes the square of the index of the current layer and subtracts the square of the index of the layer above.\\
+% Next is the Fresnel equations (Eq. (\ref{fresneleq})) which are multiplied by a modified interface function similar to Eq. (\ref{interfacefunction}) except the use of $q_{0z,i+1}$ and $q_{1z,i+1}$.\\
+% The two wave vector transfers correspond to two different processes that occurs during diffuse scattering. The term $t_{1,i+1}t_{2,i+1}$ express the scattering from the transmitted wave with amplitude $t_{1,i+1}$ into the wave with amplitude $t_{2,i+1}$. The wave vector change corresponding to that interaction is $\mathbf{q}_{0,i+1} = \mathbf{K}_{2,i+1}-\mathbf{K}_{1,i+1}$. Refer to figure \ref{fig:holykvector}.\\
+% And for $t_{1,i+1}r_{2,i+1}$, it is the scattering from the transmitted wave with amplitude $t_{1,i+1}$ into the reflected wave with amplitude $r_{2,i+1}$ and the wave vector transfer for that is $\mathbf{q}_{1,i+1} = \mathbf{K}_{2,i+1}^{'}-\mathbf{K}_{1,i+1}$.
+%
+% \begin{figure}[!ht] % holykvector
+% 	\centering
+% 		\includegraphics[height=2.2in]{figures/xray_app/holykvector.pdf}
+% 	\caption{Cross section of $N$-layer multilayer on substrate with visualization of wave vectors on the surface and in the $j$'th layer. From \cite{Holy:1993p5469}.}
+% 	\label{fig:holykvector}
+% \end{figure}
+%
+% The last part in Eq. (\ref{holyeq}), $C_i^{'} (q_x,q_y)$, is the two dimensional Fourier transform of the correlation function, $C_i$
+% \begin{eqnarray}
+% 	C_i^{'} (q_x,q_y) &=& \int_S dxdy C_i(x,y)\mathrm{e}^{-i(xq_x +yq_y)}.
+% \end{eqnarray}
+%
+% The correlation function is often described with a statistical distribution of a self-affine fractal-like surface\cite{Sinha:1988uu}
+% \begin{eqnarray}
+% 	C_i (x,y) = \sigma^2 \mathrm{e}^{-(\rho/\xi)^2h}
+% \end{eqnarray}
+%
+% where $\sigma$ is the rms roughness of the surface and $\xi$ is a lateral correlation length which is an expression for how large an area is needed to measure before $\sigma$ is constant. If the roughness is periodic along the surface, $\xi$ is the length of the period. $h$ is the Hurst parameter that describes the jaggedness of the surface between 0 and 1. For $h=0.5$ the function becomes exponential and for $h=1$ it is Gaussian. So the higher the Hurst parameter, the smoother the surface.\\
+%
+% The software used for modeling diffuse reflectivity is BEDE\cite{Wormington:1992vm}, which uses Eq. (\ref{holyeq}) for the off-specular part. In this work, measurements of diffuse reflectivity were done by transverse scans, where the sum of the ingoing angle, $\theta_{I_0}$, and outgoing angle, $\theta_I$, is constant ($\theta_{I_0} + \theta_I=\mathrm{constant}$). \\
+%
+% \begin{figure}[!ht] % double reflected
+% 	\centering
+% 		\includegraphics[height=2in]{figures/xray_app/transverse.pdf}
+% 	\caption{Simulation of a transverse XRR scan calculated in BEDE of a 400 \AA\ W singlelayer on a silicon substrate with roughness of 4 \AA, correlation length of 200 \AA\ and Hurst parameter of 0.7. }
+% 	\label{fig:transverse}
+% \end{figure}
+%
+% An example of a simulated transverse reflection can be seen in figure \ref{fig:transverse}. The peaks on both sides of the graph are Yoneda peaks\cite{Yoneda:1963tr} and arise from multiple scattering processes when either $\theta_{I_0}$ or $\theta_I$ equals the critical angle, $\theta_c$.

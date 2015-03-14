@@ -1,7 +1,7 @@
 \chapter{X-ray optic for the CAST experiment}\label{chap:cast_xrt}
 After the launch of NuSTAR, the X-ray optics group at DTU Space was invited to participate in the creation of an X-ray optic for the CAST solar axion helioscope \cite{Elias:1387488,Iguaz:1389411}. CAST is an experiment at CERN that looks for the hypothetical axion particle\cite{Weinberg:1978ii,Wilczek:1978kp,Peccei:1977ea,Peccei:1977em} which is a solution to the charge-parity (CP) problem of the standard model in particle physics\cite{Cheng:1988fu}. If the axion exist, it constitutes some or all of the Dark Matter in the universe\cite{Visinelli:2011tw,Bae:2008ix}. It was decided that the optics technology from NuSTAR\cite{Christensen:2011wg,Harrison:2010gu,Koglin:2005kb,Zhang:2009cb,Harrison:2013wl} could be leveraged and therefore use spare glass to make an inexpensive and relatively simple X-ray optic.
 
-The optic was designed between summer 2012 and summer 2014. Production, assembly, installation and alignment with CAST was done during summer 2014 in cooperation with University of Zaragoza (UoZ) in Spain and Lawrence Livermore National Lab (LLNL) in the US. In this chapter the reader will find a description of the whole process from start to finish.
+The optic was designed between 2012 and 2014. Production, assembly, installation and alignment with CAST was done during summer 2014 in cooperation with University of Zaragoza (UoZ) in Spain and Lawrence Livermore National Lab (LLNL) in the US. In this chapter the reader will find a description of the whole process from start to finish.
 
 My part of the work was to design the optic geometry and coating as well as produce the coated substrates and participate in the installation. LLNL designed the vacuum vessel and alignment procedure and UoZ designed detector and the X-ray source assembly.
 
@@ -12,7 +12,7 @@ The axion is an ultra-light particle that is formed from the interaction of a ph
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[height=6cm]{figures/cast/axion_spectrum.png}
+    \includegraphics[height=8cm]{figures/cast/axion_spectrum.png}
   \caption{\footnotesize Solar axion flux spectrum at Earth. }
   \label{fig:axion_spectrum}
 \end{figure}
@@ -21,7 +21,7 @@ The spectrum of X-rays from solar axions reaching Earth can be seen in figure \r
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[height=6cm]{figures/cast/axion_search_cast2.pdf}
+    \includegraphics[height=9cm]{figures/cast/axion_search_cast2.pdf}
   \caption{\footnotesize The axion (and axion-like partikle) parameter space, showing the limits of detection for current direct detection experiments. The yellow "axion band" represents areas of the parameter space where theoretical models predicts axions. The part of the parameter space excluded by the CAST axion helioscope so far is represented by the blue line and grey area. (From \cite{Armengaud:2014eo})}
   \label{fig:axion_search_cast}
 \end{figure}
@@ -208,19 +208,38 @@ For the CAST coatings, making a separate coating recipe for each layer would res
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[height=5cm]{figures/cast/mat_result.pdf}
-  \caption{\footnotesize Effective area comparison for computed material combinations in the CAST XRT optic.}
+    \includegraphics[height=7cm]{figures/cast/mat_result.pdf}
+  \caption{\footnotesize Integrated effective area comparison for computed material combinations in the CAST XRT optic. }
   \label{fig:mat_result}
 \end{figure}
 
-The best result for the Pt/C material combination can be seen in figure \ref{fig:pt-c_optimized_recipes}. Curves are the reflectivity squared times detector quantum efficiency times axion spectrum ($\mathbb{R}^2\cdot QE_{\text{det}}\cdot S_{\text{axion}}$) for a given recipe.
+The best result for the Pt/C material combination can be seen in figure \ref{fig:pt-c_optimized_recipes}, which is the output from the software for a given material combination. Curves show the reflectivity squared times detector quantum efficiency times axion spectrum ($\mathbb{R}^2\cdot QE_{\text{det}}\cdot S_{\text{axion}}$) for a given recipe.
 
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
   \centering
-    \includegraphics[height=5cm]{figures/cast/pt-c_optimized_recipes1.pdf}
-    \includegraphics[height=1.5cm]{figures/cast/pt-c_optimized_recipes2.pdf}
-  \caption{\footnotesize Optimised coatings for CAST XRT with a Pt/C material combination. The four recipes are for layer 0-3 (layer 0 is the mandrel), layer 4-7, layer 8-11 and layer 12-14.}
+    \includegraphics[height=7cm]{figures/cast/pt-c_optimized_recipes1.pdf}  \includegraphics[height=2.5cm]{figures/cast/pt-c_optimized_recipes2.pdf}
+
+  \caption{\footnotesize Optimised coatings for CAST XRT with a Pt/C material combination as calculated by the software. The four recipes are for layer 0-3 (layer 0 is the mandrel), layer 4-7, layer 8-11 and layer 12-14.}
   \label{fig:pt-c_optimized_recipes}
+\end{figure}
+
+\begin{figure}[htbp!]
+  \centering
+\begin{tabular}{c|c|c|c|c}
+  Recipe & \# of layers & d$_{min}$ & d$_{max}$ & $\Gamma$  \\
+  \hline
+  1 & 2 & 11.5 & 22.5 & 0.45\\
+  2 & 3 & 7.0 & 19.0 & 0.45\\
+  3 & 4 & 5.5 & 16.0 & 0.4\\
+  4 & 5 & 5.0 & 14.0 & 0.4
+\end{tabular}  \\
+\vspace{1 cm} \includegraphics[height=6cm]{figures/cast/cast-recipe1-sideview.pdf}
+    \includegraphics[height=6cm]{figures/cast/cast-recipe2-sideview.pdf}
+    \includegraphics[height=6cm]{figures/cast/cast-recipe3-sideview.pdf}
+    \includegraphics[height=6cm]{figures/cast/cast-recipe4-sideview.pdf}
+
+  \caption{\footnotesize Side view illustrations of the four optimised coating recipes calculated for CAST, along with a table showing the recipes.}
+  \label{fig:cast_recipes_sideview}
 \end{figure}
 
 The coating optimisation for the CAST X-ray optic was done in parallel with most of the Athena coating investigations that is described in chapter \ref{chap:Athena_coatings}. The findings from long term storage that are discussed in section \ref{sec:long_term} show changes in the coatings over time at ambient conditions for most B$_4$C containing films. For that reason, it was decided to make the CAST coatings with Pt/C, as the combination is well described for NuSTAR-like glass substrates. W/Si was also used for NuSTAR and would be a cheaper solution, but the Si absorption line at $\sim2$ keV would decrease efficiency of the coatings around the peak of the axion spectrum.

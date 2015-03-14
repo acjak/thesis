@@ -40,6 +40,12 @@
 \usepackage{listings}
 \usepackage{fancyvrb,fancybox,calc}
 \usepackage{capt-of}
+\usepackage{caption}
+\usepackage{soul}
+\DeclareCaptionFormat{myformat}{#1#2#3\hrulefill}
+
+\captionsetup[figure]{margin=10pt,font=small,labelfont=bf}
+\captionsetup[table]{margin=10pt,font=small,labelfont=bf}%format=myformat}
 %\renewcommand{\baselinestretch}{2.0}
 \newenvironment{verbcode}{\VerbatimEnvironment%
   \noindent

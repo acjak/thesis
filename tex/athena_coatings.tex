@@ -4,7 +4,7 @@ In this chapter are described developments and investigations in the coating tec
 
 The first part of the chapter describes the Athena telescope and optics technology. Afterwards is a description of the X-ray reflective coating investigation carried out at DTU Space, starting with the baseline coating and stress investigation in \cite{Jakobsen:2011vd}. Proceeding that is the work based on different optimization techniques multilayer coatings, namely reactive sputter deposition and pulsed-DC sputtering. The coating lab acquired a pulsed-DC power supply specifically for the Athena coating investigations, but no improvements were found. Additionally, a number of problems showed up with the new power supply and the causes were not clear. Reactive sputtering investigations revealed major problems with some material combinations that included B$_4$C, which became apparent after long term storage investigations. In the end, the baseline material combination that was initially proposed for Athena was found to be the best-performing and most stable solution.
 
-The last part of this chapter (section \ref{sec:Athena_upscaled}) is a report written to ESA on the coating production facility requirements for the original Athena mission proposed in 2012. A significant effort will have to be put into mass production for the Athena optic to be realised. The section points out the cost and timetable of such and effort.
+The last part of this chapter (section \ref{sec:Athena_upscaled}) is based on a report written to ESA on the coating production facility requirements for the original Athena mission proposed in 2012. A significant effort will have to be put into mass production for the Athena optic to be realised. The section points out the cost and timetable of such an effort.
 
 \section{The European Athena mission}
 Design and development of the Athena mission was started already in the 90's as first a European mission (XEUS) with the intent to make a high resolution X-ray telescope with a large effective area. In 2008 it merged into IXO (International X-ray Observatory), a European/American/Japanese collaboration. In 2012 after some years of global financial crisis, the collaboration fell apart as a result of down-scoping of space-related projects.
@@ -13,7 +13,7 @@ The European Space Agency (ESA) continued development of a smaller mission using
 
 \begin{figure}[!h]
   \center
-  \includegraphics[height=5cm]{figures/athena/athena_telescope.pdf}
+  \includegraphics[height=6cm]{figures/athena/athena_telescope.pdf}
 \caption{\footnotesize Illustrations of the Athena X-ray telescope. \textbf{Left:} Inside Ariane V fairing. \textbf{Right:} In space with extended solar panels. The optic is in the bottom end. (from \url{www.the-Athena-x-ray-observatory.eu}).}\label{fig:Athena_telescope}
 \end{figure}
 
@@ -56,7 +56,7 @@ Two stacks of 68 SPO substrates constitutes an SPO module as can be seen in figu
 \caption{\footnotesize A complete SPO mirror module. Two stacks of 68 SPO substrates are glued together with a pair of Cesis plates, making them co-aligned with 1'' precision. The complete module reflects an incoming X-ray photon twice and thus acts as both paraboloid and hyperboloid of the Wolter I optic. (from \cite{Willingale:2013vo}).}\label{fig:spo_stack}
 \end{figure}
 
-Each SPO module is self-consistent, making the entire optic technology modular. When a module is ready, it can be slided into a light-weight construction. This is in contrast to the NuSTAR technology (see section \ref{sec:nustar}) where each layer had to be mounted sequentially. The modularity is also a necessity when it becomes apparent that an effective area of 2 m$^2$ at 1 keV requires 1.5 mil. pores. As Athena is a large ESA mission, the Ariane V rocket will be used and the telescope is designed with the size limitations of the Ariane V fairing in mind, resulting in a telescope with $\sim$3 m diameter and $\sim$13 m length. To populate an optic with a diameter of $\sim$3 m, the number of SPO modules needed are $\sim$900 as can be seen in figure \ref{fig:Athena_full_optic}.
+Each SPO module is self-consistent, making the entire optic technology modular. When a module is ready, it can be slided into a light-weight construction. This is in contrast to the NuSTAR technology (see section \ref{sec:nustar}) where each layer had to be mounted sequentially. The modularity is also a necessity when it becomes apparent that an effective area of 2 m$^2$ at 1 keV requires 1.5 mil. pores. As Athena is a large ESA mission, the Ariane V rocket will be used and the telescope is designed with the size limitations of the Ariane V fairing in mind, resulting in a telescope with $\sim$3 m diameter and $\sim$13 m length. To populate an optic with a diameter of $\sim$3 m, the number of SPO modules needed are $\sim$1,090 as can be seen in figure \ref{fig:Athena_full_optic}.
 
 \begin{figure}[!h]
   \center
@@ -64,7 +64,7 @@ Each SPO module is self-consistent, making the entire optic technology modular. 
 \caption{\footnotesize The complete Athena optic. SPO mirror modules are arranged in rings to populate the aperture. (from \cite{Willingale:2013vo}).}\label{fig:Athena_full_optic}
 \end{figure}
 
-As each optic module consist of $2 \cdot 68 = 136$ SPO substrates, a total of $900 \cdot 136 \approx 123,000$ SPO substrates are needed, not accounting for spares or broken substrates. Considering that the NuSTAR telescope consisted of $2\cdot2376$ glass substrates and took two years to produce, it becomes apparent that the Athena mission will require a large-scale production facility. In section \ref{sec:Athena_upscaled} can be found an investigation in the coating side of the production facility requirements for the original Athena mission proposed for the ESA L1 mission. It consisted of two optics with a total of 64,640 SPO substrates.
+As each optic module consist of $2 \cdot 68 = 136$ SPO substrates, a total of $1090 \cdot 136 \approx 140,000$ SPO substrates are needed, not accounting for spares or broken substrates. Considering that the NuSTAR telescope consisted of $2\cdot2376$ glass substrates and took two years to produce, it becomes apparent that the Athena mission will require a large-scale production facility. In section \ref{sec:Athena_upscaled} can be found an investigation in the coating side of the production facility requirements for the Athena mission.
 
 \subsection{Reflective coatings on SPO substrates}
 One of the most important principles of the SPO technology is the ability for the SPO substrates to bond when stacked. It is achieved by pressing the surface of one SPO substrate against the ribs of another SPO substrate. Since the SPO substrates are wedged with a SiO$_x$ material, both ribs and surface consist of SiO$_x$ and pressing the two substrates together forms a strong covalent bond, thereby fusing the two.
@@ -215,7 +215,7 @@ The results can be seen in figure \ref{fig:wb4c-n2-storage}. The upper row are t
               \put(30,30){Stored in dessicator}\end{overpic}	\begin{overpic}[width=0.47\linewidth]{figures/athena/coatings/w-b4c-n2-0sccm-thin.pdf}\put(30,40){Reactiv. sput. (10\% N$_2$)}
               \put(30,30){Stored in dessicator}\end{overpic}	\begin{overpic}[width=0.47\linewidth]{figures/athena/coatings/w-b4c-n2-10sccm-thick.pdf}\put(30,40){Non-reactiv. sput.}
                 \put(30,30){Stored in dessicator}\end{overpic}	\begin{overpic}[width=0.47\linewidth]{figures/athena/coatings/w-b4c-n2-10sccm-thin.pdf}\put(30,40){Non-reactiv. sput.}
-                  \put(30,30){Stored in dessicator}\end{overpic}	\begin{overpic}[width=0.47\linewidth]{figures/athena/coatings/w-b4c-no-storage-thick.pdf}\put(30,40){Non-reactiv. sput.}
+                    \put(30,30){Stored in dessicator}\end{overpic}	\begin{overpic}[width=0.47\linewidth]{figures/athena/coatings/w-b4c-no-storage-thick.pdf}\put(30,40){Non-reactiv. sput.}
                     \put(30,30){Stored outside dessicator}\end{overpic}	\begin{overpic}[width=0.47\linewidth]{figures/athena/coatings/w-b4c-no-storage-thin.pdf}\put(30,40){Non-reactiv. sput.}
                 \put(30,30){Stored outside dessicator}\end{overpic}
 
@@ -345,13 +345,13 @@ It is worth noting that the Ir/B$_4$C coatings applied to the SPO substrates wer
 
 \section{Upscaled production}\label{sec:Athena_upscaled}
 
-\emph{The following section was part of a technical report for the European Space Agency. It was done as part of the coating investigations for the original Athena proposed for ESA's L1 mission, which had a double-telescope configuration. It also required significantly less silicon pore optic substrates, 64,640 vs. $\sim$130,000 for Athena. The investigations done for scaling up production still holds true and the final production will also still take 2 years, but cost, production equipment and manpower will have to increase by a factor of two to three.}
+%\emph{The following section was part of a technical report for the European Space Agency. It was done as part of the coating investigations for the original Athena proposed for ESA's L1 mission, which had a double-telescope configuration. It also required significantly less silicon pore optic substrates, 64,640 vs. $\sim$130,000 for Athena. The investigations done for scaling up production still holds true and the final production will also still take 2 years, but cost, production equipment and manpower will have to increase by a factor of two to three.}
 
-For the Athena mission, the coating of the mirror substrates will be a large undertaking as 64,640 silicon pore optic (SPO) substrates will need a coating of between two and twenty layers.
+For the Athena mission, the coating of the mirror substrates will be a large undertaking as 140,030 silicon pore optic (SPO) substrates will need a coating of between two and twenty layers.
 
 Every piece will have to be transported from the SPO substrate fabrication facility (SFF) to a new dedicated coating facility, thoroughly cleaned, coated in specially designed chambers and then transported to the stacking facility. After stacking into mirror modules (MM), each MM will be measured at one of three dedicated beam lines at the BESSY II synchrotron in Berlin.
 
-In this paper, an approximate cost and timeline of the coating and coating qualification of SPO substrates is given.
+In this paper, an estimate of cost and timeframe of the coating and coating qualification of all SPO substrates for the Athena mission is given.
 
 \subsection{Timeline and cost of procurement and setup of coating facility}
 
@@ -383,7 +383,7 @@ Clean rooms can be build inside existing larger storage areas or cleaner product
 The cost of building and preparing the coating facility will differ between a shared facility and separated facilities, but the coating chambers will have a similar configuration.
 
 \subsection{Coating chambers}\label{sec:chambers}
-The two telescopes of Athena consists of 64,640 SPO substrates, which are all coated. Considering the coating chamber design used at DTU Space, a maximum of 100 plates can be coated per day in an 8 hour workday. In a year of 200 workdays, 20,000 substrates can be coated. Using three chambers, 60,000 substrates can be coated per year, within the two year time frame a total of 120,000 substrates can be coated. A minimum of 90,000 coated is considered as baseline, as we account for damaged plates, bad coatings etc. That leaves an acceptable down time of 6 months throughout the project.
+The telescope of Athena consists of 19 rings of mirror modules, each with two stacks of 68 coated SPO substrates, resulting in 140,030 SPO substrates in total. Considering the coating chamber design used at DTU Space, a maximum of 100 plates can be coated per day in an 8 hour workday. In a year of 200 workdays, 20,000 substrates can be coated. Using six chambers, 120,000 substrates can be coated per year, within the two year time frame a total of 240,000 substrates can be coated. A minimum of 1.5 times the needed 140,000 coated substrates is considered the baseline ($\sim$210,000), as we account for damaged plates, bad coatings etc. That leaves an acceptable down time of $\sim$2 months throughout the project.
 
 Using chambers of same design as DTU Space will give a cost of around 1M \euro\ per chamber. Those chambers have the drawback of a long pump down time after having the chamber opened to change samples. The advantage of coating SPO substrates compared to e.g. NuSTAR glass is that the SPO substrates are flat and only $\sim$1 mm thin.
 
@@ -391,27 +391,27 @@ If a new chamber design is considered, it would be advantageous to pursue a desi
 
 \begin{figure}[htbp]
 	\centering
-		\includegraphics[width=0.6\textwidth]{figures/athena/dram.jpeg}
-	\caption{\footnotesize Multi-chamber deposition machine from Applied Materials. \emph{Source: www.appliedmaterials.com}}
+		\includegraphics[width=0.7\textwidth]{figures/athena/dram.jpeg}
+	\caption{\footnotesize Multi-chamber deposition machine from Applied Materials. Each white dome is a sputtering chamber with a circular cathode depositing downwards. Wafers are moved between chambers using a robotic arm  placed in the central vacuum chamber. \emph{Source: www.appliedmaterials.com}}
 	\label{fig:dram}
 \end{figure}
 
-A significant increase in production rates can be achieved using machines like this. It also gives a cleaner environment for samples, since the machine itself can stay closed for longer periods of time. Higher production rates means that only one or two chambers are needed to complete the coating of 90,000 SPO substrates in two years.
+A significant increase in production rates can be achieved using machines like this. It also gives a cleaner environment for samples, since the machine itself can stay closed for longer periods of time. Higher production rates means that only three or four chambers are needed to complete the coating of 210,000 SPO substrates in two years.
 
 \subsection{Shared facility}
-Since both the coating facility stacking facility needs a clean room, these can be combined or connected in a shared facility. If the chamber design from DTU Space is used, a separate clean room will be needed to accommodate these chambers as they can give off dust flakes of material every time they are opened. If instead a multi-chamber coating system is used as described in section \ref{sec:chambers}, the coating machinery can be in a separate clean room against the wall into the stacking facility. That way wafer cassettes full of wafer-shaped SPO substrate holders can be inserted and retrieved from the stacking facility clean room.
+Since both the coating facility and stacking facility needs a clean room, these can be combined or connected in a shared facility. If the chamber design from DTU Space is used, a separate clean room will be needed to accommodate these chambers as they can give off dust flakes of material every time they are opened. If instead a multi-chamber coating system is used as described in section \ref{sec:chambers}, the coating machinery can be in a separate clean room against the wall into the stacking facility. That way wafer cassettes full of wafer-shaped SPO substrate holders can be inserted and retrieved from the stacking facility clean room.
 
 For a shared facility with multi-chamber coating systems as described in section \ref{sec:chambers}, we propose the following facility setup:
 
 \begin{itemize}
-	\item Common class 10,000 clean room for mounting SPO substrates on wafer-shaped sample holders. The same room will be used for fast X-ray system for pre- post coating measurements.
+	\item Common class 10,000 clean room for mounting SPO substrates on wafer-shaped sample holders. The same room will be used for fast X-ray system for pre- and post coating measurements.
 	\item Access to insertion port of multi-chamber coating system from the common clean room. Wafer cassettes are mounted directly to accessible part of the machine.
 	\item The back end of the coating chambers are in a separate room, so targets can be changed without giving off dust near the substrates.
 	\item In connection to the common clean room is a separate class 100 - 10,000 clean room with stacking robots. The robots can be in a separate ventilated tent inside the clean room to decrease particle dust. Mirror modules will be sealed here and moved outside the clean rooms for packing and shipping to BESSY II.
 \end{itemize}
 
 \subsection{Separated facilites}
-If the facilities are separated, a large effort will be required to keep substrates clean when packing/unpacking for transport. The substrates will be send from the SFF in batches of 1,500 and double or triple sealed, so the package can be opened partly when inside a moderately clean room and opened completely in the main class 10,000 clean room. The following setup of clean rooms is proposed.
+If the facilities are separated, a large effort will be required to keep substrates clean when packing/unpacking for transport. The substrates will be send from the SFF in batches of 3,000 and double or triple sealed, so the package can be opened partly when inside a moderately clean room and opened completely in the main class 10,000 clean room. The following setup of clean rooms is proposed.
 
 \begin{itemize}
 	\item Two separate class 10,000 clean rooms, one for substrate handling and one for coating chambers. Alternatively, one larger clean room parted by a clear plastic curtain.
@@ -424,11 +424,11 @@ One of the processes done at the SFF to the substrates before sending them to th
 
 The process can, instead of at the SFF, be done either at the coating facility by including the proper equipment or at an external facility. DTU Danchip is the Danish National Center for Micro- Nanofabrication, which runs a class 10 clean room with equipment capable of depositing the resist and UV curing the SPO substrates.
 
-The removal of the resist after coating can be done at the stacking facility, but can instead be done at the coating facility if these are separated. By doing the resist removal at the coating facility, a visual inspection can be done of the substrate before being transported to the stacking facility. If the process damages the coating, the problem can be located and new coated substrates can be produced quickly.
+The removal of the resist after coating can be done at the stacking facility, but can also be done at the coating facility if these are separated. By doing the resist removal at the coating facility, a visual inspection can be done of the substrate before being transported to the stacking facility. If the process damages the coating, the problem can be located and new coated substrates can be produced quickly.
 
 
 \subsection{Cost for setting up}
-To prepare the lab before the coating campaign starts, the coating chambers will need to be installed and configured. An extensive campaign with scientific personnel is needed to ensure the system's capability to produce coatings of sufficient quality. We estimate 12-24 months to qualify the coating chambers for the Athena coating campaign and will need approximately two scientific personnel and one technician.
+To prepare the lab before the coating campaign starts, the coating chambers will need to be installed and configured. An extensive campaign with scientific personnel is needed to ensure the system's capability to produce coatings of sufficient quality. We estimate 12-24 months to qualify the coating chambers for the Athena coating campaign and will need approximately four scientific personnel and two technicians.
 
 The coating qualification equipment described in section \ref{qualification} will be needed to qualify the coating chambers.
 
@@ -439,21 +439,21 @@ The coating qualification equipment described in section \ref{qualification} wil
 Equipment & Approx. price \\
 \hline
 \hline
-3 x Coating chambers of DTU design  & 3 x 1,000,000 \euro\\
+6 x Coating chambers of DTU design  & 6 x 1,000,000 \euro\\
 \hline
 or:\\
 \hline
-2 x Multi-chamber coating systems & 2 x 2,000,000 \euro \\
+4 x Multi-chamber coating systems & 4 x 2,000,000 \euro \\
 \hline
 \\
 \hline
-Personnel for setup & 490,000 \euro\\
+Personnel for setup & 980,000 \euro\\
 \end{tabular}
 \end{table}
 
 
 \subsection{Timeline and cost for production of Athena coatings}
-SPO substrates are fabricated at the SFF and should be shipped to the coating facility weekly in shipments of 1500 substrates. 300 substrates are daily mounted on wafer shaped sample holders after they have been measured using the fast X-ray system. The substrates are coated in one of the coating chambers and subsequently taken out to have resist removed and be measured again using the fast X-ray system.
+SPO substrates are fabricated at the SFF and should be shipped to the coating facility weekly in shipments of 3,000 substrates. 600 substrates are daily mounted on wafer shaped sample holders after they have been measured using the fast X-ray system. The substrates are coated in one of the coating chambers and subsequently taken out to have resist removed and be measured again using the fast X-ray system.
 
 Cost drivers during production are sputtering targets and personnel. The final cost is dependent on which material combination is used for coating. The differences can be seen below.
 
@@ -473,7 +473,7 @@ W/B$_4$C & $\sim$16 & 0.73 \euro & $\sim$22 & 0.26 \euro\\
 \end{tabular}
 \end{table}
 
-The approximate cost is calculated based on a 10\% efficiency of the sputtering cathodes, meaning 10\% of the target material ends on a substrate. For a single layer of 10 nm on all the substrates of Athena, the volume of material needed will be approximately 5 cm$^3 = $ 5000 mm$^3$. From that, the total target cost can be estimated.
+The approximate cost is calculated based on a 10\% efficiency of the sputtering cathodes, meaning 10\% of the target material ends on a substrate. For a single layer of 10 nm on all the substrates of Athena, the volume of material needed will be approximately 10 cm$^3 = $ 10,000 mm$^3$. From that, the total target cost can be estimated.
 
 \begin{table}[htbp]
 	\centering
@@ -483,20 +483,20 @@ combination	&	&	&	30 \% target \\
 &	&	&	usability\\
 \hline
 \hline
-Cr/Ir/B$_4$C & Tri-layer & 57,000 \euro & 190,000 \euro \\
+Cr/Ir/B$_4$C & Tri-layer & 114,000 \euro & 380,000 \euro \\
 \hline
-Pt/B$_4$C & Graded-d multilayer & 87,000 \euro & 290,000 \euro\\
+Pt/B$_4$C & Graded-d multilayer & 174,000 \euro & 580,000 \euro\\
 \hline
-W/B$_4$C & Graded-d multilayer & 8,700 \euro & 29,000 \euro \\
+W/B$_4$C & Graded-d multilayer & 17,400 \euro & 58,000 \euro \\
 \end{tabular}
 \end{table}
 
 Only 30\% of the target can be used before it has to be replaced, so a factor of 3-4 should be applied to these cost estimates. The leftover targets of precious metals, platinum and iridium, can be sold back at market value, which can reduce the total costs of precious metal consumption by up to $\sim$50 \%.
 
-For a Pt/B$_4$C graded-d multilayer, the total thickness of Pt is 16 nm in average and 22 nm of B$_4$C. Thus, $1.6 \cdot 5000$ mm$^3$ of Pt is needed at a price of 10.5 \euro\ per mm$^3$ at 90 \% coating loss, combined with $2.2 \cdot 5000$ mm$^3$ of B$_4$C at 0.26 \euro\ per mm$^3$ gives a total cost of 87,000 \euro.
+For a Pt/B$_4$C graded-d multilayer, the total thickness of Pt is 16 nm in average and 22 nm of B$_4$C. Thus, $1.6 \cdot 10000$ mm$^3$ of Pt is needed at a price of 10.5 \euro\ per mm$^3$ at 90 \% coating loss, combined with $2.2 \cdot 10000$ mm$^3$ of B$_4$C at 0.26 \euro\ per mm$^3$ gives a total cost of 174,000 \euro.
 
 \subsection{Personnel}
-During the two year coating campaign, 300 substrates will be handled daily. Procedures to be done daily include:
+During the two year coating campaign, 600 substrates will be handled daily. Procedures to be done daily include:
 
 \begin{itemize}[itemsep=1.5pt,parsep=1pt]
 	\item Unpacking substrates.
@@ -509,9 +509,9 @@ During the two year coating campaign, 300 substrates will be handled daily. Proc
 	\item Repacking samples for transport to stacking facility.
 \end{itemize}
 
-Additionally, the coating chambers will require new targets to be installed on a weekly basis. We estimate 3-4 technicians are needed in addition to 2-3 scientific personnel to run the coating production.
+Additionally, the coating chambers will require new targets to be installed on a weekly basis. We estimate 4-5 technicians are needed in addition to 3-4 scientific personnel to run the coating production.
 
-For three technicians two scientists, a two year coating campaign will cost 1,400,000 \euro.
+For five technicians four scientists, a two year coating campaign will cost $\sim$2,800,000 \euro.
 
 %\subsection{Shared facility}
 %\subsection{Separated facilites}
@@ -519,7 +519,7 @@ For three technicians two scientists, a two year coating campaign will cost 1,40
 \subsection{Coating QA during production}\label{qualification}
 We envision a significant coating qualification campaign for the Athena mission. We propose a fast automated 8 keV X-ray setup, that can measure every plate before and after coating. The plan is to make reflectivity scan of ca 50 \% of the pores.  Each measurement is an angular scan  at a fixed 8 keV energy and at an angular range of 0\degr to $\sim$ 1.5\degr\ will determine micro roughness to an accuracy of +/- 0.02 nm. It till require automatic alignment to an accuracy of +/- 0.01\degr. Measurements for each plate should be conducted in less than 5 minutes and each scan should be automatically fitted, with the data logging and plotting part of the facility. The foot print of the beam should cover more than 10 \% of each pore.
 
-The total database of reflectivity measurements can be used when building the final optical response model for Athena. During the campaign it will be required to measure ~600 SPO substrates per day, so the system should be capable of measuring each substrate in a batch automatically.
+The total database of reflectivity measurements can be used when building the final optical response model for Athena. During the campaign it will be required to measure ~1,200 SPO substrates per day, so the system should be capable of measuring each substrate in a batch automatically.
 
 Every chamber needs to be calibrated twice a week to ensure a precise layer thickness. This will require samples to be coated with constant-d multilayers, which will be measured using a separate 8 keV X-ray reflectivity (XRR) setup at the facility.
 
@@ -570,7 +570,7 @@ T - 6 years & Coating chamber qualifications complete.\\
 
 The timetable gives the possibility of starting the coating campaign six years before launch. The coating campaign is set for two years including delays will have the optic ready four years before launch. The four year window between optic readiness and launch is specified in the ESA timetable.
 
-Total cost for a shared facility is calculated below. For a separate facility, transport costs of substrates will have to be included, estimated at 100,000 \euro. Substituting three DTU design coating chambers with two more advanced multi-chamber systems will increase the cost of coating chambers to 4 mio. \euro.
+Total cost for a shared facility is calculated below. For a separate facility, transport costs of substrates will have to be included, estimated at minimum 100,000 \euro. Substituting six DTU design coating chambers with four more advanced multi-chamber systems will increase the cost of coating chambers from 6 mio. \euro to 8 mio. \euro, but the possible improvement in cleanliness and uptime will in our opinion make up for the difference.
 
 \begin{table}[htbp]
 	\centering
@@ -578,11 +578,11 @@ Total cost for a shared facility is calculated below. For a separate facility, t
 Expense & Approx. price\\
 \hline
 \hline
-3 x Coating chambers of DTU design  & 3 x 1,000,000 \euro\\
+6 x Coating chambers of DTU design  & 6 x 1,000,000 \euro\\
 \hline
 or:\\
 \hline
-2 x Multi-chamber coating systems & 2 x 2,000,000 \euro \\
+4 x Multi-chamber coating systems & 4 x 2,000,000 \euro \\
 \hline
 \\
 \hline
@@ -592,13 +592,13 @@ Separate 8 keV X-ray setup & 500,000 \euro\\
 \hline
 Stylus stress measurement setup & 30,000 \euro\\
 \hline
-Sputtering targets & 300,000 \euro\\
+Sputtering targets & 600,000 \euro\\
 \hline
-Personnel during setup & 1,000,000 \euro\\
+Personnel during setup & 2,000,000 \euro\\
 \hline
-Personnel during production & 1,400,000 \euro\\
+Personnel during production & 3,000,000 \euro\\
 \hline
-\textbf{Total} & $\leq$ 8,230,000 \euro\\
+\textbf{Total} & $\leq$ 15,130,000 \euro\\
 \end{tabular}
 \end{table}
 
@@ -615,4 +615,4 @@ The qualification tests of Ir/B$_4$C coatings on SPO substrates described in sec
 
 The choice between single bilayer or multilayer Ir/B$_4$C coatings for Athena is a question of cost. Applying a single bilayer is the inexpensive solution, as it puts the least requirements on production facilities; every SPO substrate will get the same coating. Multilayers of 5--10 bilayers will require more time per sample to apply as well as more complicated coating chambers. One could imagine a linear coating system with one Ir cathode and one or two B$_4$C cathodes, SPO samples would enter in one end of the system and exit in the other end, thereby finishing a baseline single bilayer coating with just a linear movement through the chamber. A similar setup for multilayer coatings would require a system with up to 20 cathodes in a row of interchanging Ir and B$_4$C, a massive system with multiple points of failure. An alternative approach is the multi-chamber solution as described in section \ref{sec:chambers}, which is the recommended solution reported to ESA by DTU Space. The multi-chamber coating facility takes advantage of the SPO technology heritage from the semi-conductor industry, primary advantage being the completely flat geometry of SPO substrates before stacking.
 
-The past decades of rapid growth and technological progress in the semi-conductor industry will definitely be a major reason for making a telescope with more than 120,000 mirror substrates possible. A similar sized mission with individually slumped glass substrates as in the NuSTAR mission will require a substantial man-power effort as each step from flat glass to curved, cleaned and coated glass mirrors are labor-intensive and almost impossible to automate. The SPO technology has drawbacks, such as limits on material combinations and a larger minimum inner radius compared to slumped glass, but the low substrate figure error, mass production capability, and rigidity of mirror modules gives SPO a substantial advantage in large X-ray missions.
+The past decades of rapid growth and technological progress in the semi-conductor industry will definitely be a major reason for making a telescope with more than 140,000 mirror substrates possible. A similar sized mission with individually slumped glass substrates as in the NuSTAR mission will require a substantial man-power effort as each step from flat glass to curved, cleaned and coated glass mirrors are labor-intensive and almost impossible to automate. The SPO technology has drawbacks, such as limits on material combinations and a larger minimum inner radius compared to slumped glass, but the low substrate figure error, mass production capability, and rigidity of mirror modules gives SPO a substantial advantage in large X-ray missions.
