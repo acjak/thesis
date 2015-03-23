@@ -8,12 +8,12 @@ My part of the work was to design the optic geometry and coating as well as prod
 A complete software package was developed that could calculate the geometry of the optic given a focal length and substrate specifications. The software then optimises the coating for a range of material combinations with respect to energy range and axion spectrum by incorporating IMD. I chose to make the software in Python because of the huge amount of documentation and specialised packages available. To interface with IMD, a package called Pidly was used to communicate with IDL, which could spawn an IMD session. The principle is described in section \ref{sec:software_improvements}
 
 \section{The CAST instrument}
-The axion is an ultra-light particle that is formed from the interaction of a photon with an electromagnetic field, called the Primakoff effect. A primary source of the particle would be from inside stars, and from Earth the best nearby source will of course be the Sun. The axion is weakly interacting so in order to detect it, CAST uses a strong magnet to convert the axion back to a photon, again by the Primakoff effect. The photons subsequently hit a detector.
+The axion is a theoretical ultra-light particle formed from the interaction of a photon with an electromagnetic field. The effect is called the Primakoff conversion, which is a conversion of plasma photons into axions in the Coulomb field of charged particles. Other possible sources of axions are the \emph{ABC} processes: \emph{A}xion recombination, \emph{B}rehmstrahlung and \emph{C}ompton\cite{Redondo:2013td}. A primary source of the particle would be from inside stars where high densities of photons and charged particles are found in the plasma. From Earth the best nearby source will of course be the Sun. The axion is weakly interacting so in order to detect it, CAST uses a strong magnet to convert the axion back to a photon, again by the Primakoff effect. The photons subsequently hit a detector.
 
 \begin{figure}[htbp]
   \centering
     \includegraphics[height=8cm]{figures/cast/axion_spectrum.png}
-  \caption{\footnotesize Solar axion flux spectrum at Earth. }
+  \caption{\footnotesize Solar axion flux spectrum at Earth based on the Primakoff conversion. The spectral shape is predicted by solar observations and the unknown axion-photon coupling constant, \gay, which is only a multiplicative factor. }
   \label{fig:axion_spectrum}
 \end{figure}
 
