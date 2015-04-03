@@ -36,7 +36,7 @@ where $\rho_A f^0 (0)=\rho$ is the electron density of the material. The critica
 % 		\includegraphics[height=3in]{figures/introduction/xmm.pdf}
 % 	\caption{\footnotesize Principle of X-rays focused by double reflection. The incoming photons first hit the parabolic mirror array, and to shorten the focal length, the photons then hit a hyperbolic mirror array. The focal length in this image applies to ESA's XMM telescope. From \url{xmm.esa.int} .}
 % 	\label{fig:doublereflected}
-% \end{figure}
+%\end{figure}
 The mirrors coated with a single high density material have the drawback that they cannot effectively provide reflectivity for X-ray photons with energies outside the 0.1 to 5 keV range. When the X-ray photon energy increases, the critical angle of the material decreases, the result for a iridium film can be seen in figure \ref{fig:xrayperformance}(b) at a reflectivity angle of 13.1 mrad $=$ 0.751\degr. In figure \ref{fig:xrayperformance}(a) is shown the reflectivity at 2.2 mrad $=$ 0.126\degr\ where the Ir can reflect up to 40 keV. 0.126\degr\ is the reflectivity angle for a mirror in a mirror array distanced $\sim$8.7 cm from the focal plane and with a focal length of 10 m.
 
 \begin{figure}[!ht] % xrayperformance
@@ -57,21 +57,40 @@ The multilayer can have a constant d-spacing through the entire stack and will t
 
 The material chosen as low Z and high Z materials will perform best if the difference in electron density is as large as possible. But there are other factors to consider: as can be seen in figure \ref{fig:xrayperformance}(a) W/SiC and Pt/SiC have a cut-off at 69.5 keV and 78.4 keV respectively. That is caused by X-ray absorption edges in W and Pt, which increases the absorption in the multilayer to a point where roughness decreases significantly.
 
-Another factor to consider is the ability of the combination of two materials in a multilayer (e.g. W and SiC) to achieve low roughness in the interfaces between each layer. The interface between two layers can be described by an interface profile developed by Stearns et al\cite{Stearns:1989va}. The profile width is $\theta_{\text{rms}}=(\theta_r^2 + \theta_f^2)^{1/2}$, where $\theta_r$ is the roughness and $\theta_f$ is the diffuseness of the two materials in the interface. A general rule of thumb is to keep $\sigma_{rms} \leq d/6$, with $d$ being the thickness of a single bilayer. That means that a bilayer which is 3 nm thick can only have an average roughness of 0.5 nm, which is only the height of a few atomic monolayers. A roughness higher than that will cause loss of definition in the multilayer resulting in less defined Bragg peaks given by loss of reflectivity at the interfaces.
+Another factor to consider is the ability of the combination of two materials in a multilayer (e.g. W and SiC) to achieve low roughness in the interfaces between each layer. The interface between two layers can be described by an interface profile developed by Stearns et al\cite{Stearns:1989va}. The profile width is $\sigma_{\text{rms}}=(\sigma_r^2 + \sigma_f^2)^{1/2}$, where $\sigma_r$ is the roughness and $\sigma_f$ is the diffuseness of the two materials in the interface. A general rule of thumb is to keep $\sigma_{rms} \leq d/6$, with $d$ being the thickness of a single bilayer. That means that a bilayer which is 3 nm thick can only have an average roughness of 0.5 nm, which is only the height of a few atomic monolayers. A roughness higher than that will cause loss of definition in the multilayer resulting in less defined Bragg peaks given by loss of reflectivity at the interfaces.
+
+\subsection{Effective area}\label{sec:eff_area}
+An important benchmark for telescopes of all parts of the spectrum (optical, UV, X-ray, etc.) is the effective area. It is a metric of the telescope's collecting area at each wavelength or energy. By taking the reflecting area of a telescope and multiplying it by the normalized reflectivity spectrum, the result is the effective area. However, the process becomes a little more complicated considering that the reflectivity is dependent on incident angle on the reflecting surface. In an X-ray telescope consisting of concentric mirror shells, each mirror shell will reflect incoming photons at a different angle that each result in a certain reflectivity spectrum. Also to consider is the fact that Wolter I telescopes requires a double reflection, so the reflectivity spectrum should be squared.
+
+In an example of five mirror shells, the effective area of a shell is the cross sectional area of that shell multiplied with the square of the reflectivity spectrum. Adding up the effective area of each shell results in the effective area of the full telescope.
+
+In order to get as sensitive a telescope as possible, and in order to catch the relatively sparse amount of soft X-ray photons from far away sources, an effective area as large as possible is needed. For this reason it is important to design and optimize the telescope optics so that this is accomplished. After the design and geometry of the optics module is decided, it is lastly the reflective surface of the individual mirrors which should be optimised in order to achieve the best effective area. This means that both the material combinations, the thickness of the coating, the number of bilayers, and the use of different recipes throughout the optics design will have an influence of the telescope throughput.
+
+In this thesis I will investigate different combinations of the above and present the results with the purpose of identifying the best possible coating that will help us achieve the described objectives.
 
 \subsection{NuSTAR}\label{sec:nustar}
 \emph{This thesis has a number of references to the NuSTAR mission, so a short overview is given here.}
 
-The NuSTAR telescope was the first mission to carry a hard X-ray (5-80 keV) focusing telescope to orbit, and the first in-orbit X-ray telescope to use graded-d multilayer coatings. It is a NASA mission made in collaboration between mainly Caltech, Columbia University, Lawrence Livermore National Lab., and DTU Space and was launched in 2012. Using an extendable mast, the focal length becomes 10 m when deployed in orbit.
+The NuSTAR telescope was the first mission to carry a hard X-ray (5-80 keV) focusing telescope to orbit, and the first in-orbit X-ray telescope to use graded-d multilayer coatings. It is a NASA mission made in collaboration between mainly Caltech, Columbia University, Lawrence Livermore National Lab., and DTU Space and was launched in 2012. Using an extendable mast (see figure \ref{fig:nustar}), the focal length reaches 10 m when deployed in orbit. It carries two Wolter I type telescopes that are made by rectangular pieces of 0.21 mm thick glass, slumped to the curvature of each radius in the telescope\cite{Craig:2000fd,Hailey:1997ie} (see figure \ref{fig:nustar_glass}). The glass has a 0.4--0.5 nm r.m.s. roughness.
 
-\begin{figure}[!ht] % xrayperformance
+\begin{figure}[!htp] % xrayperformance
 	\centering	\includegraphics[width=0.8\linewidth]{figures/introduction/nustar.pdf}
-	\caption{\footnotesize Diagram of the NuSTAR telescope with the extendable mast partially collapsed. From \cite{Harrison:2010gu}.}
-	\label{fig:xrayperformance}
+	\caption{\footnotesize Illustration of the NuSTAR telescope with the extendable mast partially collapsed. The two optics are placed on the left side and is in the shown configuration with covers to protect the optic before deployment. Each optic focuses X-rays into the two focal plane detectors on the right side. From \cite{Harrison:2010gu}.}
+	\label{fig:nustar}
 \end{figure}
 
-It carries two Wolter I type telescopes that are made by rectangular pieces of 0.21 mm thick glass that is slumped to the curvature of each radius in the telescope\cite{Craig:2000fd,Hailey:1997ie}. The glass has a 0.4--0.5 nm r.m.s. roughness.
+\begin{figure}[!htp] % xrayperformance
+	\centering	\includegraphics[width=0.7\linewidth]{figures/introduction/nustar_glass.pdf}
+	\caption{\footnotesize Illustration of a NuSTAR glass substrate. All pieces are 225 mm long and 0.2 mm thick, but varies in width from $\sim$60--$\sim$140 mm. }
+	\label{fig:nustar_glass}
+\end{figure}
 
-Each telescope consists of 133 concentric mirror shells of glass, with each glass substrate being 225 mm long. Two stacks of 133 shell layers fit together to make the first and second reflection of the Wolter I principle. The innermost and outermost shells have radii of 54.4 mm and 191 mm, respectively, making the total diameter of each telescope $\sim$400 mm. Glass substrates were mounted using graphite spacers that were machined to $\sim$2.5 $\upmu$m precision.
+Each telescope consists of 133 concentric mirror shells of glass, with each glass substrate being 225 mm long. Two stacks of 133 shell layers fit together to make the first and second reflection of the Wolter I principle. The innermost and outermost shells have radii of 54.4 mm and 191 mm, respectively, making the total diameter of each telescope $\sim$400 mm. Glass substrates were mounted using graphite spacers that were machined to $\sim$2.5 $\upmu$m precision. An illustration of an assembled optic can be seen in figure \ref{fig:nustar_optic}.
+
+\begin{figure}[!ht] % xrayperformance
+	\centering	\includegraphics[width=0.6\linewidth]{figures/introduction/nustar_optic.pdf}
+	\caption{\footnotesize Illustration of an assembled NuSTAR optic. A central mandrel made from SiC is used as a base on which the firat glass layer is attached to graphite spacers with epoxy. Each subsequent layer is attached using graphite spacers, resulting in a rigid construction. From \cite{Koglin:2004tr}}
+	\label{fig:nustar_optic}
+\end{figure}
 
 All glass substrates for NuSTAR were coated at DTU Space using multilayer material combinations of either W/Si or Pt/C. Multilayers of W/Si were 291 bilayers and multilayers of Pt/C were 145 bilayers. The multilayers were graded according to a power-law\cite{Christensen:1992uc}.

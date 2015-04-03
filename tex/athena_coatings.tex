@@ -13,18 +13,46 @@ The European Space Agency (ESA) continued development of a smaller mission using
 
 \begin{figure}[!h]
   \center
-  \includegraphics[height=6cm]{figures/athena/athena_telescope.pdf}
+  \includegraphics[height=8cm]{figures/athena/athena_telescope.pdf}
 \caption{\footnotesize Illustrations of the Athena X-ray telescope. \textbf{Left:} Inside Ariane V fairing. \textbf{Right:} In space with extended solar panels. The optic is in the bottom end. (from \url{www.the-Athena-x-ray-observatory.eu}).}\label{fig:Athena_telescope}
 \end{figure}
 
-The theme of the 2028 L2 mission is \emph{The Hot and Energetic Universe}, which calls for spatially resolved X-ray spectroscopy and deep wide-field X-ray spectral imaging. The performance should greatly exceed instruments currently in use such as Chandra and XMM-Newton as well as future mission such as Astro-H and eRosita. The improvements are to be realised with an effective area of 2 m$^2$ at 1 keV, 5'' angular resolution and 40'x40' wide field-of-view\cite{Willingale:2013vo}.
+The theme of the 2028 L2 mission is \emph{The Hot and Energetic Universe}, which aims to answer the questions:
+
+\begin{enumerate}
+  \item How does ordinary matter assemble into the large scale structures that we see today?
+  \item How do black holes grow and shape the Universe?
+\end{enumerate}
+
+The first question might be answered by looking at galaxy clusters from their formation at $z\sim$ 2--3 until present day. As the structures grow over time due to accretion of hot gas they eventually become the largest bound structures in the universe. To understand the growth, it is necessary to get information about velocity, thermodynamics and chemical composition of the gas. The high temperature of the gas results in considerable amounts of X-ray emission and the goal is to measure the spectroscopic output of galaxy cluster from $z=$1 and beyond. In order to study the morphology of such clusters and in order to get spectroscopic information, a telescope with a large collecting area and good spatial resolution is required.
+
+The second question could be answered by looking at the supermassive black holes at the centers of galaxies. By looking at the epoch where the first galaxies were forming at $z=$ 6--10, the growth of the black holes can be tracked. However, that will require survey capabilities $\sim$100 times better than available with current X-ray telescopes. It will require a wide field of view as well as high sensitivity, which depends on large throughput and good spatial resolution.
+
+In conclusion, the mission calls for high energy and spatial resolution spectroscopic observations and deep wide-field X-ray imaging. The performance in these areas should greatly exceed instruments currently in use such as Chandra and XMM-Newton as well as future missions such as Astro-H and eRosita. The improvements are to be realised with an effective area of 2 m$^2$ at 1 keV, 5'' angular resolution and 40'x40' wide field-of-view\cite{Willingale:2013vo}.
+
+\subsection{The Athena reflective coating baseline}
+The baseline coating for Athena is an Ir/B$_4$C single bilayer. The Ir will reflect higher energy X-rays in the 0.1--10 keV energy range, and the B$_4$C top layer will reflect lower energies. The B$_4$C material is able to withstand the C-C bond-breaking chemical solutions applied in the last step of the lithographic process (described in section \ref{sec:litho_process}), while at the same time being a very light material. The low electron density gives B$_4$C a very good reflectivity at energies 0.1--$\sim$3 keV. In investigations done by Lumb et al are results of measurements on an Ir/C single bilayer, where the C overlayer results in a doubling of effective area of the former XEUS telescope at 2--4 keV\cite{Lumb:2007vt}. This effect is due to the lower photoelectric absorption in low density materials such as boron and carbon in total reflection mode\cite{pareschi:2004dd}.
+
+The Ir/B$_4$C combination does however have some drawbacks, especially high compressive film stress. Additionally, the Ir/B$_4$C material combination is not described in the literature, so the interplay between the two materials in both the short and long term is relatively unknown. In appendix \ref{pap:PREL_Athena} can be found a paper from 2011 that investigates the baseline Athena coating along with solutions to handle the film stress. In section \ref{sec:Athena_cr_impro} is a continuation of the investigation into stress improvements.
+
+\subsection{Coating optimisations for Athena}
+To improve on the Athena baseline coating, a range of alternative material combinations were investigated using computer optimisation with Markov chain Monte Carlo methods by Desiree D. M. Ferreira at DTU Space. A number of optimised coating recipes were produced for each material combination and the actual coatings were subsequently produced on SPO substrates in the coating lab at DTU Space. In appendix \ref{pap:Athena_2012} (see also \cite{ferreira2012Athena}) can be found a paper from 2012 on some of the optimizations and investigations done on coatings applied to SPO substrates.
+
+The material combinations investigated in this thesis are:
+
+\begin{description}
+  \item[Ir/B$_4$C single bilayer (baseline)] The baseline material combination that yields the effective area of 2 m$^2$ at 1 keV for Athena.
+  \item[Ir/B$4$C multilayer] An improvement on the baseline using the same material combination. A stack of bilayers is designed to improve the reflectivity around 6 keV while still retaining the baseline effective area.
+  \item[W/B$_4$C multilayer] A combination with lower stress and cheaper materials than the Ir/B$_4$C multilayer.
+  \item[Pt/B$_4$C single bilayer] A backup of the baseline material combination if the stress proved to be too high for the SPO substrates.
+\end{description}
 
 \subsection{Athena optics technology}\label{sec:Athena_opt_tech}
 ESA has for the past decade been working on a radically new optics technology for future X-ray missions, the Silicon Pore Optics (SPO)\cite{Barcons:2012va,Collon:2010bp,Collon:2006ky,Collon:2010bp,Collon:2006ky,Beijersbergen:2004cc}. By using silicon wafers, cut into rectangular shapes (diced) and with grooves cut into the underside, a high collecting area can be achieved with very low mass and at the same time achieve angular resolution better than NuSTAR-like glass.
 
 \begin{figure}[!h]
   \center
-  \includegraphics[height=6cm]{figures/athena/spo_principle1.pdf}
+  \includegraphics[height=8cm]{figures/athena/spo_principle1.pdf}
 \caption{\footnotesize Principles of the Silicon Pore Optic (SPO) technology. \textbf{Top:} Silicon wafers are diced into rectangular pieces and grooves are cut in the underside. \textbf{Bottom left:} The wafers have a wedge applied with SiO$_x$ and are stacked so all SPO substrates reflect to the same point. \textbf{Bottom right:} SPO substrates are stacked at a curvature corresponding to the radius at which they are placed in the optic. A reflective coating is applied in stripes on each substrates. (from \cite{Willingale:2013vo}).}\label{fig:spo_principle1}
 \end{figure}
 
@@ -52,7 +80,7 @@ Two stacks of 68 SPO substrates constitutes an SPO module as can be seen in figu
 
 \begin{figure}[!h]
   \center
-  \includegraphics[height=6cm]{figures/athena/spo_stack.pdf}
+  \includegraphics[height=7cm]{figures/athena/spo_stack.pdf}
 \caption{\footnotesize A complete SPO mirror module. Two stacks of 68 SPO substrates are glued together with a pair of Cesis plates, making them co-aligned with 1'' precision. The complete module reflects an incoming X-ray photon twice and thus acts as both paraboloid and hyperboloid of the Wolter I optic. (from \cite{Willingale:2013vo}).}\label{fig:spo_stack}
 \end{figure}
 
@@ -60,13 +88,13 @@ Each SPO module is self-consistent, making the entire optic technology modular. 
 
 \begin{figure}[!h]
   \center
-  \includegraphics[height=6cm]{figures/athena/athena_full_optic.pdf}
+  \includegraphics[height=7cm]{figures/athena/athena_full_optic.pdf}
 \caption{\footnotesize The complete Athena optic. SPO mirror modules are arranged in rings to populate the aperture. (from \cite{Willingale:2013vo}).}\label{fig:Athena_full_optic}
 \end{figure}
 
 As each optic module consist of $2 \cdot 68 = 136$ SPO substrates, a total of $1090 \cdot 136 \approx 140,000$ SPO substrates are needed, not accounting for spares or broken substrates. Considering that the NuSTAR telescope consisted of $2\cdot2376$ glass substrates and took two years to produce, it becomes apparent that the Athena mission will require a large-scale production facility. In section \ref{sec:Athena_upscaled} can be found an investigation in the coating side of the production facility requirements for the Athena mission.
 
-\subsection{Reflective coatings on SPO substrates}
+\subsection{Reflective coatings on SPO substrates}\label{sec:litho_process}
 One of the most important principles of the SPO technology is the ability for the SPO substrates to bond when stacked. It is achieved by pressing the surface of one SPO substrate against the ribs of another SPO substrate. Since the SPO substrates are wedged with a SiO$_x$ material, both ribs and surface consist of SiO$_x$ and pressing the two substrates together forms a strong covalent bond, thereby fusing the two.
 
 In order to apply a reflective coating to each of the SPO substrates, the bonding process has to be taken into account. Applying a coating with a physical vapor deposition process such as DC magnetron sputtering will coat the whole surface, but by using a lithographic process from the semiconductor industry it is possible to apply coatings in patterns on a surface. The pattern being the exact position where the ribs will touch the surface when stacking, so these areas are $\sim$0.17 mm wide, covers the entire length of the substrate surface and are spaced $\sim$0.83 mm apart. The lithographic process involves the following (also seen in figure \ref{fig:litho_process}):
@@ -81,37 +109,24 @@ In order to apply a reflective coating to each of the SPO substrates, the bondin
 
 \begin{figure}[!h]
   \center
-  \includegraphics[height=6cm]{figures/athena/litho_process.pdf}
+  \includegraphics[height=8cm]{figures/athena/litho_process.pdf}
 \caption{\footnotesize. The lithographic process applied to SPO substrates to achieve a striped pattern of reflective coating.}\label{fig:litho_process}
 \end{figure}
 
 The lithographic process puts requirements on the reflective coatings applied to the SPO substrates since chemical solutions used in the last step are designed to break carbon-carbon bonds. All multilayer coatings with pure C as the low-Z material are excluded as the last step described above will simply break apart the coating.
 
-\subsection{The Athena reflective coating baseline}
-The baseline coating for Athena is a Ir/B$_4$C single bilayer. The Ir will reflect higher energy X-rays in the 0.1--10 keV energy range, and the B$_4$C top layer will reflect lower energies. The B$_4$C material is able to withstand the C-C bond-breaking chemical solutions applied in the last step of the lithographic process, while at the same time being a very light material. The low electron density gives B$_4$C a very good reflectivity at energies 0.1--$\sim$3 keV.
 
-The Ir/B$_4$C combination does however have some drawbacks, especially high compressive film stress. Additionally, the thin film material combination is not described in the literature, so the interplay between the two materials in both the short and long term is relatively unknown. In appendix \ref{pap:PREL_Athena} can be found a paper from 2011 that investigates the baseline Athena coating along with solutions to handle the film stress. In section \ref{sec:Athena_cr_impro} is a continuation of the investigation into stress improvements.
+\section{Film stress from Ir/B$_4$C coatings}\label{sec:Athena_cr_impro}
+The baseline coating for Athena consists of a bilayer of Ir and B$_4$C, the former of which shows considerably film stress of up to $\sim$-4 GPa (compressive). High film stress of more than 1 GPa can in films cause deadhesion and "hillocks" on the surface of films with compressive stress. Some bending of the coated substrate will also result from high stress, the degree depending on substrate thickness.
 
-\subsection{Coating optimisations for Athena}
-To improve on the Athena baseline coating, a range of alternative material combinations were investigated using computer optimisation with Markov chain Monte Carlo methods by Desiree D. M. Ferreira at DTU Space. A number of optimised coating recipes were produced for each material combination and the actual coatings were subsequently produced on SPO substrates in the coating lab at DTU Space. In appendix \ref{pap:Athena_2012} (see also \cite{ferreira2012Athena}) can be found a paper from 2012 on some of the optimizations and investigations done on coatings applied to SPO substrates.
+To alleviate the stress in the film, earlier investigations has shown significant improvements in stress by using a Cr underlayer, which almost eliminates the total film stress[\ref{pap:PREL_Athena}]. The drawback of using Cr films is the high surface roughness, with r.m.s roughness of 0.1--1.0 nm normal for a 10 nm thick film. The following section investigates possible improvements to that roughness.
 
-The material combinations investigated in this thesis are:
-
-\begin{description}
-  \item[Ir/B$_4$C single bilayer (baseline)] The baseline material combination that yields the effective area of 2 m$^2$ at 1 keV for Athena.
-  \item[Ir/B$4$C multilayer] An improvement on the baseline using the same material combination. A stack of bilayers is designed to improve the reflectivity around 6 keV while still retaining the baseline effective area.
-  \item[W/B$_4$C multilayer] A combination with lower stress and cheaper materials than the Ir/B$_4$C multilayer.
-  \item[Pt/B$_4$C single bilayer] A backup of the baseline material combination if the stress proved to be too high for the SPO substrates.
-\end{description}
-
-\section{Investigation of Cr roughness improvement}\label{sec:Athena_cr_impro}
-The baseline coating for Athena consists of a bilayer of Ir and B$_4$C, the former of which shows considerably film stress of up to -4 GPa (compressive). To alleviate the stress in the film, earlier investigations has shown significant improvements in stress by using a Cr underlayer, which almost eliminates the total film stress[\ref{pap:PREL_Athena}].
-
-The drawback is however the high surface roughness in Cr films. We present here the results of two experiments with the purpose of reducing the Cr surface roughness. The first experiment is an attempt to decrease the rate of sputtered Cr atoms reaching the substrate. A lower rate will give an adsorbed Cr atom a chance to move to a lower position\cite{Venables:1984wu}. By decreasing the output power to the Cr cathode, while maintaining the same voltage of -400 V, the rate of sputtered atoms can be decreased. In figure \ref{fig:cr-power-change} XRR measurements of Cr films coated at varying power output can be seen.
+\subsection{Improving roughness in stress-relieving Cr sublayers}
+We present here the results of two experiments with the purpose of reducing the Cr surface roughness. The first experiment is an attempt to decrease the rate of sputtered Cr atoms reaching the substrate. A lower rate will give an adsorbed Cr atom a chance to move to a lower position\cite{Venables:1984wu}. By decreasing the output power to the Cr cathode, while maintaining the same voltage of -400 V, the rate of sputtered atoms can be decreased. In figure \ref{fig:cr-power-change} XRR measurements of Cr films coated at varying power output can be seen.
 
 \begin{figure}[!h]
 	\center
-	\includegraphics[height=6cm]{figures/athena/coatings/cr-power-change.pdf}
+	\includegraphics[height=8cm]{figures/athena/coatings/cr-power-change.pdf}
 \caption{\footnotesize XRR measurements of four Cr single layer coatings made with varying power settings.}\label{fig:cr-power-change}
 \end{figure}
 
@@ -121,7 +136,7 @@ A second experiment involves changing the Ar gas pressure during coating. A mini
 
 \begin{figure}[!h]
 	\center
-	\includegraphics[height=3.5cm]{figures/athena/coatings/self-shadow.pdf}
+	\includegraphics[height=5.5cm]{figures/athena/coatings/self-shadow.pdf}
 \caption{\footnotesize Principle of self-shadowing during angled deposition on a surface. At higher angles, incoming particles will have a tendency to adsorb on top of single particles already on the surface instead of filling gaps in the film. From \cite{Dirks:1977uk}.}\label{fig:self-shadow}
 \end{figure}
 
@@ -129,7 +144,7 @@ By producing Cr coatings at varying Ar pressures and measuring using XRR, a corr
 
 \begin{figure}[!h]
 	\center
-	\includegraphics[height=6cm]{figures/athena/coatings/cr-pressure-fit.pdf}
+	\includegraphics[height=8cm]{figures/athena/coatings/cr-pressure-fit.pdf}
 \caption{\footnotesize XRR measurements of two Cr single layer coatings made with varying Ar pressure. Blue points are IMD models fitted to the data.}\label{fig:cr-pressure-fit}
 \end{figure}
 
@@ -138,7 +153,7 @@ This is an extremely promising result, since the baseline Athena coating depends
 
 \begin{figure}[!h]
 	\center
-	\includegraphics[height=6cm]{figures/athena/coatings/cr-ir-fit.pdf}
+	\includegraphics[height=8cm]{figures/athena/coatings/cr-ir-fit.pdf}
 \caption{\footnotesize XRR measurement of a bilayer of Cr/Ir (red) along with an IMD model fitted to the data (blue).}\label{fig:cr-ir-fit}
 \end{figure}
 
@@ -306,23 +321,25 @@ The coated SPO substrates were also measured at the FCM beamline at the BESSY II
 
 \begin{figure}[!h]
   \center
-\includegraphics[height=7cm]{figures/athena/coating_on_spo/ml_irb4c_nores.jpg}
+\includegraphics[height=8cm]{figures/athena/coating_on_spo/ml_irb4c_nores.jpg}
 \caption{\footnotesize XRR measurements at the 1.8--10 keV energy range and a 0.6\degr\ angle, performed at the FCM beamline at BESSY II. Two measurements of the same sample are shown from different positions to investigate non-uniformity of the coating.}\label{fig:spo_bessy}
 \end{figure}
 
-
-
-
 \subsection{ISO qualification of Ir/B$_4$C coatings}\label{sec:qa_test}
-In order to qualify the Ir/B$_4$C coatings on SPO substrates for the Athena mission, a range of tests were conducted on coated substrates. Four SPO substrates were coated, two with single bilayer baseline Ir/B$_4$C and two with optimised Ir/B$_4$C multilayer. The three tests were:
+In order to qualify the Ir/B$_4$C coatings on SPO substrates for the Athena mission, a range of tests were conducted on coated substrates. Qualification testing is a cornerstone of developing hardware for space based applications, so a number of standardisations have been developed over the years. Each standardisation applies to a specific type of hardware that needs to be qualified. The European Space Agency works with the \emph{International Organization for Standardization} (ISO) for optical devices and optical coatings. The specific tests that ESA outlines as required to qualify coated optical devices are:
 
 \begin{itemize}
- \item A thermal cycling test according to \emph{AD4 ECSS-E-10-03A (15 February 2002)}.
- \item A humidity test according to \emph{ISO9022(AD6)}.
- \item An adhesion test according to \emph{ISO9211-4(AD5)}.
+ \item A thermal cycling test according to \emph{ECSS-E-10-03A (AD4) Space engineering, testing}.\begin{quote}{\bf General purpose:} [...] of the thermal cycling test is to demonstrate the ability of the equipment under test to fulfil all functional and performance requirements over the qualification temperature range at ambient pressure.\end{quote}
+
+ \item A humidity test according to \emph{ISO9022-2 (AD6) Optics and optical instruments, Environmental test methods, Part 2: Cold, heat and humidity}.\begin{quote}{\bf General purpose:} [...] to investigate to what extent the optical, thermal, mechanical, chemical and electrical performance characteristics of the specimen are affected by temperature and/or humidity.\end{quote}
+
+ \item An adhesion test according to \emph{ISO9211-4 (AD5) Optics and optical instruments, Optical coatings, Part 4: Specific test methods}.
+ \begin{quote}{\bf General purpose:} [...] of these tests is to evaluate to what extent the mechanical properties of optical coatings on components and substrates are affected when subjected to specific tensile or shear stress conditions at ambient atmospheric conditions.\end{quote}
 \end{itemize}
 
-A baseline and multilayer sample were used for both thermal cycling and humidity tests. The samples from the humidity tests were reused for the adhesion test. All tests were carried out by David Girou from DTU Space.
+Each test is described in detail in each of the documents listed above as well as the requirements that has to be met for a device or sample to succeed the test and qualify. The coated samples used in these tests were measured using XRR before and after coating as well as a visual test of the coating to quantify any changes in the coating.
+
+Four SPO substrates were coated for qualification testing, two with single bilayer baseline Ir/B$_4$C and two with optimised Ir/B$_4$C multilayer. A baseline and multilayer sample were used for both thermal cycling and humidity tests. The samples from the humidity tests were reused for the adhesion test. All tests were carried out by David Girou from DTU Space.
 
 The thermal cycling test consists of eight cycles in a oven (no vacuum). One cycle is divided into two hours spent at $T_{max}=85$\degr C $\pm 10$\degr C and two hours spent at $T_{min}=-45$\degr C $\pm 10$\degr C. The test is divided into two times four cycles since reflectance measurements are performed after the fourth cycle. Inital and final temperature is 22\degr C, that $\dfrac{\text{d}T}{\text{d}t}=4$\degr C$\cdot$min$^{-1}$ and that after the last cycle the temperature is first increased to 40\degr C and then decreased to 22\degr C to avoid condensation. Reflectance measurements are done after the fourth and the eighth cycle.
 
