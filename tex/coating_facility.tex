@@ -28,10 +28,10 @@ After chamber is closed, a roughing pump and a turbo molecular pumps evacuates t
 
 The chamber fits four cathodes at a time and the Multilab has six in total, so two can be serviced while the other four are in use. For most coatings, only two or three cathodes at a time are necessary for the same number of materials.
 
-In the earlier software solution, all cathodes were switched on at the same time during deposition of a bilayer. That necessitated two cathodes running with the low-Z material while one cathode ran with the high-Z material in order to achieve the correct $\Gamma$ value and to have each cathode running in a possible power regime. A typical Pt/C  multilayer for NuSTAR required $\Gamma = 0.6$, which meant that 60\% of a material in a bilayer had to be carbon. Platinum and carbon has vastly different coating rates, so one cathode with Pt running at 150 W required two cathodes of C running at 900 W in order to achieve $\Gamma = 0.6$. With the new software only one cathode with each kind of material is necessary, but at the expense of a longer coating time.
+In the earlier software solution, all cathodes were switched on at the same time during deposition of a bilayer. That necessitated two cathodes running with the low-Z material while one cathode ran with the high-Z material in order to achieve the correct $\Gamma$ value and to have each cathode running in a possible power regime. A typical Pt/C  multilayer for NuSTAR required $\Gamma = 0.6$, which meant that 60\% of a material in a bilayer had to be carbon. Platinum and carbon has vastly different coating rates, so one cathode with platinum running at 150 W required two cathodes of carbon running at 900 W in order to achieve $\Gamma = 0.6$. With the new software only one cathode with each kind of material is necessary, but at the expense of a longer coating time.
 
 \subsection{Magnetron cathodes}
-The cathodes are the most important part of the chamber. They are 20 inches long and 1/2 inch wide planar magnetron cathodes made by Angstrom Sciences Inc. A diagram of the cathode can be seen in figure \ref{fig:cathodeintersection}. A copper (Cu) block acts as the cathode with a stainless steel shield around it, separated by teflon spacers. Inside the Cu block, three permanent magnets with alternating field directions supplies a magnetic field in front of the cathode. Water cooling and power lines are connected from the cathode through a flexible vacuum tube to water cooling and power supplies outside the chamber. The anode shield is grounded along with the rest of the chamber.
+The cathodes are the most important part of the chamber. They are 20 inches long and 1/2 inch wide planar magnetron cathodes made by Angstrom Sciences Inc. A diagram of the cathode can be seen in figure \ref{fig:cathodeintersection}. A copper block acts as the cathode with a stainless steel shield around it, separated by teflon spacers. Inside the copper block, three permanent magnets with alternating field directions supplies a magnetic field in front of the cathode. Water cooling and power lines are connected from the cathode through a flexible vacuum tube to water cooling and power supplies outside the chamber. The anode shield is grounded along with the rest of the chamber.
 
 \begin{figure}[htbp]
   \centering  \includegraphics[width=0.5\linewidth]{figures/chamber/cathodeintersection.pdf}
@@ -39,9 +39,9 @@ The cathodes are the most important part of the chamber. They are 20 inches long
   \label{fig:cathodeintersection}
 \end{figure}
 
-Materials for sputtering, called targets, are fastened to the Cu block using a stainless steel clamp. It is important for the target to have a uniform contact with the cathode, so the Cu block should be cleaned before fastening using cleanroom wipes and ethanol. For tougher blemishes, a micro-fine sanding sponge can be used to clean the surface followed by ethanol and cleanroom wipes.
+Materials for sputtering, called targets, are fastened to the copper block using a stainless steel clamp. It is important for the target to have a uniform contact with the cathode, so the copper block should be cleaned before fastening using cleanroom wipes and ethanol. For tougher blemishes, a micro-fine sanding sponge can be used to clean the surface followed by ethanol and cleanroom wipes.
 
-Applying a voltage of -400 V to the cathode creates an electric field in front of the target. The Ar gas present in the chamber will be ionised in front of the cathode by the electric field, stripping an electron from the Ar atoms resulting in a plasma. The positive Ar$^+$ ions are accelerated towards the target, whereby the collision with the target create a sputtering of target atoms in a cone directed normal to the target surface, see figure \ref{fig:sputtering}. A substrate placed opposite the cathode will be coated with the sputtered atoms at a rate proportional to the electric current applied to the cathode.
+Applying a voltage of -400 V to the cathode creates an electric field in front of the target. The argon gas present in the chamber will be ionised in front of the cathode by the electric field, stripping an electron from the argon atoms resulting in a plasma. The positive Ar$^+$ ions are accelerated towards the target, whereby the collision with the target create a sputtering of target atoms in a cone directed normal to the target surface, see figure \ref{fig:sputtering}. A substrate placed opposite the cathode will be coated with the sputtered atoms at a rate proportional to the electric current applied to the cathode.
 
 \begin{figure}[htbp]
   \centering  \includegraphics[width=0.6\linewidth]{figures/chamber/sputtering.pdf}
@@ -49,21 +49,21 @@ Applying a voltage of -400 V to the cathode creates an electric field in front o
   \label{fig:sputtering}
 \end{figure}
 
-Electrons stripped from Ar atoms are captured by the magnetic field lines from the permanent magnets in the Cu block. The electrons are moved back and forth across the target and occasionally hits neutral Ar atoms, which also become ionised and thereby sustain the plasma. The movement of electrons are from the center of the target to the outer edge, and as more Ar atoms are ionised in between those two points, the main erosion of the target during coating takes place in a so-called \emph{race track} around the target.
+Electrons stripped from argon atoms are captured by the magnetic field lines from the permanent magnets in the copper block. The electrons are moved back and forth across the target and occasionally hits neutral argon atoms, which also become ionised and thereby sustain the plasma. The movement of electrons are from the center of the target to the outer edge, and as more argon atoms are ionised in between those two points, the main erosion of the target during coating takes place in a so-called \emph{race track} around the target.
 %
 % !!!!!Something about the physics of sputtering!!!!!
 %
 % !!!!Thornton zone model?????!!!!!!
 
 \section{X-ray lab source at DTU Space}
-Measurements at DTU Space were done with a reflectivity setup consisting of a rotating Cu-anode providing X-ray photons for two beams. One beam is used for reflectivity measurements and the other can be set up for measuring curvature in glass substrates.
+Measurements at DTU Space were done with a reflectivity setup consisting of a rotating copper-anode providing X-ray photons for two beams. One beam is used for reflectivity measurements and the other can be set up for measuring curvature in glass substrates.
 
-After the source, along the z-axis, is placed two slits, a monochromator, an attenuator, on more slit, the sample holder and finally the detector, see figure \ref{fig:xraysetup}. The first two slits ensures that only a narrow beam hits the monochromator, which then reflects only photons around the Cu K$_{\alpha_1}$ emission line (8.047 keV) by reflecting the beam on two Ge crystals at an angle where Bragg reflection only allow photons of that energy. The beam continues through the next two slits, thereby minimizing divergence and also filters out a large part of unwanted reflections from the monochromator to ensure a narrow bandwidth. The attenuator ensures that the beam intensity is not too large, thereby saturating the detector.
+After the source, along the z-axis, is placed two slits, a monochromator, an attenuator, on more slit, the sample holder and finally the detector, see figure \ref{fig:xraysetup}. The first two slits ensures that only a narrow beam hits the monochromator, which then reflects only photons around the copper K$_{\alpha_1}$ emission line (8.047 keV) by reflecting the beam on two germanium crystals at an angle where Bragg reflection only allow photons of that energy. The beam continues through the next two slits, thereby minimizing divergence and also filters out a large part of unwanted reflections from the monochromator to ensure a narrow bandwidth. The attenuator ensures that the beam intensity is not too large, thereby saturating the detector.
 
 \begin{figure}[!h]
   \center
   \includegraphics[width=0.8\linewidth]{figures/chamber/xraysetup.pdf}
-\caption{\footnotesize Diagram of the X-ray setup at DTU Space. X-ray photons from the source goes through two slits, a monochromator, an attenuator and one more slit before hitting the sample. The reflected photons from the sample travel to the detector which is rotated at a $2\theta$ angle. Below: The monochromator that consists of two Ge crystal that reflect only a given wavelength on the (111) surface using the Bragg principle.}\label{fig:xraysetup}
+\caption{\footnotesize Diagram of the X-ray setup at DTU Space. X-ray photons from the source goes through two slits, a monochromator, an attenuator and one more slit before hitting the sample. The reflected photons from the sample travel to the detector which is rotated at a $2\theta$ angle. Below: The monochromator that consists of two germanium crystal that reflect only a given wavelength on the (111) surface using the Bragg principle.}\label{fig:xraysetup}
 \end{figure}
 
 The sample holder consists of a slab of flat perforated ceramic material, a vacuum chuck, mounted vertically. It is connected to a pump, which allows flat substrates, like pieces of Si-wafer, to stick very firmly to the stone slab. This method of sample mounting makes it possible to change samples very fast and easy between measurements. The sample holder is centered and mounted on a rotating stage, $\theta$, and can also move in and out of the beam along the x-axis.\\
@@ -95,7 +95,7 @@ si5813 & 281 & 225 & 14.55 & 7.49
 %\caption{\footnotesize Calibration samples coated with 10 bilayer Ir/B$_4$C multilayers of different thickness. Each sample is measured using XRR and fitted to an IMD model. \label{tab:AFMsamples}}
 %\end{table}
 
-The d-spacings for a given material are plotted as a function of the inverse speed of the sample ring (v$^{-1}$) and fitted with a linear regression as seen in figure \ref{fig:calib-fit}. The $a$ and $b$ values of the linear regression are used directly to determine the speed of the sample ring, $v_{\mathrm{B}_4\mathrm{C}}$, to coat e.g. B$_4$C with a thickness of $d_{\mathrm{B}_4\mathrm{C}}$ like so:
+The d-spacings for a given material are plotted as a function of the inverse speed of the sample ring (v$^{-1}$) and fitted with a linear regression as seen in figure \ref{fig:calib-fit}. The $a$ and $b$ values of the linear regression are used directly to determine the speed of the sample ring, $v_{\mathrm{B}_4\mathrm{C}}$, to coat e.g. boron carbide with a thickness of $d_{\mathrm{B}_4\mathrm{C}}$ like so:
 
 \begin{eqnarray}
 	v_{\mathrm{B}_4\mathrm{C}} = \frac{a}{d_{\mathrm{B}_4\mathrm{C}}-b}.
