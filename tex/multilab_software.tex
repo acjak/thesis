@@ -65,13 +65,13 @@ The power supplies used to run the cathodes in the multilab consist of two Advan
 
 The protocol is made for connecting all power supplies to the same serial connection, but in the multilab they are connected separately. The protocol requires each command to be packaged in a binary packet that includes power supply hardware address, length of packet, command, data and finally an XOR of the entire packet so the receiver can verify that the whole packet is there. The design of the packet can be seen in figure \ref{fig:ae_packet}. In the header, which is 8 bits long, the first 5 are the address of the power supply (set with a DIP switch on the back) and the remaining 3 bits describe the length of the packet. If the length in the header is set to 7 (111 in binary), the 'optional' byte is used to describe the actual length of the packet. The 'command' byte is a number between 0 and 255 (0 and FFh) in hexadecimal numbers. The 'checksum' byte is an XOR of the entire packet up until the 'chekcksum' byte. When the receiver gets a packet, it will do an XOR of the entire packet including the 'checksum' byte and if the result is 0, the packet is approved and processed.
 
+This packet architecture is used to communicate back and forth between the ControlServer program and the power supplies. If a packet is approved, an ACK is send back in the form of the hex code 06h. The commands for the power supplies can either be to retrieve current status of some parameter, to set a parameter on the power supply, or to execute a command on the power supply. The entire communication protocol is transparent to the user and all user-level control of the power supplies can be achieved by user-level commands only.
+
 \begin{figure}[!h]
   \center
   \includegraphics[width=0.9\linewidth]{figures/chamber/ae_packet.pdf}
 \caption{\footnotesize Schematic of the principle of transmission data packets in the Advanced Energy communication protocol. Each number on the white line corresponds to one bit in the data packet, eight bits equals one byte. From \cite{Anonymous:zazNQqcS}}\label{fig:ae_packet}
 \end{figure}
-
-This packet architecture is used to communicate back and forth between the ControlServer program and the power supplies. If a packet is approved, an ACK is send back in the form of the hex code 06h. The commands for the power supplies can either be to retrieve current status of some parameter, to set a parameter on the power supply, or to execute a command on the power supply. The entire communication protocol is transparent to the user and all user-level control of the power supplies can be achieved by user-level commands only.
 
 \subsection{Coating macro}
 To produce a coating in the multilab chamber, a coating macro can be typed up and started in the main SPEC program as soon as the pressure is low enough ($\leq2\cdot10^{-6}$ Torr). An example of a simple coating macro, \verb'coat_singlelayer', can be seen here:
@@ -111,6 +111,7 @@ To produce a coating in the multilab chamber, a coating macro can be typed up an
         closeflow 1
         openvalve
         coating_stop_log
+        '
 \end{verbcode}
 
 Each step in the macro is described here:
